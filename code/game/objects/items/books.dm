@@ -1188,13 +1188,13 @@
 	. = ..()
 	if(iscarbon(owner))
 		var/mob/living/carbon/C = owner
-		C.add_stress(/datum/stressevent/blessed)
+		C.add_stress(/datum/stress_event/blessed)
 
 /datum/status_effect/buff/blessed/on_remove()
 	. = ..()
 	if(iscarbon(owner))
 		var/mob/living/carbon/C = owner
-		C.remove_stress(/datum/stressevent/blessed)
+		C.remove_stress(/datum/stress_event/blessed)
 
 /obj/item/book/law
 	name = "Tome of Justice"
@@ -1632,7 +1632,7 @@
 ____________End of Example*/
 
 /obj/item/book/magicaltheory
-	name = "Arcane Foundations - A historie of Magicks"
+	name = "Arcyne Foundations - A historie of the Arcyne"
 	desc = "Written by the rector of the Valerian College of Magick"
 	icon_state ="knowledge_0"
 	base_icon_state = "knowledge"
@@ -1722,13 +1722,13 @@ ____________End of Example*/
 	. = ..()
 	if(iscarbon(owner))
 		var/mob/living/carbon/C = owner
-		C.add_stress(/datum/stressevent/blessed)
+		C.add_stress(/datum/stress_event/blessed)
 
 /datum/status_effect/buff/blessed/on_remove()
 	. = ..()
 	if(iscarbon(owner))
 		var/mob/living/carbon/C = owner
-		C.remove_stress(/datum/stressevent/blessed)
+		C.remove_stress(/datum/stress_event/blessed)
 
 /obj/item/book/rogue/howtogaffer
 	name = "Dont be a gaff, the guild masters manual"

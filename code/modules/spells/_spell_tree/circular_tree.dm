@@ -1,5 +1,5 @@
 /datum/spell_node/arcyne_eye
-	name = "Arcane Eye"
+	name = "Arcyne Eye"
 	desc = "Create an invisible, magical eye."
 	node_x = 0
 	node_y = 0
@@ -255,6 +255,14 @@
 	prerequisites = list(/datum/spell_node/arcyne_eye)
 	spell_type = /datum/action/cooldown/spell/undirected/message
 
+/datum/spell_node/phantom_ear
+	name = "Phantom Ear"
+	desc = "Enhance your hearing to perceive distant sounds."
+	node_x = 0
+	node_y = -140
+	prerequisites = list(/datum/spell_node/message)
+	spell_type = /datum/action/cooldown/spell/conjure/phantom_ear
+
 /datum/spell_node/arcyne_affinity
 	name = "Arcyne Affinity"
 	desc = "Devote yourself to Noc."
@@ -346,7 +354,7 @@
 	spell_type = /datum/action/cooldown/spell/projectile/fetch
 
 /datum/spell_node/arcane_bolt
-	name = "Arcane Bolt"
+	name = "Arcyne Bolt"
 	desc = "Launch a bolt of pure magical energy."
 	node_x = DOWN_X_LEFT -50
 	node_y = DOWN_Y_TIER_2
@@ -354,7 +362,7 @@
 	spell_type = /datum/action/cooldown/spell/projectile/arcyne_bolt
 
 /datum/spell_node/arcyne_storm
-	name = "Arcane Storm"
+	name = "Arcyne Storm"
 	desc = "Unleash a devastating storm of magical energy."
 	node_x = DOWN_X_LEFT -25
 	node_y = DOWN_Y_TIER_3

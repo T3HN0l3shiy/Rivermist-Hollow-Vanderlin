@@ -49,7 +49,7 @@
 
 /obj/structure/fake_machine/headeater
 	name = "head eating HAILER"
-	desc = "A machine that feeds on certain heads for coin, this itteration seems unfinished, what a sell out"
+	desc = "A machine that feeds on certain heads for coin, this itteration seems unfinished, what a sell out."
 	icon = 'icons/roguetown/misc/machines.dmi'
 	icon_state = "headeater"
 	density = FALSE
@@ -92,7 +92,7 @@
 		var/obj/item/painting/lorehead/D = H
 		if(D.headprice > 0)
 			to_chat(user, span_danger("as the [src] consumes [D] without a trace, you are hit with a wistful feeling, your past...gone in an instant."))
-			user.add_stress(/datum/stressevent/destroyed_past)
+			user.add_stress(/datum/stress_event/destroyed_past)
 			budget2change(D.headprice, user)
 			qdel(D)
 			return
