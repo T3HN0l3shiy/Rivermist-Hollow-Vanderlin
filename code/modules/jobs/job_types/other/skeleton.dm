@@ -47,7 +47,7 @@
 
 	H.grant_undead_eyes()
 	H.ambushable = FALSE
-	H.underwear = "Nude"
+	//H.underwear = "Nude"
 	if(H.charflaw)
 		QDEL_NULL(H.charflaw)
 	H.update_body()

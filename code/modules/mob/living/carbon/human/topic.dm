@@ -114,21 +114,35 @@ GLOBAL_VAR_INIT(year_integer, text2num(year)) // = 2013???
 		if(!get_location_accessible(src, BODY_ZONE_PRECISE_GROIN, skipundies = TRUE))
 			to_chat(usr, span_warning("I can't reach that! Something is covering it."))
 			return
-		if(underwear == "Nude")
+		if(!underwear)
 			return
-		if(do_after(usr, 5 SECONDS, src))
-			cached_underwear = underwear
-			underwear = "Nude"
-			update_body()
-			var/obj/item/undies/U
-			if(gender == MALE)
-				U = new/obj/item/undies(get_turf(src))
-			else
-				U = new/obj/item/undies/f(get_turf(src))
-			U.color = underwear_color
+		usr.visible_message(span_warning("[usr] starts taking off [src]'s [underwear.name]."),span_warning("I start taking off [src]'s [underwear.name]..."))
+		if(do_after(usr, 50, target = src))
+			var/obj/item/bodypart/chest = src.get_bodypart(BODY_ZONE_CHEST)
+			chest.remove_bodypart_feature(src.underwear.undies_feature)
+			underwear.forceMove(get_turf(src))
 			if(iscarbon(usr))
 				var/mob/living/carbon/C = usr
-				C.put_in_hands(U)
+				C.put_in_hands(underwear)
+			underwear = null
+			regenerate_icons()
+
+	if(href_list["legwearsthing"]) //canUseTopic check for this is handled by mob/Topic()
+		if(!get_location_accessible(src, BODY_ZONE_PRECISE_GROIN, skipundies = TRUE))
+			to_chat(usr, span_warning("I can't reach that! Something is covering it."))
+			return
+		if(!legwear_socks)
+			return
+		usr.visible_message(span_warning("[usr] starts taking off [src]'s [legwear_socks.name]."),span_warning("I start taking off [src]'s [legwear_socks.name]..."))
+		if(do_after(usr, 50, target = src))
+			var/obj/item/bodypart/chest = src.get_bodypart(BODY_ZONE_CHEST)
+			chest.remove_bodypart_feature(src.legwear_socks.legwears_feature)
+			legwear_socks.forceMove(get_turf(src))
+			if(iscarbon(usr))
+				var/mob/living/carbon/C = usr
+				C.put_in_hands(legwear_socks)
+			legwear_socks = null
+			regenerate_icons()
 	return ..() //end of this massive fucking chain. TODO: make the hud chain not spooky. - Yeah, great job doing that.
 
 /mob/living/proc/check_heartbeat(mob/user)

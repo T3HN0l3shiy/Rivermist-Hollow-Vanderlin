@@ -234,9 +234,9 @@
 					B.skeletonize()
 					shouldupdate = TRUE
 			if(shouldupdate)
-				if(ishuman(burn_carbon))
+				/*if(ishuman(burn_carbon))
 					var/mob/living/carbon/human/burn_human = burn_carbon
-					burn_human.underwear = "Nude"
+					burn_human.underwear = "Nude"*/
 				burn_carbon.unequip_everything()
 				burn_carbon.update_body()
 			return FALSE // so we dont dust skeletons

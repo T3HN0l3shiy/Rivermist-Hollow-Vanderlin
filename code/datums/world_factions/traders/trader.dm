@@ -8,9 +8,9 @@
 	var/mob/living/carbon/human/dummy/dummy = new()
 	dummy.set_species(species_path)
 	dummy.stat = DEAD //this is to avoid side effects of mob spawners
-	dummy.underwear = "Nude"
+	/*dummy.underwear = "Nude"
 	dummy.undershirt = "Nude"
-	dummy.socks = "Nude"
+	dummy.socks = "Nude"*/
 	if(outfit_path)
 		var/datum/outfit/outfit = new outfit_path()
 		dummy.equipOutfit(outfit, TRUE)

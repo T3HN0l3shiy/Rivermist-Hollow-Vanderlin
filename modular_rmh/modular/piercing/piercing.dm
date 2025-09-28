@@ -33,11 +33,10 @@
 	if(breasts)
 		if(breasts.visible_through_clothes)
 			return TRUE
-	return is_human_part_visible(owner, HIDEBOOB)
-	//if(isnull(owner.underwear))
-	//	return is_human_part_visible(owner, HIDEBOOB)
-	//else
-	//	return is_human_part_visible(owner, HIDEBOOB) && !owner.underwear.covers_breasts
+	if(isnull(owner.underwear))
+		return is_human_part_visible(owner, HIDEBOOB)
+	else
+		return is_human_part_visible(owner, HIDEBOOB) && !owner.underwear.covers_breasts
 
 /datum/sprite_accessory/piercing/rings
 	icon = 'modular_rmh/icons/mob/sprite_accessory/piercings/rings.dmi'

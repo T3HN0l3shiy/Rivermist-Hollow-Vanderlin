@@ -89,13 +89,13 @@ GLOBAL_LIST_INIT(name_adjustments, list())
 	var/origin = "Default"
 
 	/// Underwear type.
-	var/underwear = "Nude"
+	//var/underwear = "Nude"
 
 	/// Underwear color.
-	var/underwear_color = null
+	//var/underwear_color = null
 
 	/// Undershirt type.
-	var/undershirt = "Nude"
+	//var/undershirt = "Nude"
 
 	/// Accessory type.
 	var/accessory = "Nothing"
@@ -135,9 +135,9 @@ GLOBAL_LIST_INIT(name_adjustments, list())
 	var/list/randomise = list(
 		(RANDOM_BODY) = FALSE,
 		(RANDOM_BODY_ANTAG) = FALSE,
-		(RANDOM_UNDERWEAR) = FALSE,
-		(RANDOM_UNDERWEAR_COLOR) = FALSE,
-		(RANDOM_UNDERSHIRT) = FALSE,
+		//(RANDOM_UNDERWEAR) = FALSE,
+		//(RANDOM_UNDERWEAR_COLOR) = FALSE,
+		//(RANDOM_UNDERSHIRT) = FALSE,
 		(RANDOM_SKIN_TONE) = FALSE,
 		(RANDOM_EYE_COLOR) = FALSE
 	)
@@ -1796,10 +1796,10 @@ GLOBAL_LIST_INIT(name_adjustments, list())
 		organ_eyes.old_eye_color = eye_color
 
 	character.skin_tone = skin_tone
-	character.underwear = underwear
-	character.undershirt = undershirt
+	//character.underwear = underwear
+	//character.undershirt = undershirt
 	character.detail = detail
-	character.socks = socks
+	//character.socks = socks
 
 	/* V: */
 

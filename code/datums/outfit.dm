@@ -87,7 +87,7 @@
 	var/list/backpack_contents = null
 
 	/// Any undershirt. While on humans it is a string, here we use paths to stay consistent with the rest of the equips.
-	var/datum/sprite_accessory/undershirt = null
+	//var/datum/sprite_accessory/undershirt = null
 
 	/// Any clothing accessory item
 	var/accessory = null
@@ -180,8 +180,8 @@
 		H.equip_to_slot_or_del(new backl(H),ITEM_SLOT_BACK_L, TRUE)
 	if(mouth)
 		H.equip_to_slot_or_del(new mouth(H),ITEM_SLOT_MOUTH, TRUE)
-	if(undershirt)
-		H.undershirt = initial(undershirt.name)
+	/*if(undershirt)
+		H.undershirt = initial(undershirt.name)*/
 	if(pants)
 		H.equip_to_slot_or_del(new pants(H),ITEM_SLOT_PANTS, TRUE)
 	if(armor)

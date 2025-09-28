@@ -11,10 +11,9 @@
 	gender_genitals_adjust(appearance_list, organ, bodypart, owner, OFFSET_BREASTS)
 
 /datum/sprite_accessory/genitals/breasts/is_visible(obj/item/organ/organ, obj/item/bodypart/bodypart, mob/living/carbon/human/owner)
-	/*
+
 	if(owner.underwear && owner.underwear.covers_breasts)
 		return FALSE
-	*/
 
 	return is_human_part_visible(owner, HIDEBOOB|HIDEJUMPSUIT)
 

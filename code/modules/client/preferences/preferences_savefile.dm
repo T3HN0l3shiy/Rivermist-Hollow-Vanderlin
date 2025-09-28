@@ -57,9 +57,9 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 			var/new_value
 			if(new_value)
 				job_preferences[initial(J.title)] = new_value
-	if(current_version < 24)
-		if (!(underwear in GLOB.underwear_list))
-			underwear = "Nude"
+	//if(current_version < 24)
+	//	if (!(underwear in GLOB.underwear_list))
+	//		underwear = "Nude"
 	if(current_version < 25)
 		randomise = list(RANDOM_UNDERWEAR = TRUE, RANDOM_UNDERWEAR_COLOR = TRUE, RANDOM_UNDERSHIRT = TRUE, RANDOM_SKIN_TONE = TRUE, RANDOM_EYE_COLOR = TRUE)
 		if(S["name_is_always_random"] == 1)
@@ -279,7 +279,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["eye_color"] >> eye_color
 	S["voice_color"] >> voice_color
 	S["skin_tone"] >> skin_tone
-	S["underwear"] >> underwear
+	//S["underwear"] >> underwear
 	S["accessory"] >> accessory
 	S["detail"] >> detail
 	S["randomise"] >> randomise
@@ -291,7 +291,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	// We load our list, but override everything to FALSE to stop a "tainted" save from making it random again.
 	randomise[RANDOM_BODY] = FALSE
 	randomise[RANDOM_BODY_ANTAG] = FALSE
-	randomise[RANDOM_UNDERWEAR] = FALSE
+	//randomise[RANDOM_UNDERWEAR] = FALSE
 	randomise[RANDOM_SKIN_TONE] = FALSE
 	randomise[RANDOM_EYE_COLOR] = FALSE
 
@@ -439,12 +439,12 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["eye_color"]			, eye_color)
 	WRITE_FILE(S["voice_color"]			, voice_color)
 	WRITE_FILE(S["skin_tone"]			, skin_tone)
-	WRITE_FILE(S["underwear"]			, underwear)
-	WRITE_FILE(S["underwear_color"]		, underwear_color)
-	WRITE_FILE(S["undershirt"]			, undershirt)
+	//WRITE_FILE(S["underwear"]			, underwear)
+	//WRITE_FILE(S["underwear_color"]		, underwear_color)
+	//WRITE_FILE(S["undershirt"]			, undershirt)
 	WRITE_FILE(S["accessory"]			, accessory)
 	WRITE_FILE(S["detail"]				, detail)
-	WRITE_FILE(S["socks"]				, socks)
+	//WRITE_FILE(S["socks"]				, socks)
 	WRITE_FILE(S["randomise"]		, randomise)
 	WRITE_FILE(S["pronouns"]		, pronouns)
 	WRITE_FILE(S["voice_type"]		, voice_type)

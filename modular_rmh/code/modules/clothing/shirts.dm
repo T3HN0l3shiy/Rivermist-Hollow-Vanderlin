@@ -44,7 +44,7 @@
 	boobed = TRUE
 	r_sleeve_status = SLEEVE_NORMAL
 	l_sleeve_status = SLEEVE_NORMAL
-	//flags_inv = HIDECROTCH|HIDEBOOB|HIDEBELLY
+	flags_inv = HIDECROTCH|HIDEBOOB|HIDEBELLY
 	allowed_race = SPECIES_BASE_BODY
 
 /obj/item/clothing/shirt/undershirt/eastshirt2
@@ -59,6 +59,6 @@
 	boobed = TRUE
 	r_sleeve_status = SLEEVE_NORMAL
 	l_sleeve_status = SLEEVE_NORMAL
-	//flags_inv = HIDECROTCH|HIDEBOOB|HIDEBELLY
+	flags_inv = HIDECROTCH|HIDEBOOB|HIDEBELLY
 	allowed_race = SPECIES_BASE_BODY
 

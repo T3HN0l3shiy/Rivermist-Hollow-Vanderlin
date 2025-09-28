@@ -7,6 +7,7 @@
 	item_state = "dress"
 	r_sleeve_status = SLEEVE_NORMAL
 	l_sleeve_status = SLEEVE_NORMAL
+	flags_inv = HIDEUNDIESBOT|HIDEUNDIESTOP|HIDEBELLY|HIDEBUTT|HIDEBOOB|HIDECROTCH
 
 /obj/item/clothing/shirt/dress/gen
 	slot_flags = ITEM_SLOT_ARMOR|ITEM_SLOT_SHIRT

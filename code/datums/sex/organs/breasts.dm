@@ -13,6 +13,8 @@
 	//var/lactating = FALSE
 	//var/milk_stored = 0
 	//var/milk_max = 75
+	blocker = ITEM_SLOT_SHIRT
+	additional_blocker = "bra"
 
 /*/obj/item/organ/genitals/filling_organ/breasts/New(mob/living/carbon/M, special, drop_if_replaced)
 	..()

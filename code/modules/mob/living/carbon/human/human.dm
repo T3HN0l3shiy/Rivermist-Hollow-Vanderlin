@@ -33,6 +33,45 @@
 							V.add_stress(/datum/stress_event/dwarfshaved)
 				else
 					held_item.melee_attack_chain(user, src, params)
+	if(user == src)
+		if(get_num_arms(FALSE) < 1)
+			return
+		if(user.zone_selected == BODY_ZONE_PRECISE_GROIN)
+			if(get_location_accessible(src, BODY_ZONE_PRECISE_GROIN, skipundies = TRUE))
+				if(!underwear)
+					return
+				src.visible_message(span_notice("[src] begins to take off [underwear]..."))
+				if(do_after(user, 30, target = src))
+					var/obj/item/bodypart/chest = get_bodypart(BODY_ZONE_CHEST)
+					chest.remove_bodypart_feature(underwear.undies_feature)
+					underwear.forceMove(get_turf(src))
+					src.put_in_hands(underwear)
+					underwear = null
+					regenerate_icons()
+		if((user.zone_selected == BODY_ZONE_L_LEG) || (user.zone_selected == BODY_ZONE_R_LEG))
+			if(get_location_accessible(src, BODY_ZONE_PRECISE_R_FOOT, skipundies = TRUE) || get_location_accessible(src, BODY_ZONE_PRECISE_L_FOOT, skipundies = TRUE))
+				if(!legwear_socks)
+					return
+				src.visible_message(span_notice("[src] begins to take off [legwear_socks]..."))
+				if(do_after(user, 30, target = src))
+					var/obj/item/bodypart/chest = get_bodypart(BODY_ZONE_CHEST)
+					chest.remove_bodypart_feature(legwear_socks.legwears_feature)
+					legwear_socks.forceMove(get_turf(src))
+					src.put_in_hands(legwear_socks)
+					legwear_socks = null
+					regenerate_icons()
+		if(user.zone_selected == BODY_ZONE_CHEST)
+			if(get_location_accessible(src, BODY_ZONE_CHEST, skipundies = TRUE))
+				if(!piercings_item)
+					return
+				src.visible_message(span_notice("[src] begins to take off [piercings_item]..."))
+				if(do_after(user, 30, target = src))
+					var/obj/item/bodypart/chest = get_bodypart(BODY_ZONE_CHEST)
+					chest.remove_bodypart_feature(piercings_item.piercings_feature)
+					piercings_item.forceMove(get_turf(src))
+					src.put_in_hands(piercings_item)
+					piercings_item = null
+					regenerate_icons()
 
 /mob/living/carbon/human/Initialize()
 	// verbs += /mob/living/proc/mob_sleep
@@ -658,7 +697,7 @@
 /mob/living/carbon/human/proc/skele_look()
 	dna.species.go_bald()
 	update_body_parts(redraw = TRUE)
-	underwear = "Nude"
+	//underwear = "Nude"
 
 /mob/living/carbon/human/adjust_nutrition(change) //Honestly FUCK the oldcoders for putting nutrition on /mob someone else can move it up because holy hell I'd have to fix SO many typechecks
 	if(HAS_TRAIT(src, TRAIT_NOHUNGER))
@@ -706,11 +745,11 @@
 	lip_style = target.lip_style
 	lip_color = target.lip_color
 	age = target.age
-	underwear = target.underwear
-	underwear_color = target.underwear_color
-	undershirt = target.undershirt
+	//underwear = target.underwear
+	//underwear_color = target.underwear_color
+	//undershirt = target.undershirt
 	shavelevel = target.shavelevel
-	socks = target.socks
+	//socks = target.socks
 	advjob = target.advjob
 	spouse_mob = target.spouse_mob
 	spouse_indicator = target.spouse_indicator

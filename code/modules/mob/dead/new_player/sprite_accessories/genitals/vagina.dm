@@ -7,10 +7,9 @@
 	gender_genitals_adjust(appearance_list, organ, bodypart, owner, OFFSET_VAGINA)
 
 /datum/sprite_accessory/genitals/vagina/is_visible(obj/item/organ/organ, obj/item/bodypart/bodypart, mob/living/carbon/owner)
-	/*
 	if(owner.underwear)
 		return FALSE
-	*/
+
 	return is_human_part_visible(owner, HIDEJUMPSUIT|HIDEUNDIESBOT)
 
 /datum/sprite_accessory/genitals/vagina/human
@@ -21,6 +20,11 @@
 /datum/sprite_accessory/genitals/vagina/hairy
 	icon_state = "hairy"
 	name = "Hairy"
+	color_key_defaults = list(KEY_HAIR_COLOR)
+
+/datum/sprite_accessory/genitals/vagina/trimmed
+	icon_state = "trimmed"
+	name = "Trimmed"
 	color_key_defaults = list(KEY_HAIR_COLOR)
 
 /datum/sprite_accessory/genitals/vagina/spade

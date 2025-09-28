@@ -823,9 +823,9 @@ All effects don't start immediately, but rather get worse over time; the rate is
 				visible_message("<span class='warning'>[src]'s body crumbles into a pile of ash!</span>")
 				dust(TRUE, TRUE)
 				chest.skeletonized = TRUE
-				if(ishuman(src))
+				/*if(ishuman(src))
 					var/mob/living/carbon/human/H = src
-					H.underwear = "Nude"
+					H.underwear = "Nude"*/
 				should_update_body = TRUE
 				if(dna && dna.species)
 					if(dna && dna.species && !(NOBLOOD in dna.species.species_traits))

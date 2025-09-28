@@ -362,8 +362,8 @@
 			to_chat(H, "<span class='warning'>I've followed the word of [old_patron.display_name ? old_patron.display_name : old_patron] in my younger years, but the path I tread todae has accustomed me to [H.patron.display_name? H.patron.display_name : H.patron].")
 
 	if(H.mind)
-		if(H.dna)
-			H.dna.species.random_underwear(H.gender)
+		//if(H.dna)
+		//	H.dna.species.random_underwear(H.gender)
 
 		if(ishumanspecies(H))
 			H.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
@@ -371,7 +371,7 @@
 			H.adjust_skillrank(/datum/skill/labor/mining, 1, TRUE)
 		else if(isharpy(H))
 			H.adjust_skillrank(/datum/skill/misc/music, 1, TRUE)
-	H.underwear_color = null
+	//H.underwear_color = null
 	H.update_body()
 
 /datum/outfit/job/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)

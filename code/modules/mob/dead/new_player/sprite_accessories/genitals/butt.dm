@@ -18,9 +18,10 @@
 	//if(organ.visible_through_clothes)
 	//	return TRUE
 	//var/obj/item/organ/genitals/butt/buttie = organ
-	//if(owner.underwear)
-	//	return FALSE
-	return is_human_part_visible(owner, HIDEJUMPSUIT|HIDEBUTT|HIDEUNDIESBOT)
+	if(owner)
+		if(owner.underwear)
+			return FALSE
+	return is_human_part_visible(owner, HIDEBUTT|HIDEUNDIESBOT)
 
 /datum/sprite_accessory/genitals/butt/pair
 	name = "Pair"

@@ -16,6 +16,8 @@
 	absorbing = TRUE
 	fertility = TRUE
 	spiller = TRUE
+	blocker = ITEM_SLOT_PANTS
+	additional_blocker = "underwear"
 	bloatable = TRUE
 
 	grid_width = 32 * 3 // 3 rows
