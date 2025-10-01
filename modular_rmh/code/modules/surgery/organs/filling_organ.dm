@@ -150,6 +150,8 @@
 				var/obj/item/reagent_containers/glass/the_bottle
 				if((owner.mobility_flags & MOBILITY_STAND))
 					for(var/obj/item/reagent_containers/glass/bottle in range(0,H)) //having a bottle under us speed up leak greatly and transfer the leak there instead.
+						if(bottle in owner.held_items)
+							break
 						if(bottle.reagents.total_volume >= bottle.reagents.maximum_volume)
 							continue
 						if(bottle.reagents.flags & REFILLABLE)

@@ -118,7 +118,7 @@
 				if(humanized.wear_pants && (humanized.wear_pants.flags_inv & HIDECROTCH || !humanized.wear_pants.genitalaccess))
 					to_chat(user, span_warning("[humanized]'s groin must be exposed before I can collect [humanized.p_them()] fluids!"))
 					return TRUE
-				var/obj/item/organ/genitals/filling_organ/vagina/vag = humanized.getorganslot(ORGAN_SLOT_TESTICLES)
+				var/obj/item/organ/genitals/filling_organ/vagina/vag = humanized.getorganslot(ORGAN_SLOT_VAGINA)
 				if(!vag)
 					to_chat(user, span_warning("[humanized] has nothing to colect from!"))
 					return TRUE

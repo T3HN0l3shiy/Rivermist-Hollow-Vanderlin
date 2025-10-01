@@ -15,6 +15,7 @@
 	//var/milk_max = 75
 	blocker = ITEM_SLOT_SHIRT
 	additional_blocker = "bra"
+	organ_sizeable = TRUE
 
 /*/obj/item/organ/genitals/filling_organ/breasts/New(mob/living/carbon/M, special, drop_if_replaced)
 	..()
@@ -23,6 +24,8 @@
 
 /obj/item/organ/genitals/filling_organ/breasts/Insert(mob/living/carbon/M, special, drop_if_replaced)
 	. = ..()
+	if(M.breast_milk)
+		reagent_to_make = M.breast_milk
 	if(!refilling)
 		reagents.clear_reagents()
 	M.add_hole(ORGAN_SLOT_BREASTS, /datum/component/storage/concrete/grid/hole/breasts)

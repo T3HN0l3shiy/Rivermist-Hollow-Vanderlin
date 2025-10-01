@@ -98,7 +98,7 @@
 
 /datum/reagent/consumable/femcum/tiefling
 	color = "#c6c6c6"
-	taste_description = "hot and sweet"
+	taste_description = "hotness and sweetness"
 
 /datum/reagent/consumable/cum/dwarf
 	color = "#c6c6c6"
