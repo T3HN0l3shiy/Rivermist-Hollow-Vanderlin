@@ -360,6 +360,11 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["nsfw_headshot_link"]		>> nsfw_headshot_link
 	if(!is_valid_nsfw_headshot_link(null, nsfw_headshot_link, TRUE))
 		nsfw_headshot_link = null
+	S["flavortext_display"]	>> flavortext_display
+	S["ooc_notes"]			>> ooc_notes
+	S["ooc_notes_display"]	>> ooc_notes_display
+	S["ooc_extra"]			>> ooc_extra
+	S["ooc_extra_link"]		>> ooc_extra_link
 
 	//try to fix any outdated data if necessary
 	if(needs_update >= 0)
@@ -482,7 +487,12 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	// nsfw headshot link
 	WRITE_FILE(S["nsfw_headshot_link"] , nsfw_headshot_link)
 	// flavor text
-	WRITE_FILE(S["flavortext"] , flavortext)
+	WRITE_FILE(S["flavortext"] , html_decode(flavortext))
+	WRITE_FILE(S["flavortext_display"], flavortext_display)
+	WRITE_FILE(S["ooc_notes"] , html_decode(ooc_notes))
+	WRITE_FILE(S["ooc_notes_display"], ooc_notes_display)
+	WRITE_FILE(S["ooc_extra"],	ooc_extra)
+	WRITE_FILE(S["ooc_extra_link"],	ooc_extra_link)
 	// Descriptor entries
 	WRITE_FILE(S["descriptor_entries"] , descriptor_entries)
 	WRITE_FILE(S["custom_descriptors"] , custom_descriptors)

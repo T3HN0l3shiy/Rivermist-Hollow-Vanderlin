@@ -19,6 +19,7 @@
 #define FEMALE_BOOB 	2
 
 //Human Overlays Indexes/////////
+#define SMELL_LAYER				56		//Hygiene
 #define REFLECTION_LAYER		55
 #define POTENCE_LAYER			54
 #define MUTATIONS_LAYER			53		//mutations. Tk headglows, cold resistance glow, etc
@@ -74,7 +75,7 @@
 #define BITE_LAYER				3
 #define FIRE_LAYER				2		//If you're on fire
 #define TURF_LAYER				1		//If you're on fire
-#define TOTAL_LAYERS			55		//KEEP THIS UP-TO-DATE OR SHIT WILL BREAK ;_;
+#define TOTAL_LAYERS			56		//KEEP THIS UP-TO-DATE OR SHIT WILL BREAK ;_;
 
 #define BACK_CLOAK_SOUTH_LAYER		(BODY_BEHIND_LAYER+1)
 
