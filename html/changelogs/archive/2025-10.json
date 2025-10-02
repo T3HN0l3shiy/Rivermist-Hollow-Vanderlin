@@ -29,5 +29,12 @@
                 "admin": "Select Equipment renamed to Admin Dress, can now equip jobs and outfits are listed immediately."
             }
         ]
+    },
+    "2025-10-02": {
+        "Just-Sim": [
+            {
+                "rscdel": "patreon restrictions on accents"
+            }
+        ]
     }
 }
