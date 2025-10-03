@@ -36,7 +36,7 @@ jobs:
             git checkout -b sync-from-vander origin/main
           fi
           
-            - name: Smart merge with conflict detection
+      - name: Smart merge with conflict detection
         id: merge_step
         run: |
           echo "=== Checking for new changes ==="
