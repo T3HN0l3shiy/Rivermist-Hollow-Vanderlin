@@ -34,16 +34,18 @@
 		return
 	var/datum/sex_session/old_session = get_sex_session(src, target)
 	if(old_session)
-		old_session.show_ui()
+		if(target.client && client)
+			old_session.show_ui()
 		return
 
 
 	var/datum/sex_session/session = new /datum/sex_session(src, target)
 	LAZYADD(GLOB.sex_sessions, session)
-	session.show_ui()
+	if(target.client && client)
+		session.show_ui()
 	return session
 
-/mob/living/carbon/human/proc/make_sucking_noise()
+/mob/living/proc/make_sucking_noise()
 	if(gender == FEMALE)
 		playsound(src, pick('sound/misc/mat/girlmouth (1).ogg','sound/misc/mat/girlmouth (2).ogg'), 25, TRUE, ignore_walls = FALSE)
 	else
@@ -236,3 +238,113 @@
 		return FALSE
 	return kink_prefs[kink_name]["enabled"]
 
+
+/mob/living
+	var/show_genitals = FALSE
+
+/mob/living/proc/give_genitals()
+	//erpable = TRUE
+	//if(sexcon == null)
+	//	sexcon = new /datum/sex_controller(src)
+	if(!issimple(src))
+		var/mob/living/carbon/human/species/user = src
+		if(!user.getorganslot(ORGAN_SLOT_ANUS))
+			var/obj/item/organ/genitals/filling_organ/anus/ass = user.getorganslot(ORGAN_SLOT_ANUS)
+			ass = new /obj/item/organ/genitals/filling_organ/anus
+			ass.Insert(user, TRUE)
+
+		if(gender == MALE)
+			if(!user.getorganslot(ORGAN_SLOT_TESTICLES))
+				var/obj/item/organ/genitals/filling_organ/testicles/testicles = user.getorganslot(ORGAN_SLOT_TESTICLES)
+				if(!show_genitals)
+					testicles = new /obj/item/organ/genitals/filling_organ/testicles/internal
+				else
+					testicles = new /obj/item/organ/genitals/filling_organ/testicles
+				testicles.organ_size = rand(MAX_TESTICLES_SIZE)
+				testicles.Insert(user, TRUE)
+
+			if(!user.getorganslot(ORGAN_SLOT_PENIS))
+				var/obj/item/organ/genitals/penis/penis = user.getorganslot(ORGAN_SLOT_PENIS)
+				if(!show_genitals)
+					penis = new /obj/item/organ/genitals/penis//internal
+				else
+					penis = new /obj/item/organ/genitals/penis
+				penis.organ_size = rand(MAX_PENIS_SIZE)
+				penis.Insert(user, TRUE)
+
+		if(gender == FEMALE)
+			if(!user.getorganslot(ORGAN_SLOT_BUTT))
+				var/obj/item/organ/genitals/butt/buttie = user.getorganslot(ORGAN_SLOT_BUTT)
+				if(buttie)
+					buttie.organ_size = rand(MAX_BUTT_SIZE)
+					buttie.Insert(user, TRUE)
+
+			if(!user.getorganslot(ORGAN_SLOT_BREASTS))
+				var/obj/item/organ/genitals/filling_organ/breasts/breasts = user.getorganslot(ORGAN_SLOT_BREASTS)
+				if(!show_genitals)
+					breasts = new /obj/item/organ/genitals/filling_organ/breasts//internal
+				else
+					breasts = new /obj/item/organ/genitals/filling_organ/breasts
+				breasts.organ_size = rand(MAX_BREASTS_SIZE)
+				breasts.Insert(user, TRUE)
+
+			if(!user.getorganslot(ORGAN_SLOT_VAGINA))
+				var/obj/item/organ/genitals/filling_organ/vagina/vagina = user.getorganslot(ORGAN_SLOT_VAGINA)
+				if(!show_genitals)
+					vagina = new /obj/item/organ/genitals/filling_organ/vagina//internal
+				else
+					vagina = new /obj/item/organ/genitals/filling_organ/vagina
+				vagina.Insert(user, TRUE)
+
+			if(prob(3)) //3 chance to be dickgirl.
+				if(!user.getorganslot(ORGAN_SLOT_TESTICLES))
+					var/obj/item/organ/genitals/filling_organ/testicles/testicles = user.getorganslot(ORGAN_SLOT_TESTICLES)
+					if(!show_genitals)
+						testicles = new /obj/item/organ/genitals/filling_organ/testicles/internal
+					else
+						testicles = new /obj/item/organ/genitals/filling_organ/testicles
+					testicles.organ_size = rand(MAX_TESTICLES_SIZE)
+					testicles.Insert(user, TRUE)
+
+
+				if(!user.getorganslot(ORGAN_SLOT_PENIS))
+					var/obj/item/organ/genitals/penis/penis = user.getorganslot(ORGAN_SLOT_PENIS)
+					if(!show_genitals)
+						penis = new /obj/item/organ/genitals/penis//internal
+					else
+						penis = new /obj/item/organ/genitals/penis
+					penis.organ_size = rand(MAX_PENIS_SIZE)
+					penis.Insert(user, TRUE)
+	else
+		if(!getorganslot(ORGAN_SLOT_ANUS))
+			var/obj/item/organ/genitals/filling_organ/anus/ass = getorganslot(ORGAN_SLOT_ANUS)
+			ass = new /obj/item/organ/genitals/filling_organ/anus
+			ass.Insert(src, TRUE)
+
+		if(gender == MALE)
+			if(!getorganslot(ORGAN_SLOT_TESTICLES))
+				var/obj/item/organ/genitals/filling_organ/testicles/testicles = getorganslot(ORGAN_SLOT_TESTICLES)
+				if(!show_genitals)
+					testicles = new /obj/item/organ/genitals/filling_organ/testicles/internal
+				else
+					testicles = new /obj/item/organ/genitals/filling_organ/testicles
+				testicles.organ_size = rand(MAX_TESTICLES_SIZE)
+				testicles.Insert(src, TRUE)
+
+			if(!getorganslot(ORGAN_SLOT_PENIS))
+				var/obj/item/organ/genitals/penis/penis = getorganslot(ORGAN_SLOT_PENIS)
+				if(!show_genitals)
+					penis = new /obj/item/organ/genitals/penis//internal
+				else
+					penis = new /obj/item/organ/genitals/penis
+				penis.organ_size = rand(MAX_PENIS_SIZE)
+				penis.Insert(src, TRUE)
+
+		if(gender == FEMALE)
+			if(!getorganslot(ORGAN_SLOT_VAGINA))
+				var/obj/item/organ/genitals/filling_organ/vagina/vagina = getorganslot(ORGAN_SLOT_VAGINA)
+				if(!show_genitals)
+					vagina = new /obj/item/organ/genitals/filling_organ/vagina//internal
+				else
+					vagina = new /obj/item/organ/genitals/filling_organ/vagina
+				vagina.Insert(src, TRUE)

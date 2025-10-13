@@ -9,6 +9,7 @@
 
 		BB_TARGETTING_DATUM = new /datum/targetting_datum/basic(),
 		BB_PET_TARGETING_DATUM = new /datum/targetting_datum/basic/not_friends(),
+		BB_HORNY_TARGETTING_DATUM = new /datum/horny_targetting_datum/basic(),
 
 	)
 
@@ -17,6 +18,8 @@
 		/datum/ai_planning_subtree/generic_resist,
 		/datum/ai_planning_subtree/generic_stand,
 		/datum/ai_planning_subtree/flee_target,
+		/datum/ai_planning_subtree/simple_find_horny,
+		/datum/ai_planning_subtree/horny,
 
 		/datum/ai_planning_subtree/aggro_find_target,
 		/datum/ai_planning_subtree/basic_melee_attack_subtree,

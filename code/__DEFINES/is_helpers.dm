@@ -53,7 +53,7 @@ GLOBAL_LIST_INIT(turfs_without_ground, typecacheof(list(
 
 //Mobs
 #define isliving(A) (istype(A, /mob/living))
-
+#define issimple(A) (istype(A, /mob/living/simple_animal))
 #define isbrain(A) (istype(A, /mob/living/brain))
 
 //Carbon mobs

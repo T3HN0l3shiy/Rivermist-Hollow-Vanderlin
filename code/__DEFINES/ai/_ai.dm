@@ -287,6 +287,8 @@ F
 // Used to hold state without making bigass lists
 /// For /datum/ai_behavior/find_potential_targets, what if any field are we using currently
 #define BB_FIND_TARGETS_FIELD(type) "bb_find_targets_field_[type]"
+/// For /datum/ai_behavior/find_potential_horny_targets, what if any field are we using currently
+#define BB_FIND_HORNY_TARGETS_FIELD(type) "bb_find_horny_targets_field_[type]"
 
 #define ACTION_STATE_CONTINUE 1
 #define ACTION_STATE_COMPLETE 2

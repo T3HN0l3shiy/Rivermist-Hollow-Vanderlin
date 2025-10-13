@@ -57,7 +57,7 @@
 	owning_behavior.new_turf_found(target, controller, filter)
 
 /datum/proximity_monitor/advanced/ai_aggro_tracking/field_turf_crossed(atom/movable/movable, turf/location, turf/old_location)
-	if(!owning_behavior.atom_allowed(movable, filter, controller.pawn))
+	if(!owning_behavior.atom_allowed(movable, filter, controller.pawn, controller))
 		return
 
 	owning_behavior.new_atoms_found(list(movable), controller, target_key, filter, hiding_location_key)

@@ -24,8 +24,9 @@
 
 /obj/item/organ/genitals/filling_organ/vagina/Insert(mob/living/carbon/M, special, drop_if_replaced)
 	. = ..()
-	if(M.femcum)
-		reagent_to_make = M.femcum
+	if(ishuman(M))
+		if(M.femcum)
+			reagent_to_make = M.femcum
 	M.add_hole(ORGAN_SLOT_VAGINA, /datum/component/storage/concrete/grid/hole/vagina)
 
 /obj/item/organ/genitals/filling_organ/vagina/Remove(mob/living/carbon/M, special, drop_if_replaced)

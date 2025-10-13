@@ -93,3 +93,10 @@
 
 #define BB_IS_BEING_RIDDEN "bb_is_ridden"
 #define BB_BASIC_MOB_SCARED_ITEM "scared_item"
+
+
+#define BB_HORNY_TARGETTING_DATUM "horny_targetting_datum"
+#define BB_BASIC_MOB_CURRENT_HORNY_TARGET "BB_basic_current_horny_target"
+#define BB_HORNY_SEEK_COOLDOWN "BB_horny_seek_cooldown"
+#define BB_HORNY_STUN_COOLDOWN "BB_horny_stun_cooldown"
+#define BB_HORNY_SEARCH_COOLDOWN "BB_horny_search_cooldown"

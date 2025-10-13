@@ -23,9 +23,10 @@
 
 /obj/item/organ/genitals/filling_organ/testicles/Insert(mob/living/carbon/M, special, drop_if_replaced)
 	. = ..()
-	if(M.cum)
-		reagent_to_make = M.cum
-	if(!virility)
-		reagent_to_make = /datum/reagent/consumable/cum/sterile
-		reagents.clear_reagents()
-		reagents.add_reagent(reagent_to_make, reagents.maximum_volume)
+	if(iscarbon(M))
+		if(M.cum)
+			reagent_to_make = M.cum
+		if(!virility)
+			reagent_to_make = /datum/reagent/consumable/cum/sterile
+			reagents.clear_reagents()
+			reagents.add_reagent(reagent_to_make, reagents.maximum_volume)

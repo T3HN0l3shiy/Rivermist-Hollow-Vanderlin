@@ -220,6 +220,7 @@ GLOBAL_LIST_EMPTY(patreon_races)
 		ORGAN_SLOT_APPENDIX = /obj/item/organ/appendix,
 		ORGAN_SLOT_GUTS = /obj/item/organ/guts,
 		ORGAN_SLOT_ANUS = /obj/item/organ/genitals/filling_organ/anus,
+		ORGAN_SLOT_ANUS = /obj/item/organ/genitals/filling_organ/anus,
 	)
 
 	/// List of descriptor choices this species gets in preferences customization

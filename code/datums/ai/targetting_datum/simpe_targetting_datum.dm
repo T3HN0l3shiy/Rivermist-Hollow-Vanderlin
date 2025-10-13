@@ -40,6 +40,12 @@
 		var/mob/living/L = the_target
 		if(faction_check(living_mob, L) || L.stat >= DEAD) //basic targetting doesn't target dead people
 			return FALSE
+		if(L.has_quirk(/datum/quirk/monsterhuntermale) || L.has_quirk(/datum/quirk/monsterhunterfemale) || HAS_TRAIT(L, TRAIT_PACIFISM))
+			return FALSE
+		if((L.body_position == LYING_DOWN) && !L.get_active_held_item() && L.ckey && !L.cmode) //if is laying and holding nothing, and not in cmode. Ignore.
+			//if(prob(4) && (L.has_quirk(/datum/quirk/monsterhuntermale) || L.has_quirk(/datum/quirk/monsterhunterfemale)) && attacker.erpable) //tiny chance to trigger abuss.
+			//	attacker.fuckcd = 0
+			return FALSE
 		return TRUE
 
 	return FALSE

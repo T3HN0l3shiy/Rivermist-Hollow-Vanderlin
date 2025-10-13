@@ -112,11 +112,15 @@ GLOBAL_LIST_INIT(target_interested_atoms, typecacheof(list(/mob)))
 	// Fire instantly, you should find something I hope
 	controller.modify_cooldown(src, world.time)
 
-/datum/ai_behavior/find_potential_targets/proc/atom_allowed(atom/movable/checking, datum/targetting_datum/strategy, mob/pawn)
+/datum/ai_behavior/find_potential_targets/proc/atom_allowed(atom/movable/checking, datum/targetting_datum/strategy, mob/pawn, datum/ai_controller/controller)
+	var/datum/horny_targetting_datum/horny_targetting_datum = controller.blackboard[BB_HORNY_TARGETTING_DATUM]
 	if(checking == pawn)
 		return FALSE
 	if(!ismob(checking) && !is_type_in_typecache(checking, GLOB.target_interested_atoms))
 		return FALSE
+	if(horny_targetting_datum)
+		if(horny_targetting_datum.can_horny(pawn, checking))
+			return TRUE
 	if(!strategy.can_attack(pawn, checking))
 		return FALSE
 	return TRUE
@@ -136,6 +140,15 @@ GLOBAL_LIST_INIT(target_interested_atoms, typecacheof(list(/mob)))
 
 	// Alright, we found something acceptable, let's use it yeah?
 	var/atom/target = pick_final_target(controller, accepted_targets)
+
+	var/datum/horny_targetting_datum/horny_targetting_datum = controller.blackboard[BB_HORNY_TARGETTING_DATUM]
+	if(!isnull(horny_targetting_datum))
+		if(horny_targetting_datum.can_horny(controller.pawn, target))
+			var/datum/proximity_monitor/field = controller.blackboard[BB_FIND_TARGETS_FIELD(type)]
+			controller.CancelActions() // On retarget cancel any further queued actions so that they will setup again with new target
+			qdel(field) // autoclears so it's fine
+			finish_action(controller, succeeded = FALSE)
+
 	controller.set_blackboard_key(target_key, target)
 
 	var/atom/potential_hiding_location = strategy.find_hidden_mobs(pawn, target)
