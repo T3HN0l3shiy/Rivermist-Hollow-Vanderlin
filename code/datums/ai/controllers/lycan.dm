@@ -9,9 +9,12 @@
 		BB_SHOCKWAVE_COOLDOWN = 0,
 		BB_LEYLINE_ENERGY = 100,
 		BB_MAX_LEYLINE_ENERGY = 100,
-		BB_ENERGY_REGEN_RATE = 0.5
+		BB_ENERGY_REGEN_RATE = 0.5,
+		BB_HORNY_TARGETTING_DATUM = new /datum/horny_targetting_datum/basic(),
 	)
 	planning_subtrees = list(
+		/datum/ai_planning_subtree/simple_find_horny,
+		/datum/ai_planning_subtree/horny,
 		/datum/ai_planning_subtree/aggro_find_target,
 		/datum/ai_planning_subtree/leyline_special_abilities,
 		/datum/ai_planning_subtree/leyline_teleport,

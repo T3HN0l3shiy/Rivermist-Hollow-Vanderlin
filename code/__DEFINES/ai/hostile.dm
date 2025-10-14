@@ -100,3 +100,4 @@
 #define BB_HORNY_SEEK_COOLDOWN "BB_horny_seek_cooldown"
 #define BB_HORNY_STUN_COOLDOWN "BB_horny_stun_cooldown"
 #define BB_HORNY_SEARCH_COOLDOWN "BB_horny_search_cooldown"
+#define BB_HORNY_TIME_START "BB_horny_search_cooldown"

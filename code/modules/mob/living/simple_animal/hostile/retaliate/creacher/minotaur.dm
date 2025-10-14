@@ -50,6 +50,7 @@
 	AddComponent(/datum/component/ai_aggro_system)
 
 /mob/living/simple_animal/hostile/retaliate/minotaur/female
+	gender = FEMALE
 	icon_state = "MinotaurFem"
 	icon_living = "MinotaurFem"
 	icon_dead = "MinotaurFem_dead"
@@ -64,6 +65,7 @@
 	loot = list(/obj/item/weapon/greataxe/steel/doublehead)
 
 /mob/living/simple_animal/hostile/retaliate/minotaur/axe/female
+	gender = FEMALE
 	icon_state = "MinotaurFem_Axe"
 	icon_living = "MinotaurFem_Axe"
 	icon_dead = "MinotaurFem_dead"

@@ -57,7 +57,8 @@
 	arousal = clamp(amount, 0, MAX_AROUSAL)
 	update_arousal_effects()
 	try_ejaculate()
-	SEND_SIGNAL(parent, COMSIG_SEX_AROUSAL_CHANGED)
+	if(iscarbon(parent))
+		SEND_SIGNAL(parent, COMSIG_SEX_AROUSAL_CHANGED)
 	return arousal
 
 /datum/component/arousal/proc/adjust_arousal(datum/source, amount)

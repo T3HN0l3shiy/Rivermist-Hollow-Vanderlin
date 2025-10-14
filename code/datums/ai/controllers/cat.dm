@@ -12,11 +12,8 @@
 		BB_CAT_SIT_CHANCE = 1,
 		BB_CAT_GET_UP_CHANCE = 2,
 		BB_CAT_GROOM_CHANCE = 1,
-		BB_HORNY_TARGETTING_DATUM = new /datum/horny_targetting_datum/basic(),
 	)
 	planning_subtrees = list(
-		/datum/ai_planning_subtree/simple_find_horny,
-		/datum/ai_planning_subtree/horny,
 		/datum/ai_planning_subtree/pet_planning,
 		/datum/ai_planning_subtree/flee_target/from_flee_key/cat_struggle,
 		/datum/ai_planning_subtree/cat_rest_behavior,

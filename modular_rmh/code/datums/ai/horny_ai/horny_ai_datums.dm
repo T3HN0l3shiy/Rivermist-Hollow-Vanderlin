@@ -3,6 +3,7 @@
 	behavior_flags = AI_BEHAVIOR_REQUIRE_MOVEMENT | AI_BEHAVIOR_MOVE_AND_PERFORM | AI_BEHAVIOR_CAN_PLAN_DURING_EXECUTION
 
 	var/seekboredom = 0
+	var/stand_up_counter = 0
 	var/wrong_action = FALSE
 	var/knockdown_need = TRUE
 
@@ -13,20 +14,24 @@
 	if(isnull(targetting_datum))
 		CRASH("No target datum was supplied in the blackboard for [controller.pawn]")
 
+	if(isnull(controller.blackboard[BB_HORNY_TIME_START]))
+		controller.set_blackboard_key(BB_HORNY_TIME_START, world.time)
 
 	var/atom/target = controller.blackboard[target_key]
 
 	var/mob/living/target_living = target
 	var/mob/living/basic_mob = controller.pawn
 
+	if(!basic_mob.GetComponent(/datum/component/arousal)) // give arousal datum if none
+		basic_mob.AddComponent(/datum/component/arousal)
 	if(!basic_mob.getorganslot(ORGAN_SLOT_ANUS)) // a little of a hacky way of checking if we have genitals, since the proc always gives anus
 		basic_mob.give_genitals()
 
+	var/list/arousal_data = list()
+	SEND_SIGNAL(basic_mob, COMSIG_SEX_GET_AROUSAL, arousal_data)
+	var/is_spent = arousal_data["is_spent"]
 
-	if(!basic_mob.GetComponent(/datum/component/arousal)) // give arousal datum if none
-		basic_mob.AddComponent(/datum/component/arousal)
-
-	if(world.time < controller.blackboard[BB_HORNY_SEEK_COOLDOWN]) // if on cooldown - stop
+	if(world.time < controller.blackboard[BB_HORNY_SEEK_COOLDOWN] || is_spent) // if on cooldown or unhorny - stop
 		return FALSE
 
 	if(targetting_datum.can_horny(basic_mob, target_living))
@@ -87,6 +92,22 @@
 	var/is_spent = arousal_data["is_spent"]
 	var/last_orgasm_time = arousal_data["last_ejaculation_time"]
 
+	var/datum/sex_session/session = get_sex_session(basic_mob, target_living)
+
+	//check if we are sated
+	if(last_orgasm_time > world.time - 10 SECONDS || is_spent || controller.blackboard[BB_HORNY_TIME_START] > world.time + 2 MINUTES)
+		session.stop_current_action()
+		finish_action(controller, TRUE, target_key)
+		return
+
+	if(basic_mob.body_position == LYING_DOWN) //try to stand before doing anything
+		if(!basic_mob.stand_up())
+			stand_up_counter += 1
+			if(stand_up_counter >= 5)
+				finish_action(controller, FALSE, target_key)
+		stand_up_counter = 0
+		return
+
 	//do stun here
 	if(world.time > controller.blackboard[BB_HORNY_STUN_COOLDOWN])
 		if(basic_mob.Adjacent(target_living))
@@ -106,10 +127,14 @@
 			knockdown_need = TRUE
 
 	//do grab here
-	if(ishuman(basic_mob))
+	if(iscarbon(basic_mob))
 		if(!basic_mob.pulling)
-			if(!target_living.pulledby)
-				basic_mob.start_pulling(target_living)
+			if(prob(100)) // chance to gag
+				basic_mob.zone_selected = BODY_ZONE_PRECISE_MOUTH
+			else
+				basic_mob.zone_selected = pick(BODY_ZONE_CHEST, BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG, BODY_ZONE_PRECISE_NECK, BODY_ZONE_PRECISE_GROIN)
+			if(!length(target_living.grabbedby))
+				target_living.grabbedby(basic_mob)
 
 	//do undress here
 	if(ishuman(target_living))
@@ -126,7 +151,6 @@
 						basic_mob.visible_message(span_danger("[basic_mob] manages to tug [human_target]'s [human_target.wear_pants.name] out of the way!"))
 					return
 
-	var/datum/sex_session/session = get_sex_session(basic_mob, target_living)
 
 	//starting the action
 	if(session)
@@ -137,12 +161,6 @@
 				wrong_action = TRUE
 				finish_action(controller, FALSE, target_key)
 
-
-	//check if we are sated
-	if(last_orgasm_time > world.time - 10 SECONDS || is_spent)
-		session.stop_current_action()
-		finish_action(controller, TRUE, target_key)
-		return
 
 	//check if dead - still fuck uncon
 
