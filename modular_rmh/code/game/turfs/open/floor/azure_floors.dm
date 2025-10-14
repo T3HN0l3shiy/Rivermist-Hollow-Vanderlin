@@ -122,23 +122,27 @@
 /turf/open/floor/tile/brick
 	icon_state = "bricktile"
 
-/turf/open/water/ocean
-	name = "salt water"
-	desc = "The waves lap at the coast, hungry to swallow the land. Doesn't look too deep."
-	icon_state = "ash"
-	icon = 'modular_rmh/icons/turf/roguefloor.dmi'
-	water_level = 2
-	slowdown = 4
-	swim_skill = TRUE
-	wash_in = TRUE
-	water_reagent = /datum/reagent/water/salty
-
-/turf/open/water/ocean/deep
-	name = "salt water"
-	desc = "Deceptively deep, be careful not to find yourself this far out."
-	icon_state = "water"
-	icon = 'modular_rmh/icons/turf/roguefloor.dmi'
+/turf/open/water/pond
+	name = "pond"
+	desc = "Still and idyllic water that flows through meadows."
+	icon_state = "together"
 	water_level = 3
-	slowdown = 8
+	slowdown = 3
 	swim_skill = TRUE
 	wash_in = TRUE
+	water_reagent = /datum/reagent/water
+
+/turf/open/water/bath/pool
+	desc = "Clear water, pleasant temperature. Soothing."
+	icon_state = "bathtile_pool"
+
+/turf/open/water/bath/pool/Initialize()
+	.  = ..()
+	icon_state = "bathtile_pool"
+
+/turf/open/water/bath/pool/mid
+	icon_state = "bathtile_pool_mid"
+
+/turf/open/water/bath/pool/mid/Initialize()
+	.  = ..()
+	icon_state = "bathtile_pool_mid"

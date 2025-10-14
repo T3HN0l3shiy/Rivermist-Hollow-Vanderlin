@@ -52,7 +52,8 @@
 		"Comforter Brush.otf" = 'interface/fonts/languages/Comforter Brush.otf',
 		"VizaviTYGRA.ttf" = 'interface/fonts/languages/VizaviTYGRA.ttf',
 		"Kamelia.ttf" = 'interface/fonts/languages/Kamelia.ttf',
-		"FDMedian.ttf" = 'interface/fonts/languages/FDMedian.ttf'
+		"FDMedian.ttf" = 'interface/fonts/languages/FDMedian.ttf',
+		"Vaticanus.ttf" = 'interface/fonts/Vaticanus.ttf'
 	)
 
 //this exists purely to avoid meta by pre-loading all language icons.
