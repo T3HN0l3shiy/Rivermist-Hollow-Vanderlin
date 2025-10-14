@@ -81,7 +81,7 @@
 /obj/item/tablecloth/silk
 	name = "silk tablecloth"
 	desc = "A fancy silk tablecloth, laid out for diplomatic feasts and other important events."
-	icon = 'icons/roguetown/items/cooking.dmi'
+	icon = 'modular_rmh/icons/obj/items/cooking.dmi'
 	icon_state = "tablecloth_silk"
 	sellprice = 40
 	w_class = WEIGHT_CLASS_NORMAL

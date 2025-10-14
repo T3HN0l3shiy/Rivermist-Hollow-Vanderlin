@@ -182,6 +182,7 @@
 /obj/item/reagent_containers/glass/bowl/gold
 	name = "gold bowl"
 	fill_icon_state = "bowl"
+	icon = 'modular_rmh/icons/obj/items/cooking.dmi'
 	icon_state = "bowl_gold"
 	drop_sound = 'sound/foley/dropsound/armor_drop.ogg'
 	melting_material = /datum/material/gold
@@ -191,6 +192,7 @@
 /obj/item/reagent_containers/glass/bowl/silver
 	name = "silver bowl"
 	icon_state = "bowl_silver"
+	icon = 'modular_rmh/icons/obj/items/cooking.dmi'
 	drop_sound = 'sound/foley/dropsound/armor_drop.ogg'
 	melting_material = /datum/material/silver
 	sellprice = 30

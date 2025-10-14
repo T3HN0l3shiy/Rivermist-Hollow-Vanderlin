@@ -49,6 +49,7 @@
 
 /obj/structure/fluff/walldeco/alarm
 	name = "le réveil murmure"
+	icon = 'modular_rmh/icons/obj/items/decoration.dmi'
 	icon_state = "alarm"
 	desc = "This est un wall-mounted système d'alarme, designed dans les ."
 	pixel_y = 32
