@@ -41,7 +41,7 @@
 
 /datum/sex_action/cunnilingus/handle_climax_message(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	target.visible_message(span_love("[target] cums into [user]'s mouth!"))
-	return "into"
+	return "oral"
 
 /datum/sex_action/cunnilingus/on_finish(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	. = ..()

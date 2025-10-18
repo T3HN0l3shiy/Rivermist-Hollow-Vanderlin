@@ -598,3 +598,4 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_DENDOR_DEVOURING "trait_dendor_devouring"
 #define TRAIT_DENDOR_LORDING "trait_dendor_lording"
 
+#define TRAIT_NYMPHO_CURSE "Nymphs Curse"

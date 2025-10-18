@@ -87,6 +87,47 @@
 /mob/living/proc/has_mouth()
 	return TRUE
 
+/mob/living/proc/has_penis()
+	return gender == MALE
+
+/mob/living/proc/has_testicles()
+	return gender == MALE
+
+/mob/living/proc/has_vagina()
+	return gender == FEMALE
+
+/mob/living/proc/has_breasts()
+	return gender == FEMALE
+
+/mob/living/carbon/human/has_penis()
+	return getorganslot(ORGAN_SLOT_PENIS)
+
+/mob/living/carbon/human/has_testicles()
+	return getorganslot(ORGAN_SLOT_TESTICLES)
+
+/mob/living/carbon/human/has_vagina()
+	return getorganslot(ORGAN_SLOT_VAGINA)
+
+/mob/living/carbon/human/has_breasts()
+	RETURN_TYPE(/obj/item/organ/genitals/filling_organ/breasts)
+	return getorganslot(ORGAN_SLOT_BREASTS)
+
+/mob/living/carbon/human/proc/has_belly()
+	RETURN_TYPE(/obj/item/organ/genitals/belly)
+	return getorganslot(ORGAN_SLOT_BELLY)
+
+/mob/living/carbon/human/proc/has_butt()
+	RETURN_TYPE(/obj/item/organ/genitals/butt)
+	return getorganslot(ORGAN_SLOT_BUTT)
+
+/mob/living/carbon/human/proc/is_fertile()
+	var/obj/item/organ/genitals/filling_organ/vagina/vagina = getorganslot(ORGAN_SLOT_VAGINA)
+	return vagina.fertility
+
+/mob/living/carbon/human/proc/is_virile()
+	var/obj/item/organ/genitals/filling_organ/testicles/testicles = getorganslot(ORGAN_SLOT_TESTICLES)
+	return testicles.virility
+
 /mob/living/proc/mouth_is_free()
 	return !is_mouth_covered()
 
@@ -113,7 +154,7 @@
 	. = ..()
 	AddComponent(/datum/component/arousal)
 	//add_hole(ORGAN_SLOT_ANUS, /datum/component/storage/concrete/grid/hole/ass)
-	//add_hole(ORGAN_SLOT_BREASTS, /datum/component/storage/concrete/grid/hole/mouth)
+	add_hole(ORGAN_SLOT_BELLY, /datum/component/storage/concrete/grid/hole/mouth)
 
 
 /mob/living/proc/return_character_information()

@@ -303,6 +303,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["gender_choice"] >> gender_choice
 	S["setspouse"] >> setspouse
 	S["selected_accent"] >> selected_accent
+	S["moan_selection"]	>> moan_selection //RMH edit
 
 	// We load our list, but override everything to FALSE to stop a "tainted" save from making it random again.
 	randomise[RANDOM_BODY] = FALSE
@@ -372,6 +373,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 	S["pronouns"] >> pronouns
 	S["voice_type"] >> voice_type
+	S["moan_selection"]	>> moan_selection 	//RMH edit
 
 	//Load flavor text
 	S["flavortext"] >> flavortext
@@ -408,6 +410,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	voice_color = voice_color
 	pronouns = sanitize_text(pronouns, THEY_THEM)
 	voice_type = sanitize_text(voice_type, VOICE_TYPE_MASC)
+	moan_selection = sanitize_text(moan_selection, MOANPACK_TYPE_DEF)	//RMH edit
 	skin_tone = skin_tone
 	family = family
 	gender_choice = gender_choice
@@ -471,6 +474,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["randomise"]		, randomise)
 	WRITE_FILE(S["pronouns"]		, pronouns)
 	WRITE_FILE(S["voice_type"]		, voice_type)
+	WRITE_FILE(S["moan_selection"] , moan_selection)	//RMH edit
 	WRITE_FILE(S["species"]			, pref_species.name)
 	WRITE_FILE(S["charflaw"]			, charflaw.type)
 	WRITE_FILE(S["loadout1"]		, loadout1)
