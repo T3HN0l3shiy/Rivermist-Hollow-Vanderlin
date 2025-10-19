@@ -3532,6 +3532,7 @@
 #include "modular_rmh\code\area\rmh_underdark_areas.dm"
 #include "modular_rmh\code\area\undercoast.dm"
 #include "modular_rmh\code\area\undergrove.dm"
+#include "modular_rmh\code\datums\character_flaw.dm"
 #include "modular_rmh\code\datums\ai\horny_ai\find_potential_horny_targets.dm"
 #include "modular_rmh\code\datums\ai\horny_ai\horny_ai_datums.dm"
 #include "modular_rmh\code\datums\ai\horny_ai\horny_subtrees.dm"
@@ -3592,4 +3593,6 @@
 #include "modular_rmh\modular\questing\questing_landmarks.dm"
 #include "modular_rmh\modular\resurrection_rune\res_helpers.dm"
 #include "modular_rmh\modular\resurrection_rune\resurrection_rune.dm"
+#include "modular_rmh\modular\selectable_moanpacks\emote.dm"
+#include "modular_rmh\modular\selectable_moanpacks\moanpacks_defs.dm"
 // END_INCLUDE

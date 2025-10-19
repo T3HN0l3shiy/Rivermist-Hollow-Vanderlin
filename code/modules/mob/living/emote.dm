@@ -170,6 +170,26 @@
 	emote_type = EMOTE_AUDIBLE
 	only_forced_audio = TRUE
 
+/datum/emote/living/scream/agony/run_emote(mob/user, params, type_override, intentional)
+	. = ..()
+	if(.)
+		for(var/mob/living/carbon/human/L in viewers(7,user))
+			if(L.has_flaw(/datum/charflaw/addiction/sadist))
+				L.sate_addiction()
+
+/datum/emote/living/scream/painscream/run_emote(mob/user, params, type_override, intentional)
+	. = ..()
+	if(.)
+		for(var/mob/living/carbon/human/L in viewers(7,user))
+			if(L.has_flaw(/datum/charflaw/addiction/sadist))
+				L.sate_addiction()
+
+/datum/emote/living/scream/firescream/run_emote(mob/user, params, type_override, intentional)
+	. = ..()
+	if(.)
+		for(var/mob/living/carbon/human/L in viewers(7,user))
+			if(L.has_flaw(/datum/charflaw/addiction/sadist))
+				L.sate_addiction()
 /datum/emote/living/aggro
 	key = "aggro"
 	key_third_person = "aggro"

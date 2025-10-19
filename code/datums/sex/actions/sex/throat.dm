@@ -48,7 +48,7 @@
 /datum/sex_action/sex/throat/handle_climax_message(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	user.visible_message(span_love("[user] cums into [target]'s throat!"))
 	user.virginity = FALSE
-	return "into"
+	return "oral"
 
 
 /datum/sex_action/sex/throat/on_finish(mob/living/carbon/human/user, mob/living/carbon/human/target)
