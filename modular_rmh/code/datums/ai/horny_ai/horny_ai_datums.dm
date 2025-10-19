@@ -24,7 +24,8 @@
 
 	if(!basic_mob.GetComponent(/datum/component/arousal)) // give arousal datum if none
 		basic_mob.AddComponent(/datum/component/arousal)
-	if(!basic_mob.getorganslot(ORGAN_SLOT_ANUS)) // a little of a hacky way of checking if we have genitals, since the proc always gives anus
+
+	if((basic_mob.gender == MALE && !basic_mob.getorganslot(ORGAN_SLOT_PENIS)) || (basic_mob.gender == FEMALE && !basic_mob.getorganslot(ORGAN_SLOT_VAGINA)))
 		basic_mob.give_genitals()
 
 	var/list/arousal_data = list()
@@ -128,13 +129,17 @@
 
 	//do grab here
 	if(iscarbon(basic_mob))
-		if(!basic_mob.pulling)
-			if(prob(100)) // chance to gag
-				basic_mob.zone_selected = BODY_ZONE_PRECISE_MOUTH
+		var/mob/living/carbon/carbon_mob = controller.pawn
+		if(!carbon_mob.pulling)
+			if(carbon_mob.get_active_held_item())
+				carbon_mob.drop_all_held_items()
+			var/sel_zone
+			if(prob(30)) // chance to gag
+				sel_zone = BODY_ZONE_PRECISE_MOUTH
 			else
-				basic_mob.zone_selected = pick(BODY_ZONE_CHEST, BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG, BODY_ZONE_PRECISE_NECK, BODY_ZONE_PRECISE_GROIN)
+				sel_zone = pick(BODY_ZONE_CHEST, BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG, BODY_ZONE_PRECISE_NECK, BODY_ZONE_PRECISE_GROIN)
 			if(!length(target_living.grabbedby))
-				target_living.grabbedby(basic_mob)
+				target_living.grabbedby(carbon_mob, FALSE, sel_zone)
 
 	//do undress here
 	if(ishuman(target_living))
