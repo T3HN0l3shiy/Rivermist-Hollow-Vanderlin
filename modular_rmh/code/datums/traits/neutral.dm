@@ -2,12 +2,12 @@
 //MAKE SURE THESE DO NOT MAJORLY IMPACT GAMEPLAY. those should be positive or negative traits.
 
 /datum/quirk/monsterhuntermale
-	name = "Monster -Hunter- (Males)"
+	name = "Monster Seeker (Males)"
 	desc = "Allows targeting by specific monsters (such as werewolves, goblins and minotaurs etc.) for something very lewd. May be unfair to you in combat. Male monsters lust for me..."
 	value = 0
 
 /datum/quirk/monsterhunterfemale
-	name = "Monster -Hunter- (Females)"
+	name = "Monster Seeker (Females)"
 	desc = "Allows targeting by specific monsters (such as werewolves, goblins and minotaurs etc.) for something very lewd. May be unfair to you in combat. Female monsters lust for me... "
 	value = 0
 
