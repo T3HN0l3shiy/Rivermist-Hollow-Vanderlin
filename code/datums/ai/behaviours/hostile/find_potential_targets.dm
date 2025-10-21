@@ -43,7 +43,7 @@ GLOBAL_LIST_INIT(target_interested_atoms, typecacheof(list(/mob)))
 	var/list/filtered_targets = list()
 
 	for(var/atom/pot_target in potential_targets)
-		if(targetting_datum.can_attack(living_mob, pot_target))//Can we attack it?
+		if(targetting_datum.can_attack(living_mob, pot_target) || targetting_datum.should_disarm(living_mob, pot_target))//Can we attack it?
 			filtered_targets += pot_target
 			continue
 

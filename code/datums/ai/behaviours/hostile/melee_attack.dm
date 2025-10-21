@@ -23,7 +23,7 @@
 	var/atom/target = controller.blackboard[target_key]
 	var/datum/targetting_datum/targetting_datum = controller.blackboard[targetting_datum_key]
 
-	if(!targetting_datum.can_attack(basic_mob, target))
+	if(!targetting_datum.can_attack(basic_mob, target) && !targetting_datum.should_disarm(basic_mob, target))
 		finish_action(controller, FALSE, target_key)
 		return
 
@@ -37,6 +37,19 @@
 	controller.set_blackboard_key(hiding_location_key, hiding_target)
 
 	basic_mob.face_atom(target)
+
+
+	if(targetting_datum.should_disarm(basic_mob, target))
+		if(ishuman(target))
+			var/mob/living/carbon/human/h_target = target
+			for(var/obj/item/I in h_target.held_items)
+				h_target.dropItemToGround(I, force = FALSE, silent = FALSE)
+			h_target.Stun(30)
+			h_target.visible_message(span_danger("[basic_mob] disarms [h_target]!"), \
+					span_userdanger("[basic_mob] disarms me!"), span_hear("I hear someone getting punished!"), COMBAT_MESSAGE_RANGE)
+			finish_action(controller, FALSE, target_key)
+			return
+
 	var/list/possible_intents = list()
 	for(var/datum/intent/intent as anything in basic_mob.possible_a_intents)
 		if(istype(intent, /datum/intent/unarmed/help) || istype(intent, /datum/intent/unarmed/shove) || istype(intent, /datum/intent/unarmed/grab))

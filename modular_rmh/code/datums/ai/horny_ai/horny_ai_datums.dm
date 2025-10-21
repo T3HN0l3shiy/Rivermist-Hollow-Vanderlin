@@ -79,14 +79,17 @@
 	if(seekboredom > 10) //11 cycles of Perform, thus //44 sec
 		seekboredom = 0
 		finish_action(controller, FALSE, target_key)
-		knockdown_need = TRUE
 		return
 
 	if(!basic_mob.Adjacent(target_living))
+		knockdown_need = TRUE
 		seekboredom += 1
 		return
 	else
 		seekboredom = CLAMP(seekboredom - 1, 0, 10)
+
+	if(target_living.body_position != LYING_DOWN)
+		knockdown_need = TRUE
 
 	var/list/arousal_data = list()
 	SEND_SIGNAL(basic_mob, COMSIG_SEX_GET_AROUSAL, arousal_data)
@@ -110,17 +113,17 @@
 		return
 
 	//do stun here
-	if(world.time > controller.blackboard[BB_HORNY_STUN_COOLDOWN])
+	if(world.time > controller.blackboard[BB_HORNY_STUN_COOLDOWN] && knockdown_need)
 		if(basic_mob.Adjacent(target_living))
-			if(target_living.cmode)
-				target_living.SetStun(20)
-				target_living.SetKnockdown(40)
+			if(iscarbon(basic_mob))
+				target_living.SetStun(40)
+				target_living.SetKnockdown(50)
 			else
-				target_living.SetStun(30)
-				target_living.SetKnockdown(60)
+				target_living.SetStun(100)
+				target_living.SetKnockdown(200)
 			if(target_living.body_position != LYING_DOWN)
 				target_living.emote("gasp")
-			controller.set_blackboard_key(BB_HORNY_STUN_COOLDOWN, world.time + 120 SECONDS)
+			controller.set_blackboard_key(BB_HORNY_STUN_COOLDOWN, world.time + 10 SECONDS)
 			basic_mob.visible_message(span_danger("[basic_mob] tackles [target_living] down to the ground, dazing them!"))
 			knockdown_need = FALSE
 			return
@@ -141,9 +144,20 @@
 			if(!length(target_living.grabbedby))
 				target_living.grabbedby(carbon_mob, FALSE, sel_zone)
 
-	//do undress here
+
 	if(ishuman(target_living))
 		var/mob/living/carbon/human/human_target = target_living
+
+		//disarm
+		if(human_target.get_active_held_item())
+			for(var/obj/item/I in human_target.held_items)
+				human_target.dropItemToGround(I, force = FALSE, silent = FALSE)
+			human_target.Stun(30)
+			human_target.visible_message(span_danger("[basic_mob] disarms [human_target]!"), \
+					span_userdanger("[basic_mob] disarms me!"), span_hear("I hear someone getting punished!"), COMBAT_MESSAGE_RANGE)
+			return
+
+		//do undress here
 		if(human_target.wear_pants)
 			if(human_target.wear_pants.flags_inv & HIDECROTCH && !human_target.wear_pants.genitalaccess)
 				if(!do_after(basic_mob, 1 SECONDS, human_target))
@@ -156,6 +170,24 @@
 						basic_mob.visible_message(span_danger("[basic_mob] manages to tug [human_target]'s [human_target.wear_pants.name] out of the way!"))
 					return
 
+		//do tie up here
+		if(iscarbon(basic_mob) && human_target.body_position == LYING_DOWN && !human_target.get_active_held_item())
+			var/mob/living/carbon/c_mob = controller.pawn
+			if(basic_mob.Adjacent(human_target) && !human_target.handcuffed && human_target.get_num_arms(TRUE) > 1)
+				c_mob.visible_message(span_danger("[c_mob] begins to tie up [human_target]'s limbs!"))
+				if(do_after(c_mob, 1.5 SECONDS, human_target))
+					// Create and use grab object
+					var/obj/item/rope/rope_item = new /obj/item/rope
+					rope_item.item_flags = DROPDEL
+
+					if(rope_item.apply_cuffs(human_target, c_mob))
+						var/obj/item/rope/leg_rope = new /obj/item/rope
+						leg_rope.item_flags = DROPDEL
+						leg_rope.apply_cuffs(human_target, c_mob, TRUE)  // TRUE for legcuffs
+					else
+						qdel(rope_item)
+				return
+
 
 	//starting the action
 	if(session)
@@ -167,11 +199,6 @@
 				finish_action(controller, FALSE, target_key)
 
 
-	//check if dead - still fuck uncon
-
-	/*if(!basic_mob.CanReach(current_target))
-		finish_action(controller, FALSE, target_key)
-		return*/
 
 
 /datum/ai_behavior/horny/finish_action(datum/ai_controller/controller, succeeded, target_key, targetting_datum_key, hiding_location_key)
@@ -185,7 +212,7 @@
 	//if ran away - be angry
 		controller.clear_blackboard_key(target_key)
 		controller.set_blackboard_key(BB_HORNY_SEEK_COOLDOWN, world.time + 10 SECONDS)
-		basic_mob.emote("scream", forced = TRUE)
+		basic_mob.visible_message(span_danger("[basic_mob] stomps on the ground, clearly unsatisfied!"))
 		wrong_action = FALSE
 		controller.CancelActions()
 		return
@@ -194,8 +221,8 @@
 
 	//if sated - go off and sleep or smth
 	controller.clear_blackboard_key(target_key)
-	basic_mob.emote("laugh", forced = TRUE)
 	controller.set_blackboard_key(BB_HORNY_SEEK_COOLDOWN, world.time + 20 SECONDS)
+	basic_mob.visible_message(span_danger("[basic_mob] exhales contently!"))
 	wrong_action = FALSE
 	controller.CancelActions()
 

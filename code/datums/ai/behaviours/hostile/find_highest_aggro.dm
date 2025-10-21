@@ -33,7 +33,7 @@
 			// Check if target is too far away
 			var/maintain_range = controller.blackboard[BB_AGGRO_MAINTAIN_RANGE] || 12
 
-			if (!targetting_datum.can_attack(living_mob, current_target))
+			if (!targetting_datum.can_attack(living_mob, current_target) && !targetting_datum.should_disarm(living_mob, current_target))
 				controller.clear_blackboard_key(BB_HIGHEST_THREAT_MOB)
 				current_target = null
 

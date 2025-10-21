@@ -11,13 +11,6 @@
 	. = ..()
 	if(!.)
 		return FALSE
-	var/locked = user.get_active_precise_hand()
-	if(check_sex_lock(user, locked))
-		return FALSE
-	if(user == target)
-		return FALSE
-	if(!check_location_accessible(user, target, BODY_ZONE_CHEST, TRUE))
-		return FALSE
 	return TRUE
 
 /datum/sex_action/rub_body/on_start(mob/living/carbon/human/user, mob/living/carbon/human/target)
