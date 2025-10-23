@@ -22,7 +22,7 @@
 		cum = /datum/reagent/consumable/cum/dwarf
 		femcum = /datum/reagent/consumable/femcum/dwarf
 
-/datum/species/halfelf
+/datum/species/human/halfelf
 		cum = /datum/reagent/consumable/cum/halfelf
 		femcum = /datum/reagent/consumable/femcum/halfelf
 
@@ -30,7 +30,7 @@
 		cum = /datum/reagent/consumable/cum/lizardfolk
 		femcum = /datum/reagent/consumable/femcum/lizardfolk
 
-/datum/species/tabaxi
+/datum/species/rakshari
 		cum = /datum/reagent/consumable/cum/tabaxi
 		femcum = /datum/reagent/consumable/femcum/tabaxi
 
@@ -42,15 +42,11 @@
 		cum = /datum/reagent/consumable/cum/halforc
 		femcum = /datum/reagent/consumable/femcum/halforc
 
-/datum/species/halforc
-		cum = /datum/reagent/consumable/cum/halforc
-		femcum = /datum/reagent/consumable/femcum/halforc
-
 /datum/species/kobold
 		cum = /datum/reagent/consumable/cum/kobold
 		femcum = /datum/reagent/consumable/femcum/kobold
 
-/datum/species/goblinp
+/datum/species/goblin
 		cum = /datum/reagent/consumable/cum/goblinp
 		femcum = /datum/reagent/consumable/femcum/goblinp
 

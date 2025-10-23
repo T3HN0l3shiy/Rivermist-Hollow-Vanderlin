@@ -130,6 +130,17 @@
 		SEND_SIGNAL(owner, COMSIG_SEX_ADJUST_AROUSAL, rand(5, 15))
 	to_chat(owner, span_love("My body wants more..."))
 
+/datum/status_effect/debuff/loinspent
+	id = "loinspent"
+	alert_type = /atom/movable/screen/alert/status_effect/debuff/loinspent
+	duration = -1
+
+/atom/movable/screen/alert/status_effect/debuff/loinspent
+	name = "Spent Loins"
+	desc = "It's starting to hurt a bit..."
+	icon_state = "debuff"
+
+
 /datum/status_effect/debuff/loinspent/tick()
 	. = ..()
 	if(!owner)

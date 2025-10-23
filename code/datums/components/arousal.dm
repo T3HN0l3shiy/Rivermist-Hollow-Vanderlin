@@ -270,7 +270,7 @@
 	if(is_spent() || is_manhood_overstimulated())
 		arousal_amt *= 0.8
 		update_aching(8, giving)
-		if(prob(15))
+		if(prob(5))
 			var/spentmessage = pick("I need to let my loins rest!", "I came too much too quickly!")
 			to_chat(user, span_warn(spentmessage))
 

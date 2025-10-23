@@ -19,6 +19,19 @@
 
 	var/hiding_target = targetting_datum.find_hidden_mobs(basic_mob, target) //If this is valid, theyre hidden in something!
 
+	if(QDELETED(basic_mob) || QDELETED(target) || !isnull(target.ckey)) //We don't want to eat anything with a ckey
+		return
+	//nor do we want to eat anything with a mind
+	if(iscarbon(target))
+		var/mob/living/carbon/c_target = target
+		if(c_target.mind || c_target.last_mind)
+			finish_action(controller, FALSE, target_key)
+			return
+	else
+		if(target.mind)
+			finish_action(controller, FALSE, target_key)
+			return
+
 	controller.set_blackboard_key(hiding_location_key, hiding_target)
 
 	basic_mob.face_atom()

@@ -99,7 +99,7 @@
 	var/datum/sex_session/session = get_sex_session(basic_mob, target_living)
 
 	//check if we are sated
-	if(last_orgasm_time > world.time - 10 SECONDS || is_spent || controller.blackboard[BB_HORNY_TIME_START] > world.time + 2 MINUTES)
+	if(last_orgasm_time > world.time - 10 SECONDS || is_spent || controller.blackboard[BB_HORNY_TIME_START] < world.time - 5 MINUTES)
 		session.stop_current_action()
 		finish_action(controller, TRUE, target_key)
 		return
@@ -191,9 +191,15 @@
 
 	//starting the action
 	if(session)
+		//make it depend on anger or smth
 		var/action_type = basic_mob.select_horny_ai_act(target_living)
 		if(isnull(session.current_action))
 			session.try_start_action(action_type)
+			basic_mob.face_atom(target_living)
+			var/force = rand(SEX_FORCE_MID, SEX_FORCE_MAX)
+			var/speed = rand(SEX_SPEED_MID, SEX_SPEED_MAX)
+			session.set_current_force(force)
+			session.set_current_speed(speed)
 			if(isnull(session.current_action))
 				wrong_action = TRUE
 				finish_action(controller, FALSE, target_key)
@@ -207,23 +213,22 @@
 
 	seekboredom = 0
 	knockdown_need = TRUE
+	wrong_action = FALSE
 	basic_mob.stop_pulling()
+	controller.clear_blackboard_key(target_key)
+	controller.clear_blackboard_key(BB_HORNY_TIME_START)
 	if(!succeeded)
-	//if ran away - be angry
-		controller.clear_blackboard_key(target_key)
-		controller.set_blackboard_key(BB_HORNY_SEEK_COOLDOWN, world.time + 10 SECONDS)
+		//if ran away - be angry
+		controller.set_blackboard_key(BB_HORNY_SEEK_COOLDOWN, world.time + 30 SECONDS)
 		basic_mob.visible_message(span_danger("[basic_mob] stomps on the ground, clearly unsatisfied!"))
-		wrong_action = FALSE
 		controller.CancelActions()
 		return
 
 
 
 	//if sated - go off and sleep or smth
-	controller.clear_blackboard_key(target_key)
-	controller.set_blackboard_key(BB_HORNY_SEEK_COOLDOWN, world.time + 20 SECONDS)
+	controller.set_blackboard_key(BB_HORNY_SEEK_COOLDOWN, world.time + 90 SECONDS)
 	basic_mob.visible_message(span_danger("[basic_mob] exhales contently!"))
-	wrong_action = FALSE
 	controller.CancelActions()
 
 /mob/living/proc/select_horny_ai_act(mob/living/target)

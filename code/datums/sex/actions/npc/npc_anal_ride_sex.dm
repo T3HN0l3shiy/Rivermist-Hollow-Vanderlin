@@ -10,6 +10,7 @@
 	name = "NPC Ride them anally"
 	stamina_cost = 0
 	check_same_tile = FALSE
+	hole_id = ORGAN_SLOT_ANUS
 
 /datum/sex_action/npc/npc_anal_ride_sex/shows_on_menu(mob/living/user, mob/living/target)
 	return FALSE

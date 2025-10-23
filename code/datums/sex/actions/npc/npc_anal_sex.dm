@@ -3,6 +3,7 @@
 	stamina_cost = 0
 	check_same_tile = FALSE
 	require_grab = FALSE
+	hole_id = ORGAN_SLOT_ANUS
 
 /datum/sex_action/npc/npc_anal_sex/shows_on_menu(mob/living/user, mob/living/target)
 	return FALSE

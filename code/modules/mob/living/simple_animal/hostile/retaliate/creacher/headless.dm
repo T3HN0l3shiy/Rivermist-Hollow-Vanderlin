@@ -88,10 +88,9 @@
 					acid_damage += 30
 				swallowed_mob.adjustFireLoss(acid_damage)
 				stomach_burn_cooldown = world.time + stomach_burn_delay
-			if(swallowed_mob.stat == DEAD)
+			if(swallowed_mob.stat == DEAD || swallowed_mob.health < 40)
 				//They are full dead.
-				swallowed_mob.dust(drop_items = TRUE)
-				swallowed_mob = null
+				SpitUp()
 				body_eater = TRUE
 				adjustBruteLoss(-50)
 				visible_message(span_notice("The [src] starts to rapidly heal."))

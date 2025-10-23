@@ -1,3 +1,6 @@
+#define RUNE_DAMAGE_THRESHOLD 80
+
+
 /datum/resurrection_rune_controller
 	var/obj/structure/resurrection_rune/control/control_rune
 	var/obj/structure/resurrection_rune/sub_rune
@@ -47,7 +50,7 @@
 			if(!isnull(unlinked.client))
 				if(!unlinked.rune_linked)
 					var/turf/tur = get_turf(H)
-					if(unlinked.health <= unlinked.crit_threshold || istype(tur, /turf/open/lava) || istype(tur, /turf/open/lava/acid))
+					if(unlinked.maxHealth - unlinked.health >= RUNE_DAMAGE_THRESHOLD || unlinked.is_dead() || istype(tur, /turf/open/lava) || istype(tur, /turf/open/lava/acid))
 						if(!(unlinked.mind in resurrecting))
 							resurrecting |= unlinked
 							to_chat(unlinked.mind.get_ghost(TRUE, TRUE), span_blue("An alien force suddenly <b>YANKS</b> you back to life!"))
@@ -111,7 +114,7 @@
 		return
 
 	var/turf/tur = get_turf(target)
-	if(target.health <= target.crit_threshold || istype(tur, /turf/open/lava) || istype(tur, /turf/open/lava/acid))
+	if(target.maxHealth - target.health >= RUNE_DAMAGE_THRESHOLD || target.is_dead() || istype(tur, /turf/open/lava) || istype(tur, /turf/open/lava/acid))
 		if(target in resurrecting)
 			return
 		start_revival(target)
@@ -129,12 +132,12 @@
 
 
 /datum/resurrection_rune_controller/proc/revive_mob(mob/living/carbon/user, is_linked)
-	//if(user.health > user.crit_threshold && !(istype(get_turf(user), /turf/open/lava) || istype(get_turf(user), /turf/open/lava/acid)))
-	//	resurrecting -= user
-	//	to_chat(user.mind, span_blue("The tugging stops; you seem to be recovering."))
-	//	return
+	/*if(!IS_RES_ELIGIBLE(user) && !(istype(get_turf(user), /turf/open/lava) || istype(get_turf(user), /turf/open/lava/acid)))
+		resurrecting -= user
+		to_chat(user.mind, span_blue("The tugging stops; you seem to be recovering."))
+		return*/
 	var/turf/T = get_turf(sub_rune)
-	var/mob/living/body = user
+	var/mob/living/carbon/body = user
 	if(!body)
 		sub_rune.visible_message(span_blue("The rune flickers, connection to a body suddenly severed."))
 		resurrecting -= user
@@ -143,11 +146,21 @@
 	playsound(get_turf(body), 'sound/magic/repulse.ogg', 100, FALSE, -1)
 	body.forceMove(T)
 	body.revive(full_heal = TRUE, admin_revive = TRUE)
-	user.grab_ghost(TRUE)
+
+	var/was_zombie = body.mind?.has_antag_datum(/datum/antagonist/zombie)
+	var/has_rot = FALSE
+	if(!was_zombie)
+		for(var/obj/item/bodypart/bodypart as anything in body.bodyparts)
+			if(bodypart.rotted)
+				has_rot = TRUE
+				break
+	if(has_rot || was_zombie)
+		remove_zombie(body, has_rot, was_zombie)
+
+	body.grab_ghost(TRUE)
 	body.flash_act()
-	//resurrecting -= user
-	addtimer(CALLBACK(src, PROC_REF(remove_res), user), 10 SECONDS)
-	var/mob/living/carbon/human/H = user
+	addtimer(CALLBACK(src, PROC_REF(remove_res), body), 10 SECONDS)
+	var/mob/living/carbon/human/H = body
 	if(H.rune_linked)
 		body.apply_status_effect(/datum/status_effect/debuff/revived/rune)
 	else
@@ -155,6 +168,25 @@
 	body.apply_status_effect(/datum/status_effect/debuff/rune_glow)
 	playsound(T, 'sound/misc/vampirespell.ogg', 100, FALSE, -1)
 	to_chat(body, span_blue("You are back."))
+
+/datum/resurrection_rune_controller/proc/remove_zombie(mob/living/carbon/target, has_rot, was_zombie)
+
+	if(was_zombie)
+		target.mind.remove_antag_datum(/datum/antagonist/zombie)
+		target.death()
+
+	var/datum/component/rot/rot = target.GetComponent(/datum/component/rot)
+	if(rot)
+		rot.amount = 0
+
+	for(var/obj/item/bodypart/rotty in target.bodyparts)
+		rotty.rotted = FALSE
+		rotty.update_limb()
+		if(rotty.can_be_disabled)
+			rotty.update_disabled()
+
+	target.update_body()
+	target.visible_message("<span class='notice'>The rot leaves [target]'s body!</span>", "<span class='green'>I feel the rot leave my body!</span>")
 
 /datum/resurrection_rune_controller/proc/remove_res(mob/living/carbon/user)
 	resurrecting -= user

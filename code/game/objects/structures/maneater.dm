@@ -1,5 +1,5 @@
 
-/obj/structure/flora/grass/maneater
+/*/obj/structure/flora/grass/maneater
 	icon = 'icons/roguetown/mob/monster/maneater.dmi'
 	icon_state = "maneater-hidden"
 	num_random_icons = 0
@@ -170,3 +170,4 @@
 	if(!aggroed)
 		update_appearance(UPDATE_ICON_STATE | UPDATE_NAME)
 	aggroed = world.time
+*/
