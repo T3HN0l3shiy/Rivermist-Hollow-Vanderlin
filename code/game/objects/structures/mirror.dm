@@ -19,6 +19,26 @@
 	. = ..()
 	if(icon_state == "mirror_broke" && !obj_broken)
 		atom_break(null, TRUE, mapload)
+	var/static/list/reflection_filter = alpha_mask_filter(icon = icon('icons/roguetown/misc/structure.dmi', "mirror"))
+	var/static/matrix/reflection_matrix = matrix(0.75, 0, 0, 0, 0.75, 0)
+	AddComponent(/datum/component/reflection, \
+		reflection_filter = reflection_filter, \
+		reflection_matrix = reflection_matrix, \
+		can_reflect = CALLBACK(src, PROC_REF(can_reflect)), \
+		update_signals = list(COMSIG_ATOM_BREAK), \
+		/*dm_filtercheck_reflect_signals = list(SIGNAL_ADDTRAIT(TRAIT_NO_MIRROR_REFLECTION), SIGNAL_REMOVETRAIT(TRAIT_NO_MIRROR_REFLECTION)),*/ \
+	)
+
+/obj/structure/mirror/proc/can_reflect(atom/movable/target)
+	///I'm doing it this way too, because the signal is sent before the broken variable is set to TRUE.
+	if(atom_integrity <= integrity_failure * max_integrity)
+		to_chat(world, "norefl1")
+		return FALSE
+	if(obj_broken || !isliving(target))// || HAS_TRAIT(target, TRAIT_NO_MIRROR_REFLECTION))
+		to_chat(world, "norefl2")
+		return FALSE
+	to_chat(world, "refl")
+	return TRUE
 
 /obj/structure/mirror/attack_hand(mob/user)
 	. = ..()
