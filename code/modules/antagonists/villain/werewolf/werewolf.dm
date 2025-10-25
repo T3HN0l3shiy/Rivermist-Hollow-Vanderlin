@@ -25,6 +25,7 @@
 		TRAIT_STRONGBITE,
 		TRAIT_BESTIALSENSE
 	)
+	var/forced_transform = FALSE
 
 /datum/antagonist/werewolf/lesser
 	name = "Lesser Werevolf"
@@ -218,3 +219,16 @@
 	. = ..()
 	ADD_TRAIT(src, TRAIT_NODROP, TRAIT_GENERIC)
 	ADD_TRAIT(src, TRAIT_NOEMBED, TRAIT_GENERIC)
+
+/mob/living/carbon/human/proc/toggle_werewolf_transform()
+	set name = "Toggle Transformation"
+	set category = "WEREWOLF"
+	var/datum/antagonist/werewolf/ww = mind.has_antag_datum(/datum/antagonist/werewolf)
+	if(isnull(ww))
+		to_chat(src, span_warning("You are not a werewolf!"))
+		return
+	if(ww.forced_transform)
+		ww.forced_transform = FALSE
+	else
+		ww.forced_transform = TRUE
+		ww.transforming = TRUE

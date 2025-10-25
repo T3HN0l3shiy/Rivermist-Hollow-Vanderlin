@@ -25,6 +25,7 @@
 	robust_searching = TRUE
 	stat_attack = UNCONSCIOUS
 	footstep_type = FOOTSTEP_MOB_HEAVY
+	ai_controller = /datum/ai_controller/troll
 
 /mob/living/simple_animal/hostile/werewolf/Initialize()
 	. = ..()

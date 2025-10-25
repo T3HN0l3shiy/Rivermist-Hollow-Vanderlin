@@ -128,4 +128,21 @@
 	ADD_TRAIT(W, TRAIT_HARDDISMEMBER, TRAIT_GENERIC)
 	ADD_TRAIT(W, TRAIT_LONGSTRIDER, TRAIT_GENERIC)
 
+	if(W.getorganslot(ORGAN_SLOT_PENIS))
+		var/obj/item/organ/genitals/penis/penis = W.getorganslot(ORGAN_SLOT_PENIS)
+		penis = new /obj/item/organ/genitals/penis/knotted/big
+		penis.Insert(W, TRUE)
+	if(W.getorganslot(ORGAN_SLOT_TESTICLES))
+		var/obj/item/organ/genitals/filling_organ/testicles/testicles = W.getorganslot(ORGAN_SLOT_TESTICLES)
+		testicles = new /obj/item/organ/genitals/filling_organ/testicles
+		testicles.Insert(W, TRUE)
+	if(W.getorganslot(ORGAN_SLOT_BREASTS))
+		var/obj/item/organ/genitals/filling_organ/breasts/breasts = W.getorganslot(ORGAN_SLOT_BREASTS)
+		breasts = new /obj/item/organ/genitals/filling_organ/breasts
+		breasts.Insert(W, TRUE)
+	if(W.getorganslot(ORGAN_SLOT_VAGINA))
+		var/obj/item/organ/genitals/filling_organ/vagina/vagina = W.getorganslot(ORGAN_SLOT_VAGINA)
+		vagina = new /obj/item/organ/genitals/filling_organ/vagina
+		vagina.Insert(W, TRUE)
+
 	return W
