@@ -15,6 +15,11 @@
 	. = ..()
 	close = new
 
+/atom/movable/screen/worker_inventory_backdrop/Destroy(force)
+	QDEL_NULL(close)
+	linked_worker = null
+	return ..()
+
 /atom/movable/screen/worker_inventory_backdrop/proc/open_ui(mob/camera/strategy_controller/opener, datum/worker_mind/worker)
 	close_uis(opener)
 	linked_worker = worker

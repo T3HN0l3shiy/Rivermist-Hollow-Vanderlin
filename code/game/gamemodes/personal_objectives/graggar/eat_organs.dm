@@ -20,7 +20,7 @@
 		UnregisterSignal(owner.current, COMSIG_ORGAN_CONSUMED)
 	return ..()
 
-/datum/objective/personal/consume_organs/proc/on_organ_consumed(datum/source, organ_type)
+/datum/objective/personal/consume_organs/proc/on_organ_consumed(datum/source, organ_type, obj/item/organ/organ_inside)
 	SIGNAL_HANDLER
 	if(completed)
 		return
@@ -36,12 +36,10 @@
 	if(organs_consumed >= organs_required && hearts_consumed >= hearts_required)
 		complete_objective()
 
-/datum/objective/personal/consume_organs/proc/complete_objective()
+/datum/objective/personal/consume_organs/complete_objective()
+	. = ..()
 	to_chat(owner.current, span_greentext("You have consumed enough organs and hearts to satisfy Graggar!"))
-	owner.current.adjust_triumphs(triumph_count)
-	completed = TRUE
 	adjust_storyteller_influence(GRAGGAR, 20)
-	escalate_objective()
 	UnregisterSignal(owner.current, COMSIG_ORGAN_CONSUMED)
 
 /datum/objective/personal/consume_organs/update_explanation_text()

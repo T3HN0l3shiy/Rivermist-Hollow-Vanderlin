@@ -4,6 +4,7 @@
 	icon_state = "skirt"
 	item_state = "skirt"
 	mob_overlay_icon = 'icons/roguetown/clothing/onmob/pants.dmi'
+	sleeved = 'icons/roguetown/clothing/onmob/helpers/sleeves_pants.dmi'
 	color = CLOTHING_LINEN
 
 /obj/item/clothing/pants/skirt/colored

@@ -104,3 +104,4 @@
 	color = null
 	salvage_amount = 1
 	salvage_result = /obj/item/natural/silk
+

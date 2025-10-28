@@ -268,9 +268,6 @@ SUBSYSTEM_DEF(migrants)
 
 	var/datum/job/migrant_job = SSjob.GetJobType(role_instance.migrant_job)
 
-	if(!migrant_job)
-		migrant_job = SSjob.GetJobType(/datum/job/migrant/generic)
-
 	SSjob.AssignRole(new_player, migrant_job, 1)
 
 	new_player.mind.late_joiner = TRUE
@@ -295,9 +292,9 @@ SUBSYSTEM_DEF(migrants)
 	to_chat(character, span_notice(wave.greet_text))
 	to_chat(character, span_notice(role_instance.greet_text))
 
-	if(migrant_job.antag_role)
-		character.mind.add_antag_datum(migrant_job.antag_role)
-		// Adding antag datums can move your character to places, so here's a bandaid
+	var/datum/antagonist/antag_role = migrant_job?.antag_role || role_instance?.antag_datum
+	if(antag_role)
+		character.mind.add_antag_datum(antag_role)
 		character.forceMove(spawn_on_location)
 
 	if(!ishuman(character))
@@ -372,7 +369,7 @@ SUBSYSTEM_DEF(migrants)
 	if(!player || !player.prefs)
 		return FALSE
 	var/datum/migrant_role/role = MIGRANT_ROLE(role_type)
-	if(!role || is_migrant_banned(player.ckey, role.name))
+	if(!role || is_migrant_banned(player.ckey, role.name) || is_race_banned(player.ckey, player.prefs.pref_species.id))
 		return FALSE
 
 	var/datum/job/migrant_job = SSjob.GetJobType(role.migrant_job)

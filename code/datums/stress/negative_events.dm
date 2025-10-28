@@ -189,6 +189,21 @@
 	stress_change = 1
 	desc = span_red("Same old ugly mug...")
 
+/datum/stress_event/fishface
+	timer = 30 SECONDS
+	stress_change = 1
+	desc = "<span class='red'>That thing is hideous!.</span>"
+
+/datum/stress_event/fish_monster
+	timer = 30 SECONDS
+	stress_change = 3
+	desc = span_boldred("<B>IT'S A HIDEOUS MONSTER!!!</B>")
+
+/datum/stress_event/fishfaceaintthatugly
+	timer = 30 SECONDS
+	stress_change = 0
+	desc = "Eh, I've seen worse faces than that fish."
+
 /datum/stress_event/delf
 	timer = 30 SECONDS
 	stress_change = 1
@@ -330,6 +345,17 @@
 	desc = span_boldred("<B>I have seen something nightmarish, and I fear for my life!</B>")
 	timer = 999 MINUTES
 
+
+/datum/stress_event/confessed
+	stress_change = 3
+	desc = span_red("I've confessed to sin.")
+	timer = 15 MINUTES
+
+/datum/stress_event/confessedgood
+	stress_change = 1
+	desc = span_red("I've confessed to sin, it feels good.")
+	timer = 15 MINUTES
+
 /datum/stress_event/maniac_woke_up
 	stress_change = 10
 	desc = span_boldred("No... I want to go back...")
@@ -452,7 +478,6 @@
 	timer = 10 MINUTES
 	desc = span_red("My wonderful musk has been washed away...")
 	stress_change = 1
-
 /datum/stress_event/startled
 	desc = span_warning("Hearing that word made me think about something scary.")
 	stress_change = 1
@@ -631,7 +656,28 @@
 	stress_change = 50
 	timer = 1000 MINUTES
 
+/datum/stress_event/consumed_tainted_lux
+	desc = span_warning("Why did i drink that?")
+	stress_change = 15
+	timer = 10 MINUTES
+
 /datum/stress_event/dead_bird
 	timer = 5 MINUTES
 	stress_change = 3
 	desc = span_red("My precious bird won't answer my call...")
+
+/datum/stress_event/soulchurnerhorror
+	timer = 10 SECONDS
+	stress_change = 50
+	desc = span_red("The horrid wails of the dead call for relief! WHAT HAVE I DONE?!")
+
+/datum/stress_event/soulchurner
+	timer = 1 MINUTES
+	stress_change = 10
+	desc = span_red("The horrid wails of the dead call for relief!")
+
+
+/datum/stress_event/soulchurnerpsydon
+	timer = 1 MINUTES
+	stress_change = 1
+	desc = span_red("The horrid wails of the dead call for relief! I can ENDURE such calls...")
