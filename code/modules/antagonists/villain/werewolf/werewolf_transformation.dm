@@ -4,7 +4,7 @@
 	if(H.stat == DEAD) return
 	if(H.advsetup) return
 	if(H.mind?.has_antag_datum(/datum/antagonist/zombie)) return
-
+	if(forced_transform) return
 	// Werewolf transforms at night AND under the sky
 	if(!transformed && !transforming)
 		if(GLOB.tod == "night")
@@ -20,28 +20,11 @@
 		// Begin transformation
 		if(transforming)
 			if (world.time >= transforming + 35 SECONDS) // Stage 3
-				for(var/obj/item/item as anything in H.get_equipped_items(FALSE))
-					if(istype(item, /obj/item/clothing) || istype(item, /obj/item/storage/belt))
-						item.take_damage(damage_amount = item.max_integrity * 0.4, sound_effect = FALSE)
-					else if(istype(item, /obj/item/weapon) || istype(item, /obj/item/storage))
-						H.dropItemToGround(item, silent = TRUE)
-
-				var/mob/living/carbon/human/species/werewolf/new_werewolf = generate_werewolf(H)
-				new_werewolf.apply_status_effect(/datum/status_effect/shapechange_mob/die_with_form, H, FALSE)
-				new_werewolf.grant_language(/datum/language/beast)
-				new_werewolf.adjust_skillrank(/datum/skill/combat/wrestling, 4, TRUE)
-				new_werewolf.adjust_skillrank(/datum/skill/combat/unarmed, 5, TRUE)
-				new_werewolf.adjust_skillrank(/datum/skill/misc/climbing, 6, TRUE)
-				new_werewolf.real_name = wolfname
-				new_werewolf.name = wolfname
-				playsound(new_werewolf, pick('sound/combat/gib (1).ogg','sound/combat/gib (2).ogg'), 200, FALSE, 3)
-				to_chat(new_werewolf, span_userdanger("I transform into a horrible beast!"))
-				new_werewolf.emote("rage")
-
+				H.werewolf_transform()
 				transforming = FALSE
 				transformed = TRUE // Mark as transformed
 
-			else if (world.time >= transforming + 25 SECONDS) // Stage 2
+			else if(world.time >= transforming + 25 SECONDS) // Stage 2
 				H.flash_fullscreen("redflash3")
 				H.emote("agony", forced = TRUE)
 				if(COOLDOWN_FINISHED(src, message_cooldown))
@@ -62,23 +45,10 @@
 				transforming = world.time // Start untransformation phase
 
 			if (world.time >= transforming + 1 MINUTES) // Untransform
+				H.emote("rage", forced = TRUE)
+				H.werewolf_untransform()
 				transformed = FALSE
 				transforming = FALSE // Reset untransforming phase
-
-				var/datum/status_effect/shapechange_mob/status_effect = H.has_status_effect(/datum/status_effect/shapechange_mob/die_with_form)
-				if(!status_effect)
-					return
-
-				var/mob/living/carbon/human/caster_mob = status_effect.caster_mob
-				H.Paralyze(1, ignore_canstun = TRUE)
-				H.emote("rage", forced = TRUE)
-				H.spawn_gibs(FALSE)
-				H.remove_status_effect(/datum/status_effect/shapechange_mob/die_with_form)
-				to_chat(caster_mob, span_userdanger("The beast within returns to slumber."))
-				caster_mob.fully_heal(FALSE)
-				playsound(caster_mob, pick('sound/combat/gib (1).ogg','sound/combat/gib (2).ogg'), 200, FALSE, 3)
-				caster_mob.Knockdown(30)
-				caster_mob.Stun(30)
 
 			else if (world.time >= transforming) // Alert player
 				if(COOLDOWN_FINISHED(src, message_cooldown))
@@ -86,37 +56,68 @@
 					to_chat(H, span_warning("Daylight shines around me... the curse begins to fade."))
 					COOLDOWN_START(src, message_cooldown, 10 SECONDS)
 
-/datum/antagonist/werewolf/proc/generate_werewolf(mob/living/carbon/human/user)
-	if(!istype(user))
-		return
-	var/mob/living/carbon/human/species/werewolf/W = new (get_turf(user))
 
-	if(user.age == AGE_CHILD)
-		W.age = AGE_CHILD
+/mob/living/carbon/human/proc/werewolf_transform()
+	if(!mind)
+		log_runtime("NO MIND ON [src.name] WHEN TRANSFORMING")
+	Paralyze(1, ignore_canstun = TRUE)
+	for(var/obj/item/W in src)
+		dropItemToGround(W)
+	regenerate_icons()
+	icon = null
+	var/oldinv = invisibility
+	invisibility = INVISIBILITY_MAXIMUM
+	cmode = FALSE
+	src.fully_heal(FALSE)
 
-	W.set_patron(user.patron)
+	var/ww_path
+	if(gender == MALE)
+		ww_path = /mob/living/carbon/human/species/werewolf/male
+	else
+		ww_path = /mob/living/carbon/human/species/werewolf/female
+
+	var/mob/living/carbon/human/species/werewolf/W = new ww_path(loc)
+	W.set_patron(src.patron)
+	W.gender = gender
+	W.regenerate_icons()
+	W.stored_mob = src
 	W.limb_destroyer = TRUE
 	W.ambushable = FALSE
+	W.dodgetime = 36
+
 	W.cmode_music = 'sound/music/cmode/antag/combat_werewolf.ogg'
 	W.skin_armor = new /obj/item/clothing/armor/skin_armor/werewolf_skin(W)
 
 	W.dna?.species.after_creation(src)
+	W.apply_status_effect(/datum/status_effect/shapechange_mob/die_with_form, src, FALSE)
+	W.grant_language(/datum/language/beast)
+	skills?.known_skills = list()
+	skills?.skill_experience = list()
+	W.grant_language(/datum/language/beast)
 
 	W.base_intents = list(INTENT_HELP, INTENT_DISARM, INTENT_GRAB)
 	W.update_a_intents()
 
-	W.dodgetime = 36
+	to_chat(W, span_userdanger("I transform into a horrible beast!"))
+	W.emote("rage")
+
+	W.adjust_skillrank(/datum/skill/combat/wrestling, 5, TRUE)
+	W.adjust_skillrank(/datum/skill/combat/unarmed, 5, TRUE)
+	W.adjust_skillrank(/datum/skill/misc/climbing, 6, TRUE)
+
+	W.STASTR = 20
+	W.STACON = 20
+	W.STAEND = 20
 
 	W.add_spell(/datum/action/cooldown/spell/undirected/howl)
 	W.add_spell(/datum/action/cooldown/spell/undirected/claws)
 
 	ADD_TRAIT(src, TRAIT_NOSLEEP, TRAIT_GENERIC)
-
-	ADD_TRAIT(W, TRAIT_NOSTAMINA, TRAIT_GENERIC)
 	ADD_TRAIT(W, TRAIT_STRONGBITE, TRAIT_GENERIC)
 	ADD_TRAIT(W, TRAIT_ZJUMP, TRAIT_GENERIC)
 	ADD_TRAIT(W, TRAIT_NOFALLDAMAGE1, TRAIT_GENERIC)
 	ADD_TRAIT(W, TRAIT_BASHDOORS, TRAIT_GENERIC)
+	ADD_TRAIT(W, TRAIT_SHOCKIMMUNE, TRAIT_GENERIC)
 	ADD_TRAIT(W, TRAIT_STEELHEARTED, TRAIT_GENERIC)
 	ADD_TRAIT(W, TRAIT_BREADY, TRAIT_GENERIC)
 	ADD_TRAIT(W, TRAIT_TOXIMMUNE, TRAIT_GENERIC)
@@ -124,25 +125,63 @@
 	ADD_TRAIT(W, TRAIT_NASTY_EATER, TRAIT_GENERIC)
 	ADD_TRAIT(W, TRAIT_DEADNOSE, TRAIT_GENERIC)
 	ADD_TRAIT(W, TRAIT_CRITICAL_RESISTANCE, TRAIT_GENERIC)
+	ADD_TRAIT(W, TRAIT_IGNOREDAMAGESLOWDOWN, TRAIT_GENERIC)
 	ADD_TRAIT(W, TRAIT_IGNORESLOWDOWN, TRAIT_GENERIC)
 	ADD_TRAIT(W, TRAIT_HARDDISMEMBER, TRAIT_GENERIC)
+	ADD_TRAIT(W, TRAIT_PIERCEIMMUNE, TRAIT_GENERIC)
 	ADD_TRAIT(W, TRAIT_LONGSTRIDER, TRAIT_GENERIC)
 
-	if(W.getorganslot(ORGAN_SLOT_PENIS))
+	invisibility = oldinv
+	W.verbs |= /mob/living/carbon/human/proc/toggle_werewolf_transform
+
+	if(getorganslot(ORGAN_SLOT_PENIS))
 		var/obj/item/organ/genitals/penis/penis = W.getorganslot(ORGAN_SLOT_PENIS)
 		penis = new /obj/item/organ/genitals/penis/knotted/big
 		penis.Insert(W, TRUE)
-	if(W.getorganslot(ORGAN_SLOT_TESTICLES))
+	if(getorganslot(ORGAN_SLOT_TESTICLES))
 		var/obj/item/organ/genitals/filling_organ/testicles/testicles = W.getorganslot(ORGAN_SLOT_TESTICLES)
-		testicles = new /obj/item/organ/genitals/filling_organ/testicles
+		testicles = new /obj/item/organ/genitals/filling_organ/testicles/internal
 		testicles.Insert(W, TRUE)
-	if(W.getorganslot(ORGAN_SLOT_BREASTS))
+	if(getorganslot(ORGAN_SLOT_BREASTS))
 		var/obj/item/organ/genitals/filling_organ/breasts/breasts = W.getorganslot(ORGAN_SLOT_BREASTS)
 		breasts = new /obj/item/organ/genitals/filling_organ/breasts
 		breasts.Insert(W, TRUE)
-	if(W.getorganslot(ORGAN_SLOT_VAGINA))
+	if(getorganslot(ORGAN_SLOT_VAGINA))
 		var/obj/item/organ/genitals/filling_organ/vagina/vagina = W.getorganslot(ORGAN_SLOT_VAGINA)
 		vagina = new /obj/item/organ/genitals/filling_organ/vagina
 		vagina.Insert(W, TRUE)
 
-	return W
+
+
+/mob/living/carbon/human/proc/werewolf_untransform(dead,gibbed)
+	if(!stored_mob)
+		return
+	if(!mind)
+		log_runtime("NO MIND ON [src.name] WHEN UNTRANSFORMING")
+	Paralyze(1, ignore_canstun = TRUE)
+	for(var/obj/item/I in src)
+		dropItemToGround(I)
+	icon = null
+	invisibility = INVISIBILITY_MAXIMUM
+
+	var/mob/living/carbon/human/W = stored_mob
+	stored_mob = null
+	REMOVE_TRAIT(W, TRAIT_NOSLEEP, TRAIT_GENERIC)
+	if(dead)
+		W.death(gibbed)
+
+	REMOVE_TRAIT(W, TRAIT_NOMOOD, TRAIT_GENERIC)
+
+	var/datum/status_effect/shapechange_mob/die_with_form/stat = has_status_effect(/datum/status_effect/shapechange_mob/die_with_form)
+	stat.restore_caster()
+
+	W.remove_spell(/datum/action/cooldown/spell/undirected/howl)
+	W.remove_spell(/datum/action/cooldown/spell/undirected/claws)
+	W.regenerate_icons()
+
+	to_chat(W, span_userdanger("I return to my facade."))
+
+	W.Knockdown(30)
+	W.Stun(30)
+
+	qdel(src)

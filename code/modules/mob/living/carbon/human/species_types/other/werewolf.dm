@@ -58,14 +58,19 @@
 	playsound(get_turf(H), pick('sound/vo/mobs/wwolf/wolftalk1.ogg', 'sound/vo/mobs/wwolf/wolftalk2.ogg'), 100, TRUE, -1)
 
 /datum/species/werewolf/regenerate_icons(mob/living/carbon/human/H)
-	H.icon = 'icons/roguetown/mob/monster/werewolf.dmi'
-	H.base_intents = list(INTENT_HELP, INTENT_DISARM, INTENT_GRAB, /datum/intent/simple/wereclaw, /datum/intent/simple/werebite)
+	H.icon = 'modular_rmh/icons/mob/monster/werewolf.dmi'
+	H.base_intents = list(INTENT_HELP, INTENT_DISARM, INTENT_GRAB)
+	var/list/arousal_data = list()
+	SEND_SIGNAL(H, COMSIG_SEX_GET_AROUSAL, arousal_data)
 	if(H.gender == MALE)
-		H.icon_state = "wwolf_m"
-	if(H.gender == FEMALE)
+		if(arousal_data["arousal"] >= 20)// && H.sexcon.manual_arousal == 1 || H.sexcon.manual_arousal == 4)
+			H.icon_state = "wwolf_m-e"
+		else if(arousal_data["arousal"] >= 10)// && H.sexcon.manual_arousal == 1 || H.sexcon.manual_arousal == 3)
+			H.icon_state = "wwolf_m-p"
+		else
+			H.icon_state = "wwolf_m"
+	else
 		H.icon_state = "wwolf_f"
-	if(H.age == AGE_CHILD)
-		H.icon_state = "wwolf_c"
 	H.update_damage_overlays()
 	return TRUE
 
