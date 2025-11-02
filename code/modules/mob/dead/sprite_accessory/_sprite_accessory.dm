@@ -91,9 +91,9 @@
 
 	var/list/offsets
 	if(use_female_sprites)
-		offsets = species.offset_genitals_m
-	else
 		offsets = species.offset_genitals_f
+	else
+		offsets = species.offset_genitals_m
 
 	if(LAZYACCESS(offsets, feature_key))
 		for(var/mutable_appearance/appearance as anything in appearance_list)
