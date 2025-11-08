@@ -62,7 +62,7 @@
 	// Check if user is aroused enough
 	var/list/arousal_data = list()
 	SEND_SIGNAL(user, COMSIG_SEX_GET_AROUSAL, arousal_data)
-	if(arousal_data["arousal"] < AROUSAL_HARD_ON_THRESHOLD)
+	if(arousal_data["arousal"] < VISIBLE_AROUSAL_THRESHOLD)
 		if(!knotted_status)
 			to_chat(user, span_notice("My knot was too soft to tie."))
 		if(knotted_recipient != target) // Only notify if this target isn't already knotted by us
@@ -231,7 +231,7 @@
 /datum/component/knotting/proc/should_remove_knot_on_movement(mob/living/carbon/human/top, mob/living/carbon/human/btm)
 	var/list/arousal_data = list()
 	SEND_SIGNAL(top, COMSIG_SEX_GET_AROUSAL, arousal_data)
-	if(arousal_data["arousal"] < AROUSAL_HARD_ON_THRESHOLD)
+	if(arousal_data["arousal"] < VISIBLE_AROUSAL_THRESHOLD)
 		knot_remove()
 		return TRUE
 
@@ -311,7 +311,7 @@
 
 	var/list/arousal_data = list()
 	SEND_SIGNAL(top, COMSIG_SEX_GET_AROUSAL, arousal_data)
-	if(arousal_data["arousal"] < AROUSAL_HARD_ON_THRESHOLD)
+	if(arousal_data["arousal"] < VISIBLE_AROUSAL_THRESHOLD)
 		knot_remove()
 		return
 

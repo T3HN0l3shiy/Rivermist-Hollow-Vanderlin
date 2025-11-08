@@ -84,6 +84,6 @@
 				emote("sexmoanmed", forced = TRUE)
 		if(75 to INFINITY)
 			if(!can_speak())
-				emote("sexmoanmed", forced = TRUE)
+				emote("sexmoangag", forced = TRUE)
 			else
 				emote("sexmoanhvy", forced = TRUE)

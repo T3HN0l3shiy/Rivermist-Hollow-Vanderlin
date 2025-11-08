@@ -585,6 +585,85 @@
 	if(length(msg))
 		. += span_warning("[msg.Join("\n")]")
 
+	var/list/organ_desc = list()
+	var/show_undie_desc = FALSE
+	var/show_naked_desc = FALSE
+	var/list/arousal_data = list()
+	SEND_SIGNAL(src, COMSIG_SEX_GET_AROUSAL, arousal_data)
+	if(wear_pants)
+		var/obj/item/clothing/pantsies = wear_pants
+		if(pantsies.flags_inv & HIDECROTCH)
+			if(!pantsies.genitalaccess)
+				if(arousal_data["arousal"] > VISIBLE_AROUSAL_THRESHOLD)
+					if(getorganslot(ORGAN_SLOT_PENIS))
+						organ_desc += "[capitalize(m3)] a visible bulge in [m2] [pantsies.name]."
+					if(getorganslot(ORGAN_SLOT_VAGINA))
+						organ_desc += "[capitalize(m1)] shifting their legs uncomfortably."
+					//show_pant_desc = TRUE
+		else if(underwear)
+			if(arousal_data["arousal"] > VISIBLE_AROUSAL_THRESHOLD)
+				if(getorganslot(ORGAN_SLOT_PENIS))
+					organ_desc += "[capitalize(m1)] pitching a tent in [m2] [underwear.name]."
+				if(getorganslot(ORGAN_SLOT_VAGINA))
+					organ_desc += "[capitalize(m3)] a wet spot on [m2] [underwear.name]."
+				show_undie_desc = TRUE
+		else
+			if(arousal_data["arousal"] > VISIBLE_AROUSAL_THRESHOLD)
+				if(getorganslot(ORGAN_SLOT_PENIS))
+					var/obj/item/organ/genitals/penis/pen = getorganslot(ORGAN_SLOT_PENIS)
+					organ_desc += "[capitalize(m2)] [pen.name] is visibly erect!"
+				if(getorganslot(ORGAN_SLOT_VAGINA))
+					var/obj/item/organ/genitals/filling_organ/vagina/vag = getorganslot(ORGAN_SLOT_VAGINA)
+					organ_desc += "[capitalize(m2)] [vag.name] is glistening with arousal!"
+				show_naked_desc = TRUE
+
+	else if(underwear && !show_undie_desc)
+		if(arousal_data["arousal"] > VISIBLE_AROUSAL_THRESHOLD)
+			if(getorganslot(ORGAN_SLOT_PENIS))
+				organ_desc += "[capitalize(m1)] pitching a tent in [m2] [underwear.name]."
+			if(getorganslot(ORGAN_SLOT_VAGINA))
+				organ_desc += "[capitalize(m3)] a wet spot on [m2] [underwear.name]."
+			show_undie_desc = TRUE
+
+	else if(arousal_data["arousal"] > VISIBLE_AROUSAL_THRESHOLD && !show_naked_desc)
+		if(getorganslot(ORGAN_SLOT_PENIS))
+			var/obj/item/organ/genitals/penis/pen = getorganslot(ORGAN_SLOT_PENIS)
+			organ_desc += "[capitalize(m2)] [pen.name] is visibly erect!"
+		if(getorganslot(ORGAN_SLOT_VAGINA))
+			var/obj/item/organ/genitals/filling_organ/vagina/vag = getorganslot(ORGAN_SLOT_VAGINA)
+			organ_desc += "[capitalize(m2)] [vag.name] is glistening with arousal!"
+		show_naked_desc = TRUE
+
+	if(length(organ_desc))
+		. += span_love("[organ_desc.Join("\n")]")
+
+	//The Nymphomaniac Underground
+	if((!appears_dead) && stat == CONSCIOUS && src.has_flaw(/datum/charflaw/addiction/lovefiend))
+		var/datum/charflaw/addiction/bonercheck = src.charflaw
+		if((bonercheck) && (bonercheck.sated == 0))
+			if(user.has_flaw(/datum/charflaw/addiction/lovefiend)) //Takes one to know one
+				switch(rand(1,5))
+					if(1)
+						. += span_love("I can sense [m2] <B>need</B> for fun...")
+					if(2)
+						. += span_love("[m1] <B>aching</B> for a release.")
+					if(3)
+						. += span_love("A carnal need <B>stirs</B> within [m2] core.")
+					if(4)
+						. += span_love("I can practically feel [m2] <B>horniness</B>...")
+					if(5)
+						. += span_love("Embers of desire <B>smolder</B> within [m2].")
+			else if(Adjacent(user)) //No nympho, but close enough to notice.
+				switch(rand(1,4))
+					if(1)
+						. += span_love("[m1] shifting their legs quite a bit...")
+					if(2)
+						. += span_love("I can see [m1] is a bit restless...")
+					if(3)
+						. += span_love("[t_He] seem distracted...")
+					if(4)
+						. += span_love("[m1] restless, for some reason.")
+
 	if(isliving(user) && user != src)
 		var/mob/living/L = user
 		var/final_str = STASTR

@@ -88,7 +88,7 @@
 
 	// modify nutrition to generate reagents
 	if(istype(src, /obj/item/organ/genitals/filling_organ/vagina)) //generate lube from arousal
-		if(arousal_data["arousal"] > AROUSAL_HARD_ON_THRESHOLD)
+		if(arousal_data["arousal"] > VISIBLE_AROUSAL_THRESHOLD)
 			refilling = TRUE
 		else
 			refilling = FALSE

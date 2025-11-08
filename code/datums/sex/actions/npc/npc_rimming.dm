@@ -2,6 +2,7 @@
 	name = "NPC Rim them"
 	stamina_cost = 0
 	check_same_tile = FALSE
+	gags_user = TRUE
 
 /datum/sex_action/npc/npc_rimming/shows_on_menu(mob/living/user, mob/living/target)
 	return FALSE

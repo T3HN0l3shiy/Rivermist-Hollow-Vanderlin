@@ -54,7 +54,7 @@
 	/// Whether to check if user is incapacitated
 	var/check_incapacitated = TRUE
 	/// Whether participants must be on same tile
-	var/check_same_tile = TRUE
+	var/check_same_tile = FALSE
 	/// Whether this requires a grab
 	var/require_grab = FALSE
 	/// Minimum grab state required
@@ -83,6 +83,10 @@
 	var/can_knot = FALSE
 	///basically for actions being done by the user where the target is the inserter set this to true
 	var/flipped = FALSE
+	/// Ued for determining if the user should be gagged
+	var/gags_user = FALSE
+	/// Ued for determining if the target should be gagged
+	var/gags_target = FALSE
 
 /datum/sex_action/Destroy()
 	// Clean up any tracked storage entries
@@ -253,6 +257,10 @@
 
 /datum/sex_action/proc/on_start(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	SHOULD_CALL_PARENT(TRUE)
+	if(gags_user)
+		user.mouth_blocked = TRUE
+	if(gags_target)
+		target.mouth_blocked = TRUE
 	if(requires_hole_storage)
 		if(flipped)
 			if(!try_store_in_hole(target, user))
@@ -268,6 +276,10 @@
 
 /datum/sex_action/proc/on_finish(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	SHOULD_CALL_PARENT(TRUE)
+	if(gags_user)
+		user.mouth_blocked = FALSE
+	if(gags_target)
+		target.mouth_blocked = FALSE
 	if(requires_hole_storage)
 		if(flipped)
 			remove_from_hole(target, user)

@@ -282,6 +282,7 @@
 
 /mob/living
 	var/show_genitals = FALSE
+	var/mouth_blocked = FALSE
 
 /mob/living/proc/give_genitals()
 	//erpable = TRUE

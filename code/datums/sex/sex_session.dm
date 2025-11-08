@@ -102,9 +102,10 @@
 	SEND_SIGNAL(user, COMSIG_SEX_GET_AROUSAL, arousal_data)
 
 	var/max_arousal = MAX_AROUSAL || 120
+	var/orgasm_threshold = PASSIVE_EJAC_THRESHOLD
 	var/current_arousal = arousal_data["arousal"] || 0
 	var/arousal_percent = min(100, (current_arousal / max_arousal) * 100)
-	var/pleasure_percent = arousal_percent
+	var/pleasure_percent = min(100, (current_arousal / orgasm_threshold) * 100)
 	var/pain_percent = 0
 
 	return "[arousal_percent],[pleasure_percent],[pain_percent]"
@@ -146,7 +147,7 @@
 	var/list/arousal_data = list()
 	SEND_SIGNAL(limper, COMSIG_SEX_GET_AROUSAL, arousal_data)
 	var/arousal_value = arousal_data["arousal"]
-	if(arousal_value >= AROUSAL_HARD_ON_THRESHOLD)
+	if(arousal_value >= VISIBLE_AROUSAL_THRESHOLD)
 		return FALSE
 	return TRUE
 
@@ -556,13 +557,14 @@
 
 	dat += "<div class='progress-container'>"
 	var/max_arousal = MAX_AROUSAL
+	var/orgasm_threshold = PASSIVE_EJAC_THRESHOLD
 	var/current_arousal = arousal_data["arousal"] || 0
-	var/pleasure_percent = min(100, (current_arousal / max_arousal) * 100)
+	var/pleasure_percent = min(100, (current_arousal / orgasm_threshold) * 100)
 	var/arousal_percent = min(100, (current_arousal / max_arousal) * 100)
 
 	dat += "<div class='progress-bar'>"
 	dat += "<div class='progress-fill-pleasure' style='width: [pleasure_percent]%;'></div>"
-	dat += "<div class='progress-label'>Pleasure</div>"
+	dat += "<div class='progress-label'>Orgasm</div>"
 	dat += "</div>"
 
 	dat += "<div class='progress-bar'>"

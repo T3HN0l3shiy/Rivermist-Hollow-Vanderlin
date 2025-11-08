@@ -7,6 +7,8 @@
 	stored_item_name = "receiving member"
 	require_grab = FALSE
 	check_same_tile = FALSE
+	requires_hole_storage = FALSE
+	gags_user = TRUE
 	target_priority = 100
 
 /datum/sex_action/blowjob/can_perform(mob/living/carbon/human/user, mob/living/carbon/human/target)
