@@ -154,7 +154,7 @@
 	. = ..()
 	AddComponent(/datum/component/arousal)
 	//add_hole(ORGAN_SLOT_ANUS, /datum/component/storage/concrete/grid/hole/ass)
-	add_hole(ORGAN_SLOT_BELLY, /datum/component/storage/concrete/grid/hole/mouth)
+	add_hole(ORGAN_SLOT_STOMACH, /datum/component/storage/concrete/grid/hole/mouth)
 
 
 /mob/living/proc/return_character_information()

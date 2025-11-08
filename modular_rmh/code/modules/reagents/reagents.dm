@@ -1,7 +1,7 @@
 
 /datum/reagent/consumable/cum
 	name = "Semen"
-	description = "A pearly white liquid produced by testicles..."
+	description = "A pearly white liquid produced by testicles."
 	color = "#c6c6c6"
 	taste_description = "salty slime"
 	glass_icon_state = "glass_white"
@@ -10,6 +10,7 @@
 	nutriment_factor = 5 * REAGENTS_METABOLISM
 	hydration_factor = 2
 	var/virile = TRUE
+	evaporation_rate = 0.2
 
 
 /datum/reagent/consumable/cum/on_transfer(atom/A, method, trans_volume)
@@ -38,10 +39,11 @@
 
 /datum/reagent/consumable/femcum
 	name = "Pussy juice"
-	description = "A sticly, slimy clear liquid, produced by female arousal."
+	description = "A sticky, slimy, clear liquid, produced by female arousal."
 	color = "#c6c6c6"
 	taste_description = "tangy slime"
 	glass_icon_state = "glass_clear"
 	glass_name = "glass of femcum"
 	glass_desc = ""
 	nutriment_factor = 0.1 * REAGENTS_METABOLISM
+	evaporation_rate = 0.2

@@ -141,7 +141,7 @@
 		if((grabstate == null || grabstate < src.required_grab_state))
 			return FALSE
 
-	var/result = get_location_accessible(target, location = location, grabs = grabs, skipundies = skipundies)
+	var/result = get_location_accessible(target, location = location, grabs = grabs, skipundies = skipundies) || target.get_erp_pref(/datum/erp_preference/boolean/clothed_sex)
 	return result
 
 /datum/sex_action/proc/check_hole_storage_available(mob/living/carbon/human/target, mob/living/carbon/human/user)

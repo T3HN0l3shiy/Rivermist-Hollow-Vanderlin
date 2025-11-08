@@ -1419,6 +1419,7 @@
 #include "code\datums\sex\preferences\bitflag\subtle.dm"
 #include "code\datums\sex\preferences\boolean\_base.dm"
 #include "code\datums\sex\preferences\boolean\allow_erp.dm"
+#include "code\datums\sex\preferences\boolean\sex_under_clothes.dm"
 #include "code\datums\sex\preferences\boolean\subtle_session_messages.dm"
 #include "code\datums\sex\preferences\list\_base.dm"
 #include "code\datums\sex\preferences\numeric\_base.dm"

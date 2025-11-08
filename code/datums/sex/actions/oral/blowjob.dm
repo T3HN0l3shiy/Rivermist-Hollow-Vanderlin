@@ -11,6 +11,13 @@
 	gags_user = TRUE
 	target_priority = 100
 
+/datum/sex_action/crotch_nuzzle/shows_on_menu(mob/living/carbon/human/user, mob/living/carbon/human/target)
+	if(user == target)
+		return FALSE
+	if(!target.getorganslot(ORGAN_SLOT_PENIS))
+		return FALSE
+	return TRUE
+
 /datum/sex_action/blowjob/can_perform(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	. = ..()
 	if(!.)
