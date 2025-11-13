@@ -122,11 +122,11 @@
 	gain_text = span_notice("Just the thought of drinking alcohol makes my head spin.")
 	lose_text = span_danger("You're no longer severely affected by alcohol.")
 	medical_record_text = "Patient demonstrates a low tolerance for alcohol. (Wimp)"
-/*
+
 /datum/quirk/nearsighted //t. errorage
 	name = "Nearsighted"
 	desc = ""
-	value = -1
+	value = -3
 	gain_text = span_danger("Things far away from you start looking blurry.")
 	lose_text = span_notice("I start seeing faraway things normally again.")
 	medical_record_text = "Patient requires prescription glasses in order to counteract nearsightedness."
@@ -136,11 +136,11 @@
 
 /datum/quirk/nearsighted/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
-	var/obj/item/clothing/glasses/regular/glasses = new(get_turf(H))
+	var/obj/item/clothing/face/spectacles/glasses = new(get_turf(H))
 	H.put_in_hands(glasses)
-	H.equip_to_slot(glasses, SLOT_GLASSES)
+	H.equip_to_slot(glasses, ITEM_SLOT_MASK)
 	H.regenerate_icons() //this is to remove the inhand icon, which persists even if it's not in their hands
-*/
+
 /datum/quirk/nyctophobia
 	name = "Nyctophobia"
 	desc = "I fear the dark..."
@@ -156,16 +156,6 @@
 	if(lums <= 0.2)
 		if(quirk_holder.m_intent == MOVE_INTENT_RUN)
 			to_chat(quirk_holder, span_warning("Easy, easy, I need to take it slow... I am in the dark..."))
-			quirk_holder.toggle_move_intent(MOVE_INTENT_WALK)
-/*
-/datum/quirk/nonviolent
-	name = "Pacifist"
-	desc = "I can not get myself to harm a thing."
-	value = -6
-	mob_trait = TRAIT_PACIFISM
-	gain_text = span_danger("I feel repulsed by the thought of violence!")
-	lose_text = span_notice("I think I can defend myself again.")
-	medical_record_text = "Patient is unusually pacifistic and cannot bring themselves to cause physical harm."*/
 
 /datum/quirk/poor_aim
 	name = "Poor Aim"

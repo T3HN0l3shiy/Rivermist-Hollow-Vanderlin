@@ -56,16 +56,16 @@
 		var/captarget = storage_per_size + (storage_per_size * organ_size) // Updates the max_reagents in case the organ size changes
 		if(damage)
 			captarget -= damage
-		//if(contents.len)
-			//for(var/obj/item/thing as anything in contents)
-			//	if(thing.type != /obj/item/dildo/plug) //plugs wont take space as they are especially for this.
-			//		captarget -= thing.w_class*10
+		if(contents.len)
+			for(var/obj/item/thing as anything in contents)
+				if(thing.type != /obj/item/dildo/plug) //plugs wont take space as they are especially for this.
+					captarget -= thing.w_class*10
 		if(captarget != reagents.maximum_volume)
 			if(fertility && pregnant)
 				captarget *= 0.5
 			reagents.maximum_volume = captarget
-			//if(H.has_quirk(/datum/quirk/selfawaregeni))
-			//	to_chat(H, span_blue("My [pick(altnames)] may be able to hold a different amount now."))
+			if(H.has_quirk(/datum/quirk/selfawaregeni))
+				to_chat(H, span_blue("My [pick(altnames)] may be able to hold a different amount now."))
 
 	//debuff checks
 	if(bloatable) //its bloatable.

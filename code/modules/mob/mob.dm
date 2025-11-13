@@ -1538,7 +1538,7 @@ GLOBAL_VAR_INIT(mobids, 1)
 	return "[message_spans_start(spans)][input]</span>"
 
 /mob/living/proc/can_smell()
-	if(HAS_TRAIT(src, TRAIT_MISSING_NOSE))
+	if(HAS_TRAIT(src, TRAIT_MISSING_NOSE) || HAS_TRAIT(src, TRAIT_AGEUSIA))
 		return FALSE
 	return TRUE
 

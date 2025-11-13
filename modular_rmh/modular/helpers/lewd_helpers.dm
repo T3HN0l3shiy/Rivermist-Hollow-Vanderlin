@@ -78,8 +78,8 @@
 		return
 	if(owner.stat == DEAD)
 		return
-	//if(owner.has_quirk(/datum/quirk/selfawaregeni))
-	//	to_chat(owner, span_love("I feel a surge of warmth in my [src.name], I’m definitely pregnant!"))
+	if(owner.has_quirk(/datum/quirk/selfawaregeni))
+		to_chat(owner, span_love("I feel a surge of warmth in my [src.name], I’m definitely pregnant!"))
 	reagents.maximum_volume *= 0.5 //ick ock, should make the thing recalculate on next life tick.
 	pregnant = TRUE
 	if(owner.getorganslot(ORGAN_SLOT_BREASTS)) //shitty default behavior i guess, i aint gonna customiza-ble this fuck that.

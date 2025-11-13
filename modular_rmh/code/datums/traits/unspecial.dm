@@ -387,16 +387,16 @@
 	H.mind.special_items["Scissors"] = /obj/item/weapon/knife/scissors/steel
 	H.mind.special_items["Needle"] = /obj/item/needle
 	H.mind.special_items["Thread"] = /obj/item/natural/bundle/fibers/full
-/*
+
 /datum/quirk/bleublood
 	name = "Noble Lineage"
 	desc = "I am of noble blood."
-	value = 1
+	value = 3
 
 /datum/quirk/bleublood/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
 	ADD_TRAIT(H, TRAIT_NOBLE, QUIRK_TRAIT)
-	H.adjust_skillrank_up_to(/datum/skill/misc/reading, 2, TRUE)*/
+	H.adjust_skillrank_up_to(/datum/skill/misc/reading, 2, TRUE)
 
 /datum/quirk/richpouch
 	name = "Rich Pouch"
@@ -422,12 +422,12 @@
 	H.adjust_skillrank_up_to(/datum/skill/misc/athletics, 3, TRUE)
 	H.change_stat("speed", 2)*/
 
-/datum/quirk/gourmand
+/datum/quirk/nasty_eater
 	name = "Not a Picky Eater"
 	desc = "I can eat even the most spoiled, raw, or toxic food and water as if they were delicacies. I'm even immune to the berry poison some folk like to coat their arrows with."
 	value = 2
 
-/datum/quirk/gourmand/on_spawn()
+/datum/quirk/nasty_eater/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
 	ADD_TRAIT(H, TRAIT_NASTY_EATER, QUIRK_TRAIT)
 
@@ -588,25 +588,6 @@
 	var/datum/antagonist/vampirelord/lesser/secret/new_antag = new ()
 	H.mind.add_antag_datum(new_antag)
 
-/datum/antagonist/vampirelord/lesser/secret
-	//ashes = FALSE
-	//is_solo = TRUE
-	//quirk = TRUE
-	confess_lines = list(
-		"THE CRIMSON CALLS!",
-		"THE SUN IS ENEMY!",
-	)
-
-/datum/antagonist/vampirelord/lesser/secret/on_gain()
-	. = ..()
-	owner.current.verbs -= /mob/living/carbon/human/proc/vampire_telepathy
-
-/datum/antagonist/vampirelord/lesser/secret/roundend_report()
-	return
-
-/datum/antagonist/vampirelord/lesser/secret/move_to_spawnpoint()
-	return*/
-/*
 /datum/quirk/hypersensitivity
 	name = "Hypersensitivity"
 	desc = "I am so senstiive even my pants are enough to constantly arouse me... I must not wear pants or wear things that don't touch my groin. Atleast my experiences with certain things make me good in bed."
@@ -616,7 +597,7 @@
 	var/mob/living/carbon/human/H = quirk_holder
 	H.add_curse(/datum/curse/nympho, TRUE)
 	ADD_TRAIT(H, TRAIT_GOODLOVER, QUIRK_TRAIT)*/
-/*
+
 /datum/quirk/loveless
 	name = "Loveless"
 	desc = "I am unable to show any kind of affection or love, whether carnal or platonic."
@@ -624,12 +605,15 @@
 
 /datum/quirk/loveless/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
-	H.add_curse(/datum/curse/eora, TRUE)*/
+	H.add_curse(/datum/curse/eora, TRUE)
 
 /datum/quirk/pacifist
 	name = "Pacifist"
 	desc = "Violence disgusts me. I cannot bring myself to wield any kind of physical weapon."
 	value = -6
+	gain_text = span_danger("I feel repulsed by the thought of violence!")
+	lose_text = span_notice("I think I can defend myself again.")
+	medical_record_text = "Patient is unusually pacifistic and cannot bring themselves to cause physical harm."
 
 /datum/quirk/pacifist/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder

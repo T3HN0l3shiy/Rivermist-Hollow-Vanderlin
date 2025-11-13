@@ -71,7 +71,7 @@
 /datum/quirk/night_vision
 	name = "Low Light Vision"
 	desc = "I see a little better in the dark."
-	value = 4
+	value = 8
 	gain_text = span_notice("The shadows seem a little less dark.")
 	lose_text = span_danger("Everything seems a little darker.")
 	medical_record_text = "Patient's eyes show above-average acclimation to darkness."
