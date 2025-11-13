@@ -619,7 +619,7 @@
 	var/mob/living/carbon/human/H = quirk_holder
 	ADD_TRAIT(H, TRAIT_PACIFISM, QUIRK_TRAIT)
 
-/*
+
 /datum/quirk/endowed
 	name = "Naturally Endowed"
 	desc = "I have massive bits... This makes life hard."
@@ -627,7 +627,7 @@
 
 /datum/quirk/endowed/on_spawn()
 	var/mob/living/carbon/human/H = quirk_holder
-	H.apply_status_effect(/datum/status_effect/debuff/bigboobs/permanent)*/
+	H.apply_status_effect(/datum/status_effect/debuff/bigboobs/permanent)
 
 /*/datum/quirk/endowedlite
 	name = "Naturally Endowed"
