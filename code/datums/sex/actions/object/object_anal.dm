@@ -14,13 +14,11 @@
 
 /datum/sex_action/object_fuck/object_anal/can_perform(mob/living/user, mob/living/target)
 	. = ..()
-	if(!.)
-		return FALSE
 	if(user != target)
 		return FALSE
-	if(check_sex_lock(user, ORGAN_SLOT_ANUS))
+	if(!check_location_accessible(user, target, BODY_ZONE_PRECISE_GROIN, TRUE))
 		return FALSE
-	if(!check_location_accessible(user, user, BODY_ZONE_PRECISE_GROIN, TRUE))
+	if(!user.getorganslot(ORGAN_SLOT_ANUS))
 		return FALSE
 	if(!get_sextoy_in_hand(user))
 		return FALSE

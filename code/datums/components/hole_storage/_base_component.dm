@@ -322,6 +322,8 @@
 
 	var/obj/item_to_remove
 
+	if(!storage_parent.contents.len)
+		return
 	// Pick the item
 	item_to_remove = pick(storage_parent.contents)
 	if(!item_to_remove)

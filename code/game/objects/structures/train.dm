@@ -82,7 +82,14 @@
 		return "Cannot cryo [mob_name]: no assigned job. Deleting early."
 	log_game("Cryo successful for [mob_name], adjusting job [J.title].")
 	J.adjust_current_positions(-1)
-	qdel(departing_mob)
+	for(var/obj/structure/resurrection_rune/rr in GLOB.global_resurrunes)
+
+		if(departing_mob in rr.resrunecontroler.linked_users)
+
+			rr.resrunecontroler.remove_user(departing_mob)
+	GLOB.chosen_names -= departing_mob.real_name
+	departing_mob.returntolobby()
+	QDEL_NULL(departing_mob)
 	return "[mob_name] successfully cryo'd!"
 
 /obj/structure/train/carriage //A temporary subform of the train that is just a carriage	name = "train"

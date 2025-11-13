@@ -18,8 +18,6 @@
 	. = ..()
 	if(!.)
 		return FALSE
-	if(!check_location_accessible(user, target, BODY_ZONE_PRECISE_GROIN, TRUE))
-		return FALSE
 	if(user.used_intent.type == INTENT_GRAB || removing)
 		return TRUE //hacky but eh
 	if(!user.get_active_held_item())

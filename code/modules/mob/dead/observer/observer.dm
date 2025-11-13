@@ -6,7 +6,8 @@ GLOBAL_VAR_INIT(observer_default_invisibility, INVISIBILITY_OBSERVER)
 GLOBAL_LIST_INIT(ghost_verbs, list(
 	/mob/dead/observer/verb/ghost_upward,
 	/mob/dead/observer/verb/ghost_downward,
-	/mob/dead/observer/proc/reenter_corpse
+	/mob/dead/observer/proc/reenter_corpse,
+	/client/proc/descend,
 ))
 
 /mob/dead/observer
