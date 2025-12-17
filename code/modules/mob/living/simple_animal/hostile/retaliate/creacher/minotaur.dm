@@ -35,6 +35,7 @@
 	defprob = 40
 	defdrain = 10
 	retreat_health = 0
+	var/is_in_horny_mode = FALSE
 
 	attack_sound = list('sound/combat/wooshes/blunt/wooshhuge (1).ogg','sound/combat/wooshes/blunt/wooshhuge (2).ogg','sound/combat/wooshes/blunt/wooshhuge (3).ogg')
 	dodgetime = 50
@@ -45,9 +46,54 @@
 	dendor_taming_chance = DENDOR_TAME_PROB_NONE
 
 
+//Метод включения хорни режима / turn on  to horny_mod for minotaur
+/mob/living/simple_animal/hostile/retaliate/minotaur/proc/enter_horny_mode(mob/living/target)
+	to_chat(world, "DEBUG_ENTER: Минотавр [src] НАЧИНАЕТ вход в хорни-режим на [target].")
+	is_in_horny_mode = TRUE
+
+	to_chat(world, "DEBUG_ENTER: Полный сброс ИИ для хорни режима.")
+
+	if(ai_controller)
+		ai_controller.clear_blackboard_key(BB_BASIC_MOB_CURRENT_TARGET)
+		ai_controller.clear_blackboard_key(BB_HIGHEST_THREAT_MOB)
+		ai_controller.set_blackboard_key(BB_MOB_AGGRO_TABLE, list())
+
+		to_chat(world, "DEBUG_ENTER: УСТАНОВКА ХОРНИ ЦЕЛИ.")
+		ai_controller.set_blackboard_key(BB_BASIC_MOB_CURRENT_HORNY_TARGET, target)
+
+		to_chat(world, "DEBUG_ENTER: Отмена всех действий, и текущих и в очереди.")
+		ai_controller.CancelActions()
+		ai_controller.queue_behavior(/datum/ai_behavior/horny_minotaur_version, BB_BASIC_MOB_CURRENT_HORNY_TARGET)
+
+
+	var/datum/component/ai_aggro_system/aggro = GetComponent(/datum/component/ai_aggro_system)
+	if(aggro)
+		STOP_PROCESSING(SSaggro, aggro)
+		to_chat(world, "DEBUG_ENTER: Отключение всех угроз!!!")
+	visible_message(span_warning("[src] focuses all attention to [target]!!!"))
+//Метод для выключения хорни режима / turn off horny_mod for minotaur
+/mob/living/simple_animal/hostile/retaliate/minotaur/proc/exit_horny_mode()
+	to_chat(world, "DEBUG_EXIT: Минотавр [src] НАЧИНАЕТ выход из хорни-режима.")
+	is_in_horny_mode = FALSE
+	if(ai_controller)
+		ai_controller.CancelActions()
+
+	if(ai_controller)
+		ai_controller.clear_blackboard_key(BB_BASIC_MOB_CURRENT_HORNY_TARGET)
+
+	var/datum/component/ai_aggro_system/aggro = GetComponent(/datum/component/ai_aggro_system)
+	if(aggro)
+		START_PROCESSING(SSaggro, aggro)
+
+	visible_message(span_warning("[src]looks around and returns to a fighting stance."))
+
+
 /mob/living/simple_animal/hostile/retaliate/minotaur/Initialize()
 	. = ..()
 	AddComponent(/datum/component/ai_aggro_system)
+	to_chat(world, "DEBUG_EXIT: Минотавр [src] проходит этап инициализации ии агро..")
+	if (ai_controller)
+		ai_controller.set_blackboard_key(BB_HORNY_TARGETTING_DATUM, new /datum/horny_targetting_datum/basic)
 
 /mob/living/simple_animal/hostile/retaliate/minotaur/female
 	gender = FEMALE

@@ -1,7 +1,17 @@
 /datum/ai_planning_subtree/minotaur_targeting
 /datum/ai_planning_subtree/minotaur_targeting/SelectBehaviors(datum/ai_controller/controller, delta_time)
+	to_chat(world, "DEBUG_EXIT: Минотавр [src] активирует файл [__FILE__].")
 	. = ..()
 	var/mob/living/simple_animal/hostile/retaliate/minotaur/boss = controller.pawn
+
+	if(boss.is_in_horny_mode)
+		controller.clear_blackboard_key(BB_BASIC_MOB_CURRENT_TARGET)
+		return
+
+	var/atom/current_horny_target = controller.blackboard[BB_BASIC_MOB_CURRENT_HORNY_TARGET]
+	if(current_horny_target && !QDELETED(current_horny_target))
+		controller.clear_blackboard_key(BB_BASIC_MOB_CURRENT_TARGET)
+		return
 
 	if(!controller.blackboard[BB_BASIC_MOB_CURRENT_TARGET])
 		controller.queue_behavior(/datum/ai_behavior/find_aggro_targets, BB_BASIC_MOB_CURRENT_TARGET, BB_TARGETTING_DATUM)

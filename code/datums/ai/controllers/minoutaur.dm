@@ -12,12 +12,12 @@
 		BB_HORNY_TARGETTING_DATUM = new /datum/horny_targetting_datum/basic(),
 	)
 	planning_subtrees = list(
-		/datum/ai_planning_subtree/simple_find_horny,
-		/datum/ai_planning_subtree/horny,
+		/datum/ai_planning_subtree/minotaur_find_horny,
+		/datum/ai_planning_subtree/minotaur_enrage,
 		/datum/ai_planning_subtree/minotaur_targeting,
 		/datum/ai_planning_subtree/minotaur_special_attacks,
-		/datum/ai_planning_subtree/minotaur_melee_attack,
-		/datum/ai_planning_subtree/minotaur_enrage // Special behavior at low health
+		/datum/ai_planning_subtree/minotaur_melee_attack
+ // Special behavior at low health
 	)
 	idle_behavior = /datum/idle_behavior/minotaur_patrol
 

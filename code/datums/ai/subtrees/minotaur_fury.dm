@@ -1,7 +1,11 @@
 /datum/ai_planning_subtree/minotaur_enrage
 /datum/ai_planning_subtree/minotaur_enrage/SelectBehaviors(datum/ai_controller/controller, delta_time)
+	to_chat(world, "DEBUG_EXIT: Минотавр [src] активирует файл [__FILE__].")
 	. = ..()
+
 	var/mob/living/simple_animal/hostile/retaliate/minotaur/boss = controller.pawn
+	if(boss.is_in_horny_mode)
+		return
 	if(!istype(boss))
 		return
 
