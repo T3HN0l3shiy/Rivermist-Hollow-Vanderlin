@@ -593,8 +593,8 @@
 	node_y = UP_Y_TIER_3
 	prerequisites = list(/datum/spell_node/beam_of_frost)
 	spell_type = /datum/action/cooldown/spell/projectile/frost_bolt
-
-
+// Убрал спелл, ибо гибает
+/*
 /datum/spell_node/gib
 	name = "Xylixs Cruel Prank"
 	desc = "Fucked up and evil."
@@ -605,3 +605,4 @@
 /datum/spell_node/gib/on_node_buy(mob/user)
 	. = ..()
 	user.gib()
+*/

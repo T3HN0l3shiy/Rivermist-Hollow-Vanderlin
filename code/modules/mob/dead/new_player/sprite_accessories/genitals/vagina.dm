@@ -1,7 +1,7 @@
 /datum/sprite_accessory/genitals/vagina
 	icon = 'modular_rmh/icons/mob/sprite_accessory/genitals/nethers.dmi'
 	color_key_name = "Nethers"
-	relevant_layers = list(BODY_ADJ_LAYER)
+	relevant_layers = list(BODY_ADJ_LOW_LAYER)
 
 /datum/sprite_accessory/genitals/vagina/adjust_appearance_list(list/appearance_list, obj/item/organ/organ, obj/item/bodypart/bodypart, mob/living/carbon/owner)
 	gender_genitals_adjust(appearance_list, organ, bodypart, owner, OFFSET_VAGINA)

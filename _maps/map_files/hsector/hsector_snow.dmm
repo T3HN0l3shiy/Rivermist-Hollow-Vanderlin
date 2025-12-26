@@ -76,7 +76,9 @@
 	pixel_x = -8
 	},
 /turf/open/floor/tile/harem2,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "abR" = (
 /obj/effect/decal/herringbone,
 /obj/structure/table/wood{
@@ -96,6 +98,10 @@
 	},
 /obj/item/candle/skull/lit{
 	pixel_x = -8
+	},
+/obj/structure/fake_machine/mail{
+	mailtag = "Archivist";
+	pixel_y = -32
 	},
 /turf/open/floor/hexstone,
 /area/under/town/rmh/basement)
@@ -294,7 +300,9 @@
 	dir = 8
 	},
 /turf/open/floor/blocks/stonered,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "aif" = (
 /obj/structure/bars/tough,
 /turf/open/floor/cobblerock,
@@ -311,7 +319,8 @@
 /area/indoors/town/rmh/town_hall)
 "aik" = (
 /obj/structure/fluff/walldeco/customflag{
-	pixel_y = -32
+	pixel_y = -32;
+	name = "rivermist hallow flag"
 	},
 /turf/open/floor/cobble/alt,
 /area/indoors/town/rmh/garrison)
@@ -320,7 +329,9 @@
 /obj/item/ration,
 /obj/item/ration,
 /turf/open/floor/ruinedwood/herringbone_clear,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "aiw" = (
 /obj/structure/flora/grass/tundra,
 /obj/structure/vine,
@@ -357,7 +368,9 @@
 	layer = 2.9
 	},
 /turf/open/floor/carpet,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "ajz" = (
 /obj/structure/flora/grass/bush/wall/tundra,
 /obj/structure/flora/grass/tundra,
@@ -548,7 +561,9 @@
 /area/indoors/town/rmh/town_hall)
 "aoM" = (
 /turf/closed/wall/mineral/stone,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "aoN" = (
 /obj/structure/flora/grass/tundra,
 /obj/machinery/light/fueledstreet/orange{
@@ -762,7 +777,9 @@
 /obj/item/key/houses/house1,
 /obj/item/key/houses/house1,
 /turf/open/floor/ruinedwood/herringbone_clear,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "ave" = (
 /obj/effect/decal/herringbone{
 	dir = 8
@@ -776,6 +793,13 @@
 	},
 /turf/open/floor/woodturned,
 /area/indoors/town/rmh/town_hall)
+"avq" = (
+/obj/effect/decal/edge{
+	dir = 8;
+	color = "#522f26"
+	},
+/turf/open/floor/woodturned,
+/area/indoors/town/rmh/tavern)
 "avF" = (
 /obj/structure/trap/fire,
 /obj/structure/bars/passage{
@@ -803,7 +827,9 @@
 	},
 /obj/structure/closet/crate/crafted_closet/inn/south,
 /turf/open/floor/tile/harem1,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "avW" = (
 /obj/structure/fluff/railing/border{
 	dir = 6
@@ -1110,7 +1136,9 @@
 "aHP" = (
 /obj/structure/fluff/wallclock,
 /turf/open/floor/ruinedwood/herringbone_clear,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "aIm" = (
 /obj/machinery/light/fueled/wallfire/candle/r,
 /obj/item/storage/sack{
@@ -1189,6 +1217,20 @@
 	},
 /turf/open/floor/grass/cold,
 /area/indoors/cave/rmh_cave/wet/lake)
+"aKh" = (
+/obj/effect/decal/edge{
+	dir = 1;
+	color = "#522f26"
+	},
+/obj/effect/decal/edge{
+	dir = 2;
+	color = "#522f26"
+	},
+/obj/structure/fluff/festive_garlands/random{
+	pixel_y = -16
+	},
+/turf/open/floor/tile/harem,
+/area/indoors/town/rmh/tavern)
 "aKm" = (
 /turf/open/floor/churchmarble,
 /area/indoors/town/rmh/chapel/basement)
@@ -1248,7 +1290,9 @@
 	},
 /obj/structure/fluff/walldeco/bigpainting/lake,
 /turf/open/floor/woodturned,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "aLJ" = (
 /obj/structure/hotspring/border,
 /turf/open/water/cleanshallow,
@@ -1389,7 +1433,9 @@
 "aPa" = (
 /obj/structure/fluff/railing/wood/west,
 /turf/open/floor/ruinedwood,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "aPm" = (
 /obj/structure/door{
 	name = "Crafter's Guild";
@@ -1559,7 +1605,9 @@
 /area/outdoors/rmh_field/north)
 "aTD" = (
 /turf/open/floor/tile/harem2,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "aTF" = (
 /obj/machinery/essence/test_tube{
 	pixel_y = 6;
@@ -1586,7 +1634,9 @@
 "aUi" = (
 /obj/effect/decal/carpet/kover_purple,
 /turf/open/floor/tile/harem2,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "aUj" = (
 /obj/structure/closet/crate/crafted_closet/inn,
 /obj/item/flashlight/flare/torch/lantern,
@@ -1650,7 +1700,9 @@
 /obj/structure/fluff/railing/corner/south_west,
 /obj/structure/chair/stool/bar,
 /turf/open/floor/ruinedwood/herringbone_clear,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "aWp" = (
 /obj/structure/leyline,
 /turf/open/floor/dirt{
@@ -1685,6 +1737,17 @@
 "aXd" = (
 /obj/structure/chair/bench/coucha/redleft,
 /turf/open/floor/ruinedwood/herringbone_clear,
+/area/indoors/town/rmh/tavern)
+"aXj" = (
+/obj/effect/decal/cobbleedge{
+	dir = 1;
+	icon_state = "borderfall";
+	pixel_y = 8
+	},
+/obj/structure/fluff/festive_garlands/random{
+	pixel_y = 46
+	},
+/turf/open/floor/carpet,
 /area/indoors/town/rmh/tavern)
 "aXr" = (
 /obj/structure/rack,
@@ -1918,7 +1981,9 @@
 "bek" = (
 /obj/machinery/light/fueled/torchholder/l,
 /turf/open/floor/dirt,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "ben" = (
 /obj/effect/decal/cobbleedge{
 	dir = 1;
@@ -2000,14 +2065,18 @@
 /obj/item/reagent_containers/glass/bottle/waterskin,
 /obj/item/kitchen/rollingpin,
 /turf/open/floor/blocks/stonered/tiny,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "bfF" = (
 /obj/machinery/light/fueled/wallfire/candle,
 /obj/structure/closet/crate/drawer/inn,
 /obj/item/key/houses/house4,
 /obj/item/key/houses/house4,
 /turf/open/floor/woodturned,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "bfJ" = (
 /obj/effect/decal/cobbleedge{
 	icon_state = "cobbleedge-sread";
@@ -2093,7 +2162,9 @@
 "bij" = (
 /obj/structure/fluff/railing/corner/south_east,
 /turf/open/floor/carpet,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "biv" = (
 /obj/structure/flora/grass/tundra,
 /obj/structure/flora/grass/herb/urtica,
@@ -2136,7 +2207,9 @@
 	pixel_x = -8
 	},
 /turf/open/floor/tile/diamond,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "bjm" = (
 /obj/structure/rack/shelf/biggest,
 /obj/item/natural/bundle/silk{
@@ -2267,6 +2340,18 @@
 	},
 /turf/open/floor/grass/yel,
 /area/outdoors/rmh_field/east)
+"bll" = (
+/obj/structure/chair/bench/coucha,
+/obj/effect/decal/cobbleedge{
+	dir = 1;
+	icon_state = "borderfall";
+	pixel_y = 8
+	},
+/obj/structure/fluff/festive_garlands/random{
+	pixel_y = 46
+	},
+/turf/open/floor/carpet,
+/area/indoors/town/rmh/tavern)
 "blp" = (
 /obj/item/natural/stone,
 /turf/open/floor/naturalstone,
@@ -2394,6 +2479,15 @@
 	name = "Rivermist Hollow";
 	first_time_text = "RIVERMIST HOLLOW"
 	})
+"boW" = (
+/obj/structure/fluff/walldeco/bath/wallpipes/outie{
+	dir = 9
+	},
+/turf/open/floor/cobblerock/alt,
+/area/outdoors/town{
+	name = "Rivermist Hollow";
+	first_time_text = "RIVERMIST HOLLOW"
+	})
 "bpj" = (
 /obj/structure/flora/tree/pine,
 /turf/open/floor/grass/cold,
@@ -2432,7 +2526,9 @@
 	pixel_y = -26
 	},
 /turf/open/floor/ruinedwood/herringbone_clear,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "bpD" = (
 /obj/structure/table/wood/large/corner_new{
 	dir = 5
@@ -2452,7 +2548,9 @@
 	icon_state = "barrel_tapped_ready"
 	},
 /turf/open/floor/carpet/red,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "bqc" = (
 /turf/closed/wall/mineral/craftstone,
 /area/indoors/town/rmh/magician)
@@ -2497,7 +2595,9 @@
 	pixel_y = 11
 	},
 /turf/open/floor/ruinedwood/spiral,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "brD" = (
 /obj/structure/fluff/walldeco/church/line{
 	dir = 4
@@ -2799,7 +2899,9 @@
 	},
 /obj/structure/fluff/railing/border/east,
 /turf/open/floor/woodturned,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "bzm" = (
 /obj/effect/decal/edge{
 	dir = 10;
@@ -3161,7 +3263,8 @@
 /area/under/town/rmh/basement)
 "bJJ" = (
 /obj/structure/fluff/walldeco/customflag{
-	pixel_y = 32
+	pixel_y = 32;
+	name = "rivermist hallow flag"
 	},
 /turf/open/floor/cobble/alt,
 /area/outdoors/town/rmh/roofs)
@@ -3212,7 +3315,8 @@
 /turf/open/transparent/openspace,
 /area/indoors/shelter/woods)
 "bLe" = (
-/obj/effect/decal/cleanable/debris/wood,
+/obj/structure/fluff/railing/corner/north_east,
+/obj/structure/flora/grass/bush/wall/tall/tundra,
 /turf/open/floor/grass/cold,
 /area/outdoors/town{
 	name = "Rivermist Hollow";
@@ -3329,7 +3433,9 @@
 	dir = 1
 	},
 /turf/open/floor/churchrough,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "bOq" = (
 /obj/structure/fluff/railing/tall/palisade{
 	dir = 8
@@ -3417,7 +3523,9 @@
 "bQw" = (
 /obj/structure/fluff/railing/corner/north_east,
 /turf/open/floor/ruinedwood/herringbone_clear,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "bQI" = (
 /obj/structure/fluff/railing/border{
 	dir = 5
@@ -3704,7 +3812,9 @@
 	pixel_y = 13
 	},
 /turf/open/floor/woodturned,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "bXW" = (
 /obj/item/natural/bundle/stoneblock,
 /turf/open/floor/cobblerock,
@@ -3728,7 +3838,9 @@
 	dir = 4
 	},
 /turf/closed/wall/mineral/wooddark,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "bYP" = (
 /obj/structure/flora/grass/tundra,
 /turf/open/floor/cobblerock/alt,
@@ -3818,7 +3930,9 @@
 /obj/item/natural/feather,
 /obj/structure/fluff/wallclock,
 /turf/open/floor/ruinedwood/herringbone_clear,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "caT" = (
 /obj/structure/chair/stool/bar,
 /turf/open/floor/ruinedwood/chevron,
@@ -3917,6 +4031,30 @@
 "cch" = (
 /turf/closed/mineral/random/low_nonval,
 /area/indoors/cave/rmh_cave/mine)
+"ccl" = (
+/obj/effect/decal/cobbleedge{
+	dir = 2;
+	icon_state = "borderfall";
+	pixel_y = -8
+	},
+/obj/structure/fluff/railing/wood{
+	pixel_y = -16
+	},
+/obj/structure/fluff/railing/corner/south_west,
+/obj/structure/fluff/railing/corner{
+	dir = 9
+	},
+/obj/structure/closet/crate/chest/wicker,
+/obj/item/reagent_containers/food/snacks/chocolate,
+/obj/item/reagent_containers/food/snacks/chocolate,
+/obj/item/reagent_containers/food/snacks/chocolate,
+/obj/item/reagent_containers/food/snacks/chocolate,
+/obj/item/reagent_containers/food/snacks/crimsoncake_cooked,
+/obj/item/reagent_containers/food/snacks/tangerinecake_cooked,
+/turf/open/floor/ruinedwood,
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "ccr" = (
 /obj/structure/fluff/walldeco/vinez/red,
 /turf/closed/wall/mineral/stone,
@@ -3935,7 +4073,9 @@
 "cdh" = (
 /obj/structure/fluff/railing/corner/south_east,
 /turf/open/floor/ruinedwood/herringbone_clear,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "cdv" = (
 /obj/effect/landmark/mapGenerator/underdark{
 	endTurfY = 255
@@ -4030,7 +4170,9 @@
 /area/indoors/town/rmh/chapel)
 "cfi" = (
 /turf/closed/wall/mineral/roofwall/outercorner,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "cfj" = (
 /obj/machinery/light/fueled/torchholder/c,
 /obj/item/reagent_containers/glass/bucket/pot/stone{
@@ -4249,6 +4391,18 @@
 "cjP" = (
 /turf/open/floor/carpet/purple,
 /area/indoors/town/rmh/magician)
+"cjW" = (
+/obj/structure/fluff/walldeco/bath/wallpipes/outie{
+	dir = 4
+	},
+/obj/structure/fluff/walldeco/bath/wallpipes/outie{
+	dir = 10
+	},
+/turf/open/floor/cobblerock/alt,
+/area/outdoors/town{
+	name = "Rivermist Hollow";
+	first_time_text = "RIVERMIST HOLLOW"
+	})
 "cjX" = (
 /obj/structure/vine{
 	icon_state = "Light2d"
@@ -4288,13 +4442,25 @@
 	},
 /obj/structure/bed/hay,
 /turf/open/floor/ruinedwood/spiral,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "ckY" = (
 /obj/structure/fluff/statue/small{
 	pixel_y = -32
 	},
 /turf/open/floor/carpet/lord/left,
 /area/indoors/town/rmh/town_hall)
+"clo" = (
+/obj/machinery/light/fueled/wallfire/candle/l{
+	pixel_y = 32
+	},
+/obj/effect/decal/edge{
+	dir = 10;
+	color = "#522f26"
+	},
+/turf/open/floor/carpet,
+/area/indoors/town/rmh/tavern)
 "clp" = (
 /obj/structure/fluff/walldeco/chains{
 	icon_state = "chains7"
@@ -4339,7 +4505,9 @@
 	},
 /obj/structure/closet/crate/chest/wicker,
 /turf/open/floor/wood,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "cmS" = (
 /obj/structure/vine,
 /turf/closed/mineral/bedrock/cold{
@@ -4394,7 +4562,9 @@
 "cnY" = (
 /obj/effect/decal/cleanable/debris/stone,
 /turf/open/floor/wood,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "coe" = (
 /obj/effect/decal/edge{
 	dir = 1;
@@ -4451,7 +4621,9 @@
 "cqX" = (
 /obj/structure/fermentation_keg/water,
 /turf/open/floor/ruinedwood/turned,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "crf" = (
 /obj/structure/stairs{
 	dir = 1
@@ -4486,7 +4658,9 @@
 /area/outdoors/rmh_field/tavel/swamps)
 "crE" = (
 /turf/closed/wall/mineral/roofwall/middle,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "crK" = (
 /obj/structure/bars,
 /turf/open/floor/metal,
@@ -4583,7 +4757,9 @@
 	dir = 8
 	},
 /turf/open/floor/blocks/stonered/tiny,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "ctS" = (
 /obj/structure/fluff/railing/border{
 	plane = -6
@@ -4597,7 +4773,9 @@
 /area/indoors/town/rmh/farm)
 "cua" = (
 /turf/open/transparent/openspace,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "cuc" = (
 /obj/structure/fluff/walldeco/church/line,
 /obj/structure/fluff/walldeco/church/line{
@@ -4678,6 +4856,9 @@
 	pixel_y = -32;
 	name = "adventure's guild flag"
 	},
+/obj/structure/fluff/festive_garlands/random{
+	pixel_y = -16
+	},
 /turf/open/floor/tile/harem1,
 /area/indoors/town/rmh/tavern)
 "cwj" = (
@@ -4731,7 +4912,9 @@
 /obj/item/key/houses/house2,
 /obj/item/key/houses/house2,
 /turf/open/floor/woodturned,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "cwU" = (
 /obj/effect/decal/cobbleedge{
 	pixel_y = 0;
@@ -4773,7 +4956,9 @@
 	pixel_y = 0
 	},
 /turf/open/floor/woodturned,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "cyl" = (
 /obj/structure/fluff/railing/wood/west,
 /obj/structure/flora/grass/tundra,
@@ -4794,7 +4979,9 @@
 	pixel_y = 13
 	},
 /turf/open/floor/blocks/stonered/tiny,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "cyq" = (
 /obj/structure/ladder/earth,
 /turf/open/floor/naturalstone,
@@ -4954,7 +5141,9 @@
 	pixel_y = -8
 	},
 /turf/open/floor/carpet,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "cDr" = (
 /turf/open/floor/naturalstone,
 /area/indoors/cave/west)
@@ -5000,7 +5189,9 @@
 /obj/item/reagent_containers/glass/bucket/wooden,
 /obj/machinery/light/fueled/wallfire/candle/l,
 /turf/open/floor/wood,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "cEL" = (
 /obj/effect/spawner/map_spawner/loot/weapon,
 /turf/open/floor/cobble/alt,
@@ -5111,8 +5302,8 @@
 "cIB" = (
 /obj/structure/fluff/statue/astrata/bling{
 	pixel_x = -17;
-	name = "statue of Eilistraee";
-	desc = "Eilistraee, the Moon Queen, whose light dances in the reflection of the waters and atones for the sins of the Drow."
+	name = "statue of Sune";
+	desc = "Sune Ognevlasaya is the goddess of passion and pleasure. She is the goddess of beauty in all its manifestations—not only beautiful sights, but also enchanting sounds, rich flavors and aromas, and, of course, the pleasure of touch, from the joys of love to the sensation of silk against the skin."
 	},
 /obj/structure/fluff/walldeco/church/line,
 /turf/open/floor/church,
@@ -5472,6 +5663,10 @@
 	icon_state = "snow"
 	},
 /area/outdoors/rmh_field/north_mountain)
+"cRA" = (
+/obj/structure/flora/tree/fir/festive,
+/turf/open/floor/tile/diamond/blue,
+/area/indoors/town/rmh/merchant)
 "cRG" = (
 /obj/structure/flora/grass/bush/tundra,
 /turf/open/floor/grass/red,
@@ -5515,6 +5710,19 @@
 	},
 /turf/open/floor/ruinedwood,
 /area/outdoors/river)
+"cUa" = (
+/obj/structure/well{
+	icon = 'icons/obj/structures/rotation_devices/water_vent.dmi';
+	icon_state = "pipevent";
+	dir = 2;
+	density = 0;
+	name = "water tap"
+	},
+/turf/open/floor/dirt/road,
+/area/outdoors/town{
+	name = "Rivermist Hollow";
+	first_time_text = "RIVERMIST HOLLOW"
+	})
 "cUw" = (
 /obj/structure/flora/grass/tundra,
 /obj/structure/flora/ausbushes/ppflowers,
@@ -5657,7 +5865,9 @@
 "cYH" = (
 /obj/structure/hay_stack/rope,
 /turf/open/floor/dirt,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "cYZ" = (
 /obj/structure/flora/grass/bush/wall/tundra,
 /turf/open/floor/grass/cold,
@@ -5845,7 +6055,9 @@
 	},
 /obj/structure/fluff/railing/corner/south_west,
 /turf/open/floor/tile/diamond,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "ddZ" = (
 /obj/structure/bars/tough{
 	icon = 'icons/effects/effects.dmi';
@@ -5881,7 +6093,9 @@
 	dir = 9
 	},
 /turf/open/floor/blocks/stonered/tiny,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "deG" = (
 /obj/structure/closet/crate/drawer{
 	lockid = "roomiv"
@@ -5984,7 +6198,9 @@
 	})
 "dhr" = (
 /turf/closed/wall/mineral/wooddark/horizontal,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "dhx" = (
 /obj/structure/trap/shock{
 	damage_deflection = 50;
@@ -6294,7 +6510,9 @@
 /obj/structure/closet/crate/chest/old_crate,
 /obj/machinery/light/fueled/wallfire/candle,
 /turf/open/floor/ruinedwood/spiral,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "dmc" = (
 /obj/structure/chair/stool/bar,
 /turf/open/floor/ruinedwood/herringbone_clear,
@@ -6597,6 +6815,9 @@
 	dir = 4;
 	color = "#3b3b3b"
 	},
+/obj/structure/fluff/festive_garlands/random{
+	pixel_y = -16
+	},
 /turf/open/floor/tile/harem1,
 /area/indoors/town/rmh/tavern)
 "drz" = (
@@ -6877,6 +7098,13 @@
 /obj/machinery/light/fueled/wallfire/candle/r,
 /turf/open/floor/ruinedwood/spiral,
 /area/indoors/town/rmh/crafters_guild/under)
+"dyE" = (
+/obj/structure/fluff/walldeco/customflag{
+	pixel_y = 32;
+	name = "rivermist hallow flag"
+	},
+/turf/open/floor/woodturned,
+/area/indoors/town/rmh/town_hall)
 "dyV" = (
 /obj/effect/decal/cobble/mossy{
 	dir = 5;
@@ -6889,6 +7117,13 @@
 	name = "Rivermist Hollow";
 	first_time_text = "RIVERMIST HOLLOW"
 	})
+"dzo" = (
+/obj/effect/decal/edge{
+	dir = 9;
+	color = "#522f26"
+	},
+/turf/open/floor/woodturned,
+/area/indoors/town/rmh/tavern)
 "dzv" = (
 /obj/effect/spawner/map_spawner/treeorbush,
 /turf/open/floor/grass/cold,
@@ -7028,7 +7263,9 @@
 /obj/structure/fluff/railing/border/east,
 /obj/structure/closet/crate/chest/crate,
 /turf/open/floor/ruinedwood/spiral,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "dCi" = (
 /obj/item/natural/rock/coal,
 /turf/open/floor/cobblerock,
@@ -7045,7 +7282,9 @@
 "dCK" = (
 /obj/structure/fluff/railing/wood/west,
 /turf/open/transparent/openspace,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "dCT" = (
 /obj/machinery/light/fueled/torchholder/l,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -7125,7 +7364,8 @@
 /area/outdoors/rmh_field)
 "dEZ" = (
 /obj/structure/fluff/walldeco/customflag{
-	pixel_x = 32
+	pixel_x = 32;
+	name = "rivermist hallow flag"
 	},
 /turf/open/transparent/openspace,
 /area/outdoors/town/rmh/roofs)
@@ -7183,6 +7423,15 @@
 	icon_state = "snow"
 	},
 /area/outdoors/rmh_field/east)
+"dGF" = (
+/obj/machinery/light/fueled/torchholder/hotspring{
+	pixel_x = 32
+	},
+/obj/structure/fluff/railing/border/east,
+/turf/open/floor/ruinedwood,
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "dGK" = (
 /obj/structure/flora/grass/herb/mentha{
 	pixel_y = 10;
@@ -7214,7 +7463,9 @@
 /obj/structure/fluff/railing/corner/north_east,
 /obj/machinery/light/fueled/wallfire/candle,
 /turf/open/floor/tile/harem1,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "dHb" = (
 /obj/structure/fluff/railing/wood/east{
 	plane = -6
@@ -7258,6 +7509,14 @@
 /obj/effect/decal/cleanable/debris/stone,
 /turf/open/floor/concrete,
 /area/under/town/rmh/basement)
+"dHV" = (
+/obj/structure/chair/bench/coucha/r,
+/obj/effect/decal/edge{
+	dir = 1;
+	color = "#522f26"
+	},
+/turf/open/floor/carpet,
+/area/indoors/town/rmh/tavern)
 "dHW" = (
 /turf/closed/mineral/random/low_nonval,
 /turf/open/floor/cobblerock,
@@ -7331,7 +7590,9 @@
 	},
 /obj/item/weapon/scabbard/sword/noble,
 /turf/open/floor/tile/harem1,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "dIK" = (
 /obj/structure/fluff/walldeco/bath/wallpipes/innie{
 	pixel_y = 17;
@@ -7464,7 +7725,9 @@
 /turf/closed/wall/mineral/roofwall/middle{
 	dir = 1
 	},
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "dLL" = (
 /obj/structure/closet/crate/chest/old_crate,
 /obj/item/storage/sack,
@@ -7571,6 +7834,16 @@
 	name = "Rivermist Hollow";
 	first_time_text = "RIVERMIST HOLLOW"
 	})
+"dNw" = (
+/obj/effect/decal/edge{
+	dir = 2;
+	color = "#3b3b3b"
+	},
+/obj/structure/fluff/festive_garlands/random{
+	pixel_y = -16
+	},
+/turf/open/floor/tile/harem1,
+/area/indoors/town/rmh/tavern)
 "dNz" = (
 /obj/structure/roguetent,
 /turf/open/floor/dirt/road{
@@ -7591,7 +7864,9 @@
 	pixel_y = -8
 	},
 /turf/open/floor/carpet/purple,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "dNW" = (
 /obj/structure/flora/tree/pine,
 /turf/open/floor/grass/red,
@@ -7648,7 +7923,9 @@
 /area/under/cavewet)
 "dPm" = (
 /turf/open/floor/wood,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "dPx" = (
 /obj/effect/decal/edge_corner{
 	dir = 2;
@@ -7704,6 +7981,18 @@
 	dir = 1
 	},
 /area/outdoors/rmh_air)
+"dRn" = (
+/obj/structure/fluff/walldeco/bath/wallpipes/outie{
+	dir = 4
+	},
+/obj/structure/fluff/walldeco/bath/wallpipes/outie{
+	dir = 10
+	},
+/turf/open/floor/concrete,
+/area/outdoors/town{
+	name = "Rivermist Hollow";
+	first_time_text = "RIVERMIST HOLLOW"
+	})
 "dRt" = (
 /obj/structure/fluff/railing/wood/east,
 /obj/machinery/light/fueled/firebowl/standing,
@@ -7920,6 +8209,15 @@
 /obj/structure/fluff/railing/corner/south_west,
 /turf/open/floor/woodturned,
 /area/indoors/town/rmh/bank)
+"dZd" = (
+/obj/structure/fluff/walldeco/bath/wallpipes/outie{
+	dir = 4
+	},
+/turf/open/floor/concrete,
+/area/outdoors/town{
+	name = "Rivermist Hollow";
+	first_time_text = "RIVERMIST HOLLOW"
+	})
 "dZz" = (
 /obj/structure/table/wood{
 	dir = 1;
@@ -7960,6 +8258,24 @@
 /obj/structure/flora/grass/tundra,
 /turf/open/floor/grass/cold,
 /area/outdoors/rmh_field/camp)
+"eaj" = (
+/obj/effect/decal/cobbleedge{
+	dir = 1;
+	icon_state = "borderfall";
+	pixel_y = 8
+	},
+/obj/structure/fluff/railing/wood/north{
+	plane = -6;
+	pixel_y = 15
+	},
+/obj/structure/fluff/railing/corner/north_east,
+/obj/structure/fluff/railing/corner/south_east,
+/obj/item/storage/sack,
+/obj/item/storage/sack,
+/turf/open/floor/ruinedwood,
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "eao" = (
 /obj/structure/flora/newtree/snow,
 /turf/open/floor/grass/cold,
@@ -8090,14 +8406,18 @@
 	dir = 1
 	},
 /turf/open/floor/hay,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "ecY" = (
 /obj/item/natural/stone,
 /turf/open/floor/naturalstone,
 /area/outdoors/beach/rmh_beach)
 "edb" = (
 /turf/open/floor/ruinedwood,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "edf" = (
 /obj/structure/spider/stickyweb,
 /obj/effect/decal/cleanable/dirt,
@@ -8209,7 +8529,9 @@
 "egB" = (
 /obj/machinery/light/fueled/torchholder/l,
 /turf/open/floor/ruinedwood/spiral,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "egW" = (
 /obj/structure/fluff/walldeco/vinez,
 /turf/closed/mineral/random,
@@ -8456,7 +8778,9 @@
 	},
 /obj/structure/fluff/railing/corner/north_east,
 /turf/open/floor/tile/harem1,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "eox" = (
 /obj/effect/decal/cobbleedge/alt{
 	dir = 10;
@@ -8495,7 +8819,8 @@
 	dir = 8
 	},
 /obj/structure/fluff/walldeco/customflag{
-	pixel_y = -32
+	pixel_y = -32;
+	name = "rivermist hallow flag"
 	},
 /turf/open/floor/ruinedwood/turned,
 /area/outdoors/town{
@@ -8516,7 +8841,9 @@
 /area/indoors/cave/underhamlet)
 "eqD" = (
 /turf/open/floor/hay,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "eqH" = (
 /obj/structure/table/wood/reinf_long{
 	dir = 4;
@@ -8548,7 +8875,9 @@
 "eqO" = (
 /obj/machinery/light/fueled/wallfire/candle/r,
 /turf/open/floor/ruinedwood/spiral,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "eqR" = (
 /turf/closed/wall/mineral/wooddark/end,
 /area/indoors/town/rmh/farm)
@@ -8678,7 +9007,9 @@
 /obj/structure/closet/crate/crafted_closet/inn,
 /obj/item/key/guest,
 /turf/open/floor/tile/harem2,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "etA" = (
 /obj/structure/table/optable{
 	pixel_y = 5
@@ -8781,6 +9112,14 @@
 	name = "Rivermist Hollow";
 	first_time_text = "RIVERMIST HOLLOW"
 	})
+"evF" = (
+/obj/structure/flora/grass/tundra,
+/obj/structure/flora/tree/fir/snowy,
+/turf/open/floor/grass/yel,
+/area/outdoors/town{
+	name = "Rivermist Hollow";
+	first_time_text = "RIVERMIST HOLLOW"
+	})
 "evH" = (
 /turf/closed/wall/mineral/wooddark/vertical,
 /area/outdoors/town{
@@ -8844,9 +9183,7 @@
 /area/indoors/town/rmh/bath)
 "ewZ" = (
 /obj/effect/decal/cleanable/debris/stone,
-/obj/structure/bookcase/random/archive{
-	opacity = 0
-	},
+/obj/structure/bookcase/random/legends,
 /turf/open/floor/cobblerock/snow,
 /area/indoors/cave/rmh_cave/minotaur)
 "exk" = (
@@ -8977,7 +9314,9 @@
 /obj/structure/window,
 /obj/structure/curtain/red,
 /turf/open/floor/ruinedwood,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "eAM" = (
 /obj/structure/fermentation_keg/water,
 /turf/open/floor/naturalstone,
@@ -9233,11 +9572,15 @@
 	dir = 1
 	},
 /turf/open/floor/tile/bfloorz,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "eHx" = (
 /obj/structure/chair/bench/couchablack,
 /turf/open/floor/wood,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "eHE" = (
 /obj/structure/table/wood{
 	dir = 1;
@@ -9297,7 +9640,9 @@
 	layer = 3.1
 	},
 /turf/open/floor/hay,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "eIN" = (
 /obj/structure/flora/grass/tundra,
 /obj/structure/flora/grass/herb/salvia,
@@ -9341,6 +9686,10 @@
 	},
 /turf/open/floor/church,
 /area/indoors/town/rmh/chapel/basement)
+"eKk" = (
+/obj/structure/bookcase/random/apocrypha,
+/turf/closed/wall/mineral/decostone/fluffstone,
+/area/under/town/rmh/basement)
 "eKl" = (
 /obj/structure/fluff/walldeco/church/line,
 /obj/structure/fluff/walldeco/church/line{
@@ -9418,7 +9767,9 @@
 	name = "patch of straw"
 	},
 /turf/open/floor/hay,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "eLI" = (
 /obj/effect/decal/wood/herringbone2{
 	dir = 1
@@ -9495,7 +9846,9 @@
 "eOx" = (
 /obj/structure/fluff/railing/corner/south_west,
 /turf/open/floor/ruinedwood,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "eOC" = (
 /obj/structure/closet/crate/chest{
 	base_icon_state = "woodchestalt";
@@ -9763,7 +10116,9 @@
 /obj/effect/mapping_helpers/access/keyset/manor/guest,
 /obj/effect/mapping_helpers/access/locker,
 /turf/open/floor/woodturned,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "eVU" = (
 /obj/structure/flora/rock/pile,
 /turf/open/lava,
@@ -9855,7 +10210,9 @@
 	},
 /obj/effect/decal/cleanable/debris/glass,
 /turf/open/floor/ruinedwood/spiral,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "eYU" = (
 /obj/machinery/light/fueled/torchholder/r,
 /turf/open/floor/grass/cold,
@@ -9904,7 +10261,9 @@
 	},
 /area/outdoors/town/rmh/roofs)
 "eZD" = (
-/obj/structure/fluff/walldeco/customflag,
+/obj/structure/fluff/walldeco/customflag{
+	name = "rivermist hallow flag"
+	},
 /turf/closed/wall/mineral/pipe,
 /area/indoors/town/rmh/cell)
 "eZK" = (
@@ -10161,7 +10520,9 @@
 "fje" = (
 /obj/structure/fluff/pillow/red,
 /turf/open/floor/ruinedwood/herringbone_clear,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "fjg" = (
 /obj/structure/window/openclose/reinforced{
 	dir = 2
@@ -10261,7 +10622,8 @@
 /area/outdoors/rmh_field/west)
 "fmp" = (
 /obj/structure/fluff/walldeco/customflag{
-	pixel_y = -32
+	pixel_y = -32;
+	name = "rivermist hallow flag"
 	},
 /obj/structure/fluff/festive_garlands/random{
 	pixel_y = -16
@@ -10300,7 +10662,9 @@
 "fna" = (
 /obj/structure/fluff/railing/wood,
 /turf/open/floor/ruinedwood/turned,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "fnb" = (
 /obj/structure/fermentation_keg/random,
 /obj/machinery/light/fueled/torchholder/l,
@@ -10438,7 +10802,8 @@
 	color = "#3b3b3b"
 	},
 /obj/structure/fluff/walldeco/customflag{
-	pixel_x = 32
+	pixel_x = 32;
+	name = "rivermist hallow flag"
 	},
 /turf/open/floor/blocks,
 /area/indoors/town/rmh/garrison)
@@ -10475,7 +10840,9 @@
 /turf/open/floor/ruinedwood{
 	icon_state = "weird1"
 	},
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "frV" = (
 /obj/structure/table/map{
 	dir = 5
@@ -10573,7 +10940,9 @@
 "fwA" = (
 /obj/machinery/light/fueled/wallfire/candle/l,
 /turf/open/floor/wood,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "fwU" = (
 /obj/machinery/light/fueled/torchholder/r,
 /turf/open/floor/cobble/alt,
@@ -10752,7 +11121,9 @@
 "fCS" = (
 /obj/structure/hay_stack,
 /turf/open/floor/ruinedwood/spiral,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "fDr" = (
 /obj/structure/spider/stickyweb,
 /turf/open/floor/ruinedwood/spiral,
@@ -10777,7 +11148,9 @@
 	dir = 4
 	},
 /turf/open/floor/ruinedwood/spiral,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "fDL" = (
 /obj/structure/door{
 	name = "Townguard's House"
@@ -10843,7 +11216,8 @@
 /obj/item/clothing/wrists/bracers/leather/advanced,
 /obj/item/rope/chain,
 /obj/structure/fluff/walldeco/customflag{
-	pixel_x = -32
+	pixel_x = -32;
+	name = "rivermist hallow flag"
 	},
 /turf/open/floor/wood,
 /area/indoors/town/rmh/garrison)
@@ -10871,7 +11245,9 @@
 /turf/closed/wall/mineral/wooddark/end{
 	dir = 1
 	},
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "fHG" = (
 /obj/machinery/light/fueled/torchholder/r,
 /turf/open/floor/cobble/alt,
@@ -11084,7 +11460,9 @@
 	dir = 1
 	},
 /turf/open/floor/ruinedwood,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "fOB" = (
 /turf/closed/wall/mineral/decostone/long{
 	dir = 1
@@ -11198,7 +11576,18 @@
 /obj/item/paper/scroll,
 /obj/item/natural/feather,
 /turf/open/floor/tile/harem1,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
+"fQh" = (
+/obj/structure/fluff/walldeco/bath/wallpipes/outie{
+	dir = 4
+	},
+/turf/open/floor/cobblerock/alt,
+/area/outdoors/town{
+	name = "Rivermist Hollow";
+	first_time_text = "RIVERMIST HOLLOW"
+	})
 "fQn" = (
 /obj/effect/decal/edge{
 	dir = 8;
@@ -11235,7 +11624,9 @@
 	},
 /obj/structure/closet/crate/chest/wicker,
 /turf/open/floor/ruinedwood/spiral,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "fQV" = (
 /obj/structure/door/weak/bolt{
 	dir = 4;
@@ -11361,7 +11752,9 @@
 /turf/open/floor/ruinedwood{
 	icon_state = "weird1"
 	},
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "fTM" = (
 /turf/open/floor/concrete,
 /area/under/town/rmh/basement)
@@ -11422,7 +11815,9 @@
 /obj/structure/fluff/wallclock,
 /obj/structure/chair/bench/couch/middle,
 /turf/open/floor/tile/bfloorz,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "fVi" = (
 /obj/structure/flora/newtree/snow,
 /obj/structure/flora/newtree/snow,
@@ -11511,6 +11906,18 @@
 	},
 /turf/open/floor/metal/barograte,
 /area/indoors/town/rmh/crafters_guild/under)
+"fXW" = (
+/obj/structure/fluff/railing/wood{
+	dir = 1;
+	pixel_y = 7;
+	plane = -6
+	},
+/obj/structure/flora/tree/fir/snowy,
+/turf/open/floor/grass/cold,
+/area/outdoors/town{
+	name = "Rivermist Hollow";
+	first_time_text = "RIVERMIST HOLLOW"
+	})
 "fYa" = (
 /obj/structure/flora/grass/herb/euphrasia,
 /turf/open/floor/dirt{
@@ -11620,7 +12027,9 @@
 	color = "#7a684b"
 	},
 /turf/open/floor/carpet,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "gbj" = (
 /turf/closed/wall/mineral/stonebrick,
 /area/indoors/town/rmh/library)
@@ -11630,7 +12039,9 @@
 	dir = 8
 	},
 /turf/open/floor/carpet,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "gbM" = (
 /obj/effect/decal/edge{
 	dir = 8;
@@ -11782,9 +12193,11 @@
 	},
 /area/outdoors/rmh_field/north_mountain)
 "gfi" = (
-/obj/effect/decal/cleanable/debris/wood,
-/obj/structure/flora/grass/herb/taraxacum,
-/turf/open/floor/grass/cold,
+/obj/machinery/light/fueledstreet/orange{
+	plane = -6;
+	pixel_y = 6
+	},
+/turf/open/floor/cobble/snow,
 /area/outdoors/town{
 	name = "Rivermist Hollow";
 	first_time_text = "RIVERMIST HOLLOW"
@@ -11875,6 +12288,10 @@
 	name = "Rivermist Hollow";
 	first_time_text = "RIVERMIST HOLLOW"
 	})
+"ghO" = (
+/obj/structure/bookcase/random/legends,
+/turf/closed/wall/mineral/decostone/long,
+/area/indoors/town/rmh/chapel/basement)
 "ghP" = (
 /mob/living/carbon/human/species/goblin/npc/ambush,
 /turf/open/floor/ruinedwood/spiral,
@@ -11883,7 +12300,9 @@
 /obj/structure/fluff/railing/border/west,
 /obj/machinery/light/fueled/firebowl/standing,
 /turf/open/floor/ruinedwood/herringbone_clear,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "gik" = (
 /obj/structure/fluff/railing/border{
 	dir = 4;
@@ -11894,7 +12313,9 @@
 	pixel_y = -35
 	},
 /turf/open/floor/blocks/stonered,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "gis" = (
 /obj/structure/flora/grass/herb/taraxacum,
 /turf/open/floor/grass/cold,
@@ -11986,7 +12407,9 @@
 	dir = 4
 	},
 /turf/open/floor/ruinedwood/herringbone_clear,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "gjO" = (
 /obj/structure/table/wood/reinf_long{
 	dir = 8
@@ -12020,7 +12443,9 @@
 	pixel_y = -8
 	},
 /turf/open/floor/tile/diamond,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "gkk" = (
 /obj/machinery/light/fueled/wallfire/candle{
 	pixel_y = 0
@@ -12032,7 +12457,9 @@
 	dir = 1
 	},
 /turf/open/floor/ruinedwood/herringbone_clear,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "gkx" = (
 /obj/effect/decal/edge_corner{
 	dir = 2;
@@ -12110,7 +12537,9 @@
 /turf/open/floor/blocks,
 /area/indoors/cave/underhamlet)
 "gnB" = (
-/obj/structure/fluff/walldeco/customflag,
+/obj/structure/fluff/walldeco/customflag{
+	name = "rivermist hallow flag"
+	},
 /turf/closed/wall/mineral/wooddark/window,
 /area/outdoors/town{
 	name = "Rivermist Hollow";
@@ -12150,7 +12579,9 @@
 /obj/structure/flora/ausbushes/brflowers,
 /obj/structure/fluff/railing/wood/east,
 /turf/open/floor/grass/cold,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "gor" = (
 /obj/structure/fluff/walldeco/painting/castle{
 	pixel_y = 32
@@ -12164,7 +12595,9 @@
 	dir = 9
 	},
 /turf/open/floor/tile/harem1,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "goB" = (
 /obj/effect/spawner/map_spawner/treeorstump,
 /turf/open/floor/grass/yel,
@@ -12192,7 +12625,9 @@
 	pixel_y = -32
 	},
 /turf/open/transparent/openspace,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "gpj" = (
 /obj/structure/flora/newtree/snow,
 /obj/structure/vine,
@@ -12218,7 +12653,9 @@
 /area/indoors/town/rmh/town_hall)
 "gpX" = (
 /turf/closed/wall/mineral/decowood/vert,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "gqm" = (
 /obj/structure/vine,
 /turf/open/floor/dirt{
@@ -12241,6 +12678,18 @@
 	},
 /turf/open/floor/wood,
 /area/indoors/town/rmh/tavern)
+"gqZ" = (
+/obj/structure/flora/grass/herb/salvia,
+/obj/structure/fluff/railing/border/north,
+/obj/structure/fluff/walldeco/customflag{
+	pixel_y = 32;
+	name = "rivermist hallow flag"
+	},
+/turf/open/floor/grass/red,
+/area/outdoors/town{
+	name = "Rivermist Hollow";
+	first_time_text = "RIVERMIST HOLLOW"
+	})
 "gra" = (
 /obj/effect/wisp/prestidigitation{
 	pixel_x = 0;
@@ -12423,7 +12872,9 @@
 	name = "stables"
 	},
 /turf/open/floor/hay,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "guy" = (
 /obj/structure/flora/grass/tundra,
 /obj/structure/flora/newleaf/snow,
@@ -12485,7 +12936,9 @@
 /obj/structure/fluff/wallclock/r,
 /obj/structure/fake_machine/scomm,
 /turf/open/floor/tile/harem2,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "gvx" = (
 /obj/structure/fluff/railing/wood{
 	dir = 1;
@@ -12669,9 +13122,7 @@
 	},
 /area/outdoors/rmh_field/camp)
 "gzG" = (
-/obj/structure/bookcase/random/archive{
-	opacity = 0
-	},
+/obj/structure/bookcase/random/eoratica,
 /turf/open/floor/church,
 /area/indoors/town/rmh/library)
 "gzW" = (
@@ -12801,13 +13252,16 @@
 	},
 /obj/structure/fluff/railing/corner/south_east,
 /turf/open/floor/carpet,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "gDs" = (
 /obj/structure/stairs{
 	dir = 4
 	},
 /obj/structure/fluff/walldeco/customflag{
-	pixel_y = -32
+	pixel_y = -32;
+	name = "rivermist hallow flag"
 	},
 /turf/open/floor/ruinedwood/turned,
 /area/outdoors/town{
@@ -13025,7 +13479,9 @@
 /turf/open/floor/ruinedwood{
 	icon_state = "weird1"
 	},
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "gIk" = (
 /obj/structure/fluff/railing/wood/north{
 	layer = 2.7;
@@ -13059,7 +13515,9 @@
 /obj/structure/bed/wool/double,
 /obj/item/bedsheet/double_pelt,
 /turf/open/floor/ruinedwood,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "gJA" = (
 /obj/structure/fluff/nest{
 	name = "patch of straw"
@@ -13234,7 +13692,9 @@
 	pixel_y = 7
 	},
 /turf/open/floor/ruinedwood/turned,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "gPh" = (
 /obj/structure/fluff/railing/wood/north{
 	layer = 2.7;
@@ -13443,16 +13903,28 @@
 	},
 /obj/structure/closet/crate/crafted_closet/inn/south,
 /turf/open/floor/carpet,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "gVA" = (
 /turf/closed/wall/mineral/wooddark,
 /area/indoors/town/rmh/crafters_guild)
 "gVD" = (
 /obj/structure/door/window,
 /turf/open/floor/ruinedwood/turned,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "gVF" = (
 /obj/machinery/light/fueled/wallfire/candle,
+/obj/effect/decal/cobbleedge{
+	dir = 1;
+	icon_state = "borderfall";
+	pixel_y = 8
+	},
+/obj/structure/fluff/festive_garlands/random{
+	pixel_y = 46
+	},
 /turf/open/floor/woodturned,
 /area/indoors/town/rmh/tavern)
 "gVI" = (
@@ -13531,6 +14003,14 @@
 /obj/machinery/light/fueled/wallfire/candle/r{
 	pixel_y = 32
 	},
+/obj/effect/decal/cobbleedge{
+	dir = 1;
+	icon_state = "borderfall";
+	pixel_y = 8
+	},
+/obj/structure/fluff/railing/corner{
+	dir = 9
+	},
 /turf/open/floor/carpet,
 /area/indoors/town/rmh/tavern)
 "gXa" = (
@@ -13539,6 +14019,10 @@
 "gXg" = (
 /obj/machinery/light/fueled/wallfire/candle/l{
 	pixel_y = -32
+	},
+/obj/effect/decal/edge{
+	dir = 9;
+	color = "#522f26"
 	},
 /turf/open/floor/carpet,
 /area/indoors/town/rmh/tavern)
@@ -13600,7 +14084,9 @@
 /obj/structure/mirror,
 /obj/machinery/light/fueled/wallfire/candle/r,
 /turf/open/floor/ruinedwood/herringbone_clear,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "gZl" = (
 /obj/structure/fluff/walldeco/church/line{
 	dir = 8;
@@ -13722,7 +14208,9 @@
 "hbu" = (
 /obj/structure/fluff/wallclock,
 /turf/open/floor/wood,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "hbG" = (
 /obj/structure/table/wood/reinf_long{
 	dir = 8;
@@ -13989,16 +14477,22 @@
 	name = "House I"
 	},
 /turf/open/floor/concrete,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "hgS" = (
 /turf/closed/wall/mineral/stone/moss,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "hhi" = (
 /obj/structure/chair/wood{
 	dir = 8
 	},
 /turf/open/floor/carpet/red,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "hhk" = (
 /obj/structure/door/green{
 	name = "Merchant's Storage room"
@@ -14071,7 +14565,9 @@
 	},
 /obj/structure/fluff/nest,
 /turf/open/floor/hay,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "hir" = (
 /obj/item/statue/gold/vase,
 /turf/open/floor/cobble/alt,
@@ -14231,7 +14727,9 @@
 "hmZ" = (
 /obj/structure/stairs,
 /turf/open/floor/ruinedwood,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "hnf" = (
 /obj/structure/fluff/railing/wood/north{
 	layer = 2.7;
@@ -14271,6 +14769,13 @@
 /obj/structure/flora/grass/herb/urtica,
 /turf/open/floor/grass/cold,
 /area/outdoors/rmh_field/west)
+"hoN" = (
+/obj/effect/decal/edge{
+	dir = 8;
+	color = "#522f26"
+	},
+/turf/open/floor/carpet,
+/area/indoors/town/rmh/tavern)
 "hoT" = (
 /obj/structure/hotspring/border/eight,
 /turf/open/water/cleanshallow,
@@ -14422,7 +14927,9 @@
 	},
 /obj/machinery/light/fueled/wallfire/candle/l,
 /turf/open/floor/carpet/red,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "hrX" = (
 /obj/item/natural/rock/random_ore,
 /turf/open/floor/naturalstone,
@@ -14464,7 +14971,9 @@
 	pixel_y = 39
 	},
 /turf/open/floor/ruinedwood/herringbone_clear,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "huh" = (
 /obj/structure/fluff/railing/border{
 	dir = 8;
@@ -14523,7 +15032,9 @@
 "hvU" = (
 /obj/structure/fluff/railing/corner/north_east,
 /turf/open/floor/tile/harem2,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "hwk" = (
 /turf/open/floor/woodturned,
 /area/indoors/town/rmh/garrison)
@@ -14561,7 +15072,9 @@
 	opacity = 1
 	},
 /turf/open/floor/ruinedwood/spiral,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "hxF" = (
 /obj/effect/decal/edge{
 	dir = 2;
@@ -14720,7 +15233,9 @@
 	pixel_y = 6
 	},
 /turf/open/floor/tile/harem1,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "hBR" = (
 /obj/machinery/light/fueled/wallfire/candle,
 /turf/open/floor/wood,
@@ -14780,12 +15295,15 @@
 	dir = 8;
 	color = "#3b3b3b"
 	},
+/obj/machinery/light/fueled/firebowl/standing,
 /turf/open/floor/tile/harem1,
 /area/indoors/town/rmh/tavern)
 "hDL" = (
 /obj/structure/chair/stool/bar,
 /turf/open/floor/ruinedwood/herringbone_clear,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "hEc" = (
 /obj/structure/spider/stickyweb,
 /turf/open/floor/cobblerock,
@@ -14862,7 +15380,9 @@
 	dir = 9
 	},
 /turf/open/floor/tile/harem1,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "hFw" = (
 /obj/structure/table/wood{
 	icon_state = "longtable"
@@ -14874,6 +15394,9 @@
 /area/indoors/town/rmh/crafters_guild/under)
 "hFD" = (
 /obj/structure/bookcase,
+/obj/structure/fluff/festive_flags/random{
+	pixel_y = -16
+	},
 /turf/open/floor/tile/bfloorz,
 /area/indoors/town/rmh/tavern)
 "hFY" = (
@@ -14926,7 +15449,9 @@
 /area/indoors/town/rmh/farm)
 "hHI" = (
 /turf/open/floor/ruinedwood/herringbone_clear,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "hHO" = (
 /turf/open/floor/cobblerock/alt,
 /area/outdoors/rmh_air)
@@ -14936,7 +15461,9 @@
 	plane = -6
 	},
 /turf/open/floor/ruinedwood/spiral,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "hIk" = (
 /obj/structure/flora/tree/burnt,
 /turf/open/floor/grass/cold,
@@ -15022,7 +15549,9 @@
 /obj/effect/mapping_helpers/access/keyset/manor/guest,
 /obj/effect/mapping_helpers/access/locker,
 /turf/open/floor/woodturned,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "hKr" = (
 /obj/effect/decal/cleanable/debris/stone,
 /turf/open/floor/ruinedwood/herringbone_clear,
@@ -15277,7 +15806,9 @@
 	pixel_x = 11
 	},
 /turf/open/floor/blocks/stonered,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "hRm" = (
 /obj/structure/flora/grass/herb/matricaria{
 	pixel_x = 5;
@@ -15310,9 +15841,7 @@
 /turf/open/floor/grass/cold,
 /area/outdoors/rmh_air)
 "hRQ" = (
-/obj/structure/bookcase/random/archive{
-	opacity = 0
-	},
+/obj/structure/bookcase/random/legends,
 /obj/machinery/light/fueled/wallfire/candle/blue/l{
 	pixel_y = -32
 	},
@@ -15345,7 +15874,9 @@
 	name = "patch of straw"
 	},
 /turf/open/floor/dirt/road,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "hSp" = (
 /obj/structure/door/weak/bolt{
 	dir = 4
@@ -15381,7 +15912,9 @@
 	dir = 1
 	},
 /turf/open/floor/ruinedwood/herringbone_clear,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "hTn" = (
 /obj/structure/stairs/stone,
 /obj/machinery/light/fueled/wallfire/candle/l,
@@ -15461,6 +15994,10 @@
 "hVK" = (
 /turf/open/transparent/openspace,
 /area/indoors/town/rmh/bath)
+"hVT" = (
+/obj/structure/flora/tree/fir/festive,
+/turf/open/floor/cobble/alt,
+/area/indoors/town/rmh/garrison)
 "hWc" = (
 /obj/structure/table/wood/reinf_long{
 	pixel_y = 1
@@ -15521,7 +16058,9 @@
 "hXo" = (
 /obj/structure/fluff/railing/wood/east,
 /turf/open/floor/ruinedwood/turned,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "hXy" = (
 /turf/closed/mineral/bedrock/cold{
 	name = "solid rock"
@@ -15557,7 +16096,9 @@
 /obj/structure/bed/inn/double,
 /obj/item/bedsheet/double_pelt,
 /turf/open/floor/ruinedwood/herringbone_clear,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "hYa" = (
 /obj/structure/flora/grass/tundra,
 /obj/item/natural/rock,
@@ -15866,7 +16407,9 @@
 	},
 /obj/structure/fluff/railing/corner/north_east,
 /turf/open/floor/carpet,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "iho" = (
 /obj/structure/fluff/railing/wood/east,
 /turf/open/floor/twig,
@@ -16046,7 +16589,9 @@
 /turf/closed/wall/mineral/roofwall/outercorner{
 	dir = 1
 	},
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "ikh" = (
 /obj/structure/closet/crate/chest/old_crate,
 /obj/item/clothing/armor/leather/hide{
@@ -16170,7 +16715,9 @@
 	},
 /obj/machinery/light/fueled/wallfire/candle/l,
 /turf/open/floor/tile/harem2,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "imM" = (
 /obj/structure/stairs{
 	dir = 1
@@ -16183,7 +16730,9 @@
 	name = "Bedroom"
 	},
 /turf/open/floor/woodturned,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "imT" = (
 /obj/structure/door{
 	name = "Crafter's Guild";
@@ -16347,7 +16896,9 @@
 "iqf" = (
 /obj/structure/fluff/railing/border/east,
 /turf/open/floor/ruinedwood/herringbone_clear,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "iqi" = (
 /obj/effect/decal/cobblerockedge{
 	dir = 8
@@ -16408,7 +16959,9 @@
 	plane = -6
 	},
 /turf/open/floor/woodturned,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "iru" = (
 /turf/open/water/river{
 	dir = 8
@@ -16743,7 +17296,9 @@
 	layer = 2.9
 	},
 /turf/open/floor/carpet,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "iya" = (
 /obj/structure/flora/grass/tundra,
 /turf/open/floor/dirt/road{
@@ -16862,7 +17417,9 @@
 	},
 /obj/structure/fluff/railing/wood,
 /turf/open/floor/ruinedwood/turned,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "iBM" = (
 /obj/structure/window/openclose/reinforced{
 	dir = 8
@@ -16914,7 +17471,9 @@
 	color = "#7a684b"
 	},
 /turf/open/floor/carpet,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "iCB" = (
 /obj/structure/door{
 	name = "Watchtower"
@@ -17040,7 +17599,9 @@
 /obj/structure/flora/ausbushes/brflowers,
 /obj/structure/fluff/railing/wood/east,
 /turf/open/floor/grass/cold,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "iEB" = (
 /obj/effect/decal/edge{
 	dir = 4;
@@ -17103,7 +17664,9 @@
 	pixel_y = 8
 	},
 /turf/open/floor/carpet,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "iGJ" = (
 /obj/structure/flora/grass/tundra,
 /obj/structure/flora/grass/tundra,
@@ -17144,7 +17707,9 @@
 "iIg" = (
 /obj/structure/bookcase/random/legends,
 /turf/open/floor/woodturned,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "iIj" = (
 /obj/structure/table/map{
 	dir = 6
@@ -17889,7 +18454,9 @@
 /area/indoors/cave/underhamlet)
 "jbt" = (
 /turf/open/floor/carpet/royalblack,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "jbA" = (
 /obj/structure/fluff/walldeco/sign/apothecarysign{
 	pixel_y = 32
@@ -17918,6 +18485,17 @@
 "jcj" = (
 /obj/machinery/light/fueled/wallfire/candle/l{
 	pixel_y = 32
+	},
+/obj/structure/chair/wood/alt/chair_noble/red{
+	dir = 4
+	},
+/obj/effect/decal/cobbleedge{
+	dir = 1;
+	icon_state = "borderfall";
+	pixel_y = 8
+	},
+/obj/structure/fluff/festive_garlands/random{
+	pixel_y = 46
 	},
 /turf/open/floor/carpet,
 /area/indoors/town/rmh/tavern)
@@ -18024,6 +18602,15 @@
 	name = "Rivermist Hollow";
 	first_time_text = "RIVERMIST HOLLOW"
 	})
+"jfD" = (
+/obj/structure/fluff/festive_garlands/random{
+	pixel_y = -16
+	},
+/turf/open/floor/cobblerock/snow,
+/area/outdoors/town{
+	name = "Rivermist Hollow";
+	first_time_text = "RIVERMIST HOLLOW"
+	})
 "jgN" = (
 /obj/effect/decal/cleanable/dirt/cobweb,
 /obj/structure/closet/crate/chest/wicker,
@@ -18049,7 +18636,9 @@
 	plane = -6
 	},
 /turf/open/floor/ruinedwood/spiral,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "jig" = (
 /obj/structure/fluff/railing/border,
 /turf/open/floor/woodturned,
@@ -18129,6 +18718,21 @@
 /obj/item/bedsheet/wool,
 /turf/open/floor/wood,
 /area/indoors/town/rmh/garrison)
+"jjX" = (
+/obj/structure/closet/crate/chest/old_crate,
+/obj/effect/decal/cobbleedge{
+	dir = 1;
+	icon_state = "borderfall";
+	pixel_y = 8
+	},
+/obj/structure/fluff/railing/wood/north{
+	plane = -6;
+	pixel_y = 15
+	},
+/turf/open/floor/ruinedwood,
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "jkg" = (
 /obj/structure/flora/grass/bush/wall/tall/tundra,
 /turf/open/floor/grass/cold,
@@ -18144,7 +18748,9 @@
 	hover_color = "#8a6b6b"
 	},
 /turf/open/floor/concrete,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "jks" = (
 /obj/effect/decal/cobbleedge{
 	dir = 10;
@@ -18245,7 +18851,9 @@
 /obj/structure/fluff/railing/corner/south_west,
 /obj/machinery/light/fueled/wallfire/candle/l,
 /turf/open/floor/tile/harem1,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "jmL" = (
 /obj/structure/flora/grass/herb/atropa,
 /turf/open/floor/grass/cold,
@@ -18257,6 +18865,10 @@
 	name = "Rivermist Hollow";
 	first_time_text = "RIVERMIST HOLLOW"
 	})
+"jmV" = (
+/obj/structure/flora/tree/fir/festive,
+/turf/open/floor/cobble,
+/area/indoors/town/rmh/crafters_guild)
 "jnb" = (
 /obj/structure/carpet/purple,
 /turf/open/floor/woodturned,
@@ -18275,6 +18887,12 @@
 /area/under/town/rmh/basement)
 "jno" = (
 /obj/structure/table/church/m,
+/obj/structure/fluff/statue/astrata/bling{
+	pixel_x = -17;
+	name = "statue of Eilistraee";
+	desc = "Eilistraee, the Moon Queen, whose light dances in the reflection of the waters and atones for the sins of the Drow.";
+	pixel_y = 17
+	},
 /turf/open/floor/church,
 /area/outdoors/rmh_air)
 "jnA" = (
@@ -18536,6 +19154,11 @@
 /obj/item/recipe_book/underworld,
 /turf/open/floor/concrete,
 /area/indoors/town/apothecary)
+"jtN" = (
+/turf/closed/indestructible/wooddark/hull,
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "jtU" = (
 /obj/item/natural/bundle/stoneblock,
 /turf/open/floor/naturalstone,
@@ -18614,7 +19237,9 @@
 /obj/structure/fluff/railing/corner/south_east,
 /obj/item/key/guest,
 /turf/open/floor/tile/harem1,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "jvP" = (
 /obj/structure/fluff/walldeco/church/line{
 	dir = 8
@@ -18672,7 +19297,9 @@
 "jxi" = (
 /obj/structure/fluff/railing/border/east,
 /turf/open/floor/ruinedwood/spiral,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "jxs" = (
 /obj/structure/fluff/railing/wood/east{
 	plane = -6
@@ -18707,7 +19334,9 @@
 "jxI" = (
 /obj/structure/fake_machine/scomm/l,
 /turf/open/floor/ruinedwood/herringbone_clear,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "jya" = (
 /obj/structure/fluff/railing/border{
 	plane = -6
@@ -18791,7 +19420,9 @@
 	dir = 9
 	},
 /turf/open/floor/ruinedwood/spiral,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "jAe" = (
 /turf/open/transparent/openspace,
 /area/outdoors/rmh_field/druid)
@@ -18818,7 +19449,8 @@
 /area/indoors/cave/underhamlet)
 "jBp" = (
 /obj/structure/fluff/walldeco/customflag{
-	pixel_x = -32
+	pixel_x = -32;
+	name = "rivermist hallow flag"
 	},
 /turf/open/floor/grass/yel,
 /area/outdoors/rmh_field)
@@ -19003,7 +19635,9 @@
 	pixel_x = 5
 	},
 /turf/open/floor/tile/harem2,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "jHV" = (
 /obj/effect/decal/cobbleedge{
 	dir = 10;
@@ -19209,6 +19843,9 @@
 "jMt" = (
 /obj/structure/bookcase,
 /obj/machinery/light/fueled/wallfire/candle/blue/l,
+/obj/structure/fluff/festive_flags/random{
+	pixel_y = -16
+	},
 /turf/open/floor/tile/bfloorz,
 /area/indoors/town/rmh/tavern)
 "jMJ" = (
@@ -19293,7 +19930,9 @@
 	name = "House II"
 	},
 /turf/open/floor/concrete,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "jPa" = (
 /turf/open/floor/church,
 /area/outdoors/rmh_air)
@@ -19358,7 +19997,9 @@
 /obj/structure/fluff/railing/corner/north_east,
 /obj/structure/fake_machine/scomm,
 /turf/open/floor/tile/harem1,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "jRf" = (
 /obj/structure/stairs{
 	dir = 8
@@ -19412,11 +20053,15 @@
 	dir = 6
 	},
 /turf/open/floor/ruinedwood/herringbone_clear,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "jSQ" = (
 /obj/structure/chair/bench/couch/left,
 /turf/open/floor/tile/bfloorz,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "jST" = (
 /obj/machinery/light/fueled/wallfire/candle/weak/r,
 /turf/open/floor/carpet/green,
@@ -19516,7 +20161,9 @@
 "jVs" = (
 /obj/effect/decal/cleanable/debris/wood,
 /turf/open/floor/ruinedwood/spiral,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "jVJ" = (
 /obj/structure/curtain/red,
 /obj/structure/closet/crate/chest/neu_fancy,
@@ -19595,7 +20242,9 @@
 /area/outdoors/rmh_field/druid)
 "jXq" = (
 /turf/open/floor/ruinedwood/turned,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "jXv" = (
 /obj/structure/flora/grass/bush/tundra,
 /obj/structure/fluff/walldeco/vinez/l,
@@ -19617,6 +20266,13 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/concrete,
 /area/under/town/rmh/basement)
+"jYe" = (
+/obj/machinery/light/fueled/torchholder/r,
+/turf/open/floor/cobblerock/snow,
+/area/outdoors/town{
+	name = "Rivermist Hollow";
+	first_time_text = "RIVERMIST HOLLOW"
+	})
 "jYs" = (
 /obj/structure/fluff/railing/border{
 	dir = 1
@@ -19685,7 +20341,13 @@
 	plane = -6
 	},
 /turf/open/floor/wood,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
+"kag" = (
+/obj/structure/bookcase/random/myths,
+/turf/open/floor/church,
+/area/indoors/town/rmh/library)
 "kan" = (
 /obj/machinery/light/fueled/wallfire/candle/r,
 /turf/open/floor/wood,
@@ -19720,6 +20382,18 @@
 	},
 /turf/open/floor/cobblerock,
 /area/under/town/rmh/basement)
+"kbh" = (
+/obj/structure/table/wood/plain/alto,
+/obj/effect/decal/cobbleedge{
+	dir = 1;
+	icon_state = "borderfall";
+	pixel_y = 8
+	},
+/obj/structure/fluff/festive_garlands/random{
+	pixel_y = 46
+	},
+/turf/open/floor/carpet,
+/area/indoors/town/rmh/tavern)
 "kbm" = (
 /obj/effect/decal/cobblerockedge/alt{
 	dir = 6
@@ -19951,7 +20625,9 @@
 	dir = 4
 	},
 /turf/open/floor/carpet/royalblack,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "kho" = (
 /obj/effect/decal/cobble/mossy{
 	dir = 6;
@@ -19993,7 +20669,9 @@
 /area/under/town/rmh/basement)
 "khE" = (
 /turf/open/floor/dirt/road,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "khM" = (
 /obj/structure/fluff/railing/wood,
 /obj/effect/decal/edge{
@@ -20044,7 +20722,9 @@
 	pixel_y = 32
 	},
 /turf/open/floor/ruinedwood/herringbone_clear,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "kjc" = (
 /obj/structure/fluff/railing/wood{
 	dir = 8;
@@ -20135,7 +20815,9 @@
 /area/indoors/town/rmh/garrison/wall)
 "kla" = (
 /turf/open/floor/blocks/stonered/tiny,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "klo" = (
 /turf/open/floor/cobble/alt,
 /area/indoors/town/rmh/garrison)
@@ -20308,6 +20990,10 @@
 	},
 /turf/open/transparent/openspace,
 /area/indoors/town/rmh/farm)
+"kpK" = (
+/obj/structure/flora/tree/fir/festive,
+/turf/open/floor/churchmarble,
+/area/indoors/town/rmh/chapel)
 "kpP" = (
 /obj/structure/table/wood,
 /obj/item/weapon/knife/villager,
@@ -20554,6 +21240,9 @@
 	})
 "kwA" = (
 /obj/effect/decal/wood/herringbone,
+/obj/structure/fluff/festive_flags/random{
+	pixel_y = -16
+	},
 /turf/open/floor/ruinedwood/spiralfade,
 /area/indoors/town/rmh/tavern)
 "kwF" = (
@@ -20615,7 +21304,9 @@
 	layer = 2.7
 	},
 /turf/open/floor/wood,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "kys" = (
 /obj/structure/stairs,
 /turf/open/floor/ruinedwood,
@@ -20630,7 +21321,9 @@
 /area/under/town/rmh/basement)
 "kyS" = (
 /turf/open/floor/carpet/lord/right,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "kyZ" = (
 /obj/effect/decal/cleanable/debris/stone,
 /obj/item/natural/rock,
@@ -20653,7 +21346,9 @@
 	},
 /obj/machinery/light/fueled/wallfire/candle,
 /turf/open/floor/tile/harem2,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "kzB" = (
 /obj/structure/vine,
 /turf/open/floor/dirt/road{
@@ -20771,7 +21466,9 @@
 /area/indoors/town/rmh/crafters_guild/under)
 "kDr" = (
 /turf/open/floor/tile/bfloorz,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "kDK" = (
 /obj/machinery/light/fueled/hearth,
 /obj/item/reagent_containers/glass/bucket/pot,
@@ -20846,7 +21543,9 @@
 	},
 /obj/structure/chair/wood/alt/fancy/chair5,
 /turf/open/floor/woodturned,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "kFi" = (
 /obj/effect/decal/cleanable/debris/stone,
 /turf/open/floor/blocks/newstone/alt,
@@ -21003,6 +21702,18 @@
 	first_time_text = "FORGOTTEN HALLS";
 	name = "underdungeon"
 	})
+"kKj" = (
+/obj/effect/decal/cobbleedge{
+	dir = 1;
+	icon_state = "borderfall";
+	pixel_y = 8
+	},
+/obj/structure/fluff/railing/corner/north_east,
+/obj/structure/fluff/festive_garlands/random{
+	pixel_y = 46
+	},
+/turf/open/floor/carpet,
+/area/indoors/town/rmh/tavern)
 "kKx" = (
 /obj/structure/fluff/walldeco/church/line,
 /obj/structure/fluff/walldeco/church/line{
@@ -21025,6 +21736,17 @@
 "kKK" = (
 /turf/open/water/swamp/deep,
 /area/outdoors/rmh_field/north)
+"kKS" = (
+/obj/machinery/light/fueled/lanternpost{
+	pixel_x = 15;
+	pixel_y = 6
+	},
+/obj/structure/flora/tree/fir/snowy,
+/turf/open/floor/grass/cold,
+/area/outdoors/town{
+	name = "Rivermist Hollow";
+	first_time_text = "RIVERMIST HOLLOW"
+	})
 "kLa" = (
 /obj/structure/rack,
 /turf/open/floor/woodturned,
@@ -21126,7 +21848,9 @@
 /area/under/rmh_bedrock)
 "kNW" = (
 /turf/closed/wall/mineral/decostone/fluffstone,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "kOj" = (
 /obj/machinery/light/fueled/torchholder/hotspring{
 	pixel_y = 32
@@ -21324,6 +22048,15 @@
 /obj/structure/fluff/railing/border/north,
 /turf/open/transparent/openspace,
 /area/outdoors/town/rmh/roofs)
+"kRp" = (
+/obj/structure/fluff/traveltile{
+	aportalgoesto = "wagono";
+	aportalid = "wagoni"
+	},
+/turf/open/floor/ruinedwood,
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "kRt" = (
 /obj/structure/flora/pillar,
 /turf/open/floor/cobblerock/alt,
@@ -21738,7 +22471,9 @@
 	name = "tall window"
 	},
 /turf/open/floor/ruinedwood,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "lfr" = (
 /obj/structure/water_pipe,
 /turf/closed/wall/mineral/pipe,
@@ -21980,7 +22715,9 @@
 "lmU" = (
 /obj/item/bin/water,
 /turf/open/floor/hay,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "lmV" = (
 /obj/structure/fluff/walldeco/church/line{
 	dir = 4;
@@ -22011,7 +22748,9 @@
 /obj/effect/mapping_helpers/access/keyset/manor/general,
 /obj/effect/mapping_helpers/access/locker,
 /turf/open/floor/woodturned,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "lnz" = (
 /obj/structure/window,
 /turf/open/floor/ruinedwood/herringbone_clear,
@@ -22079,7 +22818,9 @@
 /obj/effect/mapping_helpers/access/locker,
 /obj/effect/mapping_helpers/access/keyset/manor/lord,
 /turf/open/floor/woodturned,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "lpz" = (
 /obj/structure/flora/grass/tundra,
 /turf/open/floor/dirt/road{
@@ -22100,7 +22841,9 @@
 	},
 /obj/structure/fluff/railing/corner/south_west,
 /turf/open/floor/tile/harem1,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "lpH" = (
 /obj/structure/flora/grass/tundra,
 /turf/open/floor/grass/yel,
@@ -22138,6 +22881,24 @@
 /area/outdoors/town{
 	name = "Rivermist Hollow";
 	first_time_text = "RIVERMIST HOLLOW"
+	})
+"lqO" = (
+/obj/structure/closet/crate/chest/wicker,
+/obj/effect/decal/cobbleedge{
+	dir = 2;
+	icon_state = "borderfall";
+	pixel_y = -8
+	},
+/obj/structure/fluff/railing/wood{
+	pixel_y = -16
+	},
+/obj/structure/fluff/railing/corner/south_east,
+/obj/structure/fluff/railing/corner/north_east,
+/obj/item/storage/sack,
+/obj/item/storage/sack,
+/turf/open/floor/ruinedwood,
+/area/indoors/town/rmh{
+	name = "wagon"
 	})
 "lrc" = (
 /obj/item/reagent_containers/glass/cup,
@@ -22223,10 +22984,6 @@
 	})
 "ltn" = (
 /obj/effect/decal/herringbone,
-/obj/structure/fake_machine/mail{
-	mailtag = "Archivist";
-	pixel_y = -32
-	},
 /turf/open/floor/hexstone,
 /area/under/town/rmh/basement)
 "ltq" = (
@@ -22343,7 +23100,8 @@
 /area/outdoors/rmh_air)
 "lup" = (
 /obj/structure/fluff/walldeco/customflag{
-	pixel_x = -32
+	pixel_x = -32;
+	name = "rivermist hallow flag"
 	},
 /turf/open/floor/cobble,
 /area/outdoors/town/rmh/roofs)
@@ -22481,7 +23239,9 @@
 	pixel_x = -32
 	},
 /turf/open/floor/ruinedwood,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "lzm" = (
 /obj/effect/decal/wood/herringbone2,
 /obj/effect/decal/wood/herringbone2{
@@ -23314,6 +24074,14 @@
 /obj/structure/table/wood/plain,
 /turf/open/floor/carpet/red,
 /area/indoors)
+"lXp" = (
+/obj/structure/tent_wall{
+	dir = 4
+	},
+/turf/closed/indestructible/wooddark/hull,
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "lXI" = (
 /obj/effect/landmark/start/adventurer{
 	dir = 8
@@ -23376,7 +24144,9 @@
 	dir = 8
 	},
 /turf/open/floor/carpet,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "lZx" = (
 /obj/machinery/light/fueled/wallfire/candle/r,
 /obj/structure/fluff/wallclock{
@@ -23544,14 +24314,18 @@
 	name = "patch of straw"
 	},
 /turf/open/floor/dirt,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "mdk" = (
 /turf/open/floor/cobble/alt,
 /area/indoors/town/rmh/crafters_guild/under)
 "mdx" = (
 /obj/structure/fluff/railing/wood/north,
 /turf/open/floor/dirt,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "mdA" = (
 /obj/effect/landmark/mapGenerator/beach{
 	endTurfX = 255;
@@ -23689,7 +24463,9 @@
 	dir = 1
 	},
 /turf/open/floor/carpet,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "mgI" = (
 /obj/structure/bridge_stakes{
 	dir = 8;
@@ -23776,7 +24552,9 @@
 /area/indoors/town/apothecary)
 "mjh" = (
 /turf/open/floor/blocks/stonered,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "mji" = (
 /obj/structure/table/wood/reinf_long{
 	pixel_y = 3
@@ -23849,7 +24627,8 @@
 "mla" = (
 /obj/machinery/light/fueled/wallfire/candle,
 /obj/structure/fluff/walldeco/customflag{
-	pixel_x = -32
+	pixel_x = -32;
+	name = "rivermist hallow flag"
 	},
 /obj/structure/closet/crate/crafted_closet/dark,
 /turf/open/floor/woodturned,
@@ -24228,7 +25007,9 @@
 /obj/structure/flora/grass/tundra,
 /obj/structure/fluff/railing/wood/east,
 /turf/open/floor/grass/cold,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "mvD" = (
 /obj/structure/table/map{
 	dir = 9
@@ -24432,7 +25213,9 @@
 	dir = 4
 	},
 /turf/open/floor/carpet,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "mzY" = (
 /obj/structure/table/wood/large/corner/middle_east,
 /obj/structure/fluff/railing/border/north,
@@ -24509,7 +25292,9 @@
 	pixel_x = 8
 	},
 /turf/open/floor/tile/harem1,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "mBM" = (
 /obj/structure/fluff/walldeco/vinez/l,
 /turf/open/floor/cobble/alt,
@@ -24656,7 +25441,9 @@
 	pixel_y = 16
 	},
 /turf/open/floor/woodturned,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "mEN" = (
 /obj/structure/stairs,
 /turf/open/floor/ruinedwood,
@@ -24826,7 +25613,9 @@
 	color = "#7a684b"
 	},
 /turf/open/floor/carpet,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "mIV" = (
 /obj/effect/decal/mossy{
 	dir = 1;
@@ -24920,7 +25709,9 @@
 	},
 /obj/structure/mannequin/male,
 /turf/open/floor/woodturned,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "mLq" = (
 /obj/structure/fluff/walldeco/church/line{
 	dir = 4
@@ -25240,7 +26031,9 @@
 /turf/open/floor/ruinedwood{
 	icon_state = "weird1"
 	},
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "mRK" = (
 /obj/effect/decal/cleanable/debris/stone,
 /turf/open/floor/hexstone,
@@ -25351,7 +26144,9 @@
 	dir = 4
 	},
 /turf/open/floor/wood,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "mWb" = (
 /obj/effect/decal/cobbleedge{
 	dir = 1;
@@ -25368,7 +26163,9 @@
 /turf/closed/wall/mineral/wooddark/end{
 	dir = 4
 	},
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "mWR" = (
 /turf/closed/wall/mineral/decostone/moss,
 /area/indoors/town/rmh/magician/pass)
@@ -25664,7 +26461,9 @@
 "nes" = (
 /obj/structure/water_pipe,
 /turf/closed/wall/mineral/pipe,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "neB" = (
 /obj/structure/ladder/unbreakable,
 /turf/open/floor/metal,
@@ -25912,7 +26711,9 @@
 	})
 "njw" = (
 /turf/closed/wall/mineral/stonebrick,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "njL" = (
 /obj/structure/fluff/walldeco/vinez,
 /turf/closed/mineral/random/med,
@@ -25961,7 +26762,9 @@
 	dir = 6
 	},
 /turf/open/floor/ruinedwood/spiral,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "nkM" = (
 /turf/closed/wall/mineral/stonebrick,
 /area/indoors/town)
@@ -25992,7 +26795,9 @@
 /obj/machinery/light/fueled/oven/south,
 /obj/item/cooking/pan,
 /turf/open/floor/concrete,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "nlw" = (
 /obj/structure/fluff/railing/border,
 /turf/open/floor/carpet/lord/right,
@@ -26124,7 +26929,9 @@
 /obj/machinery/light/fueled/oven/north,
 /obj/machinery/light/fueled/hearth,
 /turf/open/floor/cobble,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "nqy" = (
 /obj/effect/decal/wood/herringbone2{
 	dir = 8
@@ -26232,7 +27039,9 @@
 	name = "House III"
 	},
 /turf/open/floor/cobblerock/snow,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "ntL" = (
 /obj/structure/bars/tough{
 	icon = 'icons/effects/effects.dmi';
@@ -26318,6 +27127,18 @@
 /turf/open/floor/cobblerock/alt,
 /area/under/underdark/rmh{
 	name = "Caves & Mines"
+	})
+"nvD" = (
+/obj/structure/fluff/festive_garlands/random{
+	pixel_y = -16
+	},
+/obj/effect/decal/cobblerockedge/alt{
+	dir = 9
+	},
+/turf/open/floor/cobblerock/snow,
+/area/outdoors/town{
+	name = "Rivermist Hollow";
+	first_time_text = "RIVERMIST HOLLOW"
 	})
 "nvO" = (
 /obj/structure/closet/crate/crafted_closet/dark,
@@ -26627,7 +27448,9 @@
 	name = "House IV"
 	},
 /turf/open/floor/wood,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "nFw" = (
 /turf/open/floor/rooftop{
 	icon_state = "roofg"
@@ -26657,7 +27480,9 @@
 	pixel_y = 0
 	},
 /turf/open/floor/ruinedwood/spiral,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "nGw" = (
 /obj/structure/fluff/walldeco/church/line{
 	dir = 1
@@ -26781,6 +27606,9 @@
 	dir = 2;
 	color = "#3b3b3b"
 	},
+/obj/structure/fluff/festive_garlands/random{
+	pixel_y = -16
+	},
 /turf/open/floor/tile/harem1,
 /area/indoors/town/rmh/tavern)
 "nIu" = (
@@ -26833,7 +27661,9 @@
 	dir = 4
 	},
 /turf/open/floor/tile/harem1,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "nKc" = (
 /obj/structure/flora/grass/herb/rosa{
 	pixel_y = 13
@@ -26855,9 +27685,8 @@
 /turf/open/floor/woodturned,
 /area/indoors/town/rmh/tavern)
 "nKj" = (
-/obj/structure/fluff/railing/corner/south_west,
-/obj/structure/fluff/festive_flags/random{
-	pixel_y = -16
+/obj/structure/fluff/railing/wood/north{
+	pixel_y = 9
 	},
 /turf/open/floor/cobblerock/alt,
 /area/outdoors/town{
@@ -26875,6 +27704,15 @@
 /obj/item/bin/water/gross,
 /turf/open/floor/cobble/alt,
 /area/under/town/rmh/basement)
+"nKx" = (
+/obj/structure/fluff/festive_garlands/random{
+	pixel_y = -16
+	},
+/turf/open/floor/cobble/snow,
+/area/outdoors/town{
+	name = "Rivermist Hollow";
+	first_time_text = "RIVERMIST HOLLOW"
+	})
 "nKG" = (
 /obj/structure/handcart{
 	dir = 8
@@ -26887,7 +27725,9 @@
 	dir = 4
 	},
 /turf/open/floor/ruinedwood/herringbone_clear,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "nKM" = (
 /obj/structure/fluff/railing/border/north,
 /turf/open/floor/ruinedwood/herringbone_clear,
@@ -27043,7 +27883,9 @@
 	dir = 1
 	},
 /turf/open/floor/carpet,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "nNG" = (
 /obj/structure/table/wood{
 	dir = 1;
@@ -27087,7 +27929,9 @@
 	name = "patch of straw"
 	},
 /turf/open/floor/ruinedwood/spiral,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "nOA" = (
 /obj/structure/flora/grass/herb/random,
 /turf/open/floor/grass/yel,
@@ -27120,7 +27964,9 @@
 	})
 "nPC" = (
 /turf/open/floor/woodturned,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "nPI" = (
 /obj/structure/flora/grass/thorn_bush,
 /turf/open/water/swamp/deep,
@@ -27221,7 +28067,15 @@
 	dir = 10
 	},
 /turf/open/floor/blocks/stonered/tiny,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
+"nSa" = (
+/obj/structure/tent_wall,
+/turf/closed/indestructible/wooddark/hull,
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "nSf" = (
 /obj/structure/fluff/railing/wood{
 	dir = 8;
@@ -27300,7 +28154,9 @@
 	dir = 8
 	},
 /turf/open/floor/ruinedwood,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "nTA" = (
 /obj/structure/bed/inn,
 /obj/item/bedsheet/pelt,
@@ -27347,6 +28203,10 @@
 	},
 /turf/open/floor/grass/yel,
 /area/outdoors/rmh_air)
+"nUN" = (
+/obj/structure/bookcase/random/myths,
+/turf/closed/wall/mineral/decostone/long,
+/area/indoors/town/rmh/chapel/basement)
 "nVa" = (
 /obj/structure/flora/grass/swampweed,
 /turf/open/floor/grass/yel,
@@ -27378,7 +28238,9 @@
 "nVZ" = (
 /mob/living/simple_animal/hostile/retaliate/saiga/tame/saddled,
 /turf/open/floor/dirt/road,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "nWl" = (
 /obj/structure/window/openclose/reinforced,
 /turf/open/floor/ruinedwood{
@@ -27491,6 +28353,28 @@
 "nZb" = (
 /turf/open/floor/wood,
 /area/indoors/town/rmh/crafters_guild/under)
+"nZf" = (
+/obj/structure/bed/sleepingbag/deluxe{
+	pixel_x = 3;
+	pixel_y = 3
+	},
+/obj/effect/decal/cobbleedge{
+	dir = 1;
+	icon_state = "borderfall";
+	pixel_y = 8
+	},
+/obj/structure/fluff/railing/wood/north{
+	plane = -6;
+	pixel_y = 15
+	},
+/obj/structure/fluff/railing/corner{
+	dir = 9
+	},
+/obj/structure/fluff/railing/corner/south_west,
+/turf/open/floor/ruinedwood,
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "nZk" = (
 /obj/structure/table/wood/large/corner_new{
 	dir = 6
@@ -27502,7 +28386,9 @@
 	})
 "nZm" = (
 /turf/open/floor/dirt,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "nZp" = (
 /obj/structure/flora/grass/tundra,
 /obj/structure/flora/tree/burnt,
@@ -27698,7 +28584,9 @@
 /obj/item/key/houses/house3,
 /obj/item/key/houses/house3,
 /turf/open/floor/ruinedwood,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "oen" = (
 /obj/item/natural/worms/leech,
 /obj/item/natural/worms/leech{
@@ -27784,7 +28672,9 @@
 /obj/structure/fluff/nest,
 /obj/structure/fluff/railing/border/east,
 /turf/open/floor/hay,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "ogE" = (
 /turf/open/floor/blocks,
 /area/under/town/rmh/basement)
@@ -27981,7 +28871,9 @@
 /area/indoors/cave/rmh_cave/mine)
 "oln" = (
 /turf/closed/wall/mineral/wooddark,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "olv" = (
 /obj/structure/closet/crate/chest/wicker,
 /obj/effect/spawner/map_spawner/loot/dungeon/misc,
@@ -28127,7 +29019,7 @@
 /area/indoors/town/rmh/garrison)
 "opn" = (
 /obj/structure/bars/cemetery,
-/turf/open/floor/cobblerock/snow,
+/turf/open/floor/concrete,
 /area/outdoors/town{
 	name = "Rivermist Hollow";
 	first_time_text = "RIVERMIST HOLLOW"
@@ -28212,13 +29104,14 @@
 /turf/open/floor/wood,
 /area/indoors/town/rmh/bank)
 "oqW" = (
-/obj/effect/decal/mossy{
-	dir = 8
+/obj/structure/water_pipe,
+/obj/structure/bars/grille{
+	max_integrity = 1500
 	},
-/obj/effect/decal/cobble/mossy{
-	dir = 6
+/obj/structure/fluff/walldeco/bath/wallpipes/outie{
+	dir = 4
 	},
-/turf/open/floor/cobblerock/alt,
+/turf/open/floor/metal,
 /area/outdoors/town{
 	name = "Rivermist Hollow";
 	first_time_text = "RIVERMIST HOLLOW"
@@ -28671,7 +29564,9 @@
 /obj/effect/mapping_helpers/access/keyset/manor/hand,
 /obj/effect/mapping_helpers/access/locker,
 /turf/open/floor/woodturned,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "oBa" = (
 /obj/structure/fluff/railing/wood/north{
 	layer = 2.7;
@@ -28702,7 +29597,9 @@
 	pixel_y = -32
 	},
 /turf/open/floor/ruinedwood/herringbone_clear,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "oBg" = (
 /turf/open/floor/dirt/road,
 /area/outdoors/town{
@@ -28937,7 +29834,8 @@
 /area/indoors/town/rmh/tavern)
 "oIs" = (
 /obj/structure/fluff/walldeco/customflag{
-	pixel_x = -32
+	pixel_x = -32;
+	name = "rivermist hallow flag"
 	},
 /turf/open/floor/wood,
 /area/indoors/town/rmh/garrison)
@@ -29054,7 +29952,9 @@
 	},
 /obj/structure/fluff/railing/corner/south_east,
 /turf/open/floor/tile/harem2,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "oLF" = (
 /turf/closed/wall/mineral/decostone/moss/red/end{
 	dir = 4
@@ -29230,7 +30130,9 @@
 	},
 /obj/machinery/light/fueled/wallfire/candle/l,
 /turf/open/floor/carpet/purple,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "oQn" = (
 /obj/structure/fluff/customsign{
 	desc = "Опасные дикие земли. ";
@@ -29343,7 +30245,9 @@
 	},
 /obj/item/reagent_containers/glass/bucket/wooden,
 /turf/open/floor/ruinedwood/turned,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "oSF" = (
 /obj/structure/fluff/railing/wood/west,
 /obj/structure/fluff/railing/wood,
@@ -29400,6 +30304,7 @@
 	layer = 2.7;
 	pixel_y = 7
 	},
+/obj/structure/flora/tree/fir/snowy,
 /turf/open/floor/dirt{
 	icon_state = "snow"
 	},
@@ -29541,7 +30446,9 @@
 	pixel_y = 36
 	},
 /turf/open/floor/blocks/stonered/tiny,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "oYR" = (
 /obj/structure/fluff/railing/wood/west{
 	plane = -6
@@ -29668,6 +30575,13 @@
 	name = "Rivermist Hollow";
 	first_time_text = "RIVERMIST HOLLOW"
 	})
+"pbL" = (
+/obj/structure/flora/tree/fir/snowy,
+/turf/open/floor/grass/cold,
+/area/outdoors/town{
+	name = "Rivermist Hollow";
+	first_time_text = "RIVERMIST HOLLOW"
+	})
 "pbS" = (
 /obj/effect/decal/wood/herringbone,
 /obj/effect/decal/wood/herringbone{
@@ -29743,7 +30657,9 @@
 	dir = 1
 	},
 /turf/open/floor/woodturned,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "pef" = (
 /obj/structure/table/wood{
 	dir = 2;
@@ -29911,7 +30827,9 @@
 	pixel_x = 1
 	},
 /turf/open/floor/ruinedwood/herringbone_clear,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "pij" = (
 /obj/effect/decal/cleanable/debris/stone,
 /turf/open/floor/cobble/alt,
@@ -29963,7 +30881,9 @@
 "pjn" = (
 /obj/effect/decal/cleanable/debris/wood,
 /turf/open/floor/ruinedwood/darker,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "pjo" = (
 /obj/item/natural/stoneblock,
 /obj/effect/decal/cleanable/debris/stone,
@@ -30057,6 +30977,14 @@
 	icon_state = "snowpatchy_grass"
 	},
 /area/outdoors/rmh_field/north)
+"plI" = (
+/obj/structure/table/wood/plain/alto,
+/obj/effect/decal/edge{
+	dir = 1;
+	color = "#522f26"
+	},
+/turf/open/floor/carpet,
+/area/indoors/town/rmh/tavern)
 "plJ" = (
 /obj/structure/chair/stool,
 /turf/open/floor/cobble/alt,
@@ -30239,7 +31167,9 @@
 /area/indoors/cave/west)
 "pqQ" = (
 /turf/open/floor/ruinedwood/spiral,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "pqY" = (
 /obj/structure/flora/grass/bush/wall/tundra,
 /obj/structure/flora/grass/tundra,
@@ -30283,7 +31213,9 @@
 	hover_color = "#8a6b6b"
 	},
 /turf/open/floor/woodturned,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "prC" = (
 /turf/closed/wall/mineral/stone,
 /area/indoors/town/rmh/merchant)
@@ -30495,7 +31427,7 @@
 	first_time_text = "RIVERMIST HOLLOW"
 	})
 "pxp" = (
-/obj/structure/bookcase/random/archive,
+/obj/structure/bookcase/random/thesis,
 /turf/closed/wall/mineral/decostone/long,
 /area/indoors/town/rmh/chapel/basement)
 "pxz" = (
@@ -30553,7 +31485,9 @@
 	pixel_y = 8
 	},
 /turf/open/floor/tile/harem2,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "pzE" = (
 /turf/closed/mineral/random/high_nonval,
 /area/under/underdark/rmh{
@@ -30620,7 +31554,9 @@
 	pixel_y = 14
 	},
 /turf/open/floor/woodturned,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "pBw" = (
 /turf/open/floor/tile/tilerg,
 /area/under/town/rmh/basement)
@@ -30644,7 +31580,9 @@
 /turf/open/floor/dirt/road{
 	icon_state = "snowpatchy_grass"
 	},
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "pDq" = (
 /obj/structure/water_pipe,
 /obj/structure/bars/grille,
@@ -30688,7 +31626,9 @@
 	pixel_y = 7
 	},
 /turf/open/floor/ruinedwood,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "pDP" = (
 /obj/structure/stairs/stone{
 	dir = 4
@@ -30704,7 +31644,9 @@
 	},
 /obj/item/candle/gold,
 /turf/open/floor/wood,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "pDX" = (
 /obj/structure/floordoor/gatehatch/inner{
 	redstone_id = "gatelava"
@@ -30802,7 +31744,9 @@
 	dir = 1
 	},
 /turf/open/floor/ruinedwood,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "pIm" = (
 /turf/closed/wall/mineral/decostone/moss/cand,
 /area/indoors/town/rmh/chapel/basement)
@@ -30981,7 +31925,8 @@
 	dir = 1
 	},
 /obj/structure/fluff/walldeco/customflag{
-	pixel_x = -32
+	pixel_x = -32;
+	name = "rivermist hallow flag"
 	},
 /turf/open/floor/cobble/snow,
 /area/indoors/town/rmh/garrison)
@@ -31016,7 +31961,9 @@
 "pNm" = (
 /obj/structure/fluff/railing/wood/east,
 /turf/open/transparent/openspace,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "pNr" = (
 /obj/structure/rack/underworld,
 /obj/effect/spawner/map_spawner/loot/dungeon/medical,
@@ -31067,7 +32014,9 @@
 	pixel_x = -3
 	},
 /turf/open/floor/ruinedwood/herringbone_clear,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "pNP" = (
 /obj/structure/fluff/railing/border,
 /turf/open/floor/blocks,
@@ -31285,6 +32234,15 @@
 	first_time_text = "FORGOTTEN HALLS";
 	name = "underdungeon"
 	})
+"pUC" = (
+/obj/structure/stairs{
+	dir = 8
+	},
+/obj/structure/fluff/festive_garlands/random{
+	pixel_y = -16
+	},
+/turf/open/floor/ruinedwood,
+/area/indoors/town/rmh/tavern)
 "pUV" = (
 /obj/effect/decal/mossy{
 	dir = 8;
@@ -31361,6 +32319,20 @@
 	},
 /turf/open/floor/cobblerock,
 /area/under/town/rmh/sewer)
+"pWm" = (
+/obj/effect/decal/cobbleedge{
+	dir = 1;
+	icon_state = "borderfall";
+	pixel_y = 8
+	},
+/obj/structure/fluff/railing/wood/north{
+	plane = -6;
+	pixel_y = 15
+	},
+/turf/open/floor/ruinedwood,
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "pWs" = (
 /turf/closed/wall/mineral/stonebrick,
 /area/indoors/town/apothecary)
@@ -31386,7 +32358,9 @@
 /turf/closed/wall/mineral/roofwall/middle{
 	dir = 4
 	},
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "pYm" = (
 /turf/open/floor/naturalstone,
 /area/outdoors/rmh_air)
@@ -31623,7 +32597,9 @@
 "qdA" = (
 /obj/structure/fluff/railing/border,
 /turf/open/floor/ruinedwood/herringbone_clear,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "qdM" = (
 /obj/effect/decal/wood/herringbone{
 	dir = 4
@@ -31778,7 +32754,9 @@
 "qjO" = (
 /obj/structure/fluff/railing/wood/west,
 /turf/open/floor/ruinedwood/turned,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "qkl" = (
 /obj/structure/fluff/railing/wood,
 /turf/open/floor/cobblerock,
@@ -31920,7 +32898,9 @@
 	},
 /obj/effect/decal/wood/herringbone2,
 /turf/open/floor/blocks/stonered,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "qnL" = (
 /obj/structure/fluff/railing/wood{
 	plane = -6
@@ -31980,7 +32960,9 @@
 	dir = 1
 	},
 /turf/open/floor/churchrough,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "qpA" = (
 /turf/closed/wall/mineral/decostone/long/east_west,
 /area/under/town/rmh/basement)
@@ -32021,7 +33003,9 @@
 "qpX" = (
 /obj/machinery/light/fueled/wallfire/candle/r,
 /turf/open/transparent/openspace,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "qqG" = (
 /turf/open/floor/ruinedwood/herringbone,
 /area/indoors/town/rmh/farm)
@@ -32064,6 +33048,14 @@
 /obj/effect/decal/cleanable/debris/wood,
 /turf/open/floor/blocks/stonered,
 /area/under/town/basement)
+"qrA" = (
+/obj/structure/tent_wall{
+	dir = 8
+	},
+/turf/closed/indestructible/wooddark/hull,
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "qrH" = (
 /obj/effect/decal/cobbleedge{
 	dir = 8;
@@ -32250,11 +33242,22 @@
 	dir = 8
 	},
 /turf/open/floor/ruinedwood/turned,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "qwa" = (
 /obj/structure/handcart,
 /turf/open/floor/naturalstone,
 /area/indoors/cave/rmh_cave/mine)
+"qwE" = (
+/obj/machinery/light/fueled/torchholder/hotspring{
+	pixel_x = -32
+	},
+/obj/structure/fluff/railing/border/west,
+/turf/open/floor/ruinedwood,
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "qwT" = (
 /obj/effect/decal/cobbleedge/alt{
 	dir = 10;
@@ -32313,7 +33316,9 @@
 	dir = 8
 	},
 /turf/open/floor/tile/harem1,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "qyl" = (
 /obj/structure/flora/tree/burnt,
 /turf/open/floor/grass/cold,
@@ -32344,12 +33349,16 @@
 /obj/item/natural/wood/plank,
 /obj/item/weapon/hammer/wood,
 /turf/open/floor/ruinedwood/spiral,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "qyV" = (
 /turf/closed/wall/mineral/roofwall/middle{
 	dir = 8
 	},
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "qzm" = (
 /obj/structure/fluff/railing/wood{
 	pixel_y = -8
@@ -32388,7 +33397,9 @@
 	pixel_y = 0
 	},
 /turf/open/floor/blocks/stonered/tiny,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "qzZ" = (
 /turf/open/floor/grass/yel,
 /area/outdoors/rmh_field)
@@ -32397,7 +33408,9 @@
 	pixel_y = 32
 	},
 /turf/open/floor/woodturned,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "qBh" = (
 /obj/item/reagent_containers/glass/bottle/rtoper{
 	pixel_x = -6
@@ -32543,7 +33556,7 @@
 /obj/structure/fluff/railing/wood{
 	plane = -6
 	},
-/turf/open/floor/cobblerock/snow,
+/turf/open/floor/cobble/snow,
 /area/outdoors/town{
 	name = "Rivermist Hollow";
 	first_time_text = "RIVERMIST HOLLOW"
@@ -32637,6 +33650,7 @@
 /obj/structure/window/openclose{
 	dir = 1
 	},
+/turf/open/floor/ruinedwood/darker,
 /area/indoors/town/rmh/town_hall)
 "qFu" = (
 /turf/open/floor/hexstone,
@@ -32774,7 +33788,9 @@
 	},
 /obj/structure/closet/crate/crafted_closet/inn/south,
 /turf/open/floor/wood,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "qJy" = (
 /obj/structure/carpet/red,
 /turf/open/floor/woodturned,
@@ -32789,6 +33805,12 @@
 	name = "Rivermist Hollow";
 	first_time_text = "RIVERMIST HOLLOW"
 	})
+"qJN" = (
+/obj/structure/fluff/festive_garlands/random{
+	pixel_y = -16
+	},
+/turf/open/floor/carpet,
+/area/indoors/town/rmh/tavern)
 "qJP" = (
 /obj/structure/flora/ausbushes/ywflowers,
 /turf/open/floor/dirt{
@@ -33260,7 +34282,9 @@
 	},
 /obj/effect/mapping_helpers/access/locker,
 /turf/open/floor/ruinedwood/turned,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "qVp" = (
 /obj/structure/spider/stickyweb,
 /turf/open/floor/naturalstone,
@@ -33319,7 +34343,9 @@
 "qWi" = (
 /obj/structure/chair/bench/couchablack/r,
 /turf/open/floor/wood,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "qWj" = (
 /obj/effect/decal/cobblerockedge/alt{
 	dir = 8
@@ -33335,7 +34361,9 @@
 	},
 /obj/structure/fluff/railing/wood/east,
 /turf/open/floor/ruinedwood,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "qWA" = (
 /turf/open/water/marsh/deep,
 /area/outdoors/town{
@@ -33354,7 +34382,9 @@
 /turf/open/floor/ruinedwood{
 	icon_state = "weird1"
 	},
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "qWG" = (
 /obj/machinery/light/fueled/wallfire/candle/blue/l{
 	pixel_y = -32
@@ -33366,7 +34396,9 @@
 /obj/item/reagent_containers/glass/bucket/wooden,
 /obj/machinery/light/fueled/wallfire/candle,
 /turf/open/floor/wood,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "qWZ" = (
 /obj/structure/flora/tree/pine{
 	icon_state = "pine3"
@@ -33523,7 +34555,9 @@
 	dir = 1
 	},
 /turf/open/floor/blocks/stonered,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "qZQ" = (
 /obj/structure/closet/crate/chest/crate,
 /obj/item/paper,
@@ -33584,7 +34618,9 @@
 	pixel_x = 8
 	},
 /turf/open/floor/tile/harem2,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "rbd" = (
 /obj/structure/fluff/railing/wood/east{
 	plane = -6
@@ -33628,7 +34664,9 @@
 	},
 /obj/structure/fluff/railing/wood/east,
 /turf/open/floor/grass/cold,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "rbH" = (
 /obj/structure/fluff/railing/stonehedge{
 	dir = 1
@@ -33912,7 +34950,9 @@
 	},
 /obj/item/broom,
 /turf/open/floor/ruinedwood/turned,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "rjC" = (
 /obj/machinery/light/fueled/torchholder{
 	pixel_y = -32
@@ -33987,7 +35027,9 @@
 	},
 /obj/structure/fluff/railing/corner/south_west,
 /turf/open/floor/tile/harem1,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "rld" = (
 /obj/item/natural/rock,
 /turf/open/floor/dirt/road{
@@ -34009,7 +35051,9 @@
 "rlv" = (
 /obj/structure/chair/bench/couchablack/r,
 /turf/open/floor/carpet/royalblack,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "rlD" = (
 /obj/structure/fluff/walldeco/church/line,
 /turf/open/floor/church,
@@ -34267,7 +35311,9 @@
 	pixel_x = -5
 	},
 /turf/open/floor/ruinedwood/herringbone_clear,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "rsT" = (
 /obj/structure/fluff/walldeco/chains{
 	icon_state = "chains8"
@@ -34414,6 +35460,20 @@
 	name = "Rivermist Hollow";
 	first_time_text = "RIVERMIST HOLLOW"
 	})
+"rvf" = (
+/obj/effect/decal/cobbleedge{
+	dir = 2;
+	icon_state = "borderfall";
+	pixel_y = -8
+	},
+/obj/structure/fluff/railing/wood{
+	pixel_y = -16
+	},
+/obj/structure/fluff/railing/corner/south_east,
+/turf/open/floor/ruinedwood,
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "rvi" = (
 /obj/structure/flora/grass/bush_meagre/tundra,
 /turf/open/floor/grass/cold,
@@ -34518,7 +35578,9 @@
 "rzb" = (
 /obj/structure/chair/bench/coucha,
 /turf/open/floor/ruinedwood/herringbone_clear,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "rzd" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/cobblerock/snow,
@@ -34529,7 +35591,9 @@
 /area/under/town/rmh/sewer)
 "rzK" = (
 /turf/open/floor/tile/diamond,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "rzU" = (
 /obj/machinery/essence/test_tube{
 	pixel_y = 6;
@@ -34581,7 +35645,8 @@
 	pixel_y = -32
 	},
 /obj/structure/fluff/walldeco/customflag{
-	pixel_x = -32
+	pixel_x = -32;
+	name = "rivermist hallow flag"
 	},
 /obj/item/candle/yellow{
 	pixel_y = 9;
@@ -34773,7 +35838,9 @@
 	},
 /obj/machinery/light/fueled/wallfire/candle/r,
 /turf/open/floor/wood,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "rGh" = (
 /obj/structure/flora/grass/herb/random,
 /turf/open/floor/grass/cold,
@@ -34812,7 +35879,9 @@
 	plane = -6
 	},
 /turf/open/floor/ruinedwood/turned,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "rGV" = (
 /obj/structure/fluff/walldeco/church/line,
 /obj/structure/flora/pillar{
@@ -34884,6 +35953,18 @@
 /obj/item/weapon/knife/villager,
 /turf/open/floor/tile/harem,
 /area/indoors/town/rmh/magician)
+"rIE" = (
+/obj/structure/fluff/festive_garlands/random{
+	pixel_y = -16
+	},
+/obj/effect/decal/cobblerockedge/alt{
+	dir = 4
+	},
+/turf/open/floor/cobble/snow,
+/area/outdoors/town{
+	name = "Rivermist Hollow";
+	first_time_text = "RIVERMIST HOLLOW"
+	})
 "rIG" = (
 /turf/closed/wall/mineral/decostone/moss/long,
 /area/indoors/town/rmh/library)
@@ -34977,7 +36058,9 @@
 	pixel_y = 16
 	},
 /turf/open/floor/ruinedwood/herringbone_clear,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "rLX" = (
 /obj/effect/decal/cobbleedge{
 	dir = 1;
@@ -34989,7 +36072,9 @@
 	},
 /obj/structure/chair/bench/couchablack,
 /turf/open/floor/carpet/royalblack,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "rMm" = (
 /obj/effect/decal/remains/human,
 /turf/open/floor/hexstone,
@@ -35109,6 +36194,9 @@
 /obj/machinery/light/fueled/wallfire/candle/l{
 	pixel_y = -32
 	},
+/obj/structure/fluff/festive_flags/random{
+	pixel_y = -16
+	},
 /turf/open/floor/ruinedwood/spiralfade,
 /area/indoors/town/rmh/tavern)
 "rOs" = (
@@ -35203,7 +36291,9 @@
 	pixel_y = 3
 	},
 /turf/open/floor/ruinedwood/herringbone_clear,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "rQB" = (
 /obj/structure/closet/crate/chest/old_crate,
 /turf/open/floor/naturalstone,
@@ -35389,6 +36479,16 @@
 	},
 /turf/open/floor/ruinedwood/herringbone_clear,
 /area/under/town/rmh/basement)
+"rTE" = (
+/obj/effect/decal/edge{
+	dir = 6;
+	color = "#522f26"
+	},
+/obj/structure/fluff/festive_garlands/random{
+	pixel_y = -16
+	},
+/turf/open/floor/woodturned,
+/area/indoors/town/rmh/tavern)
 "rTI" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/ruinedwood/spiral,
@@ -35398,13 +36498,17 @@
 	dir = 4
 	},
 /turf/open/floor/woodturned,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "rTT" = (
 /obj/structure/door/swing{
 	name = "stables"
 	},
 /turf/open/floor/dirt/road,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "rUa" = (
 /obj/structure/well/fountain{
 	pixel_x = -16;
@@ -35438,7 +36542,9 @@
 	pixel_x = -8
 	},
 /turf/open/floor/carpet/purple,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "rUE" = (
 /obj/machinery/light/fueled/torchholder{
 	dir = 1
@@ -35536,7 +36642,9 @@
 	pixel_x = 8
 	},
 /turf/open/floor/tile/harem2,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "rWC" = (
 /obj/effect/landmark/quest_spawner/hard,
 /turf/open/floor/naturalstone,
@@ -35958,7 +37066,9 @@
 	dir = 4
 	},
 /turf/open/floor/ruinedwood,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "sky" = (
 /obj/item/weapon/pick/copper,
 /turf/open/floor/naturalstone,
@@ -36121,7 +37231,9 @@
 	dir = 4
 	},
 /turf/open/floor/carpet,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "soz" = (
 /obj/effect/spawner/map_spawner/loot/dungeon/misc,
 /turf/open/floor/naturalstone,
@@ -36194,7 +37306,9 @@
 	pixel_x = 7
 	},
 /turf/open/floor/carpet/red,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "sqo" = (
 /obj/structure/table/wood/counter/end,
 /turf/open/floor/woodturned,
@@ -36364,7 +37478,8 @@
 /area/under/town/rmh/basement)
 "stO" = (
 /obj/structure/fluff/walldeco/customflag{
-	pixel_x = -32
+	pixel_x = -32;
+	name = "rivermist hallow flag"
 	},
 /turf/open/floor/concrete,
 /area/indoors/town/rmh/garrison)
@@ -36425,7 +37540,9 @@
 /turf/closed/wall/mineral/roofwall/outercorner{
 	dir = 8
 	},
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "sws" = (
 /turf/closed/mineral/random/cold,
 /area/indoors/town/rmh/magician/pass)
@@ -36563,11 +37680,15 @@
 	hover_color = "#8a6b6b"
 	},
 /turf/open/floor/woodturned,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "sBd" = (
 /obj/structure/chair/bench/couchamagenta/r,
 /turf/open/floor/carpet/purple,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "sBe" = (
 /obj/structure/flora/grass/bush/tundra,
 /turf/open/floor/grass/cold,
@@ -36700,7 +37821,8 @@
 	},
 /obj/item/clothing/gloves/angle,
 /obj/structure/fluff/walldeco/customflag{
-	pixel_x = -32
+	pixel_x = -32;
+	name = "rivermist hallow flag"
 	},
 /turf/open/floor/woodturned,
 /area/indoors/town/rmh/garrison)
@@ -36794,7 +37916,8 @@
 	})
 "sFQ" = (
 /obj/structure/fluff/walldeco/customflag{
-	pixel_x = 32
+	pixel_x = 32;
+	name = "rivermist hallow flag"
 	},
 /turf/open/floor/dirt/road{
 	icon_state = "snowpatchy_grass"
@@ -36819,7 +37942,9 @@
 /area/indoors/town/rmh/magician)
 "sHf" = (
 /turf/closed/wall/mineral/wood,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "sHh" = (
 /turf/open/floor/herringbone,
 /area/indoors/cave/rmh_cave/to_underdark{
@@ -37033,7 +38158,9 @@
 	dir = 8
 	},
 /turf/open/floor/blocks/stonered/tiny,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "sMq" = (
 /obj/item/reagent_containers/food/snacks/crow{
 	dir = 8
@@ -37092,7 +38219,9 @@
 "sNH" = (
 /obj/structure/ladder,
 /turf/open/floor/ruinedwood/spiral,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "sNL" = (
 /obj/machinery/light/fueled/firebowl/standing{
 	pixel_y = 13
@@ -37246,7 +38375,9 @@
 	plane = -6
 	},
 /turf/open/floor/ruinedwood,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "sRG" = (
 /turf/closed/wall/mineral/roofwall/middle{
 	dir = 8
@@ -37271,7 +38402,9 @@
 /turf/open/floor/ruinedwood{
 	icon_state = "weird1"
 	},
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "sSo" = (
 /turf/closed/wall/mineral/wooddark/window,
 /area/indoors/town/rmh/chapel)
@@ -37303,6 +38436,20 @@
 	name = "Rivermist Hollow";
 	first_time_text = "RIVERMIST HOLLOW"
 	})
+"sTe" = (
+/obj/structure/fluff/railing/wood/north{
+	layer = 2.7;
+	pixel_y = 7
+	},
+/obj/effect/decal/edge{
+	dir = 2;
+	color = "#3b3b3b"
+	},
+/obj/structure/fluff/festive_garlands/random{
+	pixel_y = -16
+	},
+/turf/open/floor/wood,
+/area/indoors/town/rmh/tavern)
 "sTf" = (
 /obj/structure/rack/shelf/biggest,
 /turf/open/floor/blocks/newstone,
@@ -37580,7 +38727,9 @@
 "sZt" = (
 /obj/structure/chair/bench/couch/right,
 /turf/open/floor/tile/bfloorz,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "sZz" = (
 /turf/closed/mineral/bedrock/cold{
 	name = "solid rock"
@@ -37669,7 +38818,9 @@
 	hover_color = "#8a6b6b"
 	},
 /turf/open/floor/ruinedwood,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "tcR" = (
 /obj/structure/table/wood{
 	dir = 1;
@@ -37739,7 +38890,9 @@
 /obj/item/natural/saddle,
 /obj/item/natural/saddle,
 /turf/open/floor/hay,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "teT" = (
 /obj/structure/rotation_piece/cog/large,
 /turf/open/floor/concrete,
@@ -38227,7 +39380,9 @@
 	pixel_y = 7
 	},
 /turf/open/floor/ruinedwood,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "trf" = (
 /obj/structure/flora/grass/tundra,
 /obj/structure/flora/ausbushes/ppflowers,
@@ -38329,7 +39484,8 @@
 	})
 "ttG" = (
 /obj/structure/fluff/walldeco/customflag{
-	pixel_x = 32
+	pixel_x = 32;
+	name = "rivermist hallow flag"
 	},
 /turf/open/floor/grass/cold,
 /area/outdoors/town{
@@ -38372,6 +39528,7 @@
 	hover_color = "#8a6b6b"
 	},
 /obj/structure/window/openclose,
+/turf/open/floor/ruinedwood/darker,
 /area/indoors/town/rmh/town_hall)
 "tui" = (
 /obj/structure/fluff/railing/border/east,
@@ -38405,7 +39562,9 @@
 	icon_state = "tablewood1"
 	},
 /turf/open/floor/carpet/royalblack,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "tuS" = (
 /obj/structure/rack/shelf,
 /obj/item/reagent_containers/glass/cup/wooden{
@@ -38648,7 +39807,8 @@
 /obj/machinery/light/fueled/torchholder/c,
 /obj/structure/table/wood/bar,
 /obj/structure/fluff/walldeco/customflag{
-	pixel_x = -32
+	pixel_x = -32;
+	name = "rivermist hallow flag"
 	},
 /obj/item/candle/yellow,
 /turf/open/floor/cobble/snow,
@@ -38697,7 +39857,9 @@
 "tAf" = (
 /obj/structure/closet/crate/chest/old_crate,
 /turf/open/floor/ruinedwood,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "tAA" = (
 /obj/structure/fake_machine/scomm{
 	pixel_y = -32
@@ -38830,6 +39992,12 @@
 "tEJ" = (
 /turf/closed/wall/mineral/decostone/cand,
 /area/indoors/town/rmh/crafters_guild)
+"tEN" = (
+/obj/structure/fluff/festive_garlands/random{
+	pixel_y = -16
+	},
+/turf/open/floor/woodturned,
+/area/indoors/town/rmh/tavern)
 "tER" = (
 /obj/effect/spawner/map_spawner/treeorstump,
 /turf/open/floor/dirt{
@@ -38981,6 +40149,12 @@
 /obj/effect/decal/edge{
 	dir = 2;
 	color = "#3b3b3b"
+	},
+/obj/structure/fluff/festive_garlands/random{
+	pixel_y = -16
+	},
+/obj/machinery/light/fueled/wallfire/candle/blue{
+	pixel_y = -32
 	},
 /turf/open/floor/tile/harem1,
 /area/indoors/town/rmh/tavern)
@@ -39458,7 +40632,9 @@
 	},
 /obj/item/weapon/pitchfork,
 /turf/open/floor/hay,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "tUT" = (
 /obj/structure/table/wood{
 	dir = 10;
@@ -39478,6 +40654,14 @@
 /area/outdoors/town{
 	name = "Rivermist Hollow";
 	first_time_text = "RIVERMIST HOLLOW"
+	})
+"tVl" = (
+/obj/structure/tent_wall{
+	dir = 1
+	},
+/turf/closed/indestructible/wooddark/hull,
+/area/indoors/town/rmh{
+	name = "wagon"
 	})
 "tVn" = (
 /obj/structure/fluff/statue/small,
@@ -39637,7 +40821,9 @@
 /obj/structure/fluff/railing/corner/north_east,
 /obj/machinery/light/fueled/wallfire/candle,
 /turf/open/floor/tile/diamond,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "tZD" = (
 /obj/item/natural/rock,
 /turf/open/floor/cobble/mossy,
@@ -39794,7 +40980,9 @@
 /obj/structure/fermentation_keg/sourwine,
 /obj/effect/decal/cleanable/debris/wood,
 /turf/open/floor/ruinedwood/spiral,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "uei" = (
 /obj/structure/rack,
 /obj/item/weapon/thresher{
@@ -39848,7 +41036,9 @@
 	dir = 4
 	},
 /turf/open/floor/carpet,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "ufh" = (
 /obj/effect/decal/cleanable/debris/stone,
 /obj/effect/decal/cleanable/dirt/cobweb{
@@ -40041,6 +41231,16 @@
 	},
 /turf/open/floor/carpet/red,
 /area/indoors/town/rmh/chapel/basement)
+"ukg" = (
+/obj/effect/decal/edge{
+	dir = 10;
+	color = "#522f26"
+	},
+/obj/structure/fluff/festive_garlands/random{
+	pixel_y = -16
+	},
+/turf/open/floor/woodturned,
+/area/indoors/town/rmh/tavern)
 "ukh" = (
 /obj/structure/table/wood{
 	icon_state = "longtable"
@@ -40057,7 +41257,9 @@
 "uky" = (
 /obj/structure/table/vtable,
 /turf/open/floor/ruinedwood/herringbone_clear,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "ukG" = (
 /turf/open/floor/churchrough/purple,
 /area/under/cave/mazedungeon{
@@ -40103,7 +41305,9 @@
 	},
 /obj/machinery/light/fueled/wallfire/candle/r,
 /turf/open/floor/blocks/stonered/tiny,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "umP" = (
 /obj/structure/stairs/stone/church{
 	dir = 8
@@ -40199,7 +41403,9 @@
 	dir = 8
 	},
 /turf/open/floor/ruinedwood,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "uoG" = (
 /obj/machinery/light/fueled/wallfire/candle/r{
 	pixel_y = 32
@@ -40238,7 +41444,9 @@
 	pixel_y = -1
 	},
 /turf/open/floor/concrete,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "upu" = (
 /turf/open/lava,
 /area/indoors/cave/rmh_cave/to_underdark{
@@ -40381,6 +41589,20 @@
 /obj/structure/fluff/railing/border/west,
 /turf/open/floor/cobble,
 /area/indoors/town/rmh/garrison)
+"utu" = (
+/obj/structure/chair/wood/alt/chair_noble/red{
+	dir = 8
+	},
+/obj/effect/decal/cobbleedge{
+	dir = 1;
+	icon_state = "borderfall";
+	pixel_y = 8
+	},
+/obj/structure/fluff/festive_garlands/random{
+	pixel_y = 46
+	},
+/turf/open/floor/carpet,
+/area/indoors/town/rmh/tavern)
 "utI" = (
 /obj/effect/landmark/start/adventurerlate{
 	dir = 4
@@ -40480,6 +41702,13 @@
 /turf/open/floor/naturalstone,
 /area/under/underdark/rmh{
 	name = "Caves & Mines"
+	})
+"uwA" = (
+/obj/machinery/light/fueled/torchholder/l,
+/turf/open/floor/cobblerock/snow,
+/area/outdoors/town{
+	name = "Rivermist Hollow";
+	first_time_text = "RIVERMIST HOLLOW"
 	})
 "uwE" = (
 /obj/effect/landmark/quest_spawner/hard,
@@ -40712,7 +41941,9 @@
 	pixel_y = 5
 	},
 /turf/open/floor/ruinedwood/herringbone_clear,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "uCl" = (
 /obj/machinery/light/fueled/torchholder/l,
 /turf/open/floor/ruinedwood/spiral,
@@ -40741,7 +41972,9 @@
 	},
 /obj/structure/closet/crate/chest/old_crate,
 /turf/open/floor/ruinedwood/spiral,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "uDs" = (
 /obj/structure/fluff/railing/wood{
 	dir = 1;
@@ -40759,7 +41992,9 @@
 	},
 /obj/machinery/light/fueled/wallfire/candle/l,
 /turf/open/floor/ruinedwood,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "uDF" = (
 /obj/effect/decal/cobbleedge{
 	dir = 4;
@@ -40856,7 +42091,9 @@
 "uGy" = (
 /obj/structure/table/vtable/v2,
 /turf/open/floor/ruinedwood/herringbone_clear,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "uGD" = (
 /obj/structure/fluff/railing/border{
 	plane = -6
@@ -41045,7 +42282,9 @@
 	dir = 8
 	},
 /turf/open/floor/carpet/royalblack,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "uKV" = (
 /obj/structure/well/fountain{
 	pixel_x = -16;
@@ -41177,7 +42416,9 @@
 	},
 /obj/effect/decal/cleanable/debris/wood,
 /turf/open/floor/ruinedwood/spiral,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "uNq" = (
 /obj/structure/flora/rock/water,
 /obj/structure/hotspring,
@@ -41280,7 +42521,9 @@
 /area/indoors/town/rmh/crafters_guild/under)
 "uQH" = (
 /turf/closed/wall/mineral/wooddark/window,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "uQJ" = (
 /turf/open/floor/dirt{
 	icon_state = "snow"
@@ -41296,7 +42539,9 @@
 "uQV" = (
 /obj/machinery/light/fueled/torchholder/l,
 /turf/open/floor/hay,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "uRi" = (
 /obj/structure/stairs/stone{
 	dir = 1
@@ -41553,7 +42798,9 @@
 "uYp" = (
 /obj/structure/closet/crate/crafted_closet/inn/south,
 /turf/open/floor/ruinedwood,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "uYx" = (
 /obj/structure/fluff/walldeco/bath/wallpipes/innie{
 	pixel_y = 18;
@@ -41661,7 +42908,9 @@
 /turf/closed/wall/mineral/roofwall/outercorner{
 	dir = 4
 	},
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "vaP" = (
 /obj/structure/rack,
 /obj/item/weapon/sword{
@@ -41721,6 +42970,13 @@
 	dir = 8
 	},
 /area/outdoors/beach/rmh_beach)
+"vcT" = (
+/obj/effect/decal/edge{
+	dir = 2;
+	color = "#522f26"
+	},
+/turf/open/floor/woodturned,
+/area/indoors/town/rmh/tavern)
 "vdh" = (
 /obj/effect/decal/edge_corner{
 	dir = 1;
@@ -41748,7 +43004,9 @@
 /obj/structure/fluff/railing/corner/south_east,
 /obj/machinery/light/fueled/wallfire/candle/r,
 /turf/open/floor/carpet,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "vdz" = (
 /obj/structure/fluff/railing/corner/north_east,
 /turf/open/floor/ruinedwood/darker,
@@ -41870,6 +43128,9 @@
 /obj/item/storage/keyring{
 	pixel_x = 4;
 	pixel_y = -7
+	},
+/obj/structure/fluff/festive_flags/random{
+	pixel_y = -16
 	},
 /turf/open/floor/tile/bfloorz,
 /area/indoors/town/rmh/tavern)
@@ -42462,9 +43723,7 @@
 /turf/open/floor/cobble,
 /area/outdoors/town/rmh/roofs)
 "vzE" = (
-/obj/structure/bookcase/random/archive{
-	opacity = 0
-	},
+/obj/structure/bookcase/random/thesis,
 /obj/effect/decal/cleanable/dirt/cobweb{
 	dir = 8
 	},
@@ -42516,7 +43775,7 @@
 /turf/open/floor/grass/cold,
 /area/outdoors/rmh_field/east)
 "vAQ" = (
-/obj/structure/bookcase/random/archive,
+/obj/structure/bookcase/random/eoratica,
 /obj/effect/decal/cleanable/dirt/cobweb,
 /turf/open/floor/twig,
 /area/indoors/town/rmh/witch)
@@ -42642,9 +43901,7 @@
 /turf/open/floor/blocks/stonered/tiny,
 /area/indoors/town/rmh/garrison)
 "vFN" = (
-/obj/structure/bookcase/random/archive{
-	opacity = 0
-	},
+/obj/structure/bookcase/random/thesis,
 /turf/open/floor/hexstone,
 /area/indoors/cave/rmh_cave/minotaur)
 "vFQ" = (
@@ -42775,6 +44032,9 @@
 	dir = 2;
 	color = "#3b3b3b"
 	},
+/obj/structure/fluff/festive_garlands/random{
+	pixel_y = -16
+	},
 /turf/open/floor/tile/harem1,
 /area/indoors/town/rmh/tavern)
 "vKp" = (
@@ -42793,7 +44053,7 @@
 /turf/open/floor/concrete,
 /area/indoors/town/rmh/chapel)
 "vKR" = (
-/obj/structure/bookcase/random/archive,
+/obj/structure/bookcase/random/apocrypha,
 /turf/closed/wall/mineral/stone,
 /area/indoors/town/rmh/chapel/basement)
 "vKW" = (
@@ -42847,6 +44107,15 @@
 /obj/machinery/light/fueled/firebowl/stump,
 /turf/open/floor/grass/yel,
 /area/outdoors/rmh_air)
+"vMk" = (
+/obj/structure/tent_wall{
+	icon_state = "tent_door1";
+	name = "tent door"
+	},
+/turf/closed/indestructible/wooddark/hull,
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "vMl" = (
 /obj/structure/closet/crate/chest/old_crate,
 /obj/effect/spawner/map_spawner/loot/dungeon/medical,
@@ -42902,7 +44171,9 @@
 	dir = 4
 	},
 /turf/open/floor/ruinedwood/herringbone_clear,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "vOD" = (
 /obj/effect/decal/edge{
 	dir = 1;
@@ -42951,6 +44222,13 @@
 	},
 /turf/open/floor/tile/harem,
 /area/indoors/town/rmh/magician)
+"vPl" = (
+/obj/effect/decal/edge{
+	dir = 10;
+	color = "#522f26"
+	},
+/turf/open/floor/woodturned,
+/area/indoors/town/rmh/tavern)
 "vPJ" = (
 /obj/structure/fluff/railing/border{
 	dir = 9
@@ -43021,7 +44299,9 @@
 	pixel_x = -32
 	},
 /turf/open/floor/ruinedwood/turned,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "vRF" = (
 /obj/structure/roguetent/preopen,
 /turf/open/floor/naturalstone,
@@ -43039,7 +44319,9 @@
 	pixel_x = 8
 	},
 /turf/open/floor/tile/harem1,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "vRQ" = (
 /obj/structure/closet/crate/chest,
 /obj/item/reagent_containers/powder/salt,
@@ -43100,6 +44382,10 @@
 "vSA" = (
 /turf/closed/wall/mineral/decostone/cand,
 /area/indoors/town/rmh/bath)
+"vSM" = (
+/obj/structure/flora/tree/fir/festive,
+/turf/open/floor/carpet/lord/center,
+/area/indoors/town/rmh/town_hall)
 "vSR" = (
 /obj/structure/fluff/walldeco/church/line{
 	dir = 1
@@ -43207,7 +44493,9 @@
 	layer = 2.9
 	},
 /turf/open/floor/carpet,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "vVd" = (
 /obj/machinery/light/fueled/campfire,
 /turf/open/floor/cobblerock,
@@ -43301,7 +44589,9 @@
 "vXO" = (
 /obj/structure/fluff/railing/corner/south_west,
 /turf/open/floor/tile/harem1,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "vXT" = (
 /obj/structure/flora/newleaf/snow,
 /turf/open/floor/ruinedwood/platform,
@@ -43402,7 +44692,9 @@
 	},
 /obj/structure/fluff/railing/wood/west,
 /turf/open/floor/ruinedwood,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "wbw" = (
 /obj/structure/flora/grass/tundra,
 /obj/structure/fluff/railing/border{
@@ -43443,7 +44735,9 @@
 	dir = 4
 	},
 /turf/closed/wall/mineral/wooddark/horizontal,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "wbX" = (
 /turf/closed/wall/mineral/decostone/moss/long,
 /area/indoors/town/rmh/chapel)
@@ -43451,6 +44745,20 @@
 /turf/open/water/marsh/deep,
 /area/indoors/cave/rmh_cave/to_underdark{
 	ceiling_protected = 1
+	})
+"wcx" = (
+/obj/effect/decal/cobbleedge{
+	dir = 2;
+	icon_state = "borderfall";
+	pixel_y = -8
+	},
+/obj/structure/fluff/railing/wood{
+	pixel_y = -16
+	},
+/obj/structure/fluff/railing/corner/south_west,
+/turf/open/floor/ruinedwood,
+/area/indoors/town/rmh{
+	name = "wagon"
 	})
 "wcK" = (
 /obj/structure/fluff/railing/border/west,
@@ -43477,7 +44785,9 @@
 	dir = 8
 	},
 /turf/open/floor/hay,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "wdj" = (
 /obj/machinery/light/fueled/wallfire/candle,
 /obj/structure/table/wood/plain/alto,
@@ -43634,7 +44944,8 @@
 "wha" = (
 /obj/structure/chair/wood/alt/chair3,
 /obj/structure/fluff/walldeco/customflag{
-	pixel_y = 32
+	pixel_y = 32;
+	name = "rivermist hallow flag"
 	},
 /turf/open/floor/cobble/alt,
 /area/indoors/town/rmh/garrison)
@@ -43738,7 +45049,9 @@
 /obj/structure/fluff/railing/border/east,
 /obj/machinery/light/fueled/firebowl/standing,
 /turf/open/floor/ruinedwood/herringbone_clear,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "wjJ" = (
 /turf/open/floor/tile/brick,
 /area/under/town/rmh/basement)
@@ -43759,7 +45072,9 @@
 	},
 /obj/item/reagent_containers/glass/bucket/pot,
 /turf/open/floor/blocks/stonered/tiny,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "wkd" = (
 /obj/machinery/light/fueled/torchholder/l,
 /turf/open/floor/naturalstone,
@@ -43793,6 +45108,13 @@
 /obj/structure/table/wood/fancy/black,
 /turf/open/floor/carpet/purple,
 /area/indoors/town/rmh/magician)
+"wlq" = (
+/obj/structure/flora/tree/fir/snowy,
+/turf/open/floor/cobble/mossy,
+/area/outdoors/town{
+	name = "Rivermist Hollow";
+	first_time_text = "RIVERMIST HOLLOW"
+	})
 "wlG" = (
 /turf/open/floor/grass/cold,
 /area/indoors/cave/rmh_cave/wet/lake)
@@ -43835,7 +45157,9 @@
 	},
 /obj/effect/decal/cleanable/dirt/cobweb/cobweb2,
 /turf/open/floor/ruinedwood/spiral,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "wmQ" = (
 /obj/structure/fluff/railing/border/east,
 /obj/structure/fluff/railing/border{
@@ -43913,7 +45237,9 @@
 "wpn" = (
 /obj/structure/fluff/railing/wood/north,
 /turf/open/floor/hay,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "wpr" = (
 /obj/structure/flora/grass/tundra,
 /obj/effect/wisp/prestidigitation{
@@ -44051,7 +45377,9 @@
 "wsB" = (
 /mob/living/simple_animal/hostile/retaliate/chicken,
 /turf/open/floor/hay,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "wsL" = (
 /obj/effect/decal/cobble/mossy{
 	dir = 9
@@ -44111,7 +45439,9 @@
 	pixel_x = 8
 	},
 /turf/open/floor/tile/harem2,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "wtI" = (
 /turf/closed/wall/mineral/wooddark,
 /area/outdoors/rmh_field/east)
@@ -44138,7 +45468,9 @@
 	dir = 1
 	},
 /turf/open/floor/carpet,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "wur" = (
 /turf/open/floor/naturalstone,
 /area/outdoors/rmh_field/tavel/mountain)
@@ -44162,7 +45494,9 @@
 	hover_color = "#8a6b6b"
 	},
 /turf/open/floor/ruinedwood,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "wvA" = (
 /obj/structure/bearpelt{
 	pixel_x = -17;
@@ -44191,7 +45525,9 @@
 /turf/closed/wall/mineral/wooddark/end{
 	dir = 8
 	},
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "wwc" = (
 /obj/structure/fluff/walldeco/church/line,
 /obj/structure/fluff/walldeco/church/line{
@@ -44325,7 +45661,9 @@
 "wzz" = (
 /obj/structure/bookcase/random/eoratica,
 /turf/closed/wall/mineral/wooddark/horizontal,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "wzK" = (
 /obj/structure/spider/stickyweb,
 /turf/open/floor/cobblerock,
@@ -44342,7 +45680,9 @@
 	},
 /obj/structure/fluff/railing/corner/south_west,
 /turf/open/floor/carpet/royalblack,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "wzW" = (
 /obj/structure/table/wood{
 	icon_state = "longtable"
@@ -44430,7 +45770,9 @@
 "wCA" = (
 /mob/living/simple_animal/hostile/retaliate/saiga/tame/saddled,
 /turf/open/floor/dirt,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "wCL" = (
 /turf/open/floor/ruinedwood/herringbone_clear,
 /area/indoors/town/apothecary)
@@ -44717,7 +46059,9 @@
 /obj/structure/bed/inn/double,
 /obj/item/bedsheet/double_pelt,
 /turf/open/floor/woodturned,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "wJM" = (
 /obj/structure/fluff/walldeco/church/line{
 	dir = 4
@@ -44945,7 +46289,9 @@
 /area/indoors/town/rmh/chapel)
 "wRz" = (
 /turf/closed/wall/mineral/wooddark/end,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "wRK" = (
 /obj/structure/flora/grass/tundra,
 /obj/structure/flora/grass/bush/wall/tall/tundra,
@@ -44965,7 +46311,9 @@
 	dir = 10
 	},
 /turf/open/floor/wood,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "wSl" = (
 /obj/structure/closet/crate/crafted_closet/dark{
 	pixel_x = 3
@@ -45028,7 +46376,9 @@
 	dir = 8
 	},
 /turf/open/floor/carpet,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "wTR" = (
 /obj/structure/flora/tree/pine{
 	icon_state = "pine3"
@@ -45142,8 +46492,18 @@
 /turf/open/floor/cobblerock,
 /area/indoors/town/rmh/chapel/basement)
 "wVO" = (
-/obj/structure/bars/cemetery,
-/turf/open/floor/cobble/mossy,
+/obj/structure/bars/grille{
+	max_integrity = 1500;
+	plane = -9
+	},
+/obj/structure/fluff/steamvent,
+/obj/structure/fluff/walldeco/bath/wallpipes/outie{
+	dir = 4
+	},
+/obj/structure/fluff/walldeco/bath/wallpipes/outie{
+	dir = 9
+	},
+/turf/open/floor/metal/barograte,
 /area/outdoors/town{
 	name = "Rivermist Hollow";
 	first_time_text = "RIVERMIST HOLLOW"
@@ -45327,7 +46687,9 @@
 /obj/structure/fluff/railing/wood/east,
 /obj/structure/flora/ausbushes/brflowers,
 /turf/open/floor/grass/cold,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "wZL" = (
 /obj/item/natural/rock,
 /obj/effect/decal/cleanable/debris/stone,
@@ -45373,7 +46735,9 @@
 	},
 /obj/machinery/light/fueled/wallfire/candle,
 /turf/open/floor/ruinedwood/herringbone_clear,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "wZR" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/closet/crate/chest/wicker,
@@ -45607,7 +46971,9 @@
 	dir = 4
 	},
 /turf/open/floor/carpet/red,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "xgI" = (
 /obj/structure/fluff/railing/border/west{
 	plane = -6
@@ -45710,7 +47076,9 @@
 /area/indoors/shelter/woods)
 "xjF" = (
 /turf/open/floor/carpet/lord/left,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "xjG" = (
 /obj/structure/table/church/m,
 /obj/machinery/light/fueled/hearth{
@@ -45747,6 +47115,14 @@
 "xjM" = (
 /obj/machinery/light/fueled/wallfire/candle,
 /obj/structure/fluff/clock,
+/obj/effect/decal/cobbleedge{
+	dir = 1;
+	icon_state = "borderfall";
+	pixel_y = 8
+	},
+/obj/structure/fluff/festive_garlands/random{
+	pixel_y = 46
+	},
 /turf/open/floor/woodturned,
 /area/indoors/town/rmh/tavern)
 "xjR" = (
@@ -45851,7 +47227,9 @@
 	},
 /obj/structure/fluff/railing/corner/south_east,
 /turf/open/floor/tile/harem1,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "xlR" = (
 /turf/closed/mineral/random/high,
 /area/indoors/town/rmh/magician/pass)
@@ -45867,11 +47245,15 @@
 /area/indoors/town/rmh/farm)
 "xnf" = (
 /turf/open/floor/tile/harem1,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "xnu" = (
 /obj/structure/fluff/railing/corner/south_west,
 /turf/open/floor/ruinedwood/herringbone_clear,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "xnR" = (
 /obj/structure/flora/grass/bush/tundra,
 /turf/open/floor/grass/cold,
@@ -46134,7 +47516,9 @@
 	},
 /obj/structure/ladder,
 /turf/open/floor/ruinedwood/spiral,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "xup" = (
 /obj/item/natural/stoneblock,
 /turf/open/floor/naturalstone,
@@ -46475,12 +47859,14 @@
 	})
 "xEx" = (
 /turf/open/floor/carpet,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "xEI" = (
-/obj/structure/fluff/festive_garlands/random{
-	pixel_y = -16
+/obj/effect/decal/cobblerockedge/alt{
+	dir = 4
 	},
-/turf/open/floor/grass/cold,
+/turf/open/floor/cobblerock/snow,
 /area/outdoors/town{
 	name = "Rivermist Hollow";
 	first_time_text = "RIVERMIST HOLLOW"
@@ -46702,6 +48088,14 @@
 /area/under/underdark/rmh{
 	name = "Caves & Mines"
 	})
+"xHP" = (
+/obj/structure/flora/grass/tundra,
+/obj/structure/flora/tree/fir/snowy,
+/turf/open/floor/grass/cold,
+/area/outdoors/town{
+	name = "Rivermist Hollow";
+	first_time_text = "RIVERMIST HOLLOW"
+	})
 "xHT" = (
 /obj/item/riddleofsteel,
 /turf/open/floor/cobblerock/alt,
@@ -46847,7 +48241,9 @@
 	},
 /obj/machinery/light/fueled/wallfire/candle/r,
 /turf/open/floor/ruinedwood,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "xKp" = (
 /turf/open/floor/ruinedwood/spiralfade,
 /area/outdoors/town/rmh/roofs)
@@ -46900,7 +48296,9 @@
 	},
 /obj/structure/chair/stool/bar,
 /turf/open/floor/ruinedwood/herringbone_clear,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "xLM" = (
 /obj/machinery/light/fueled/torchholder{
 	dir = 1
@@ -46916,7 +48314,9 @@
 	name = "Stables"
 	},
 /turf/open/floor/cobblerock,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "xMu" = (
 /obj/effect/decal/wood/herringbone{
 	dir = 1
@@ -47030,14 +48430,18 @@
 /area/outdoors/rmh_field/north)
 "xPd" = (
 /turf/closed/wall/mineral/wooddark/vertical,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "xPo" = (
 /obj/effect/decal/carpet/kover_purple{
 	dir = 8;
 	pixel_x = 11
 	},
 /turf/open/floor/ruinedwood/herringbone_clear,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "xPC" = (
 /obj/structure/chair/bench/couchamagenta,
 /turf/open/floor/wood,
@@ -47084,7 +48488,9 @@
 	pixel_x = 8
 	},
 /turf/open/floor/tile/harem2,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "xPS" = (
 /obj/structure/flora/tree/burnt,
 /turf/open/floor/grass/red,
@@ -47264,7 +48670,9 @@
 "xTE" = (
 /obj/machinery/light/fueled/wallfire/candle/l,
 /turf/open/floor/ruinedwood/herringbone_clear,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "xTK" = (
 /obj/effect/decal/mossy{
 	dir = 4;
@@ -47288,9 +48696,7 @@
 	},
 /area/outdoors/river)
 "xUu" = (
-/obj/structure/bookcase/random/archive{
-	opacity = 0
-	},
+/obj/structure/bookcase/random/thesis,
 /turf/open/floor/naturalstone,
 /area/indoors/cave/rmh_cave/minotaur)
 "xUB" = (
@@ -47381,7 +48787,9 @@
 	pixel_y = 7
 	},
 /turf/open/floor/ruinedwood/spiral,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "xVY" = (
 /turf/closed/wall/mineral/decostone/center,
 /area/under/town/rmh/basement)
@@ -47490,7 +48898,9 @@
 	pixel_y = -8
 	},
 /turf/open/floor/tile/harem1,
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "xZc" = (
 /obj/structure/fluff/railing/wood/east,
 /turf/open/floor/grass/cold,
@@ -47977,7 +49387,9 @@
 /turf/open/floor/ruinedwood{
 	icon_state = "weird1"
 	},
-/area/indoors/town/rmh)
+/area/indoors/town/rmh{
+	name = "wagon"
+	})
 "yjO" = (
 /obj/structure/fluff/walldeco/church/line,
 /turf/open/floor/churchmarble,
@@ -48030,7 +49442,7 @@
 /turf/open/floor/ruinedwood/herringbone,
 /area/indoors/cave/underhamlet)
 "ylj" = (
-/obj/structure/bookcase/random/archive,
+/obj/structure/bookcase/random/apocrypha,
 /turf/closed/wall/mineral/stone/moss,
 /area/indoors/town/rmh/chapel/basement)
 "yls" = (
@@ -48852,11 +50264,11 @@ fSl
 snm
 snm
 snm
-snm
-snm
-snm
-snm
-snm
+tVl
+qrA
+jtN
+qrA
+nSa
 snm
 snm
 snm
@@ -49109,11 +50521,11 @@ hud
 snm
 snm
 snm
-snm
-snm
-snm
-snm
-snm
+tVl
+nZf
+qwE
+ccl
+nSa
 snm
 snm
 snm
@@ -49366,11 +50778,11 @@ rCr
 snm
 snm
 snm
-snm
-snm
-snm
-snm
-snm
+tVl
+pWm
+edb
+rvf
+nSa
 snm
 snm
 snm
@@ -49623,11 +51035,11 @@ rCr
 snm
 snm
 snm
-snm
-snm
-snm
-snm
-snm
+tVl
+pWm
+edb
+kRp
+vMk
 snm
 snm
 snm
@@ -49880,11 +51292,11 @@ rCr
 snm
 snm
 snm
-snm
-snm
-snm
-snm
-snm
+tVl
+jjX
+edb
+wcx
+nSa
 snm
 snm
 snm
@@ -50137,11 +51549,11 @@ rCr
 snm
 snm
 snm
-snm
-snm
-snm
-snm
-snm
+tVl
+eaj
+dGF
+lqO
+nSa
 snm
 snm
 snm
@@ -50394,11 +51806,11 @@ rCr
 snm
 snm
 snm
-snm
-snm
-snm
-snm
-snm
+tVl
+lXp
+jtN
+lXp
+nSa
 snm
 snm
 snm
@@ -88271,9 +89683,9 @@ snm
 snm
 tmx
 xqN
+nUN
 pxp
-pxp
-pxp
+ghO
 xqN
 mKv
 iLv
@@ -91900,7 +93312,7 @@ fsU
 mcH
 bEO
 fix
-nyi
+eKk
 dAx
 dAx
 dAx
@@ -92157,7 +93569,7 @@ nKl
 bRX
 mcH
 ltn
-nyi
+eKk
 dAx
 dAx
 dAx
@@ -138921,7 +140333,7 @@ xSs
 aBI
 klo
 klo
-klo
+hVT
 mTZ
 hwk
 nXz
@@ -139440,7 +140852,7 @@ mTZ
 cgE
 piT
 eUR
-myx
+cnh
 myx
 dId
 dId
@@ -139697,8 +141109,8 @@ mTZ
 pIx
 fWD
 myx
-hvS
-mxZ
+cnh
+cnh
 wwh
 lyL
 lyL
@@ -139955,7 +141367,7 @@ fWD
 teA
 soN
 soN
-lyL
+dId
 cvg
 lyL
 lyL
@@ -140212,7 +141624,7 @@ mBM
 wqe
 myx
 hvS
-myx
+dId
 lpH
 hvS
 vZZ
@@ -140467,10 +141879,10 @@ lff
 tLb
 lff
 lyL
-lyL
 oZl
 rED
-dFV
+cnh
+dId
 soN
 myx
 xPd
@@ -140481,13 +141893,13 @@ dPm
 xPd
 evu
 mnZ
-pdO
+pbL
 cnh
 wsL
 eUR
 cbx
 izD
-myx
+xHP
 lyL
 uqh
 nAJ
@@ -140724,10 +142136,10 @@ lyL
 lyL
 mxZ
 sBe
-hvS
 rED
 sld
-ozE
+cnh
+dId
 soN
 aoM
 aoM
@@ -140981,10 +142393,10 @@ evD
 pZb
 lyL
 jkg
-hvS
 rED
 sld
-pZb
+cnh
+dId
 soN
 aoM
 nlu
@@ -141238,10 +142650,10 @@ lpH
 qXn
 vzt
 jkg
-hvS
 rED
 dFV
-pZb
+kKS
+cnh
 myx
 hgS
 aoM
@@ -141498,7 +142910,7 @@ lyL
 pZb
 hru
 pZb
-bLe
+cnh
 lyL
 dJi
 xPd
@@ -141754,8 +143166,8 @@ cjy
 vzt
 kdW
 lyL
-mxZ
-gfi
+dId
+cnh
 mYC
 lyL
 xPd
@@ -141776,7 +143188,7 @@ woa
 iqi
 sVi
 sBe
-lyL
+pbL
 pZb
 hvS
 pZb
@@ -142011,9 +143423,9 @@ nCq
 lyL
 myx
 myx
-myx
-myx
-lyL
+dId
+dId
+dId
 lyL
 oln
 dhr
@@ -143834,7 +145246,7 @@ hlb
 cKs
 qKb
 mZv
-dId
+cnh
 lyL
 hvS
 vcl
@@ -144081,7 +145493,7 @@ gVl
 mot
 mtk
 qHu
-lkG
+jmV
 hxF
 tQm
 tQm
@@ -144091,7 +145503,7 @@ hlb
 qKb
 dId
 eUR
-dId
+cnh
 qDL
 mZi
 myx
@@ -144348,7 +145760,7 @@ hlb
 qKb
 dId
 qMr
-dId
+cnh
 qDL
 aMC
 myx
@@ -144606,12 +146018,12 @@ qKb
 dId
 eUR
 dId
-dId
+cnh
 egZ
 pZb
 fBh
 gQg
-lyL
+pbL
 evu
 hCC
 jxs
@@ -144869,7 +146281,7 @@ dId
 dId
 dId
 vqf
-wVO
+opn
 mHL
 eUR
 eUR
@@ -145119,11 +146531,11 @@ uop
 dId
 dId
 dId
-dId
-dId
 mex
 mex
 mex
+mex
+rIZ
 mex
 mex
 mex
@@ -145376,13 +146788,13 @@ dId
 dId
 dId
 dId
-aus
-rCS
 mex
-rCS
-aus
-aus
-aus
+dId
+dId
+cnh
+cnh
+dId
+dId
 opn
 fKR
 lyL
@@ -145630,17 +147042,17 @@ kBA
 sKo
 nII
 dnp
-qKb
-qKb
-qKb
-qKb
-qKb
-qKb
-qKb
-qKb
-qKb
-qKb
-qKb
+qWj
+qWj
+qWj
+mex
+dId
+cnh
+cnh
+cnh
+cnh
+dId
+opn
 kPV
 jAw
 otF
@@ -145888,16 +147300,16 @@ rIZ
 qKb
 qKb
 qpk
-qKb
-qKb
-qKb
-qKb
+boW
+dZd
+oqW
+dRn
 qpk
-qKb
-qKb
-qKb
-qKb
-qKb
+fPk
+fPk
+qWj
+qWj
+opn
 wxU
 wvS
 vxH
@@ -146150,9 +147562,9 @@ vTG
 vTG
 mfo
 yfA
-qKb
-qKb
-qKb
+wVO
+fQh
+cjW
 qpk
 gQC
 gQC
@@ -146405,7 +147817,7 @@ qpk
 eCb
 qua
 oyM
-lix
+tEN
 qpk
 skC
 vTG
@@ -146666,10 +148078,10 @@ lix
 rSB
 tGh
 hWc
-lix
+tEN
 qpk
 rVr
-rVr
+pUC
 qpk
 wbS
 oBg
@@ -146913,8 +148325,8 @@ lff
 rXZ
 nII
 cKs
-qKb
-whQ
+xEI
+rIE
 cGw
 iDm
 iDm
@@ -147138,7 +148550,7 @@ qMr
 jHp
 pZb
 myx
-lyL
+pbL
 ecC
 lyL
 ttQ
@@ -147167,11 +148579,11 @@ sVW
 eUx
 cAU
 lff
-qKb
+cKs
 sDW
 dId
-qKb
-whQ
+cnh
+nKx
 vTG
 hxf
 hxf
@@ -147183,7 +148595,7 @@ tmv
 lix
 aHB
 lrm
-tKp
+dNw
 qpk
 wvS
 ruw
@@ -147409,7 +148821,7 @@ kAb
 hfi
 cNZ
 lOF
-gwA
+gqZ
 kqQ
 cnh
 jOX
@@ -147426,9 +148838,9 @@ cAU
 lff
 dId
 ggO
-dId
-qKb
-whQ
+jYe
+cnh
+nKx
 yfA
 xPC
 jco
@@ -147661,7 +149073,7 @@ kiQ
 mGL
 sLX
 ydY
-sLX
+dyE
 hsp
 hsp
 fIe
@@ -148176,7 +149588,7 @@ qtp
 jNb
 vOW
 ggX
-ggX
+vSM
 ggX
 ggX
 jqQ
@@ -148213,7 +149625,7 @@ eRz
 bjR
 drx
 gQC
-oBg
+cUa
 vxH
 vxH
 oBg
@@ -148415,7 +149827,7 @@ eUx
 eUx
 eUx
 eUx
-tgG
+fXW
 lyL
 mxZ
 pdO
@@ -148689,7 +150101,7 @@ eay
 mJM
 sLX
 ydY
-sLX
+dyE
 hsp
 hsp
 acK
@@ -148717,7 +150129,7 @@ epR
 qpk
 wJb
 cna
-vBn
+aKh
 gkk
 pDt
 xIQ
@@ -148951,7 +150363,7 @@ kAb
 hfi
 cNZ
 lOF
-gwA
+gqZ
 dOs
 lyL
 cnh
@@ -148968,9 +150380,9 @@ eUx
 eUx
 ezt
 dId
+uwA
 dId
-qKb
-whQ
+jfD
 yfA
 nnp
 cna
@@ -149223,11 +150635,11 @@ dId
 jsT
 jsT
 jsT
+cnh
+cnh
 dId
 dId
-dId
-qKb
-whQ
+nvD
 vTG
 eqH
 cna
@@ -149480,10 +150892,10 @@ rCS
 sDP
 sDP
 sDP
-dId
-dId
-dId
-qKb
+cnh
+cnh
+cnh
+dnp
 whQ
 cGw
 aCO
@@ -149738,9 +151150,9 @@ eUx
 eUx
 eUx
 ezt
-dId
-dId
-qKb
+cnh
+cnh
+gKV
 whQ
 vTG
 rVr
@@ -149995,9 +151407,9 @@ eUx
 eUx
 eUx
 ezt
-dId
-dId
-qKb
+cnh
+cnh
+cKs
 xEI
 yfA
 aFJ
@@ -150251,11 +151663,11 @@ dId
 src
 src
 src
+cnh
+cnh
 dId
 dId
-dId
-lyL
-myx
+wwh
 qpk
 mfo
 qpk
@@ -150510,8 +151922,8 @@ lff
 lff
 dId
 dId
-qKb
-myx
+dId
+dId
 lyL
 sBe
 lyL
@@ -150765,10 +152177,10 @@ lff
 lff
 lff
 dId
-vqf
-eUR
-cKs
-myx
+dId
+dId
+dId
+dId
 myx
 lyL
 hqU
@@ -151022,11 +152434,11 @@ cnh
 dId
 dId
 dId
-eUR
-eUR
-lff
-lyL
-lyL
+cnh
+cnh
+dId
+dId
+pbL
 myx
 myx
 lyL
@@ -151267,7 +152679,7 @@ sZI
 lNq
 dId
 dId
-eUR
+wlq
 qMr
 dId
 cnh
@@ -151279,10 +152691,10 @@ ssQ
 cnh
 cnh
 cnh
-oqW
-uTd
-lff
-lyL
+cnh
+cnh
+cnh
+jkg
 evu
 myx
 lyL
@@ -151536,11 +152948,11 @@ hQq
 cnh
 cnh
 cnh
-qKb
-qKb
-lff
-jmO
-lyL
+cnh
+cnh
+cnh
+bLe
+sBe
 myx
 myx
 lyL
@@ -151769,7 +153181,7 @@ wbX
 qLz
 rED
 rED
-lpH
+evF
 dId
 jnH
 eUR
@@ -152521,7 +153933,7 @@ eUx
 lEW
 uDs
 dId
-lyL
+pbL
 soN
 gQg
 hvS
@@ -153046,7 +154458,7 @@ pNs
 lDW
 siQ
 jRV
-fOI
+kpK
 xAH
 oRO
 oRO
@@ -153842,7 +155254,7 @@ qKb
 njs
 cnh
 cnh
-cnh
+gfi
 dId
 dId
 cnh
@@ -154114,7 +155526,7 @@ tEC
 mDs
 fHU
 cmW
-cmW
+cRA
 xRg
 acE
 oXI
@@ -154347,7 +155759,7 @@ nmL
 aAO
 jfB
 soN
-myx
+xHP
 dId
 dId
 cnh
@@ -154872,7 +156284,7 @@ dId
 dId
 lyL
 hvS
-lyL
+pbL
 xxU
 rCS
 mex
@@ -155380,7 +156792,7 @@ cnh
 sMq
 dId
 dId
-lyL
+pbL
 goE
 myx
 myx
@@ -156663,7 +158075,7 @@ skD
 iow
 lWo
 yjO
-gzG
+kag
 vzE
 guZ
 snm
@@ -211432,8 +212844,8 @@ vzR
 mfo
 sTz
 mfo
-jcj
-urg
+clo
+hoN
 gXg
 skC
 lzI
@@ -211681,17 +213093,17 @@ lzI
 lzI
 xTt
 dCE
-urg
+plI
 urg
 xvv
 sJh
 hYS
-lix
-lix
-lix
+vPl
+avq
+dzo
 xWJ
 urg
-urg
+qJN
 skC
 lzI
 lzI
@@ -211938,7 +213350,7 @@ lzI
 lzI
 xTt
 skC
-urg
+utu
 urg
 lAZ
 gqN
@@ -211948,7 +213360,7 @@ gqN
 thd
 tNN
 rVr
-rVr
+pUC
 skC
 lzI
 lzI
@@ -212452,7 +213864,7 @@ lzI
 lzI
 xTt
 skC
-urg
+bll
 urg
 khM
 jcC
@@ -212709,14 +214121,14 @@ lzI
 lzI
 xTt
 dCE
-urg
+dHV
 urg
 khM
 jcC
 jcC
 jcC
 jcC
-alm
+sTe
 yfA
 aHH
 hlZ
@@ -212966,7 +214378,7 @@ sXq
 sXq
 xTt
 skC
-urg
+kbh
 urg
 khM
 jcC
@@ -213230,7 +214642,7 @@ jcC
 jcC
 jcC
 jcC
-alm
+sTe
 yfA
 nDq
 oBG
@@ -213480,14 +214892,14 @@ jeM
 jwV
 oRK
 skC
-urg
+aXj
 urg
 khM
 jcC
 jcC
 uze
 jcC
-alm
+sTe
 yfA
 uoL
 qUI
@@ -213737,7 +215149,7 @@ ebn
 ebn
 qbp
 skC
-urg
+kKj
 urg
 khM
 jcC
@@ -214260,7 +215672,7 @@ jLb
 jLb
 sro
 amu
-lix
+rTE
 uYa
 sHw
 sHw
@@ -214517,7 +215929,7 @@ mfo
 mfo
 qpk
 lix
-lix
+vcT
 kEd
 sHw
 sHw
@@ -214774,7 +216186,7 @@ aFJ
 aFJ
 qGP
 lix
-lix
+ukg
 jMh
 sHw
 sHw

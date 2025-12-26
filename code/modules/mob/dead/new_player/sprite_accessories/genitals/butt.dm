@@ -1,8 +1,7 @@
-
 /datum/sprite_accessory/genitals/butt
 	icon = 'modular_rmh/icons/mob/sprite_accessory/genitals/butt.dmi'
 	color_key_name = "Butt"
-	relevant_layers = list(BODY_ADJ_LAYER)
+	relevant_layers = list(BODY_BEHIND_LAYER)
 
 /datum/sprite_accessory/genitals/butt/adjust_appearance_list(list/appearance_list, obj/item/organ/organ, obj/item/bodypart/bodypart, mob/living/carbon/owner)
 	gender_genitals_adjust(appearance_list, organ, bodypart, owner, OFFSET_BUTT)

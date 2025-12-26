@@ -117,11 +117,11 @@
 	)
 
 	offset_genitals_m = list(
-		OFFSET_BREASTS = list(0, 2),\
+		OFFSET_BREASTS = list(0, 1),\
 	)
 
 	offset_genitals_f = list(
-		OFFSET_BREASTS = list(0, 2),\
+		OFFSET_BREASTS = list(0, 1),\
 	)
 
 	specstats_m = list(STATKEY_STR = -1, STATKEY_PER = 1, STATKEY_INT = 1, STATKEY_CON = -1, STATKEY_END = 0, STATKEY_SPD = 2, STATKEY_LCK = 0)

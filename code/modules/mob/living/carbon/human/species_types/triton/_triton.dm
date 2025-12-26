@@ -103,14 +103,14 @@
 
 	offset_genitals_m = list(
 		OFFSET_PENIS = list(0,0),\
-		OFFSET_BREASTS = list(0,3),\
+		OFFSET_BREASTS = list(0,2),\
 		OFFSET_TESTICLES = list(0,0),\
 		OFFSET_VAGINA = list(0,-1),\
 	)
 
 	offset_genitals_f = list(
 		OFFSET_PENIS = list(0,0),\
-		OFFSET_BREASTS = list(0,-2),\
+		OFFSET_BREASTS = list(0,-1),\
 		OFFSET_TESTICLES = list(0,0),\
 		OFFSET_VAGINA = list(0,0),\
 	)
