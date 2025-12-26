@@ -8,6 +8,7 @@
 
 	if (M.client)
 		dat += {"
+		<meta charset='UTF-8'>
 		<div style='text-align: center;'>
 			<h3>Client</h3>
 			<div>
