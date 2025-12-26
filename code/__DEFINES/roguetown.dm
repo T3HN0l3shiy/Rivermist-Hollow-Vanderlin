@@ -3,6 +3,7 @@
 #define ALL_PALADIN_PATRONS 	list(/datum/patron/psydon, /datum/patron/psydon/progressive, /datum/patron/divine/astrata, /datum/patron/divine/noc, /datum/patron/divine/dendor, /datum/patron/divine/abyssor, /datum/patron/divine/necra, /datum/patron/divine/ravox, /datum/patron/divine/xylix, /datum/patron/divine/pestra, /datum/patron/divine/malum, /datum/patron/divine/eora)
 #define ALL_TEMPLAR_PATRONS 	list(/datum/patron/divine/astrata, /datum/patron/divine/noc, /datum/patron/divine/eora, /datum/patron/divine/necra, /datum/patron/divine/ravox, /datum/patron/divine/pestra, /datum/patron/divine/dendor, /datum/patron/divine/abyssor, /datum/patron/divine/malum, /datum/patron/divine/xylix, /datum/patron/psydon)
 #define ALL_PROFANE_PATRONS 	list(/datum/patron/inhumen/graggar, /datum/patron/inhumen/zizo, /datum/patron/inhumen/matthios, /datum/patron/inhumen/baotha)
+#define ALL_ICONOCLAST_PATRONS  list(/datum/patron/psydon, /datum/patron/psydon/extremist, /datum/patron/divine/astrata, /datum/patron/divine/noc, /datum/patron/divine/dendor, /datum/patron/divine/abyssor, /datum/patron/divine/necra, /datum/patron/divine/ravox, /datum/patron/divine/xylix, /datum/patron/divine/pestra, /datum/patron/divine/malum, /datum/patron/divine/eora, /datum/patron/inhumen/graggar, /datum/patron/inhumen/zizo, /datum/patron/inhumen/matthios, /datum/patron/inhumen/baotha)
 
 GLOBAL_LIST_INIT(curse_names, list())
 
@@ -122,12 +123,13 @@ GLOBAL_LIST_EMPTY(job_respawn_delays)
 #define FRYVEGGIE_NUTRITION SNACK_POOR
 #define COOKED_FAT_NUTRITION SNACK_DECENT
 
-/*	........   Rotting Food defines   ................ */
-#define SHELFLIFE_EXTREME 90 MINUTES
-#define SHELFLIFE_LONG 50 MINUTES
-#define SHELFLIFE_DECENT 30 MINUTES
-#define SHELFLIFE_SHORT 20 MINUTES
-#define SHELFLIFE_TINY 12 MINUTES
+/*	........   Rotting Food defines   ................ */ //everything 10 times longer
+#define SHELFLIFE_EXTREME 160 MINUTES * 10
+#define SHELFLIFE_LONG 90 MINUTES * 10
+#define SHELFLIFE_DECENT 70 MINUTES * 10
+#define SHELFLIFE_SHORT 50 MINUTES * 10
+#define SHELFLIFE_TINY 30 MINUTES * 10
+#define SHELFLIFE_MINISCULE 10 MINUTES * 10
 
 /*
 	Formerly bitflags, now we are strings
@@ -166,7 +168,6 @@ GLOBAL_LIST_EMPTY(job_respawn_delays)
 #define TRIUMPH_BUY_RACE_ALL "race_all"
 #define TRIUMPH_BUY_ANY_CLASS "pick_any"
 #define TRIUMPH_BUY_ADOPTION "adoption"
-//#define TRIUMPH_BUY_FART "fart"
 #define TRIUMPH_BUY_SECRET_OFFICIANT "secret_officiant"
 
 // Character category and its buys
@@ -193,6 +194,21 @@ GLOBAL_LIST_EMPTY(job_respawn_delays)
 #define TRIUMPH_BUY_GRAGGAR_INFLUENCE "graggar_influence"
 #define TRIUMPH_BUY_MATTHIOS_INFLUENCE "matthios_influence"
 
+#define TRIUMPH_BUY_MATTHIOS_INFLUENCE_REDUCTION "matthios_influence_reduction"
+#define TRIUMPH_BUY_GRAGGAR_INFLUENCE_REDUCTION "graggar_influence_reduction"
+#define TRIUMPH_BUY_BAOTHA_INFLUENCE_REDUCTION "baotha_influence_reduction"
+#define TRIUMPH_BUY_ZIZO_INFLUENCE_REDUCTION "zizo_influence_reduction"
+#define TRIUMPH_BUY_DENDOR_INFLUENCE_REDUCTION "dendor_influence_reduction"
+#define TRIUMPH_BUY_EORA_INFLUENCE_REDUCTION "eora_influence_reduction"
+#define TRIUMPH_BUY_MALUM_INFLUENCE_REDUCTION "malum_influence_reduction"
+#define TRIUMPH_BUY_PESTRA_INFLUENCE_REDUCTION "pestra_influence_reduction"
+#define TRIUMPH_BUY_NECRA_INFLUENCE_REDUCTION "necra_influence_reduction"
+#define TRIUMPH_BUY_XYLIX_INFLUENCE_REDUCTION "xylix_influence_reduction"
+#define TRIUMPH_BUY_ABYSSOR_INFLUENCE_REDUCTION "abyssor_influence_reduction"
+#define TRIUMPH_BUY_RAVOX_INFLUENCE_REDUCTION "ravox_influence_reduction"
+#define TRIUMPH_BUY_NOC_INFLUENCE_REDUCTION "noc_influence_reduction"
+#define TRIUMPH_BUY_ASTRATA_INFLUENCE_REDUCTION "astrata_influence_reduction"
+
 // Misc category and its buys
 #define TRIUMPH_CAT_MISC "MISC"
 
@@ -204,6 +220,7 @@ GLOBAL_LIST_EMPTY(job_respawn_delays)
 #define TRIUMPH_BUY_PSYDON_RETIREMENT "psydon_retirement"
 #define TRIUMPH_BUY_ORPHANAGE_RENOVATION "orphanage_renovation"
 #define TRIUMPH_BUY_LONGER_WEEK "longer_week"
+#define TRIUMPH_BUY_EXOTIC_TASTES "exotic_tastes"
 
 // Bought triumph buys category
 #define TRIUMPH_CAT_ACTIVE_DATUMS "BOUGHT"

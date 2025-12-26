@@ -1,7 +1,7 @@
 /datum/sprite_accessory/genitals/testicles
 	icon = 'icons/mob/sprite_accessory/genitals/gonads.dmi'
 	color_key_name = "Sack"
-	relevant_layers = list(BODY_BEHIND_LAYER, BODY_ADJ_LOW_LAYER)
+	relevant_layers = list(BODY_ADJ_LAYER)
 	abstract_type = /datum/sprite_accessory/genitals/testicles
 
 /datum/sprite_accessory/genitals/testicles/get_icon_state(obj/item/organ/organ, obj/item/bodypart/bodypart, mob/living/carbon/owner)

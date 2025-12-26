@@ -58,9 +58,9 @@
 	sharedSoullinks = null
 	return ..()
 
-/mob/living/update_appearance(updates)
-	. = ..()
+/mob/living/carbon/human/regenerate_icons()
 	update_reflection()
+	. = ..()
 
 /mob/living/proc/create_reflection()
 	//Add custom reflection image
@@ -544,7 +544,7 @@
 		var/mob/living/living = AM
 		for(var/hand in living.hud_used?.hand_slots)
 			var/atom/movable/screen/inventory/hand/H = living.hud_used.hand_slots[hand]
-			H?.update_appearance()
+			H?.update_appearance(UPDATE_OVERLAYS)
 
 /mob/living/proc/is_limb_covered(obj/item/bodypart/limb)
 	if(!limb)
@@ -603,9 +603,10 @@
 			M.reset_offsets("pulledby")
 			if(HAS_TRAIT(M, TRAIT_GARROTED))
 				var/obj/item/inqarticles/garrote/gcord = src.get_active_held_item()
-				if(!gcord)
+				if(!istype(gcord))
 					gcord = src.get_inactive_held_item()
-				gcord.wipeslate(src)
+				if(istype(gcord))
+					gcord.wipeslate(src)
 
 			if(grab_state >= GRAB_AGGRESSIVE)
 				TIMER_COOLDOWN_START(pulling, "broke_free", max(0, 2 SECONDS - (0.2 SECONDS * get_skill_level(/datum/skill/combat/wrestling)))) // BUFF: Reduced cooldown
@@ -741,10 +742,13 @@
 	set hidden = 1
 	if(stat)
 		return
-	if(pulledby)
-		to_chat(src, span_warning("I'm grabbed!"))
-		resist_grab()
-		return
+	if(pulledby && pulledby.grab_state >= GRAB_AGGRESSIVE)
+		var/fail_resist = resist_grab()
+		if(fail_resist)
+			to_chat(src, span_warning("I failed to resist their grab and i can't get up!"))
+			return FALSE
+		else
+			to_chat(src, span_notice("I resisted their grab!"))
 	if(resting)
 		if(!HAS_TRAIT(src, TRAIT_FLOORED))
 			visible_message(span_notice("[src] begins standing up."), span_notice("I begin to stand up."))
@@ -807,6 +811,12 @@
 	set waitfor = FALSE
 	var/timer = 2
 
+	if(pulledby && pulledby.grab_state >= GRAB_AGGRESSIVE)
+		var/fail_resist = resist_grab()
+		if(fail_resist)
+			set_resting(TRUE, silent = TRUE)
+			return
+
 	if(iscarbon(src))
 		var/mob/living/carbon/getter_upper = src
 		var/obj/item/clothing/armor/got_armor = getter_upper.get_item_by_slot(ITEM_SLOT_ARMOR) //grabs the item in your armorslot
@@ -833,7 +843,7 @@
 	set_lying_angle(0)
 
 /mob/living/proc/rest_checks_callback()
-	if(resting || body_position == STANDING_UP || HAS_TRAIT(src, TRAIT_FLOORED) || pulledby)
+	if(resting || body_position == STANDING_UP || HAS_TRAIT(src, TRAIT_FLOORED))
 		return FALSE
 	return TRUE
 
@@ -951,12 +961,12 @@
 	set_nutrition(NUTRITION_LEVEL_FED + 50)
 	bodytemperature = BODYTEMP_NORMAL
 	set_blindness(0)
-	set_blurriness(0)
 	set_dizziness(0)
 	cure_nearsighted()
 	cure_blind()
 	cure_husk()
-	heal_overall_damage(INFINITY, INFINITY, null, TRUE) //heal brute and burn dmg on both organic and robotic limbs, and update health right away.
+	heal_overall_damage(INFINITY, INFINITY, null, FALSE) //heal brute and burn dmg on both organic and robotic limbs,
+	updatehealth()										 //and update health right away.
 	for(var/datum/wound/wound as anything in get_wounds())
 		if(admin_revive)
 			qdel(wound)
@@ -967,12 +977,12 @@
 	divine_fire_stacks = 0
 	confused = 0
 	dizziness = 0
-	drowsyness = 0
 	stuttering = 0
 	slurring = 0
 	jitteriness = 0
 	slowdown = 0
 	stop_sound_channel(CHANNEL_HEARTBEAT)
+	reapply_quirks()
 
 //proc called by revive(), to check if we can actually ressuscitate the mob (we don't want to revive him and have him instantly die again)
 /mob/living/proc/can_be_revived()
@@ -1347,7 +1357,12 @@
 	changeNext_move(CLICK_CD_MELEE)
 
 	if(prob(counter_chance))
-		var/counter_type = pick(list("knee" = 45, "elbow" = 45, "stomp" = 10))
+		var/fist_skill = get_skill_level(/datum/skill/combat/unarmed)
+		var/counter_type
+		if(fist_skill >= 4)
+			counter_type = pick(list("knee" = 45, "elbow" = 45,  "stomp" = 10))
+		else
+			counter_type = pick(list("knee" = 50, "elbow" = 50))
 		switch(counter_type)
 			if("knee")
 				visible_message("<span class='danger'>[src] drives a knee into [attacker]'s midsection!</span>", \
@@ -1387,7 +1402,7 @@
 
 		return TRUE
 
-	to_chat(src, span_warning("I fail to do a counter attack!"))
+	to_chat(src, span_warning("I fail to do a counterattack!"))
 	return FALSE
 
 /mob/living/proc/get_positioning_modifier(mob/living/target)
@@ -1517,19 +1532,31 @@
 		if(G.chokehold)
 			combat_modifier -= 0.1 // BUFF: Reduced chokehold penalty (was 0.15)
 
-	resist_chance += ((((STASTR - L.STASTR)/4) + wrestling_diff) * 5 + rand(-5, 5))
+	resist_chance += ((((STASTR - L.STASTR)/3) + wrestling_diff) * 5)
 	resist_chance *= combat_modifier * stamina_factor * (1/positioning_modifier)
-	resist_chance = clamp(resist_chance, 8, 90)
+	resist_chance = clamp(resist_chance, 5, 95)
 
 	var/time_grabbed = S_TIMER_COOLDOWN_TIMELEFT(src, "broke_free")
 	if(time_grabbed)
 		resist_chance += min(time_grabbed / 50, 20) // Up to +20% after long grabs
 
 	if(moving_resist) //we resisted by trying to move
-		client?.move_delay = world.time + 20
+		client?.move_delay = world.time + 50
 
-	adjust_stamina(rand(3,7))
-	pulledby.adjust_stamina(rand(2,6))
+	var/pain_factor = 1
+	if(istype(pulledby, /mob/living/carbon))
+		var/mob/living/carbon/C = pulledby
+		var/pain = C.get_pain_factor()
+		if(pain)
+			if(resist_chance <= 20)
+				pain_factor += (pain * 1.5)
+			else
+				pain_factor += (pain * 1.2)
+
+	resist_chance *= pain_factor
+
+	adjust_stamina(rand(2,5))
+	pulledby.adjust_stamina(rand(2,5))
 	if(iscarbon(pulledby))
 		var/mob/living/carbon/carbon_pulledby = pulledby
 		carbon_pulledby.add_grab_fatigue(0.5)
@@ -1545,9 +1572,9 @@
 			gcord = L.get_inactive_held_item()
 		to_chat(pulledby, span_warning("[src] struggles against the [gcord]!"))
 		if(!src.mind) // NPCs do less damage to the garrote
-			gcord.take_damage(10)
+			gcord.take_damage(5)
 		else
-			gcord.take_damage(25)
+			gcord.take_damage(10)
 	if(prob(resist_chance))
 		visible_message("<span class='warning'>[src] breaks free of [pulledby]'s grip!</span>", \
 						"<span class='notice'>I break free of [pulledby]'s grip![shitte]</span>", null, null, pulledby)
@@ -1556,7 +1583,7 @@
 			var/obj/item/inqarticles/garrote/gcord = L.get_active_held_item()
 			if(!gcord)
 				gcord = L.get_inactive_held_item()
-			gcord.take_damage(gcord.max_integrity)
+			gcord.take_damage(gcord.max_integrity * 0.2)
 			gcord.wipeslate(src)
 		log_combat(pulledby, src, "broke grab")
 		pulledby.stop_pulling()
@@ -1800,7 +1827,7 @@
 
 /mob/living/proc/can_use_guns(obj/item/G)//actually used for more than guns!
 	if(G.trigger_guard == TRIGGER_GUARD_NONE)
-		to_chat(src, "<span class='warning'>I are unable to fire this!</span>")
+		to_chat(src, "<span class='warning'>I am unable to fire this!</span>")
 		return FALSE
 	if(G.trigger_guard != TRIGGER_GUARD_ALLOW_ALL && !IsAdvancedToolUser())
 		to_chat(src, "<span class='warning'>I try to fire [G], but can't use the trigger!</span>")
@@ -1961,9 +1988,14 @@
 		return TRUE
 	return FALSE
 
-/mob/living/proc/SoakMob(locations)
+
+/mob/living/proc/SoakMob(locations, dirty_water = FALSE, rain = FALSE)
 	if(locations & CHEST)
 		ExtinguishMob()
+		if(locations & HEAD)
+			adjust_fire_stacks(-2)
+		else
+			adjust_fire_stacks(-1)
 
 /mob/living/proc/ExtinguishMob()
 	if(on_fire)
@@ -2241,8 +2273,6 @@
 			var/obj/item/organ/eyes/E = getorganslot(ORGAN_SLOT_EYES)
 			if(E)
 				E.setOrganDamage(var_value)
-		if("eye_blurry")
-			set_blurriness(var_value)
 		if("maxHealth")
 			updatehealth()
 		if("resize")
@@ -2477,6 +2507,12 @@
 					found_ping(get_turf(M), client, "trap")
 			if(istype(O, /obj/structure/flora/grass/maneater/real))
 				found_ping(get_turf(O), client, "trap")
+			if(istype(O, /obj/structure/lever/hidden))
+				var/obj/structure/lever/hidden/lever = O
+				// they're trained at this
+				var/bonuses = (HAS_TRAIT(src, TRAIT_THIEVESGUILD) || HAS_TRAIT(src, TRAIT_ASSASSIN)) ? 2 : 0
+				if(stat_roll(STATKEY_PER, 25, lever.hidden_dc - bonuses - 1) || istype(lever, /obj/structure/lever/hidden/keep && HAS_TRAIT(src, TRAIT_KNOWKEEPPLANS)))
+					found_ping(get_turf(O), client, "hidden")
 
 		for(var/obj/effect/skill_tracker/potential_track in orange(7, src)) //Can't use view because they're invisible by default.
 			if(!can_see(src, potential_track, 10))
@@ -2672,7 +2708,7 @@
 
 	for(var/hand in hud_used?.hand_slots)
 		var/atom/movable/screen/inventory/hand/H = hud_used.hand_slots[hand]
-		H?.update_appearance()
+		H?.update_appearance(UPDATE_OVERLAYS)
 
 	if(isnull(new_pulledby))
 		reset_pull_offsets()
@@ -2970,3 +3006,19 @@
 
 /mob/living/proc/is_dead() // bwuh
 	return (!QDELETED(src) && (stat >= DEAD))
+
+/// Set the eyesclosed var updating blindness and UI as needed
+/mob/living/proc/set_eyes_closed(closed)
+	if(eyesclosed == closed)
+		return
+
+	eyesclosed = closed
+
+	if(eyesclosed)
+		become_blind("eyelids")
+	else
+		cure_blind("eyelids")
+
+	if(hud_used)
+		var/atom/movable/screen/eye_intent/eyet = locate() in hud_used.static_inventory
+		eyet?.update_appearance(UPDATE_ICON)

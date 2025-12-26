@@ -79,7 +79,7 @@
 
 /obj/item/reagent_containers/food/snacks/fish/dead
 	abstract_type = /obj/item/reagent_containers/food/snacks/fish/dead
-	dead = TRUE
+	status = FISH_DEAD
 	fish_id = "dead"
 
 /*	........   Cooked food template   ................ */ // No choppping double cooking etc prefixed
@@ -154,7 +154,7 @@
 /*	..................   METT   ................... */
 /obj/item/reagent_containers/food/snacks/meat/mince/beef/mett
 	name = "grenzel mett"
-	desc = "A popular toping for bread in Grenzelhoft, while simply bizarr to people from vanderlin"
+	desc = "A popular topping for bread in Grenzelhoft, while simply bizarre to people from Vanderlin."
 	icon_state = "mett_minced"
 	list_reagents = list(/datum/reagent/consumable/nutriment = SNACK_NUTRITIOUS)
 	bitesize = 3

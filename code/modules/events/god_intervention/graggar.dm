@@ -20,7 +20,7 @@ GLOBAL_LIST_EMPTY(graggar_cullings)
 	. = ..()
 	if(!.)
 		return FALSE
-	if(GLOB.patron_follower_counts["Graggar"] < 2)
+	if(GLOB.patron_follower_counts[/datum/patron/inhumen/graggar::name] < 2)
 		return FALSE
 
 /datum/round_event/graggar_culling/start()
@@ -124,7 +124,7 @@ GLOBAL_LIST_EMPTY(graggar_cullings)
 	if(winner)
 		winner.add_stress(/datum/stress_event/graggar_culling_finished)
 		winner.adjust_triumphs(1)
-		adjust_storyteller_influence(GRAGGAR, 10)
+		adjust_storyteller_influence(GRAGGAR, 20)
 		to_chat(winner, span_notice("Your rival's heart has been DESTROYED! While not the glorious consumption Graggar has desired, you have overcome the culling nevertheless."))
 
 	finish_culling(winner, loser)

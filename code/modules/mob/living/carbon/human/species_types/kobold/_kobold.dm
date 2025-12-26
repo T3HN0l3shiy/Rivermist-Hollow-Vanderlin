@@ -1,10 +1,8 @@
 	/*==============*
 	*				*
-	*	  Dwarf		*
+	*	  Kobold	*
 	*				*
 	*===============*/
-
-//	( + Poison Resistance )
 
 /mob/living/carbon/human/species/kobold
 	race = /datum/species/kobold
@@ -30,20 +28,22 @@
 	specstats_m = list(STATKEY_STR = -4, STATKEY_PER = -2, STATKEY_INT = -2, STATKEY_CON = -4, STATKEY_END = 2, STATKEY_SPD = 2, STATKEY_LCK = 0)
 	specstats_f = list(STATKEY_STR = -4, STATKEY_PER = -2, STATKEY_INT = -2, STATKEY_CON = -4, STATKEY_END = 2, STATKEY_SPD = 2, STATKEY_LCK = 0)
 
-	allowed_pronouns = PRONOUNS_LIST_IT_ONLY
+	// allowed_pronouns = PRONOUNS_LIST_IT_ONLY // Чтобы могли брать любые местоимения
 
 	possible_ages = NORMAL_AGES_LIST
 	use_skintones = TRUE
 
 	changesource_flags = WABBAJACK
 
+	native_language = "Gutter"
+
 	limbs_icon_m = 'icons/roguetown/mob/bodies/f/kobold.dmi'
 	limbs_icon_f = 'icons/roguetown/mob/bodies/f/kobold.dmi'
 
 	enflamed_icon = "widefire"
 
-	soundpack_m = /datum/voicepack/male/dwarf
-	soundpack_f = /datum/voicepack/female/dwarf
+	soundpack_m = /datum/voicepack/male/kobold
+	soundpack_f = /datum/voicepack/female/dwarf // Поменял на женский, так как мужской - это уродск
 
 	exotic_bloodtype = /datum/blood_type/human/kobold
 
@@ -73,19 +73,23 @@
 		OFFSET_ARMOR = list(0,0),\
 		OFFSET_UNDIES = list(0,0),\
 	)
-
+// Попытка починить смещение органов
 	offset_genitals_m = list(
 		OFFSET_PENIS = list(0,-4),\
 		OFFSET_BREASTS = list(0,-4),\
-		OFFSET_TESTICLES = list(0,-2),\
+		OFFSET_TESTICLES = list(0,-3),\
 		OFFSET_VAGINA = list(0,-4),\
+		OFFSET_BUTT = list(0,-4),\
+		OFFSET_BELLY = list(0,-4),\
 	)
 
 	offset_genitals_f = list(
-		OFFSET_PENIS = list(0,4),\
+		OFFSET_PENIS = list(0,-4),\
 		OFFSET_BREASTS = list(0,-4),\
-		OFFSET_TESTICLES = list(0,-2),\
+		OFFSET_TESTICLES = list(0,-3),\
 		OFFSET_VAGINA = list(0,-4),\
+		OFFSET_BUTT = list(0,-4),\
+		OFFSET_BELLY = list(0,-4),\
 	)
 
 	organs = list(
@@ -111,12 +115,12 @@
 		/datum/customizer/bodypart_feature/underwear,
 		/datum/customizer/bodypart_feature/legwear,
 		/datum/customizer/bodypart_feature/piercing,
-		/datum/customizer/organ/genitals/penis/human,
-		/datum/customizer/organ/genitals/vagina/human,
-		/datum/customizer/organ/genitals/breasts/human,
-		/datum/customizer/organ/genitals/belly/human,
-		/datum/customizer/organ/genitals/butt/human,
-		/datum/customizer/organ/genitals/testicles/human,
+		/datum/customizer/organ/genitals/penis/anthro,
+		/datum/customizer/organ/genitals/vagina/anthro,
+		/datum/customizer/organ/genitals/breasts/animal,
+		/datum/customizer/organ/genitals/belly/animal,
+		/datum/customizer/organ/genitals/butt/animal,
+		/datum/customizer/organ/genitals/testicles/anthro,
 	)
 	body_markings = list(
 		/datum/body_marking/tonage,
@@ -150,6 +154,7 @@
 		/datum/body_marking/flushed_cheeks,
 		/datum/body_marking/eyeliner,
 	)
+	COOLDOWN_DECLARE(kobold_cooldown)
 
 /datum/species/kobold/on_species_gain(mob/living/carbon/C, datum/species/old_species, datum/preferences/pref_load)
 	. = ..()
@@ -167,6 +172,22 @@
 
 /datum/species/kobold/check_roundstart_eligible()
 	return TRUE
+
+/datum/species/kobold/after_creation(mob/living/carbon/C)
+	..()
+	C.dna.species.accent_language = C.dna.species.get_accent(native_language, 1)
+
+/datum/species/kobold/spec_life(mob/living/carbon/human/H)
+	. = ..()
+	if(prob(1) && !(H.rogue_sneaking))
+		if(!COOLDOWN_FINISHED(src, kobold_cooldown))
+			return
+		var/emote = "sniff"
+		if(prob(35))
+			emote = "cough"
+		H.emote(emote, forced = TRUE)
+
+		COOLDOWN_START(src, kobold_cooldown, 5 MINUTES)
 
 /datum/species/kobold/get_skin_list()
 	return sortList(list(

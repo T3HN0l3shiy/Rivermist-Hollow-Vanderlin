@@ -12,7 +12,7 @@
 /datum/mapGeneratorModule/underdarkstone
 	clusterCheckFlags = CLUSTER_CHECK_DIFFERENT_ATOMS
 	allowed_turfs = list(/turf/open/floor/naturalstone)
-	allowed_areas = list(/area/rogue/under/underdark)
+	allowed_areas = list(/area/under/underdark)
 	spawnableAtoms = list(/obj/structure/flora/shroom_tree/happy/random = 30,
 							/obj/structure/flora/mushroomcluster = 20,
 							/obj/structure/flora/tinymushrooms = 20,
@@ -22,7 +22,7 @@
 
 /datum/mapGeneratorModule/underdarkmud
 	clusterCheckFlags = CLUSTER_CHECK_SAME_ATOMS
-	allowed_areas = list(/area/rogue/under/underdark)
+	allowed_areas = list(/area/under/underdark)
 	allowed_turfs = list(/turf/open/floor/dirt)
 	excluded_turfs = list(/turf/open/floor/dirt/road)
 	spawnableAtoms = list(/obj/structure/flora/mushroomcluster = 20,

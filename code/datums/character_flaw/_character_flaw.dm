@@ -28,7 +28,7 @@ GLOBAL_LIST_INIT(character_flaws, list(
 	"Luxless" = /datum/charflaw/lux_taken,
 	"Witless Pixie" = /datum/charflaw/witless_pixie,
 	"Random Flaw or No Flaw"=/datum/charflaw/randflaw,
-	"Guaranteed No Flaw (3 TRI)"=/datum/charflaw/noflaw,
+	"Guaranteed No Flaw (FREE)"=/datum/charflaw/eznoflaw,
 ))
 
 /datum/charflaw
@@ -112,6 +112,9 @@ GLOBAL_LIST_INIT(character_flaws, list(
 	if(after_spawn)
 		charflaw.after_spawn(src)
 
+	if(after_spawn)
+		charflaw.after_spawn(src)
+
 /datum/charflaw/randflaw
 	name = "Random Flaw"
 	desc = "Chooses a random flaw (50% chance for no flaw)"
@@ -167,7 +170,7 @@ GLOBAL_LIST_INIT(character_flaws, list(
 				var/obj/item/I = H.wear_mask
 				if(!I.obj_broken)
 					return
-	H.blur_eyes(2)
+	H.set_eye_blur_if_lower(4 SECONDS)
 	H.apply_status_effect(/datum/status_effect/debuff/badvision)
 
 /datum/status_effect/debuff/badvision
@@ -701,7 +704,7 @@ GLOBAL_LIST_INIT(character_flaws, list(
 
 		// Severe migraine effects
 		if(prob(30)) // 30% chance of severe episode
-			H.blur_eyes(rand(3, 6))
+			H.set_eye_blur_if_lower(rand(6 SECONDS, 12 SECONDS))
 			to_chat(H, span_boldwarning("A severe migraine strikes! Your vision blurs and your head pounds!"))
 		else
 			to_chat(H, span_warning("A migraine headache begins to build."))
@@ -791,7 +794,7 @@ GLOBAL_LIST_INIT(character_flaws, list(
 		return
 	var/mob/living/L = user
 
-	L.adjust_stat_modifier("[REF(src)]", STATKEY_INT, rand(-2, -5)) //this would probably make the average manorc a vegetable
+	L.adjust_stat_modifier(STATMOD_FLAW, STATKEY_INT, rand(-2, -5)) //this would probably make the average manorc a vegetable
 
 /datum/charflaw/witless_pixie/after_spawn(mob/user)
 	if(!ishuman(user))

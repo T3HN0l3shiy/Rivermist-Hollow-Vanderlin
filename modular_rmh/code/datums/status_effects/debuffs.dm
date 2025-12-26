@@ -3,6 +3,10 @@
 	alert_type = null // don't show an alert on screen
 	duration = 12 MINUTES // wear off eventually or until character washes themselves
 
+/datum/stress_event/facial
+	desc = "<span class='warning'>I've been creamed. Tastes like cum.</span>\n"
+	timer = 20 MINUTES
+
 /datum/status_effect/facial/internal
 	id = "creampie"
 	alert_type = null // don't show an alert on screen
@@ -10,10 +14,12 @@
 
 /datum/status_effect/facial/on_apply()
 	RegisterSignal(owner, list(COMSIG_COMPONENT_CLEAN_ACT, COMSIG_COMPONENT_CLEAN_FACE_ACT),PROC_REF(clean_up))
+	owner.add_stress(/datum/stress_event/facial)
 	return ..()
 
 /datum/status_effect/facial/on_remove()
 	UnregisterSignal(owner, list(COMSIG_COMPONENT_CLEAN_ACT, COMSIG_COMPONENT_CLEAN_FACE_ACT))
+	owner.remove_stress(/datum/stress_event/facial)
 	return ..()
 
 ///Callback to remove pearl necklace
@@ -61,6 +67,19 @@
 	alert_type = /atom/movable/screen/alert/status_effect/edging_overstimulation
 	effectedstats = list("strength" = -1, "speed" = -2, "intelligence" = -2)
 
+/datum/stress_event/edging_overstimulation
+	desc = "<span class='love_low'>I have been going at it for too long without release, I need relief...</span>\n"
+	timer = 60 MINUTES
+	stress_change = 1
+
+/datum/status_effect/edging_overstimulation/on_apply()
+	owner.add_stress(/datum/stress_event/edging_overstimulation)
+	. = ..()
+
+/datum/status_effect/edging_overstimulation/on_remove()
+	owner.remove_stress(/datum/stress_event/edging_overstimulation)
+	. = ..()
+
 /atom/movable/screen/alert/status_effect/edging_overstimulation
 	name = "Overstimulated"
 	desc = "I have been going at it for too long without release, I need relief..."
@@ -70,6 +89,19 @@
 	alert_type = /atom/movable/screen/alert/status_effect/debuff/orgasmbroken
 	effectedstats = list("intelligence" = -10, "strength" = -2, "speed" = -2, "perception" = -5, "endurance" = 2, "constitution" = -2)
 	duration = -1
+
+/datum/stress_event/orgasmbroken
+	desc = "<span class='love_low'>My legs are shaking, but I need more.</span>\n"
+	timer = 60 MINUTES
+	stress_change = -5
+
+/datum/status_effect/debuff/orgasmbroken/on_apply()
+	owner.add_stress(/datum/stress_event/orgasmbroken)
+	. = ..()
+
+/datum/status_effect/debuff/orgasmbroken/on_remove()
+	owner.remove_stress(/datum/stress_event/orgasmbroken)
+	. = ..()
 
 /datum/status_effect/debuff/orgasmbroken/on_apply()
 	. = ..()
@@ -90,6 +122,19 @@
 	//effectedstats = list("intelligence" = -20, "strength" = -8, "speed" = -6, "perception" = -5, "endurance" = 2, "constitution" = -2)
 	duration = -1
 
+/datum/stress_event/nympho_addiction
+	desc = "<span class='love_low'>I want to do it again. And again. And again.</span>\n"
+	timer = 60 MINUTES
+	stress_change = -3
+
+/datum/status_effect/debuff/nympho_addiction/on_apply()
+	owner.add_stress(/datum/stress_event/nympho_addiction)
+	. = ..()
+
+/datum/status_effect/debuff/nympho_addiction/on_remove()
+	owner.remove_stress(/datum/stress_event/nympho_addiction)
+	. = ..()
+
 /datum/status_effect/debuff/nympho_addiction/on_apply()
 	. = ..()
 	var/mob/living/carbon/human/human = owner
@@ -106,9 +151,22 @@
 	effectedstats = list("intelligence" = -10, "strength" = -6, "speed" = -6)
 	duration = -1
 
+/datum/stress_event/cumbrained
+	desc = "<span class='love_low'>It's hard to think of anything but sex...</span>\n"
+	timer = 60 MINUTES
+	stress_change = -1
+
+/datum/status_effect/debuff/cumbrained/on_apply()
+	owner.add_stress(/datum/stress_event/cumbrained)
+	. = ..()
+
+/datum/status_effect/debuff/cumbrained/on_remove()
+	owner.remove_stress(/datum/stress_event/cumbrained)
+	. = ..()
+
 /atom/movable/screen/alert/status_effect/debuff/cumbrained
 	name = "Cum Brained"
-	desc = "It's hard to think..."
+	desc = "It's hard to think of anything but sex..."
 	icon_state = "debuff"
 
 /datum/status_effect/debuff/cumbrained/tick()
@@ -134,6 +192,19 @@
 	id = "loinspent"
 	alert_type = /atom/movable/screen/alert/status_effect/debuff/loinspent
 	duration = -1
+
+/datum/stress_event/loinspent
+	desc = "<span class='love_low'>All this effort is starting to hurt a bit...</span>\n"
+	timer = 60 MINUTES
+	stress_change = 1
+
+/datum/status_effect/debuff/loinspent/on_apply()
+	owner.add_stress(/datum/stress_event/loinspent)
+	. = ..()
+
+/datum/status_effect/debuff/loinspent/on_remove()
+	owner.remove_stress(/datum/stress_event/loinspent)
+	. = ..()
 
 /atom/movable/screen/alert/status_effect/debuff/loinspent
 	name = "Spent Loins"
@@ -170,6 +241,19 @@
 	examine_text = span_notice("Their belly is bulging...")
 	effectedstats = list("constitution" = 1, "speed" = -1)
 
+/datum/stress_event/bloatsex
+	desc = "<span class='love_low'>I have been filled to the brim...</span>\n"
+	timer = 60 MINUTES
+	stress_change = -1
+
+/datum/status_effect/debuff/bloatone/on_apply()
+	owner.add_stress(/datum/stress_event/bloatsex)
+	. = ..()
+
+/datum/status_effect/debuff/bloatone/on_remove()
+	owner.remove_stress(/datum/stress_event/bloatsex)
+	. = ..()
+
 /atom/movable/screen/alert/status_effect/bloatone
 	name = "Bloated"
 	desc = "Bit full..."
@@ -186,6 +270,11 @@
 	. = ..()
 	if(owner.has_status_effect(/datum/status_effect/debuff/bloatone))
 		owner.remove_status_effect(/datum/status_effect/debuff/bloatone)
+	owner.add_stress(/datum/stress_event/bloatsex)
+
+/datum/status_effect/debuff/bloattwo/on_remove()
+	owner.remove_stress(/datum/stress_event/bloatsex)
+	. = ..()
 
 /atom/movable/screen/alert/status_effect/bloattwo
 	name = "Bloated"
@@ -201,3 +290,103 @@
 	timer = 5 MINUTES
 	stress_change = -3
 	desc = list(span_green("My loins took a GOOD beating!~"),span_green("My loins got slammed GOOD!"),span_green("My loins got beaten GOOD!"))
+
+/datum/status_effect/debuff/bigboobs
+	id = "bigboobs"
+	alert_type = /atom/movable/screen/alert/status_effect/debuff/bigboobs
+	examine_text = span_notice("They have massive MAGICAL GOODS!")
+	effectedstats = list("constitution" = 3, "speed" = -1)
+	duration = 10 MINUTES
+	var/initialpenis
+	var/initialbutt
+	var/initialball
+	var/initialbreasts
+	var/nodrawback = FALSE
+
+/datum/status_effect/debuff/bigboobs/permanent
+	duration = -1 //used for quirk
+/*
+/datum/status_effect/debuff/bigboobs/permanent/lite
+	alert_type = /atom/movable/screen/alert/status_effect/debuff/bigboobslite
+	examine_text = span_notice("They have massive GOODS!")
+	nodrawback = TRUE
+	effectedstats = null*/
+
+/atom/movable/screen/alert/status_effect/debuff/bigboobs
+	name = "Enchanted Endowment" //was gonna name it a curse but it isn't a technically one.
+	desc = "They feel as heavy as gold and are massive... My back hurts."
+	//icon = 'modular_stonehedge/licensed-eaglephntm/icons/mob/screen_alert.dmi'
+	icon_state = "status"
+/*
+/atom/movable/screen/alert/status_effect/debuff/bigboobslite
+	name = "Natural Endowment"
+	desc = "I got unusually large, natural bits, they aren't as heavy as an enchanted one thankfully."
+	icon = 'modular_stonehedge/licensed-eaglephntm/icons/mob/screen_alert.dmi'
+	icon_state = "bigboobslite"
+*/
+/datum/status_effect/debuff/bigboobs/on_apply()
+	. = ..()
+	var/mob/living/carbon/human/species/user = owner
+	if(!user)
+		return
+	/*if(nodrawback)
+		ADD_TRAIT(user, TRAIT_ENDOWMENTLITE, id)
+	else
+		ADD_TRAIT(user, TRAIT_ENDOWMENT, id)*/
+	to_chat(user, span_warning("Gah! my [user.gender == FEMALE ? "TITS" : "JUNK"] expand to impossible sizes!"))
+	//max them out.
+	for(var/obj/item/organ/genitals/forgan as anything in user.internal_organs) //as anything cause i either do this or use for() twice which is i guess worse.
+		if(istype(forgan, /obj/item/organ/genitals/penis))
+			initialpenis = forgan.organ_size
+			forgan.organ_size = TOTAL_PENIS_SIZE
+			continue
+		/*if(istype(forgan, /obj/item/organ/butt))
+			initialbutt = forgan.organ_size
+			forgan.organ_size = TOTAL_BUTT_SIZE
+			continue*/
+		if(istype(forgan, /obj/item/organ/genitals/filling_organ/testicles))
+			initialball = forgan.organ_size
+			forgan.organ_size = TOTAL_TESTICLES_SIZE
+			continue
+		if(istype(forgan, /obj/item/organ/genitals/filling_organ/breasts))
+			initialbreasts = forgan.organ_size
+			forgan.organ_size = TOTAL_BREASTS_SIZE - 2
+			continue
+		continue
+	user.update_body_parts(TRUE)
+	//drop our unwearable equipment to the floor.
+	/*if(user.gender == MALE)
+		var/obj/item/clothing/thepants = user.wear_pants
+		if(thepants && !thepants?.can_hold_endowed)
+			user.dropItemToGround(thepants)
+	else
+		var/obj/item/clothing/theshirt = user.wear_shirt
+		var/obj/item/clothing/thearmor = user.wear_armor
+		if(theshirt && !theshirt?.can_hold_endowed)
+			user.dropItemToGround(theshirt)
+		if(thearmor && !thearmor?.can_hold_endowed)
+			user.dropItemToGround(thearmor)*/
+
+/datum/status_effect/debuff/bigboobs/on_remove()
+	. = ..()
+	var/mob/living/carbon/human/species/user = owner
+	if(!user)
+		return
+	//REMOVE_TRAIT(user, TRAIT_ENDOWMENT, id)
+	to_chat(user, span_notice("Phew, My bits shrunk back to the way they were."))
+	//return to pref sizes.
+	for(var/obj/item/organ/genitals/forgan as anything in user.internal_organs)
+		if(istype(forgan, /obj/item/organ/genitals/penis))
+			forgan.organ_size = initialpenis
+			continue
+		/*if(istype(forgan, /obj/item/organ/butt))
+			forgan.organ_size = initialbutt
+			continue*/
+		if(istype(forgan, /obj/item/organ/genitals/filling_organ/testicles))
+			forgan.organ_size = initialball
+			continue
+		if(istype(forgan, /obj/item/organ/genitals/filling_organ/breasts))
+			forgan.organ_size = initialbreasts
+			continue
+		continue
+	user.update_body_parts(TRUE)

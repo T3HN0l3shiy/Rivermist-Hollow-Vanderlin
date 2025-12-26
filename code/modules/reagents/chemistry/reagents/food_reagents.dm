@@ -28,7 +28,7 @@
 	if (method == INGEST && ishuman(M))
 		var/mob/living/carbon/human/HM = M
 
-		if(HM.culinary_preferences)
+		if(HM.culinary_preferences && !HAS_TRAIT(HM, TRAIT_AGEUSIA))
 			var/favorite_drink_type = HM.culinary_preferences[CULINARY_FAVOURITE_DRINK]
 			if(favorite_drink_type == type)
 				if(HM.add_stress(/datum/stress_event/favourite_drink))
@@ -51,7 +51,7 @@
 					if(HM.add_stress(/datum/stress_event/hated_drink))
 						to_chat(HM, span_red("Yuck! My hated drink!"))
 
-		if (quality)
+		if (quality && !HAS_TRAIT(HM, TRAIT_AGEUSIA))
 			switch (quality)
 				if (DRINK_NICE)
 					M.add_stress(/datum/stress_event/wine_okay)
@@ -226,7 +226,7 @@
 
 /datum/reagent/consumable/honey
 	name = "Honey"
-	description = "Sweet sweet honey that decays into sugar. Has antibacterial and natural healing properties."
+	description = "Sweet, sweet honey that decays into sugar. Has antibacterial and natural healing properties."
 	color = "#d3a308"
 	nutriment_factor = 15 * REAGENTS_METABOLISM
 	metabolization_rate = 1 * REAGENTS_METABOLISM

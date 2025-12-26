@@ -401,18 +401,18 @@
 	else if(slot & ITEM_SLOT_RING)
 		active_item = TRUE
 		to_chat(user, span_notice("Here be dragons."))
-		user.change_stat("strength", 2)
-		user.change_stat("constitution", 2)
-		user.change_stat("endurance", 2)
+		user.change_stat(STATKEY_STR, 2)
+		user.change_stat(STATKEY_CON, 2)
+		user.change_stat(STATKEY_END, 2)
 	return
 
 /obj/item/clothing/ring/dragon_ring/dropped(mob/living/user)
 	..()
 	if(active_item)
 		to_chat(user, span_notice("Gone is thy hoard."))
-		user.change_stat("strength", -2)
-		user.change_stat("constitution", -2)
-		user.change_stat("endurance", -2)
+		user.change_stat(STATKEY_STR, -2)
+		user.change_stat(STATKEY_CON, -2)
+		user.change_stat(STATKEY_END, -2)
 		active_item = FALSE
 	return
 
@@ -452,4 +452,4 @@
 /obj/item/clothing/ring/feldsher_ring
 	name = "feldsher's ring"
 	icon_state = "ring_feldsher"
-	desc = "A hallowed copper ring, ritualistically forged by Pestran clergymen upon the graduation of a feldsher. \n It bears a vulture skull, whose beak is crooked, and the copper was blessed with pestra's rot : it will corrode in time, yet never lose it's resilience. \n Although the wearer may not have Pestra as her patron, this ring is proof of Her blessing. This allows the feldsher to extract and manipulate Lux, so long as they follow Her teachings"
+	desc = "A hallowed copper ring, ritualistically forged by Pestran clergymen upon the graduation of a feldsher. \n It bears a vulture skull, whose beak is crooked, and the copper was blessed with Pestra's rot: it will corrode in time, yet never lose its resilience. \n Although the wearer may not have Pestra as her patron, this ring is proof of Her blessing. This allows the feldsher to extract and manipulate Lux, so long as they follow Her teachings"

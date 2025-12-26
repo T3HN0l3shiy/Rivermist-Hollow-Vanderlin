@@ -172,3 +172,19 @@
 	sprite_accessories = list(
 		/datum/sprite_accessory/ears/miqote,
 		)
+
+/datum/customizer/organ/ears/triton
+	customizer_choices = list(/datum/customizer_choice/organ/ears/triton)
+	allows_disabling = TRUE
+
+/datum/customizer_choice/organ/ears/triton
+	name = "Triton Ears"
+	generic_random_pick = TRUE
+	allows_accessory_color_customization = TRUE
+	sprite_accessories = list(
+		/datum/sprite_accessory/ears/axolotl,
+		/datum/sprite_accessory/ears/jellyfish,
+		/datum/sprite_accessory/ears/shark,
+		/datum/sprite_accessory/ears/fish,
+		/datum/sprite_accessory/ears/elf,
+		)

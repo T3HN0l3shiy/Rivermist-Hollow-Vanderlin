@@ -41,6 +41,11 @@
 	armor = ARMOR_PLATE_GOOD
 	prevent_crits = ALL_CRITICAL_HITS_VAMP
 
+/obj/item/clothing/armor/plate/ancient
+	name = "ancient plate"
+	desc = "An ornate, ceremonial plate of considerable age."
+	icon_state = "ancientplate"
+
 //................ Full Plate Armor ............... //
 /obj/item/clothing/armor/plate/full
 	name = "plate armor"
@@ -102,7 +107,7 @@
 
 /obj/item/clothing/armor/plate/decorated
 	name = "decorated halfplate"
-	desc = "A halfplate decorated with an gold ornament on the chestplate. A status symbol that doesnt lose out on practicality. "
+	desc = "A halfplate decorated with a gold ornament on the chestplate. A status symbol that doesn't lose out on practicality. "
 	icon_state = "halfplate_decorated"
 	icon = 'icons/roguetown/clothing/special/decorated_armor.dmi'
 	mob_overlay_icon = 'icons/roguetown/clothing/special/onmob/decorated_armor.dmi'
@@ -111,7 +116,7 @@
 
 /obj/item/clothing/armor/plate/decorated/corset
 	name = "decorated halfplate with corset"
-	desc = "A halfplate decorated with an gold ornament on the chestplate and a fine silk corset. More for decoration then actual use."
+	desc = "A halfplate decorated with a gold ornament on the chestplate and a fine silk corset. More for decoration then actual use."
 	icon_state = "halfplate_decorated_corset"
 
 //................ Zizo Armor ...............//
@@ -183,20 +188,10 @@
 	max_integrity = 400
 	melt_amount = 150
 	melting_material = /datum/material/silver
-	armor = ARMOR_BRIGANDINE // overall worse because of the endurance buff
-
-/obj/item/clothing/armor/plate/fluted/ornate/equipped(mob/living/user, slot)
-	. = ..()
-	if(slot & ITEM_SLOT_ARMOR)
-		user.apply_status_effect(/datum/status_effect/buff/psydonic_endurance)
-
-/obj/item/clothing/armor/plate/fluted/ornate/dropped(mob/living/carbon/human/user)
-	. = ..()
-	if(istype(user) && user?.wear_armor == src)
-		user.remove_status_effect(/datum/status_effect/buff/psydonic_endurance)
+	armor = ARMOR_PLATE // overall worse because of the endurance buff //Changed to Plate armor
 
 
-/obj/item/clothing/armor/plate/full/fluted/ornate/ordinator
+/obj/item/clothing/armor/plate/fluted/ornate/ordinator
 	name = "inquisitorial ordinator's plate"
 	desc = "A relic that is said to have survived the early sieges of Grenzelhoft, refurbished and repurposed to slay the arch-enemy in the name of Psydon. <br> A fluted cuirass that has been reinforced with thick padding and an additional shoulder piece. You will endure."
 	icon_state = "ordinatorplate"
@@ -205,7 +200,7 @@
 /datum/status_effect/buff/psydonic_endurance
 	id = "psydonic_endurance"
 	alert_type = /atom/movable/screen/alert/status_effect/buff/psydonic_endurance
-	effectedstats = list("constitution" = 1,"endurance" = 1)
+	effectedstats = list(STATKEY_CON = 1,STATKEY_END = 1)
 
 /datum/status_effect/buff/psydonic_endurance/on_apply()
 	. = ..()

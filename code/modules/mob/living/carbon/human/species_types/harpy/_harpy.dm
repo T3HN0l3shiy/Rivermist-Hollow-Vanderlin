@@ -95,7 +95,8 @@
 		ORGAN_SLOT_APPENDIX = /obj/item/organ/appendix,
 		ORGAN_SLOT_VOICE = /obj/item/organ/vocal_cords/harpy,
 		ORGAN_SLOT_TAIL = /obj/item/organ/tail/harpy,
-		ORGAN_SLOT_WINGS = /obj/item/organ/wings/flight/harpy,
+		ORGAN_SLOT_WINGS = /obj/item/organ/wings/flight/harpy,,
+		ORGAN_SLOT_ANUS = /obj/item/organ/genitals/filling_organ/anus,
 	)
 
 	meat = /obj/item/reagent_containers/food/snacks/meat/poultry/cutlet
@@ -116,8 +117,8 @@
 		/datum/customizer/bodypart_feature/piercing,
 		/datum/customizer/organ/tail/harpy,
 		/datum/customizer/organ/wings/harpy,
-		/datum/customizer/organ/genitals/penis/human,
-		/datum/customizer/organ/genitals/vagina/human,
+		/datum/customizer/organ/genitals/penis/anthro,
+		/datum/customizer/organ/genitals/vagina/anthro,
 		/datum/customizer/organ/genitals/breasts/human,
 		/datum/customizer/organ/genitals/belly/human,
 		/datum/customizer/organ/genitals/butt/human,

@@ -147,6 +147,8 @@
 #define SKIN_COLOR_KELP "0d844e"
 /// Brownish/Yellow "#bcbb7a"
 #define SKIN_COLOR_SAND "bcbb7a"
+/// Light Gray "#979ca8"
+#define SKIN_COLOR_SHELL "979ca8" /// Временная замена
 
 // MEDICATOR SKIN TONES
 /// Gray "#5e5e5e"
@@ -159,6 +161,12 @@
 #define SKIN_COLOR_WASTE "4f2d61"
 /// Pale Orange "#d69558"
 #define SKIN_COLOR_TOXIN "d69558"
+
+// RAKSHARI SKIN TONES
+/// Black "#41414e"
+#define SKIN_COLOR_NIGHTSHADE "41414e"
+/// Orange "#cc9552"
+#define SKIN_COLOR_QUICKSAND "cc9552" //Apparently sphynx cats can be orange, who knew!
 
 // SPECIAL SKIN TONES
 /// Sickly green

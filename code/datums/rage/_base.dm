@@ -1,10 +1,6 @@
-#define RAGE_LEVEL_LOW "25"
-#define RAGE_LEVEL_MEDIUM "50"
-#define RAGE_LEVEL_HIGH "75"
-#define RAGE_LEVEL_CRITICAL "90"
-
 /datum/rage
 	var/mob/living/carbon/human/holder_mob = null
+	var/mob/living/carbon/human/secondary_mob = null ///this is a shitcode follower for transformations so that ww's can acccess hud updates
 
 	var/rage = 0
 	var/max_rage = 100
@@ -33,10 +29,9 @@
 
 /datum/rage/Destroy(force)
 	remove()
-	STOP_PROCESSING(SSprocessing, src)
 	return ..()
 
-/datum/rage/process()
+/datum/rage/proc/on_life()
 	if(holder_mob.stat >= DEAD)
 		return
 
@@ -51,7 +46,7 @@
 	if(!holder)
 		return
 
-	START_PROCESSING(SSprocessing, src)
+	RegisterSignal(holder, COMSIG_HUMAN_LIFE, PROC_REF(on_life))
 	holder_mob = holder
 	holder_mob.rage_datum = src
 	holder_mob?.hud_used?.initialize_bloodpool()
@@ -62,8 +57,32 @@
 		grant_ability(ability, permanent = TRUE)
 
 	RegisterSignal(holder_mob, COMSIG_MOB_ADD_STRESS, PROC_REF(on_stress_added))
+	holder_mob.AddElement(/datum/element/relay_attackers)
+	RegisterSignal(holder_mob, COMSIG_ATOM_WAS_ATTACKED, PROC_REF(rage))
 
 	update_hud()
+
+/datum/rage/proc/grant_to_secondary(mob/living/carbon/human/holder)
+	if(!holder)
+		return
+
+	secondary_mob = holder
+	secondary_mob.rage_datum = src
+	secondary_mob?.hud_used?.initialize_bloodpool()
+	secondary_mob?.hud_used?.bloodpool.set_fill_color(rage_color)
+
+	RegisterSignal(secondary_mob, COMSIG_MOB_ADD_STRESS, PROC_REF(on_stress_added))
+	secondary_mob.AddElement(/datum/element/relay_attackers)
+	RegisterSignal(secondary_mob, COMSIG_ATOM_WAS_ATTACKED, PROC_REF(rage))
+
+	update_hud()
+
+/datum/rage/proc/remove_secondary()
+	if(secondary_mob)
+		UnregisterSignal(secondary_mob, COMSIG_MOB_ADD_STRESS)
+		UnregisterSignal(secondary_mob, COMSIG_ATOM_WAS_ATTACKED)
+		secondary_mob.rage_datum = null
+		secondary_mob.RemoveElement(/datum/element/relay_attackers)
 
 /datum/rage/proc/remove()
 	if(holder_mob)
@@ -90,12 +109,13 @@
 	holder_mob.remove_spell(ability)
 	active_abilities -= ability
 
-/datum/rage/proc/on_stress_added(datum/source, new_stress_amount)
+/datum/rage/proc/on_stress_added(datum/source, datum/stress_event/new_stress)
 	SIGNAL_HANDLER
 
 	if(!holder_mob || holder_mob.stat >= DEAD)
 		return
 
+	var/new_stress_amount = new_stress.stress_change
 	// Calculate rage gain based on total stress - global multiplier
 	// At 0 stress: 1x multiplier, at 5 stress: 1.33x, at 10 stress: 1.67x, at 15 stress: 2x
 	// Negative stress reduces rage gain
@@ -112,6 +132,7 @@
 
 /datum/rage/proc/update_rage(amount)
 	var/old_rage = rage
+	if(holder_mob.stat == DEAD) return
 	rage = clamp(rage + amount, 0, max_rage)
 
 	update_hud()
@@ -119,6 +140,10 @@
 	if(old_rage != rage)
 		SEND_SIGNAL(holder_mob, COMSIG_LIVING_RAGE_CHANGED, amount)
 		check_rage_tier()
+		if(rage <= 0)
+			SEND_SIGNAL(holder_mob, COMSIG_RAGE_BOTTOMED)
+	if(rage == max_rage)
+		SEND_SIGNAL(holder_mob, COMSIG_RAGE_OVERRAGE)
 
 /datum/rage/proc/update_hud()
 	holder_mob?.hud_used?.bloodpool?.name = "Rage: [round(rage, 0.1)]"
@@ -127,6 +152,14 @@
 		holder_mob?.hud_used?.bloodpool?.set_value(0, 1 SECONDS)
 	else
 		holder_mob?.hud_used?.bloodpool?.set_value((100 / (max_rage / rage)) / 100, 1 SECONDS)
+
+	if(secondary_mob)
+		secondary_mob?.hud_used?.bloodpool?.name = "Rage: [round(rage, 0.1)]"
+		secondary_mob?.hud_used?.bloodpool?.desc = "Rage: [round(rage, 0.1)]/[max_rage]"
+		if(rage <= 0)
+			secondary_mob?.hud_used?.bloodpool?.set_value(0, 1 SECONDS)
+		else
+			secondary_mob?.hud_used?.bloodpool?.set_value((100 / (max_rage / rage)) / 100, 1 SECONDS)
 
 /datum/rage/proc/check_rage(required)
 	return rage >= abs(required)
@@ -185,7 +218,11 @@
 	check_rage_tier()
 	to_chat(holder_mob, span_boldwarning("My rage has been unleashed to its full potential!"))
 
-#undef RAGE_LEVEL_LOW
-#undef RAGE_LEVEL_MEDIUM
-#undef RAGE_LEVEL_HIGH
-#undef RAGE_LEVEL_CRITICAL
+/datum/rage/proc/rage(mob/living/attacked, mob/living/carbon/human/attacker, damage)
+	var/base_rage = damage ? damage : 5
+	var/stress_multi = 1
+	if(stress_rage_multiplier > stress_multi)
+		stress_multi = stress_rage_multiplier
+
+	update_rage(base_rage * stress_multi)
+

@@ -12,6 +12,7 @@
 	var/mood_quirk = FALSE //if true, this quirk affects mood and is unavailable if moodlets are disabled
 	var/mob_trait //if applicable, apply and remove this mob trait
 	var/mob/living/quirk_holder
+	var/revive_reapply = FALSE
 
 /datum/quirk/New(mob/living/quirk_mob, spawn_effects)
 	..()
@@ -48,6 +49,11 @@
 		ADD_TRAIT(to_mob, mob_trait, ROUNDSTART_TRAIT)
 	quirk_holder = to_mob
 	on_transfer()
+
+/datum/quirk/proc/reapply()
+	if(revive_reapply)
+		on_spawn()
+		addtimer(CALLBACK(src, PROC_REF(post_add)), 30)
 
 /datum/quirk/proc/add() //special "on add" effects
 /datum/quirk/proc/on_spawn() //these should only trigger when the character is being created for the first time, i.e. roundstart/latejoin
@@ -95,6 +101,11 @@
 		var/datum/quirk/T = V
 		T.transfer_mob(to_mob)
 
+/mob/living/proc/reapply_quirks()
+	for(var/V in roundstart_quirks)
+		var/datum/quirk/T = V
+		if(T.revive_reapply)
+			T.reapply()
 /*
 
 Commented version of Nearsighted to help you add your own traits

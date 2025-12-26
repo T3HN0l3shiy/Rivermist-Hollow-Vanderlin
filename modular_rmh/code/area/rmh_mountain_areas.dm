@@ -1,6 +1,6 @@
 //MOUNTAIN MAP AREAS//
 
-/area/rogue/outdoors/mountains/rmh_mountains/frozen
+/area/outdoors/mountains/rmh_mountains/frozen
 	name = "Dusk Spire Mountains"
 	icon_state = "decap"
 	ambush_mobs = null
@@ -19,10 +19,10 @@
 				/mob/living/simple_animal/hostile/retaliate/wolf/bobcat = 21,
 				/mob/living/simple_animal/hostile/retaliate/wolf = 21,
 				/mob/living/simple_animal/hostile/retaliate/wolf_undead = 18)*/
-	converted_type = /area/rogue/indoors/shelter/mountains/rmh_mountains/frozen
+	converted_type = /area/indoors/shelter/mountains/rmh_mountains/frozen
 	//deathsight_message = "a spire pass"
 
-/area/rogue/indoors/shelter/mountains/rmh_mountains/frozen
+/area/indoors/shelter/mountains/rmh_mountains/frozen
 	icon = 'modular_rmh/icons/turf/areas.dmi'
 	icon_state = "indoors"
 	background_track = 'sound/music/area/decap.ogg'
@@ -31,7 +31,7 @@
 	background_track_dusk = null
 	background_track_night = null
 
-/area/rogue/indoors/cave/rmh_cave/cold
+/area/indoors/cave/rmh_cave/cold
 	name = "Cold Caves"
 	first_time_text = "COLD CAVES"
 	icon = 'modular_rmh/icons/turf/areas.dmi'
@@ -42,17 +42,17 @@
 
 //DUSK SPIRE MANOR
 
-/area/rogue/indoors/town/rmh/manor
+/area/indoors/town/rmh/manor
 	name = "Dusk Spire Manor"
 	first_time_text = "DUSK SPIRE MANOR"
 	icon_state = "manor"
 	background_track = list('sound/music/area/manor.ogg', 'sound/music/area/manor2.ogg')
 	background_track_dusk = null
 	background_track_night = null
-	converted_type = /area/rogue/outdoors/exposed/rmh/manorgarri
+	converted_type = /area/outdoors/exposed/rmh/manorgarri
 	keep_area = TRUE
 
-/area/rogue/outdoors/exposed/rmh/manorgarri
+/area/outdoors/exposed/rmh/manorgarri
 	name = "Dusk Spire Manor Court"
 	first_time_text = "DUSK SPIRE MANOR COURTYARD"
 	icon_state = "manorgarri"
@@ -63,18 +63,18 @@
 	ambientsounds = DRONING_MOUNTAIN
 	ambientnight = DRONING_MOUNTAIN
 
-/area/rogue/indoors/town/rmh/manor/basement
+/area/indoors/town/rmh/manor/basement
 	name = "Dusk Spire Manor Basement"
 	first_time_text = "DUSK SPIRE MANOR BASEMENT"
 	icon_state = "basement"
 
-/area/rogue/indoors/town/rmh/manor/bath
+/area/indoors/town/rmh/manor/bath
 	name = "Dusk Spire Manor Baths"
 	first_time_text = "DUSK SPIRE MANOR BATHS"
 	icon_state = "bath"
 	background_track = 'sound/music/area/bath.ogg'
 
-/area/rogue/indoors/town/rmh/manor/vault
+/area/indoors/town/rmh/manor/vault
 	name = "Dusk Spire Manor Vault"
 	first_time_text = "DUSK SPIRE MANOR VAULT"
 	icon_state = "vault"
@@ -82,14 +82,14 @@
 
 //KEEP OUTSKIRTS
 
-/area/rogue/outdoors/mountains/rmh_mountains/frozen/lowlands
+/area/outdoors/mountains/rmh_mountains/frozen/lowlands
 	name = "Cold Lowlands"
 	icon = 'modular_rmh/icons/turf/areas.dmi'
 	icon_state = "outdoors"
 	first_time_text = "COLD LOWLANDS"
 	//deathsight_message = "cold lowlands"
 
-/area/rogue/outdoors/mountains/rmh_mountains/frozen/forsaken_village
+/area/outdoors/mountains/rmh_mountains/frozen/forsaken_village
 	name = "Forsaken Village"
 	icon = 'modular_rmh/icons/turf/areas.dmi'
 	icon_state = "village"
@@ -98,7 +98,7 @@
 
 //KEEP
 
-/area/rogue/indoors/cave/rmh_dwarf_keep
+/area/indoors/cave/rmh_dwarf_keep
 	name = "Kêdnath Acöb"
 	first_time_text = "KÊDNATH ACÖB"
 	icon_state = "dwarfin"
@@ -109,11 +109,11 @@
 	//spookynight = AMBIENCE_CAVE
 	background_track_dusk = null
 	background_track_night = null
-	converted_type = /area/rogue/outdoors/exposed/rmh_dwarf_keep
+	converted_type = /area/outdoors/exposed/rmh_dwarf_keep
 	ceiling_protected = TRUE
 
 
-/area/rogue/outdoors/exposed/rmh_dwarf_keep
+/area/outdoors/exposed/rmh_dwarf_keep
 	name = "Kêdnath Acöb"
 	first_time_text = "KÊDNATH ACÖB"
 	icon_state = "dwarfin"
@@ -125,49 +125,49 @@
 	background_track_dusk = null
 	background_track_night = null
 
-/area/rogue/indoors/cave/rmh_dwarf_keep/entrance
+/area/indoors/cave/rmh_dwarf_keep/entrance
 	name = "Kêdnath Acöb Entrance Hall"
 	first_time_text = "KÊDNATH ACÖB ENTRANCE HALL"
 	icon = 'modular_rmh/icons/turf/areas.dmi'
 	icon_state = "indoors"
 
-/area/rogue/indoors/cave/rmh_dwarf_keep/living
+/area/indoors/cave/rmh_dwarf_keep/living
 	name = "Kêdnath Acöb Living Hall"
 	first_time_text = "KÊDNATH ACÖB LIVING HALL"
 	icon = 'modular_rmh/icons/turf/areas.dmi'
 	icon_state = "living"
 
-/area/rogue/indoors/cave/rmh_dwarf_keep/communal
+/area/indoors/cave/rmh_dwarf_keep/communal
 	name = "Kêdnath Acöb Communal Hall"
 	first_time_text = "KÊDNATH ACÖB COMMUNAL HALL"
 	icon = 'modular_rmh/icons/turf/areas.dmi'
 	icon_state = "village"
 
-/area/rogue/indoors/cave/rmh_dwarf_keep/grand
+/area/indoors/cave/rmh_dwarf_keep/grand
 	name = "Kêdnath Acöb Grand Hall"
 	first_time_text = "KÊDNATH ACÖB GRAND HALL"
 	icon = 'modular_rmh/icons/turf/areas.dmi'
 	icon_state = "duke"
 
-/area/rogue/indoors/cave/rmh_dwarf_keep/throne
+/area/indoors/cave/rmh_dwarf_keep/throne
 	name = "Kêdnath Acöb Throne Hall"
 	first_time_text = "KÊDNATH ACÖB THRONE HALL"
 	icon = 'modular_rmh/icons/turf/areas.dmi'
 	icon_state = "manor"
 
-/area/rogue/indoors/cave/rmh_dwarf_keep/treasury
+/area/indoors/cave/rmh_dwarf_keep/treasury
 	name = "Kêdnath Acöb Treasury Hall"
 	first_time_text = "KÊDNATH ACÖB TREASURY HALL"
 	icon = 'modular_rmh/icons/turf/areas.dmi'
 	icon_state = "vault"
 
-/area/rogue/indoors/cave/rmh_dwarf_keep/smelters
+/area/indoors/cave/rmh_dwarf_keep/smelters
 	name = "Kêdnath Acöb Workshop: Smelters"
 	first_time_text = "KÊDNATH ACÖB WORKSHOP: SMELTERS"
 	icon = 'modular_rmh/icons/turf/areas.dmi'
 	icon_state = "fire_chamber"
 
-/area/rogue/indoors/cave/rmh_dwarf_keep/forge
+/area/indoors/cave/rmh_dwarf_keep/forge
 	name = "Kêdnath Acöb Workshop: Forge"
 	first_time_text = "KÊDNATH ACÖB WORKSHOP: FORGE"
 	icon = 'modular_rmh/icons/turf/areas.dmi'
@@ -175,12 +175,12 @@
 
 //TRANSITIONS
 
-/area/rogue/outdoors/rmh_field/tavel/mount_to_rivermist
+/area/outdoors/rmh_field/tavel/mount_to_rivermist
 	name = "Mountain To Rivermist Hollow"
 	first_time_text = "TO RIVERMIST HOLLOW"
 	ambientsounds = DRONING_MOUNTAIN
 	ambientnight = DRONING_MOUNTAIN
 
-/area/rogue/outdoors/rmh_field/tavel/mount_to_underdark
+/area/outdoors/rmh_field/tavel/mount_to_underdark
 	name = "Mountain Descent To Underdark"
 	first_time_text = "DESCENT TO UNDERDARK"

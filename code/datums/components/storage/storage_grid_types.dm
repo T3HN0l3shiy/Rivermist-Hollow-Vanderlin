@@ -40,6 +40,18 @@
 	screen_max_rows = 2
 	screen_max_columns = 1
 
+/datum/component/storage/concrete/grid/potion_belt
+    screen_max_rows = 4
+    screen_max_columns = 4
+    max_w_class = WEIGHT_CLASS_NORMAL
+    max_items = 8
+    attack_hand_interact = TRUE
+
+//проверка на тип предмета через открытый инвентарь
+/datum/component/storage/concrete/grid/potion_belt/New(datum/P, ...)
+    . = ..()
+    set_holdable(list(/obj/item/reagent_containers/glass/bottle))
+
 /datum/component/storage/concrete/grid/keyring
 	screen_max_rows = 4
 	screen_max_columns = 5
@@ -221,7 +233,9 @@
 
 /datum/component/storage/concrete/grid/crucible/can_be_inserted(obj/item/storing, stop_messages, mob/user, worn_check, params, storage_click)
 	if(!storing.melting_material)
-		return FALSE
+		var/obj/item/ingot/ingot = storing.smeltresult
+		if(!ispath(ingot, /obj/item/ingot))
+			return FALSE
 	. = ..()
 
 /datum/component/storage/concrete/grid/anvil_bin
@@ -371,3 +385,21 @@
 			)
 		)
 	)
+
+/datum/component/storage/concrete/grid/drying_rack
+	max_w_class = WEIGHT_CLASS_HUGE
+	screen_max_rows = 8
+	screen_max_columns = 4
+
+/datum/component/storage/concrete/grid/drying_rack/New(datum/P, ...)
+	. = ..()
+	set_holdable(list(/obj/item/clothing))
+
+/datum/component/storage/concrete/grid/tray
+	max_w_class = WEIGHT_CLASS_BULKY
+	screen_max_rows = 6
+	screen_max_columns = 1
+
+/datum/component/storage/concrete/grid/tray/New(datum/P, ...)
+	. = ..()
+	set_holdable(list(/obj/item/plate))

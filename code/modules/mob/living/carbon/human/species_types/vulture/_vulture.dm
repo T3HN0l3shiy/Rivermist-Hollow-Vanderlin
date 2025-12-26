@@ -8,7 +8,7 @@
 
 	meat = /obj/item/reagent_containers/food/snacks/meat/strange
 
-	desc = "Medicators originate from the the fetid swamps and murk within the Isle of Enigma. Their species has historically been localized around the area, \
+	desc = "Medicators originate from the fetid swamps and murk within the Isle of Enigma. Their species has historically been localized around the area, \
 	although the Brass Cataclysm of Heartfelt's fall has resulted in droves of their kind seeking refuge elsewhere. They are a newer form of sentience, with records dating back only after Zizo's ascension. \
 	\n\n\
 	Their appearance is gaunt, patches of bare skin riddled with feathers and pox scars, Medicators are a horrifying fusion of bird and men- unlike their far more appealing adversaries, the harpies. \
@@ -71,14 +71,14 @@
 
 	offset_genitals_m = list(
 		OFFSET_PENIS = list(0,0),\
-		OFFSET_BREASTS = list(0,0),\
+		OFFSET_BREASTS = list(0,1),\
 		OFFSET_TESTICLES = list(0,0),\
 		OFFSET_VAGINA = list(0,0),\
 	)
 
 	offset_genitals_f = list(
 		OFFSET_PENIS = list(0,0),\
-		OFFSET_BREASTS = list(0,-1),\
+		OFFSET_BREASTS = list(0,1),\
 		OFFSET_TESTICLES = list(0,0),\
 		OFFSET_VAGINA = list(0,0),\
 	)
@@ -111,12 +111,12 @@
 		/datum/customizer/bodypart_feature/underwear,
 		/datum/customizer/bodypart_feature/legwear,
 		/datum/customizer/bodypart_feature/piercing,
-		/datum/customizer/organ/genitals/penis/human,
-		/datum/customizer/organ/genitals/vagina/human,
-		/datum/customizer/organ/genitals/breasts/human,
-		/datum/customizer/organ/genitals/belly/human,
-		/datum/customizer/organ/genitals/butt/human,
-		/datum/customizer/organ/genitals/testicles/human,
+		/datum/customizer/organ/genitals/penis/anthro,
+		/datum/customizer/organ/genitals/vagina/anthro,
+		/datum/customizer/organ/genitals/breasts/animal,
+		/datum/customizer/organ/genitals/belly/animal,
+		/datum/customizer/organ/genitals/butt/animal,
+		/datum/customizer/organ/genitals/testicles/anthro,
 	)
 
 	body_markings = list(

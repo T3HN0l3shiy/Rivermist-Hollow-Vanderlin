@@ -42,13 +42,13 @@
 		/datum/sprite_accessory/tail/catbig,
 		/datum/sprite_accessory/tail/twocat,
 //		/datum/sprite_accessory/tail/corvid,		For harpies instead?
-//		/datum/sprite_accessory/tail/cow,			Clipping
+		/datum/sprite_accessory/tail/cow,
 //		/datum/sprite_accessory/tail/eevee,			Clipping
 		/datum/sprite_accessory/tail/fennec,
 //		/datum/sprite_accessory/tail/fish,			Clipping
 		/datum/sprite_accessory/tail/fox,
 		/datum/sprite_accessory/tail/fox2,			//Clipping - Ook request to keep in.
-//		/datum/sprite_accessory/tail/horse,			Clipping
+		/datum/sprite_accessory/tail/horse,
 		/datum/sprite_accessory/tail/husky,
 //		/datum/sprite_accessory/tail/insect,		Clipping
 		/datum/sprite_accessory/tail/kangaroo,
@@ -63,7 +63,7 @@
 		/datum/sprite_accessory/tail/shark,
 //		/datum/sprite_accessory/tail/shepherd,		Clipping
 		/datum/sprite_accessory/tail/australian_shepherd,
-//		/datum/sprite_accessory/tail/skunk,			Clipping
+		/datum/sprite_accessory/tail/skunk,
 //		/datum/sprite_accessory/tail/stripe,		Clipping
 		/datum/sprite_accessory/tail/straighttail,
 		/datum/sprite_accessory/tail/squirrel,
@@ -75,7 +75,7 @@
 		/datum/sprite_accessory/tail/raptor,
 //		/datum/sprite_accessory/tail/spade,			Clipping also should be tief exclusive.
 //		/datum/sprite_accessory/tail/leopard,		Clipping
-//		/datum/sprite_accessory/tail/deer,			Clipping
+		/datum/sprite_accessory/tail/deer,
 		/datum/sprite_accessory/tail/raccoon,
 		/datum/sprite_accessory/tail/sabresune,
 		/datum/sprite_accessory/tail/lizard/smooth,
@@ -100,14 +100,18 @@
 
 /datum/customizer/organ/tail/triton
 	customizer_choices = list(/datum/customizer_choice/organ/tail/triton)
-	allows_disabling = FALSE
 
 /datum/customizer_choice/organ/tail/triton
 	name = "Triton Bell"
 	organ_type = /obj/item/organ/tail/triton
-	allows_accessory_color_customization = FALSE
+	allows_accessory_color_customization = TRUE
+	generic_random_pick = TRUE
 	sprite_accessories = list(
 		/datum/sprite_accessory/tail/triton,
+		/datum/sprite_accessory/tail/tshark,
+		/datum/sprite_accessory/tail/tfish,
+		/datum/sprite_accessory/tail/torca,
+		/datum/sprite_accessory/tail/none,
 	)
 
 /datum/customizer/organ/tail/kobold
@@ -133,4 +137,18 @@
 	allows_accessory_color_customization = FALSE
 	sprite_accessories = list(
 		/datum/sprite_accessory/tail/medicator
+	)
+
+/datum/customizer/organ/tail/rakshari
+	customizer_choices = list(/datum/customizer_choice/organ/tail/rakshari)
+	allows_disabling = FALSE
+
+/datum/customizer_choice/organ/tail/rakshari
+	name = "Rakshari Tail"
+	organ_type = /obj/item/organ/tail/cat
+	allows_accessory_color_customization = TRUE
+	sprite_accessories = list(
+		/datum/sprite_accessory/tail/cat,
+		/datum/sprite_accessory/tail/catbig,
+		/datum/sprite_accessory/tail/tiger,
 	)

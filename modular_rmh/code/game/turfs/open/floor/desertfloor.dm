@@ -8,7 +8,7 @@
 	barefootstep = FOOTSTEP_SOFT_BAREFOOT
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 	landsound = 'sound/foley/jumpland/grassland.ogg'
-	slowdown = 5
+	slowdown = 3
 
 /turf/open/floor/sand/desertsand/Initialize()
 	. = ..()
@@ -26,7 +26,7 @@
 	clawfootstep = FOOTSTEP_HARD_CLAW
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 	landsound = 'sound/foley/jumpland/stoneland.ogg'
-	slowdown = 2
+	slowdown = 1
 
 /turf/open/floor/sand/sandbrick/Initialize()
 	. = ..()
@@ -61,9 +61,4 @@
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 	landsound = 'sound/foley/jumpland/grassland.ogg'
 	slowdown = 2
-
-/turf/open/floor/sand/desertsand/oasis/Initialize()
-	. = ..()
-	var/random_num = rand(1, 2)
-	icon_state = "oasissand-[random_num]"
 

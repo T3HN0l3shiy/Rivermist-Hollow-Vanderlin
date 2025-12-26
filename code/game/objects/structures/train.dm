@@ -64,7 +64,7 @@
 	say(span_notice("[departing_mob == user ? "Out of their own volition, " : "Ushered by [user], "][departing_mob] is departing from [SSmapping.config.map_name]."))
 	cryo_mob(departing_mob)
 
-/proc/cryo_mob(mob/departing_mob)
+/proc/cryo_mob(mob/departing_mob, admin = FALSE)
 	if(QDELETED(departing_mob))
 		return "Tried to cryo a deleted mob!"
 	GLOB.actors_list -= departing_mob.mobid // mob cryod - get him outta here.
@@ -81,8 +81,19 @@
 		qdel(departing_mob)
 		return "Cannot cryo [mob_name]: no assigned job. Deleting early."
 	log_game("Cryo successful for [mob_name], adjusting job [J.title].")
-	J.adjust_current_positions(-1)
+	if(J.parent_job)
+		J.parent_job.adjust_current_positions(-1)
+	else
+		J.adjust_current_positions(-1)
+	for(var/obj/structure/resurrection_rune/rr in GLOB.global_resurrunes)
+
+		if(departing_mob in rr.resrunecontroler.linked_users)
+
+			rr.resrunecontroler.remove_user(departing_mob)
+	GLOB.chosen_names -= departing_mob.real_name
+	departing_mob.returntolobby()
 	qdel(departing_mob)
+	SEND_GLOBAL_SIGNAL(COMSIG_GLOB_HUMAN_ENTER_CRYO, departing_mob, admin)
 	return "[mob_name] successfully cryo'd!"
 
 /obj/structure/train/carriage //A temporary subform of the train that is just a carriage	name = "train"

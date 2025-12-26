@@ -173,6 +173,16 @@ GLOBAL_LIST_INIT(natural_precursor_registry, list())
 		/obj/item/reagent_containers/food/snacks/produce/grain/oat,
 	)
 
+/datum/natural_precursor/mushroom
+	name = "mushroom"
+	essence_yields = list(
+		/datum/thaumaturgical_essence/chaos = 3,
+		/datum/thaumaturgical_essence/life = 1
+	)
+	init_types = list(
+		/obj/item/reagent_containers/food/snacks/produce/mushroom,
+	)
+
 /datum/natural_precursor/swampweed
 	name = "swampweed"
 	essence_yields = list(
@@ -188,9 +198,9 @@ GLOBAL_LIST_INIT(natural_precursor_registry, list())
 /datum/natural_precursor/sunflower
 	name = "sunflower"
 	essence_yields = list(
-		/datum/thaumaturgical_essence/fire = 1,
-		/datum/thaumaturgical_essence/life = 1,
-		/datum/thaumaturgical_essence/light = 1,
+		/datum/thaumaturgical_essence/fire = 2,
+		/datum/thaumaturgical_essence/life = 3,
+		/datum/thaumaturgical_essence/light = 5,
 	)
 	init_types = list(
 		/obj/item/reagent_containers/food/snacks/produce/sunflower,
@@ -199,8 +209,8 @@ GLOBAL_LIST_INIT(natural_precursor_registry, list())
 /datum/natural_precursor/fyritius
 	name = "fyritius flower"
 	essence_yields = list(
-		/datum/thaumaturgical_essence/fire = 3,
-		/datum/thaumaturgical_essence/life = 1
+		/datum/thaumaturgical_essence/fire = 10,
+		/datum/thaumaturgical_essence/life = 5
 	)
 	init_types = list(
 		/obj/item/reagent_containers/food/snacks/produce/fyritius,
@@ -313,7 +323,7 @@ GLOBAL_LIST_INIT(natural_precursor_registry, list())
 		/obj/item/gem/turq,//frost because its associated with necra
 	)
 
-//we can assume opal is really dense due to being seen as crystalized rainbow
+//we can assume opal is really dense due to being seen as crystallized rainbow
 //also something about E = cm^2, you get the idea I hope
 /datum/natural_precursor/gem_energia
 	name = "energia gem"

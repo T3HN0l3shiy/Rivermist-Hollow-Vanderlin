@@ -38,8 +38,8 @@
 
 			var/datum/job/target_job = SSjob.GetJob(D.mind.assigned_role)
 			if(target_job)
-				if(target_job.job_reopens_slots_on_death)
-					target_job.current_positions = max(0, target_job.current_positions - 1)
+				//if(target_job.job_reopens_slots_on_death)
+				target_job.current_positions = max(0, target_job.current_positions - 1)
 				//if(target_job.same_job_respawn_delay)
 					// Store the current time for the player
 					//GLOB.job_respawn_delays[src.ckey] = world.time + target_job.same_job_respawn_delay
@@ -77,6 +77,6 @@
 		O.paid = TRUE
 		to_chat(src, span_biginfo("Necra has guaranteed your passage to the next life. Your toll has been already paid."))
 
-	var/area/rogue/underworld/underworld = get_area(spawn_loc)
+	var/area/underworld/underworld = get_area(spawn_loc)
 	underworld.Entered(O, null)
 	verbs -= /client/proc/descend*/

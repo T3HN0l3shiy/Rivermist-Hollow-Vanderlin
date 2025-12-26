@@ -4,21 +4,30 @@ SUBSYSTEM_DEF(migrants)
 	runlevels = RUNLEVEL_GAME
 
 	/// Count of all waves
+
+	/// Count of all waves
 	var/wave_number = 1
+	/// Current wave running
 	/// Current wave running
 	var/current_wave = null
 	/// Time until the next wave
+	/// Time until the next wave
 	var/time_until_next_wave = 2 MINUTES
+	/// Current wave timer
 	/// Current wave timer
 	var/wave_timer = 0
 
 	/// Time between successful waves
+	/// Time between successful waves
 	var/time_between_waves = 3 MINUTES
+	/// Time between failing waves
 	/// Time between failing waves
 	var/time_between_fail_wave = 90 SECONDS
 	/// how long waves wait for players
+	/// how long waves wait for players
 	var/wave_wait_time = 30 SECONDS
 
+	/// Track waves that have happened
 	/// Track waves that have happened
 	var/list/spawned_waves = list()
 	/// Track triumph contributions across all waves
@@ -48,6 +57,7 @@ SUBSYSTEM_DEF(migrants)
 /datum/controller/subsystem/migrants/proc/get_current_disabled_status()
 	return admin_disabled ? "Disabled" : "Enabled"
 
+
 /datum/controller/subsystem/migrants/proc/set_current_wave(wave_type, time, parent_wave = -1)
 	current_wave = wave_type
 	wave_timer = time
@@ -55,6 +65,8 @@ SUBSYSTEM_DEF(migrants)
 		current_parent_wave = parent_wave
 
 /datum/controller/subsystem/migrants/proc/process_migrants(dt)
+	if(admin_disabled)
+		return
 	if(admin_disabled)
 		return
 	if(current_wave)
@@ -104,17 +116,32 @@ SUBSYSTEM_DEF(migrants)
 
 /datum/controller/subsystem/migrants/proc/try_spawn_wave()
 	var/datum/migrant_wave/wave = MIGRANT_WAVE(current_wave)
-	/// Create initial assignment list
-	/// migrant_role = client (initally migrant_role = null)
-	var/list/assignments = list()
+	/// Create indexed assignment slots and role map
+	var/list/assignments = list()  // indexed list of clients (null = empty slot)
+	var/list/assignment_roles = list()  // indexed list of role types per slot
 	/// Populate it
 	for(var/role_type in wave.roles)
 		var/amount = wave.roles[role_type]
 		for(var/i in 1 to amount)
-			assignments[role_type] = null
-	/// Shuffle assignments so role rolling is not consistent
-	assignments = shuffle(assignments)
+			assignments += null
+			assignment_roles += role_type
 
+	/// Shuffle assignments so role rolling is not consistent
+	var/list/slot_order = list()
+	for(var/i in 1 to assignments.len)
+		slot_order += i
+	slot_order = shuffle(slot_order)
+
+	var/list/shuffled_assignments = list()
+	var/list/shuffled_assignment_roles = list()
+	for(var/idx in slot_order)
+		shuffled_assignments += assignments[idx]
+		shuffled_assignment_roles += assignment_roles[idx]
+
+	assignments = shuffled_assignments
+	assignment_roles = shuffled_assignment_roles
+
+	///Get active migrants and shuffle them
 	var/list/active_migrants = get_active_migrants()
 	active_migrants = shuffle(active_migrants)
 
@@ -123,18 +150,22 @@ SUBSYSTEM_DEF(migrants)
 	if(!length(active_migrants))
 		return FALSE
 
+
 	/// Try to assign priority players to positions
-	for(var/assignment in assignments)
+	for(var/i in 1 to assignments.len)
 		if(!length(active_migrants))
-			break // Out of migrants, we're screwed and will fail
-		if(!isnull(assignments[assignment]))
+			break
+		if(!isnull(assignments[i]))
 			continue
-		var/list/priority = get_priority_players(active_migrants, assignment, current_wave)
+
+		var/role_type = assignment_roles[i]
+		var/list/priority = get_priority_players(active_migrants, role_type, current_wave)
 		if(!length(priority))
 			continue
+
 		var/client/picked
 		for(var/client/client as anything in priority)
-			if(!can_be_role(client, assignment))
+			if(!can_be_role(client, role_type))
 				continue
 			picked = client
 			break
@@ -142,19 +173,20 @@ SUBSYSTEM_DEF(migrants)
 			continue
 
 		active_migrants -= picked
-		assignments[assignment] = picked
+		assignments[i] = picked
 		picked_migrants += picked
 
 	/// Assign rest of the players to positions
-	for(var/assignment in assignments)
+	for(var/i in 1 to assignments.len)
 		if(!length(active_migrants))
 			break // Out of migrants, we're screwed and will fail
-		if(!isnull(assignments[assignment]))
+		if(!isnull(assignments[i]))
 			continue
 
+		var/role_type = assignment_roles[i]
 		var/client/picked
 		for(var/client/client as anything in active_migrants)
-			if(!can_be_role(client, assignment))
+			if(!can_be_role(client, role_type))
 				continue
 			picked = client
 			break
@@ -162,7 +194,7 @@ SUBSYSTEM_DEF(migrants)
 			continue
 
 		active_migrants -= picked
-		assignments[assignment] = picked
+		assignments[i] = picked
 		picked_migrants += picked
 
 	/// Find spawn points for the assignments
@@ -177,14 +209,15 @@ SUBSYSTEM_DEF(migrants)
 		client.prefs.migrant.post_spawn()
 
 	/// Spawn the migrants, hooray
-	for(var/assignment in assignments)
-		var/client/client = assignments[assignment]
+	for(var/i in 1 to assignments.len)
+		var/client/client = assignments[i]
 		if(!client)
 			continue
+		var/role_type = assignment_roles[i]
 		var/turf/spawn_turf = pick_n_take(turfs)
 		if(!spawn_turf)
 			spawn_turf = fallback_location
-		spawn_migrant(wave, assignment, client, spawn_turf)
+		spawn_migrant(wave, role_type, client, spawn_turf)
 
 	// Increment wave spawn counter
 	var/used_wave_type = wave.type
@@ -195,7 +228,7 @@ SUBSYSTEM_DEF(migrants)
 	spawned_waves[used_wave_type] += 1
 
 	reset_wave_contributions(wave)
-	message_admins("MIGRANTS: Spawned wave: [wave.name] (players: [assignments.len]) at [ADMIN_VERBOSEJMP(spawn_location)]")
+	message_admins("MIGRANTS: Spawned wave: [wave.name] (players: [picked_migrants.len]) at [ADMIN_VERBOSEJMP(spawn_location)]")
 
 	unset_all_active_migrants()
 
@@ -261,6 +294,7 @@ SUBSYSTEM_DEF(migrants)
 	var/mob/dead/new_player/new_player = client.mob
 	if(!new_player)
 		return
+
 
 	/// copy pasta from AttemptLateSpawn(rank) further on TODO put it in a proc and use in both places
 
@@ -333,6 +367,7 @@ SUBSYSTEM_DEF(migrants)
 		if(final_priority > 0)
 			triumph_weighted[client] = final_priority
 
+	//Convert weighted list to prioritized list
 	//Check if all triumph_weighted values are equal
 	var/all_equal = TRUE
 	var/first_val = -1
@@ -363,6 +398,10 @@ SUBSYSTEM_DEF(migrants)
 	if(all_equal)
 		priority = shuffle(priority)
 
+	//Shuffle only if all have equal priority
+	if(all_equal)
+		priority = shuffle(priority)
+
 	return priority
 
 
@@ -385,17 +424,25 @@ SUBSYSTEM_DEF(migrants)
 	if(!player.prefs.allowed_respawn())
 		return FALSE
 
+
 	var/can_join = TRUE
 	if(length(migrant_job.allowed_races) && !(prefs.pref_species.id in migrant_job.allowed_races))
 		if(!(player.has_triumph_buy(TRIUMPH_BUY_RACE_ALL)))
 			to_chat(player, span_warning("Wrong species. Your prioritized role only allows [migrant_job.allowed_races.Join(", ")]."))
 			can_join = FALSE
+
+	if(length(migrant_job.blacklisted_species) && (prefs.pref_species.id in migrant_job.blacklisted_species))
+		if(!(player.has_triumph_buy(TRIUMPH_BUY_RACE_ALL)))
+			to_chat(player, span_warning("Wrong species. Your prioritized role disallows [migrant_job.blacklisted_species.Join(", ")]."))
+			can_join = FALSE
+
 	if(length(migrant_job.allowed_sexes) && !(prefs.gender in migrant_job.allowed_sexes))
 		to_chat(player, span_warning("Wrong gender. Your prioritized role only allows [migrant_job.allowed_sexes.Join(", ")]."))
 		can_join = FALSE
 	if(length(migrant_job.allowed_ages) && !(prefs.age in migrant_job.allowed_ages))
 		to_chat(player, span_warning("Wrong age. Your prioritized role only allows [migrant_job.allowed_ages.Join(", ")]."))
 		can_join = FALSE
+
 
 	return can_join
 
@@ -604,6 +651,7 @@ SUBSYSTEM_DEF(migrants)
 	return active
 
 /// Returns a list of all new_player clients with active migrant pref
+/// Returns a list of all new_player clients with active migrant pref
 /datum/controller/subsystem/migrants/proc/get_active_migrants()
 	var/list/migrants = list()
 	for(var/mob/dead/new_player/player as anything in GLOB.new_player_list)
@@ -616,6 +664,7 @@ SUBSYSTEM_DEF(migrants)
 		migrants += player.client
 	return migrants
 
+/// Returns a list of all new_player clients
 /// Returns a list of all new_player clients
 /datum/controller/subsystem/migrants/proc/get_all_migrants()
 	var/list/migrants = list()
@@ -674,6 +723,5 @@ SUBSYSTEM_DEF(migrants)
 		qdel(GET_IT_OUT)
 
 /mob/living/carbon/human/proc/grant_lit_torch()
-	var/obj/item/flashlight/flare/torch/torch = new()
-	torch.spark_act()
-	put_in_hands(torch, forced = TRUE)
+		adv_hugboxing_start()
+

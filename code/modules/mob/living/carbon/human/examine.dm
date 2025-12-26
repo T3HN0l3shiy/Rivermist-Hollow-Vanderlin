@@ -85,17 +85,11 @@
 		if(user == src)
 			self_inspect = TRUE
 		var/used_title = get_role_title()
-		var/is_returning = FALSE
-		if(islatejoin)
-			is_returning = TRUE
 
 		// building the examine identity
 		statement_of_identity += "<EM>[used_name]</EM>"
 
 		var/appendage_to_name
-		if(is_returning && race_name && !HAS_TRAIT(src, TRAIT_FOREIGNER)) // latejoined? Foreigners can never be returning because they never lived here in the first place
-			appendage_to_name += " returning"
-
 		if(race_name) // race name
 			appendage_to_name += " [race_name]"
 // job name, don't show job of foreigners.
@@ -137,7 +131,7 @@
 		if(ishuman(user))
 			var/mob/living/carbon/human/stranger = user
 			var/is_male = FALSE
-			if(gender == MALE)
+			if(pronouns != SHE_HER)
 				is_male = TRUE
 			if(family_datum == stranger.family_datum && family_datum)
 				var/family_text = ReturnRelation(user)
@@ -148,6 +142,8 @@
 				. += span_love(span_bold("[self_inspect ? "I am" : "[t_He] is"] [is_male ? "handsome" : "beautiful"]!"))
 			if(HAS_TRAIT(src, TRAIT_UGLY))
 				. += span_necrosis(span_bold("[self_inspect ? "I am" : "[t_He] is"] hideous."))
+			if(HAS_TRAIT(src, TRAIT_FAT))
+				. += span_boldwarning(span_bold("[self_inspect ? "I am" : "[t_He] is"] very obese!"))
 		if(length(GLOB.tennite_schisms))
 			var/datum/tennite_schism/S = GLOB.tennite_schisms[1]
 			var/user_side = (WEAKREF(user) in S.supporters_astrata) ? "astrata" : (WEAKREF(user) in S.supporters_challenger) ? "challenger" : null
@@ -173,7 +169,7 @@
 			else
 				. += span_green("A fellow triton")
 
-		if(HAS_TRAIT(src, TRAIT_FISHFACE) && !HAS_TRAIT(user, TRAIT_FISHFACE))
+		if(ishuman(user) && HAS_TRAIT(src, TRAIT_FISHFACE) && !HAS_TRAIT(user, TRAIT_FISHFACE))
 			var/mob/living/carbon/human/H = user
 			if(H.age == AGE_CHILD)
 				. += span_userdanger("IT'S A HORRIBLE MONSTER!!!")
@@ -208,14 +204,17 @@
 
 		var/list/known_frumentarii = user.mind?.cached_frumentarii
 		if(name in known_frumentarii)
-			. += span_greentext("<b>[m1] an agent of the court!</b>")
+			if(known_frumentarii[name])
+				. += span_greentext("<b>[m1] an agent of the court!</b>")
+			else
+				. += span_redtext("[m1] an ex-agent of the court.")
 
 		if(user != src)
 			if(HAS_TRAIT(src, TRAIT_OLDPARTY) && HAS_TRAIT(user, TRAIT_OLDPARTY))
 				. += span_green("Ahh... my old friend!")
 
 			if(HAS_TRAIT(src, TRAIT_THIEVESGUILD) && HAS_TRAIT(user, TRAIT_THIEVESGUILD))
-				. += span_green("A member of the Thieves Guild.")
+				. += span_green("A member of the Thieves' Guild.")
 
 			if((HAS_TRAIT(src, TRAIT_CABAL) && HAS_TRAIT(user, TRAIT_CABAL)) || (src.patron?.type == /datum/patron/inhumen/zizo && HAS_TRAIT(user, TRAIT_CABAL)))
 				. += span_purple("A fellow seeker of Her ascension.")
@@ -253,6 +252,9 @@
 
 	if(HAS_TRAIT(src, TRAIT_FACELESS))
 		. += span_userdanger("FACELESS?! AN ASSASSIN!")
+
+	if(HAS_TRAIT(src, TRAIT_ABOMINATION))
+		. += span_userdanger("WHAT IS THAT ABOMINATION!")
 
 	if(user != src)
 		var/datum/mind/user_mind = user.mind
@@ -489,7 +491,13 @@
 		msg += msg_list.Join(" ")
 
 	//Fire/water stacks
-	if(fire_stacks + divine_fire_stacks > 0)
+	if(on_fire)
+		var/fire_text = "[m1] on fire!"
+		if(user.has_flaw(/datum/charflaw/addiction/pyromaniac))
+			fire_text += span_boldred(" IT'S BEAUTIFUL!")
+			user.sate_addiction()
+		msg += fire_text
+	else if(fire_stacks + divine_fire_stacks > 0)
 		msg += "[m1] covered in something flammable."
 	else if(fire_stacks < 0 && !on_fire)
 		msg += "[m1] soaked."
@@ -722,7 +730,7 @@
 				. += span_notice("Inscryption[N ? " by [N]'s " : ""][W ? "Wonder #[W]" : ""]: [K ? K : ""]")
 
 	if(!obscure_name) // Miniature headshot on examine
-		if(headshot_link)
+		if(headshot_link && client?.is_donator())
 			. += "<img src=[headshot_link] width=100 height=100/>"
 
 	if(Adjacent(user))
@@ -754,7 +762,7 @@
 	if(!appears_dead)
 		if(skipface && user.has_flaw(/datum/charflaw/hunted) && user != src)
 			user.add_stress(/datum/stress_event/hunted)
-	if(!obscure_name && (flavortext || headshot_link)) // only show flavor text if there is a flavor text and we show headshot
+	if(!obscure_name && (flavortext || headshot_link || ooc_extra_link)) // only show flavor text if there is a flavor text and we show headshot
 		. += "<a href='?src=[REF(src)];task=view_flavor_text;'>Examine Closer</a>"
 
 	var/trait_exam = common_trait_examine()

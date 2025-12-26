@@ -1,4 +1,4 @@
-/datum/config_entry/string/verification_api_url
+/*/datum/config_entry/string/verification_api_url
 	name = "Veyra URL"
 	config_entry_value = "http://localhost:3000"
 
@@ -390,4 +390,4 @@ SUBSYSTEM_DEF(verifications)
 		to_chat(C, "<span class='boldannounce'>[reason]</span>")
 		log_admin("Client [C.ckey] denied connection: [reason]")
 		return FALSE
-	return TRUE
+	return TRUE*/

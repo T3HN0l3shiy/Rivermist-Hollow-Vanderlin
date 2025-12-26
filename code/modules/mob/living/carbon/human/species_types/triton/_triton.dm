@@ -36,27 +36,19 @@
 	default_color = "9cc2e2"
 	use_skintones = TRUE
 
-	species_traits = list(NO_UNDERWEAR, HAIR, OLDGREY)
-	inherent_traits = list(TRAIT_NOMOBSWAP, TRAIT_WATER_BREATHING, TRAIT_GOOD_SWIM, TRAIT_FISHFACE)
+	species_traits = list(NO_UNDERWEAR, HAIR, FACEHAIR, OLDGREY)
+	inherent_traits = list(TRAIT_NOMOBSWAP, TRAIT_WATER_BREATHING, TRAIT_GOOD_SWIM)
 	inherent_traits_f = list(TRAIT_STRONGBITE)
 	inherent_skills = list(
 		/datum/skill/labor/fishing = 3,
 		/datum/skill/misc/swimming = 4,
 	)
 
-	allowed_voicetypes_f = list(
-		VOICE_TYPE_MASC,
-	)
-
-	allowed_voicetypes_m = list(
-		VOICE_TYPE_ANDRO
-	)
-
 	specstats_m = list(STATKEY_STR = -1, STATKEY_PER = -2, STATKEY_CON = -2, STATKEY_SPD = 1, STATKEY_INT = 2)
 	specstats_f = list(STATKEY_STR = 2, STATKEY_PER = -4, STATKEY_CON = 3, STATKEY_SPD = -3)
-
-	limbs_icon_m = 'icons/roguetown/mob/bodies/m/triton.dmi'
-	limbs_icon_f = 'icons/roguetown/mob/bodies/f/triton.dmi'
+	// Поменял местами, так как женские спрайты - это были мужские, и наоборот
+	limbs_icon_m = 'icons/roguetown/mob/bodies/f/triton.dmi'
+	limbs_icon_f = 'icons/roguetown/mob/bodies/m/triton.dmi'
 
 	soundpack_m = /datum/voicepack/female
 	soundpack_f = /datum/voicepack/male
@@ -77,6 +69,7 @@
 		OFFSET_FACEMASK = list(0,0),\
 		OFFSET_HEAD = list(0,0),\
 		OFFSET_FACE = list(0,0),\
+		OFFSET_SNOUT = list(0,0),\
 		OFFSET_BELT = list(0,0),\
 		OFFSET_BACK = list(0,0),\
 		OFFSET_NECK = list(0,0),\
@@ -97,6 +90,7 @@
 		OFFSET_FACEMASK = list(0,-1),\
 		OFFSET_HEAD = list(0,-1),\
 		OFFSET_FACE = list(0,-1),\
+		OFFSET_SNOUT = list(0,-1),\
 		OFFSET_BELT = list(0,0),\
 		OFFSET_BACK = list(0,-1),\
 		OFFSET_NECK = list(0,-1),\
@@ -109,7 +103,7 @@
 
 	offset_genitals_m = list(
 		OFFSET_PENIS = list(0,0),\
-		OFFSET_BREASTS = list(0,0),\
+		OFFSET_BREASTS = list(0,2),\
 		OFFSET_TESTICLES = list(0,0),\
 		OFFSET_VAGINA = list(0,-1),\
 	)
@@ -126,7 +120,8 @@
 		ORGAN_SLOT_HEART = /obj/item/organ/heart,
 		ORGAN_SLOT_LUNGS = /obj/item/organ/lungs,
 		ORGAN_SLOT_EYES = /obj/item/organ/eyes/triton,
-		ORGAN_SLOT_EARS = /obj/item/organ/ears,
+		ORGAN_SLOT_SNOUT = /obj/item/organ/snout/triton,
+		ORGAN_SLOT_EARS = /obj/item/organ/ears/triton,
 		ORGAN_SLOT_TONGUE = /obj/item/organ/tongue/fish,
 		ORGAN_SLOT_LIVER = /obj/item/organ/liver,
 		ORGAN_SLOT_STOMACH = /obj/item/organ/stomach,
@@ -139,18 +134,21 @@
 
 	customizers = list(
 		/datum/customizer/organ/tail/triton,
+		/datum/customizer/organ/snout/triton,
+		/datum/customizer/organ/ears/triton,
 		/datum/customizer/bodypart_feature/hair/head/humanoid/triton,
+		/datum/customizer/bodypart_feature/hair/facial/humanoid/triton,
 		/datum/customizer/bodypart_feature/accessory,
 		/datum/customizer/bodypart_feature/face_detail,
 		/datum/customizer/bodypart_feature/underwear,
 		/datum/customizer/bodypart_feature/legwear,
 		/datum/customizer/bodypart_feature/piercing,
-		/datum/customizer/organ/genitals/penis/human,
-		/datum/customizer/organ/genitals/vagina/human,
-		/datum/customizer/organ/genitals/breasts/human,
-		/datum/customizer/organ/genitals/belly/human,
-		/datum/customizer/organ/genitals/butt/human,
-		/datum/customizer/organ/genitals/testicles/human,
+		/datum/customizer/organ/genitals/penis/anthro,
+		/datum/customizer/organ/genitals/vagina/anthro,
+		/datum/customizer/organ/genitals/breasts/animal,
+		/datum/customizer/organ/genitals/belly/animal,
+		/datum/customizer/organ/genitals/butt/animal,
+		/datum/customizer/organ/genitals/testicles/anthro,
 	)
 
 	body_markings = list(
@@ -219,6 +217,7 @@
 		"Sand Borne" = SKIN_COLOR_SAND,
 		"Shallow Borne" = SKIN_COLOR_SHALLOW,
 		"Urchin Borne" = SKIN_COLOR_URCHIN,
+		"Shell Borne" = SKIN_COLOR_SHELL,
 	)
 
 /datum/species/triton/get_hairc_list()

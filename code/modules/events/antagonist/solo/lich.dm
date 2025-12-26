@@ -4,18 +4,19 @@
 		TAG_ZIZO,
 		TAG_COMBAT,
 		TAG_HAUNTED,
-		TAG_VILLIAN,
+		TAG_VILLAIN,
 	)
 	roundstart = TRUE
 	antag_flag = ROLE_LICH
 	shared_occurence_type = SHARED_HIGH_THREAT
 
-	denominator = 80
+	denominator = 65
 
 	base_antags = 1
 	maximum_antags = 2
 
-	weight = 12 //temp disabled 12
+	min_players = 25
+	weight = 12
 
 	earliest_start = 0 SECONDS
 
@@ -23,9 +24,9 @@
 	antag_datum = /datum/antagonist/lich
 
 	restricted_roles = list(
-		"Monarch",
-		"Consort",
-		"Priest",
+		/datum/job/lord,
+		/datum/job/consort,
+		/datum/job/priest,
 	)
 
 

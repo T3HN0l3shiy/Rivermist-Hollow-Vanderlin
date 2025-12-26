@@ -11,6 +11,10 @@
 /datum/sprite_accessory/snout/adjust_appearance_list(list/appearance_list, obj/item/organ/organ, obj/item/bodypart/bodypart, mob/living/carbon/owner)
 	generic_gender_feature_adjust(appearance_list, organ, bodypart, owner, OFFSET_FACE)
 
+/datum/sprite_accessory/snout/none
+	name = "None"
+	icon_state = ""
+
 /datum/sprite_accessory/snout/cat
 	name = "Cat"
 	icon_state = "cat"

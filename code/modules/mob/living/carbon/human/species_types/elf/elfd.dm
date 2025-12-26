@@ -66,8 +66,8 @@
 		/datum/customizer/bodypart_feature/underwear,
 		/datum/customizer/bodypart_feature/legwear,
 		/datum/customizer/bodypart_feature/piercing,
-		/datum/customizer/organ/genitals/penis/human,
-		/datum/customizer/organ/genitals/vagina/human,
+		/datum/customizer/organ/genitals/penis/anthro,
+		/datum/customizer/organ/genitals/vagina/anthro,
 		/datum/customizer/organ/genitals/breasts/human,
 		/datum/customizer/organ/genitals/belly/human,
 		/datum/customizer/organ/genitals/butt/human,
@@ -115,6 +115,14 @@
 		OFFSET_SHIRT = list(0,1),\
 		OFFSET_ARMOR = list(0,1),\
 		OFFSET_UNDIES = list(0,1),\
+	)
+
+	offset_genitals_m = list(
+		OFFSET_BREASTS = list(0, 0),\
+	)
+
+	offset_genitals_f = list(
+		OFFSET_BREASTS = list(0, 0),\
 	)
 
 	specstats_m = list(STATKEY_STR = -1, STATKEY_PER = -1, STATKEY_INT = 1, STATKEY_CON = 0, STATKEY_END = 2, STATKEY_SPD = 2, STATKEY_LCK = 0)

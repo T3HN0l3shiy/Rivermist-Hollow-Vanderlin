@@ -17,7 +17,7 @@
 	/// Number of targets needed
 	var/target_amount = 1
 	/// Location for courier quests
-	var/area/rogue/indoors/town/target_delivery_location
+	var/area/indoors/town/target_delivery_location
 	/// Location name for kill/clear quests
 	var/target_spawn_area = ""
 	/// Fallback reference to the spawned scroll

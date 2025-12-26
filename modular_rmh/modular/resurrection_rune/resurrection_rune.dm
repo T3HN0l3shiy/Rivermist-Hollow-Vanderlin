@@ -51,7 +51,7 @@
 				if(!unlinked.rune_linked)
 					var/turf/tur = get_turf(H)
 					if(unlinked.maxHealth - unlinked.health >= RUNE_DAMAGE_THRESHOLD || unlinked.is_dead() || istype(tur, /turf/open/lava) || istype(tur, /turf/open/lava/acid))
-						if(!(unlinked.mind in resurrecting))
+						if(!(unlinked in resurrecting))
 							resurrecting |= unlinked
 							to_chat(unlinked.mind.get_ghost(TRUE, TRUE), span_blue("An alien force suddenly <b>YANKS</b> you back to life!"))
 							addtimer(CALLBACK(src, PROC_REF(start_revival), unlinked, FALSE), 1 SECONDS)
@@ -166,6 +166,15 @@
 	else
 		body.apply_status_effect(/datum/status_effect/debuff/revived/rune/rough)
 	body.apply_status_effect(/datum/status_effect/debuff/rune_glow)
+
+	/*if(H.has_quirk(/datum/quirk/night_vision)) //idc
+		var/obj/item/organ/eyes/eyes = H.getorgan(/obj/item/organ/eyes)
+		if(!eyes || eyes.lighting_alpha)
+			return
+		eyes.see_in_dark = 7 // Same as half-darksight eyes
+		eyes.lighting_alpha = LIGHTING_PLANE_ALPHA_NV_TRAIT
+		eyes.Insert(H)*/
+
 	playsound(T, 'sound/misc/vampirespell.ogg', 100, FALSE, -1)
 	to_chat(body, span_blue("You are back."))
 

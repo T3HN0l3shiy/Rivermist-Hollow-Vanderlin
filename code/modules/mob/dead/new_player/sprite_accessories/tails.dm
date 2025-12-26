@@ -29,6 +29,10 @@
 
 #endif
 
+/datum/sprite_accessory/tail/none
+	name = "None"
+	icon_state = ""
+
 /datum/sprite_accessory/tail/cat
 	name = "Cat"
 	icon_state = "cat"
@@ -352,6 +356,30 @@
 	icon_state = "triton"
 	specuse = list(SPEC_ID_TRITON)
 	color_key_defaults = list(KEY_SKIN_COLOR)
+
+/datum/sprite_accessory/tail/tshark
+	name = "Shark Tail"
+	icon = 'modular_rmh/icons/mob/sprite_accessory/tails/triton_custom.dmi'
+	icon_state = "shark"
+	specuse = list(SPEC_ID_TRITON)
+	color_key_defaults = list(KEY_SKIN_COLOR)
+	can_wag = TRUE
+
+/datum/sprite_accessory/tail/tfish
+	name = "Fish Tail"
+	icon = 'modular_rmh/icons/mob/sprite_accessory/tails/triton_custom.dmi'
+	icon_state = "fish"
+	specuse = list(SPEC_ID_TRITON)
+	color_key_defaults = list(KEY_SKIN_COLOR)
+	can_wag = TRUE
+
+/datum/sprite_accessory/tail/torca
+	name = "Orca Tail"
+	icon = 'modular_rmh/icons/mob/sprite_accessory/tails/triton_custom.dmi'
+	icon_state = "orca"
+	specuse = list(SPEC_ID_TRITON)
+	color_key_defaults = list(KEY_SKIN_COLOR)
+	can_wag = TRUE
 
 /datum/sprite_accessory/tail/kobold
 	name = "Kobold Curly"

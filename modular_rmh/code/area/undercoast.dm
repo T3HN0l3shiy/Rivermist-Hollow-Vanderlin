@@ -1,35 +1,35 @@
-/area/rogue/indoors/cave
+/area/indoors/cave
 	name = "The Undercoast" // Forgive me I need a better name but Northern Coastl Cave is too wordy
 	icon_state = "cave"
 	background_track = DRONING_CAVE_GENERIC
 	background_track_night = DRONING_CAVE_GENERIC
 	soundenv = 8
 
-/area/rogue/indoors/cave/underhamlet
+/area/indoors/cave/underhamlet
 	name = "The Underhamlet"
 	first_time_text = "The Underhamlet"
 
-/area/rogue/indoors/cave/west
+/area/indoors/cave/west
 	name = "Western Undercoast"
 	first_time_text = "Western Undercoast"
 
-/area/rogue/indoors/cave/east
+/area/indoors/cave/east
 	name = "Eastern Undercoast"
 	first_time_text = "Eastern Undercoast"
 
-/area/rogue/indoors/cave/central
+/area/indoors/cave/central
 	name = "Central Undercoast"
 	first_time_text = "Central Undercoast"
 
-/area/rogue/indoors/cave/northern
+/area/indoors/cave/northern
 	name = "Northern Undercoast"
 	first_time_text = "Northern Undercoast"
 
-/area/rogue/indoors/cave/southern
+/area/indoors/cave/southern
 	name = "Southern Undercoast"
 	first_time_text = "Southern Undercoast"
 
-/area/rogue/under/cave/mazedungeon
+/area/under/cave/mazedungeon
 	name = "mazedungeon"
 	icon_state = "under"
 	first_time_text = "TEMPLE OF THE SHATTERED GOD"
@@ -38,7 +38,7 @@
 	background_track_night = null
 	ceiling_protected = TRUE
 
-/area/rogue/under/cave/orcdungeon
+/area/under/cave/orcdungeon
 	name = "orcdungeon"
 	icon_state = "under"
 	first_time_text = "OLD RUIN"

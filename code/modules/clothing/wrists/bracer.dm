@@ -14,9 +14,15 @@
 	smeltresult = /obj/item/ingot/iron //no 1 to 1 conversion
 	max_integrity = INTEGRITY_STRONG
 
+/obj/item/clothing/wrists/bracers/ancient
+	name = "ancient vambraces"
+	desc = "Very old vambraces."
+	icon_state = "ancientbracers"
+	item_state = "ancientbracers"
+
 /obj/item/clothing/wrists/bracers/naledi
 	name = "sojourner's wrappings"
-	desc = "Sheared burlap and cloth, meticulously fashioned around the forearms. Naledian-trained monks rarely share the same fatalistic mindset as their Grenzelhoftian cousins, and - consequency - tend to be averse with binding their wrists in jagged thorns. Unbloodied fingers tend to work far better with the arcyne, too. </br>'..And so, the great tears that they wept when it took it's last breath, the rain of the Weeper, is what marked this era of silence. Fools would tell you that Psydon has died, that they splintered into ‘ten smaller fragments', but that does not make sense. They are everything within and without, they are beyond size and shape. How can everything become something? No, they have merely turned their ear from us. They mourn, for their greatest child and their worst..'"
+	desc = "Sheared burlap and cloth, meticulously fashioned around the forearms. It provides more freedom of movement than the traditional steel thorns."
 	slot_flags = ITEM_SLOT_WRISTS
 	body_parts_covered = ARMS
 	icon_state = "nocwrappings"
@@ -93,7 +99,7 @@
 
 /obj/item/clothing/wrists/bracers/leather/masterwork
 	name = "masterwork leather bracers"
-	desc = "These bracers are a craftsmanship marvel. Made with the finest leather. Strong, nimible, reliable."
+	desc = "These bracers are a craftsmanship marvel. Made with the finest leather. Strong, nimble, reliable."
 	armor = list("blunt" = 80, "slash" = 60, "stab" = 40, "piercing" = 0, "fire" = 0, "acid" = 0)
 	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_TWIST) //We're getting chop here
 	max_integrity = INTEGRITY_STANDARD + 100

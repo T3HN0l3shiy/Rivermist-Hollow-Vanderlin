@@ -345,7 +345,7 @@
 
 /atom/movable/screen/alert/status_effect/debuff/netted
 	name = "Net"
-	desc = "<span class='boldwarning'>A net was thrown on me.. how can I move?</span>\n"
+	desc = "<span class='boldwarning'>A net was thrown on me... how can I move?</span>\n"
 	icon_state = "muscles"
 
 /datum/status_effect/debuff/netted
@@ -405,7 +405,7 @@
 
 /atom/movable/screen/alert/status_effect/debuff/revive
 	name = "Revival Sickness"
-	desc = "<span class='warning'>I have returned from oblivion.. but the fatigue of death still affects me.</span>\n"
+	desc = "<span class='warning'>I have returned from oblivion... but the fatigue of death still affects me.</span>\n"
 	icon_state = "muscles"
 
 /datum/status_effect/debuff/viciousmockery
@@ -462,7 +462,7 @@
 
 /atom/movable/screen/alert/status_effect/debuff/drunk
 	name = "Eoran Wine"
-	desc = span_warning("I am intoxicated from ambromsia not meant for mortal mouths.\n")
+	desc = span_warning("I am intoxicated from ambrosia not meant for mortal mouths.\n")
 	icon_state = "drunk"
 
 /datum/status_effect/debuff/mesmerised
@@ -473,19 +473,19 @@
 
 /atom/movable/screen/alert/status_effect/debuff/mesmerised
 	name = "Mesmerised"
-	desc = span_warning("Their beauty is otherwordly..")
+	desc = span_warning("Their beauty is otherworldly...")
 	icon_state = "acid"
 
 
 /datum/status_effect/debuff/call_to_slaughter
 	id = "call_to_slaughter"
 	alert_type = /atom/movable/screen/alert/status_effect/debuff/call_to_slaughter
-	effectedstats = list("endurance" = -2, "constitution" = -2)
+	effectedstats = list(STATKEY_END = -2, STATKEY_CON = -2)
 	duration = 2.5 MINUTES
 
 /atom/movable/screen/alert/status_effect/debuff/call_to_slaughter
 	name = "Call to Slaughter"
-	desc = "A putrid rotting scent fills your nose as Graggar's call for slaughter rattles you to your core.."
+	desc = "A putrid rotting scent fills your nose as Graggar's call for slaughter rattles you to your core..."
 	icon_state = "call_to_slaughter"
 
 /datum/status_effect/debuff/baothadruqks
@@ -496,7 +496,7 @@
 
 /atom/movable/screen/alert/status_effect/debuff/baothadruqks
 	name = "Baothan Dust"
-	desc = span_warning("Someone blew some powders at me..\n")
+	desc = span_warning("Someone blew some powders at me...\n")
 	icon_state = "drunk"
 
 /datum/status_effect/debuff/lux_drained
@@ -569,3 +569,47 @@
 /atom/movable/screen/alert/status_effect/debuff/corrupted_by_tainted_lux
 	name = "Corrupted..."
 	desc = span_danger("It filled my veins with light and rot alike... I can feel it crawling under my skin, whispering that I should never have done it...")
+
+/datum/status_effect/debuff/electrified
+	id = "electrified"
+	alert_type = /atom/movable/screen/alert/status_effect/debuff/electrified
+	duration = 20 SECONDS
+	status_type = STATUS_EFFECT_UNIQUE
+	var/shock_strength = 30
+	var/static/mutable_appearance/electric = mutable_appearance('icons/effects/effects.dmi', "electricity")
+
+/datum/status_effect/debuff/electrified/on_apply()
+	. = ..()
+	to_chat(owner, span_warning("Your body crackles with electricity!"))
+	if(isliving(owner))
+		var/mob/living/L = owner
+		RegisterSignal(L, COMSIG_MOVABLE_MOVED, PROC_REF(check_conductive_surface))
+		L.add_overlay(electric)
+
+/datum/status_effect/debuff/electrified/on_remove()
+	. = ..()
+	if(isliving(owner))
+		var/mob/living/L = owner
+		UnregisterSignal(L, COMSIG_MOVABLE_MOVED)
+		L.cut_overlay(electric)
+
+/datum/status_effect/debuff/electrified/proc/check_conductive_surface()
+	SIGNAL_HANDLER
+	var/mob/living/L = owner
+	if(!L)
+		return
+
+	var/turf/T = get_turf(L)
+	if(!T)
+		return
+
+	for(var/atom/A in list(T) + T.contents)
+		if(A.flags_1 & CONDUCT_1)
+			L.visible_message(span_warning("[L] gets shocked!"), span_danger("Electricity courses through your body!"))
+			L.electrocute_act(shock_strength, src)
+			return
+
+/atom/movable/screen/alert/status_effect/debuff/electrified
+	name = "Electrified"
+	desc = "Your body is charged with unstable electricity!"
+	icon_state = "dazed"

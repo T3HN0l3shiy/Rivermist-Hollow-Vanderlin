@@ -70,10 +70,6 @@
 	icon_living = "MinotaurFem_Axe"
 	icon_dead = "MinotaurFem_dead"
 
-/mob/living/simple_animal/hostile/retaliate/minotaur/death(gibbed)
-	..()
-	update_appearance()
-
 /mob/living/simple_animal/hostile/retaliate/minotaur/taunted(mob/user)
 	emote("aggro")
 	return
@@ -235,7 +231,7 @@
 	STOP_PROCESSING(SSobj, src)
 	return ..()
 
-/obj/effect/temp_visual/minotaur_fury_zone/process(delta_time)
+/obj/effect/temp_visual/minotaur_fury_zone/process()
 	if(!active)
 		return
 
@@ -243,7 +239,7 @@
 		if(L.faction.Find("caves"))
 			continue
 
-		L.adjustFireLoss(damage_per_tick * delta_time)
+		L.adjustFireLoss(damage_per_tick)
 
 		if(!warned && prob(50))
 			to_chat(L, "<span class='danger'>The flames sear your flesh!</span>")

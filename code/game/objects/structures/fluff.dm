@@ -175,15 +175,7 @@
 /obj/structure/fluff/railing/border/west
 	dir = 8
 
-/obj/structure/fluff/railing/tall
-	name = "wooden fence"
-	desc = "A sturdy fence of wooden planks."
-	icon = 'icons/roguetown/misc/tallwoodenrailing.dmi'
-	icon_state = "tallwoodenrailing"
-	max_integrity = 500
-	pass_crawl = FALSE
-	pass_throwing = FALSE
-	pass_projectile = TRUE
+
 
 /obj/structure/fluff/railing/tall/palisade
 	name = "palisade"
@@ -193,6 +185,10 @@
 	opacity = TRUE
 	climb_offset = 6
 	pass_projectile = FALSE
+	max_integrity = 500
+	pass_crawl = FALSE
+	pass_throwing = FALSE
+	pass_projectile = TRUE
 
 /obj/structure/bars
 	name = "bars"
@@ -202,6 +198,7 @@
 	density = TRUE
 	anchored = TRUE
 	blade_dulling = DULLING_BASHCHOP
+	pass_flags_self = PASSGRILLE|LETPASSTHROW|PASSSTRUCTURE|NOTLETPASSTHROWNMOB
 	max_integrity = 700
 	damage_deflection = 12
 	integrity_failure = 0.15
@@ -212,13 +209,16 @@
 	attacked_sound = list("sound/combat/hits/onmetal/metalimpact (1).ogg", "sound/combat/hits/onmetal/metalimpact (2).ogg")
 
 /obj/structure/bars/CanAllowThrough(atom/movable/mover, turf/target)
-	. = ..()
-	if(.)
-		return
 	if(isobserver(mover))
 		return TRUE
-	if(mover.throwing && isitem(mover))
-		return prob(66)
+	. = ..()
+	if(. && density && mover.throwing && isitem(mover))
+		var/obj/item/I = mover
+		var/chance = 100 - (I.w_class-1) * 30
+		if(isliving(I.throwing.thrower))
+			var/mob/living/L = I.throwing.thrower
+			chance += (L.STALUC - 10) * 10
+		return prob(clamp(chance, 0, 100))
 
 /obj/structure/bars/shop
 	icon_state = "barsbent"
@@ -256,6 +256,12 @@
 /obj/structure/bars/cemetery
 	icon_state = "cemetery"
 
+/// like bars but indestructible and you cant throw through them
+/obj/structure/bars/cemetery/underworld
+	pass_flags_self = PASSSTRUCTURE
+	resistance_flags = INDESTRUCTIBLE
+	max_integrity = 9999
+
 /obj/structure/bars/passage
 	icon_state = "passage0"
 	density = TRUE
@@ -277,6 +283,7 @@
 	density = TRUE
 	opacity = TRUE
 	redstone_structure = TRUE
+	pass_flags_self = PASSSTRUCTURE
 
 /obj/structure/bars/passage/shutter/redstone_triggered(mob/user)
 	if(obj_broken)
@@ -545,7 +552,7 @@
 //vampire
 /obj/structure/fluff/wallclock/vampire
 	name = "ancient clock"
-	desc = "This appears to be a clock, but a pair of red lights blink in a recess where the face ought be."
+	desc = "This appears to be a clock, but a pair of red lights blink in a recess where the face ought to be."
 	icon = 'icons/roguetown/misc/structure.dmi'
 	icon_state = "wallclockvampire"
 	density = FALSE
@@ -1031,19 +1038,23 @@
 		var/datum/antagonist/bandit/B = user.mind.has_antag_datum(/datum/antagonist/bandit)
 		if(B)
 			if(B.tri_amt >= 8)
-				to_chat(user, "<span class='warning'>The idol had collected enough tribute from you.</span>")
+				to_chat(user, span_warning("The idol had collected enough tribute from you."))
 				return
 			if(istype(W, /obj/item/reagent_containers/lux))
-				B.contrib += 150
-				record_round_statistic(STATS_SHRINE_VALUE, 150)
+				B.contrib += 120
+				record_round_statistic(STATS_SHRINE_VALUE, 120)
 			else if(istype(W, /obj/item/coin) || istype(W, /obj/item/gem) || istype(W, /obj/item/reagent_containers/glass/cup/silver) || istype(W, /obj/item/reagent_containers/glass/cup/golden) || istype(W, /obj/item/reagent_containers/glass/carafe) || istype(W, /obj/item/clothing/ring) || istype(W, /obj/item/clothing/head/crown/circlet) || istype(W, /obj/item/statue))
 				if(!istype(W, /obj/item/coin))
+					B.contrib += (W.get_real_price() / 2) // sell jewelry and other fineries, though at a lesser price compared to fencing them first
 					B.contrib += (W.get_real_price() / 2) // sell jewelry and other fineries, though at a lesser price compared to fencing them first
 					record_round_statistic(STATS_SHRINE_VALUE, (W.get_real_price() / 2))
 				else
 					B.contrib += W.get_real_price()
 					record_round_statistic(STATS_SHRINE_VALUE, W.get_real_price())
-			if(B.contrib >= 100)
+			else
+				to_chat(user, span_warning("The idol doesn't want your garbage."))
+				return
+			if(B.contrib >= 80)
 				give_rewards(B, user)
 			else
 				playsound(loc,'sound/items/matidol1.ogg', 50, TRUE)
@@ -1056,7 +1067,7 @@
 /obj/structure/fluff/statue/evil/proc/give_rewards(datum/antagonist/bandit/offering_bandit, mob/user)
 	offering_bandit.tri_amt++
 	user.mind.adjust_triumphs(1)
-	offering_bandit.contrib -= 100
+	offering_bandit.contrib -= 80
 
 	var/obj/item/I
 	switch(offering_bandit.tri_amt)
@@ -1177,7 +1188,7 @@
 
 /obj/structure/fluff/psycross/crafted/shrine/dendor_gote
 	name = "growing shrine to Dendor"
-	desc = "The life force of a Gote has consecrated this holy place. \n First present a poppy flower, swampweed leaf, and silk grub to craft a green sacrifice. \n Then offer a euphoriba flower, swampweed leaf, and two thorns to craft a viridian sacrifice."
+	desc = "The life force of a Gote has consecrated this holy place. \n First present a poppy flower, swampweed leaf, and silk grub to craft a green sacrifice. \n Then offer a euphorbia flower, swampweed leaf, and two thorns to craft a viridian sacrifice."
 	icon_state = "shrine_dendor_gote"
 
 /obj/structure/fluff/psycross/crafted/shrine/dendor_troll
@@ -1187,7 +1198,7 @@
 
 /obj/structure/fluff/psycross/psycrucifix
 	name = "wooden psydonic crucifix"
-	desc = "A rarely seen symbol of absolute and devoted certainty, more common in Grenzelhoft: HE yet lyves. HE yet breathes."
+	desc = "A rarely seen symbol of absolute and devoted certainty, more common in Grenzelhoft: HE yet lives. HE yet breathes."
 	icon_state = "psycruci"
 	max_integrity = 80
 
@@ -1221,7 +1232,7 @@
 		to_chat(user, span_warning("Apple must be bitten once by two different people to conduct a wedding ceremony!"))
 		return FALSE
 
-	var/in_church = istype(get_area(user), /area/rogue/indoors/town/church/chapel)
+	var/in_church = istype(get_area(user), /area/indoors/town/church/chapel)
 	var/secret_marriage = !in_church && HAS_TRAIT(user, TRAIT_SECRET_OFFICIANT)
 
 	if(!in_church && !secret_marriage)

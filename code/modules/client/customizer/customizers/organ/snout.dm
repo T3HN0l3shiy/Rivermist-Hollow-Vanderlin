@@ -44,3 +44,19 @@
 		/datum/sprite_accessory/snout/thin_beak/hookbeak,
 		/datum/sprite_accessory/snout/thin_beak/hookbeakbig,
 	)
+
+/datum/customizer/organ/snout/triton
+	name = "Triton Snout"
+	customizer_choices = list(/datum/customizer_choice/organ/snout/triton)
+	allows_disabling = TRUE
+
+/datum/customizer_choice/organ/snout/triton
+	name = "Triton Snout"
+	organ_type = /obj/item/organ/snout/triton
+	allows_accessory_color_customization = TRUE
+	generic_random_pick = TRUE
+	sprite_accessories = list(
+		/datum/sprite_accessory/snout/shark,
+		/datum/sprite_accessory/snout/round,
+		/datum/sprite_accessory/snout/sharp,
+	)

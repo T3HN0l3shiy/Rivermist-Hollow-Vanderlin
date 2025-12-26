@@ -53,6 +53,8 @@
 	. = ..()
 
 	if(world.time < controller.blackboard[BB_HORNY_SEEK_COOLDOWN]) // if on cooldown - stop
+		controller.CancelActions()
+		controller.modify_cooldown(controller, world.time)
 		return FALSE
 
 	var/datum/horny_targetting_datum/targetting_datum = controller.blackboard[targetting_datum_key]
@@ -149,7 +151,7 @@
 		var/mob/living/carbon/human/human_target = target_living
 
 		//disarm
-		if(human_target.get_active_held_item())
+		if(human_target.get_active_held_item() && human_target.Adjacent(basic_mob))
 			for(var/obj/item/I in human_target.held_items)
 				human_target.dropItemToGround(I, force = FALSE, silent = FALSE)
 			human_target.Stun(30)
@@ -230,7 +232,8 @@
 		//if ran away - be angry
 		controller.set_blackboard_key(BB_HORNY_SEEK_COOLDOWN, world.time + 30 SECONDS)
 		basic_mob.visible_message(span_danger("[basic_mob] stomps on the ground, clearly unsatisfied!"))
-		controller.CancelActions()
+		controller.modify_cooldown(controller, world.time)
+		//controller.CancelActions()
 		return
 
 
@@ -238,7 +241,8 @@
 	//if sated - go off and sleep or smth
 	controller.set_blackboard_key(BB_HORNY_SEEK_COOLDOWN, world.time + 90 SECONDS)
 	basic_mob.visible_message(span_danger("[basic_mob] exhales contently!"))
-	controller.CancelActions()
+	controller.modify_cooldown(controller, world.time)
+	//controller.CancelActions()
 
 /mob/living/proc/select_horny_ai_act(mob/living/target)
 	var/current_action = /datum/sex_action/rub_body

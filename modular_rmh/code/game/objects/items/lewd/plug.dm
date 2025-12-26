@@ -8,6 +8,7 @@
 	lefthand_file = 'modular_rmh/icons/mob/lewd/items_lefthand.dmi'
 	righthand_file = 'modular_rmh/icons/mob/lewd/items_righthand.dmi'
 	slot_flags = 0
+	w_class = WEIGHT_CLASS_TINY
 
 /obj/item/dildo/plug/New()
 	. = ..()

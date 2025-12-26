@@ -1,11 +1,23 @@
-/obj/item/clothing/face/facemask/snmask
+/obj/item/clothing/face/snmask
 	name = "traveler silly mask"
-	desc = "A silver mask, forever locked in a rigor of uncontestable joy. The Order of Saint Xylix can't decide on whether it's meant to represent Psydon's 'mirthfulness,' 'theatricality,' or the unpredictable melding of both."
 	icon_state = "nmask"
 	item_state = "nmask"
 	icon = 'modular_rmh/icons/clothing/karatur.dmi'
 	mob_overlay_icon = 'modular_rmh/icons/clothing/onmob/karatur.dmi'
-	slot_flags = ITEM_SLOT_MASK
+	desc = "An white mask that both conceals and protects the face. Made from white wood."
+	max_integrity = 300
+	blocksound = PLATEHIT
+	break_sound = 'sound/foley/breaksound.ogg'
+	drop_sound = 'sound/foley/dropsound/armor_drop.ogg'
+	armor = list("blunt" = 80, "slash" = 80, "stab" = 80,  "piercing" = 50, "fire" = 0, "acid" = 0)
+	prevent_crits = list(BCLASS_LASHING, BCLASS_BITE, BCLASS_TWIST, BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_STAB)
+	body_parts_covered = FACE
+	block2add = FOV_BEHIND
+	slot_flags = ITEM_SLOT_MASK|ITEM_SLOT_HIP
+	experimental_onhip = TRUE
+	sewrepair = FALSE
+	anvilrepair = TRUE
+	sellprice = 80
 	allowed_race = SPECIES_BASE_BODY
 
 /obj/item/clothing/neck/snscarf

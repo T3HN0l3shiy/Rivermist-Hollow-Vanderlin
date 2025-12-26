@@ -3,12 +3,12 @@
 	category = "Necra's Chosen"
 	triumph_count = 2
 	immediate_effects = list("Gained a temporary ability to listen to the cries of the dead")
-	rewards = list("2 Triumphs", "Necra grows stronger", "Deaths won't disturb you anymore")
+	rewards = list("2 Triumphs", "Necra grows stronger", "Death and suffering won't disturb you")
 	var/time_required = 3 MINUTES
 	var/time_spent = 0
 	var/last_check = 0
 	var/check_interval = 10 SECONDS
-	var/area/church_area = /area/rogue/indoors/town/church
+	var/area/church_area = /area/indoors/town/church
 	var/list/heard_messages = list()
 
 /datum/objective/personal/listen_whispers/on_creation()

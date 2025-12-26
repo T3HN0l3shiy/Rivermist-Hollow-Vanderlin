@@ -138,6 +138,9 @@ GLOBAL_LIST_INIT(target_interested_atoms, typecacheof(list(/mob)))
 			continue
 		accepted_targets += maybe_target
 
+	if(!LAZYLEN(accepted_targets))
+		finish_action(controller, succeeded = FALSE)
+
 	// Alright, we found something acceptable, let's use it yeah?
 	var/atom/target = pick_final_target(controller, accepted_targets)
 

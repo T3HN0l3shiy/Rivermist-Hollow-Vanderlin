@@ -12,6 +12,12 @@
 	icon_state = "nocwrappings"
 	item_state = "nocwrappings"
 
+
+/obj/item/clothing/wrists/bracers/rare
+	abstract_type = /obj/item/clothing/wrists/bracers/rare
+
+//Aasimar hoplite bracers
+
 /obj/item/clothing/wrists/silverbracelet
 	name = "silver bracelets"
 	slot_flags = ITEM_SLOT_WRISTS

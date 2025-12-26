@@ -158,10 +158,10 @@
 		return
 	else
 		if(stage == 3)
-			var/turf/under_turf = get_step_multiz(src, DOWN)
 			var/turf/our_turf = get_turf(src)
+			var/turf/under_turf = GET_TURF_BELOW(our_turf)
 			if(under_turf && our_turf && isopenturf(under_turf))
-				var/area/rogue/underA = under_turf.loc
+				var/area/underA = under_turf.loc
 				if((underA && !underA.ceiling_protected) || !underA)
 					playsound(loc,'sound/items/dig_shovel.ogg', 100, TRUE)
 					user.visible_message("[user] starts digging out the bottom of [src]", "I start digging out the bottom of [src].")

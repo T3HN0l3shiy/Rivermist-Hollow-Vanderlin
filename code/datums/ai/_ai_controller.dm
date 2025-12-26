@@ -57,7 +57,8 @@ have ways of interacting with a specific atom and control it. They posses a blac
 	COOLDOWN_DECLARE(repath_cooldown)
 	///AI paused time
 	var/paused_until = 0
-
+	///Idle cooldown so that mobs dont run around like rockets
+	COOLDOWN_DECLARE(idle_cooldown)
 	var/failed_sneak_check = 0
 	///Time at which controller became inactive
 	var/inactive_timestamp
@@ -355,7 +356,10 @@ have ways of interacting with a specific atom and control it. They posses a blac
 		return //this should remove them from processing in the future through event-based stuff.
 
 	if(!LAZYLEN(current_behaviors) && idle_behavior)
-		idle_behavior.perform_idle_behavior(delta_time, src) //Do some stupid shit while we have nothing to do
+
+		if(COOLDOWN_FINISHED(src, idle_cooldown))
+			COOLDOWN_START(src, idle_cooldown, rand(1 SECONDS, 2.5 SECONDS))
+			idle_behavior.perform_idle_behavior(delta_time, src) //Do some stupid shit while we have nothing to do
 		return
 
 	if(current_movement_target)
@@ -625,7 +629,7 @@ have ways of interacting with a specific atom and control it. They posses a blac
 /datum/ai_controller/proc/set_blackboard_key_assoc(key, thing, value)
 	if(!islist(blackboard[key]))
 		CRASH("set_blackboard_key_assoc called on non-list key [key]!")
-	TRACK_AI_DATUM_TARGET(thing, key)
+
 	TRACK_AI_DATUM_TARGET(value, key)
 	blackboard[key][thing] = value
 	post_blackboard_key_set(key)

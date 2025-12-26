@@ -27,6 +27,12 @@
 		return "maleelf_reg"
 	return "male_reg"
 
+/datum/sprite_accessory/underwear/male_half
+	name = "Undies Half"
+	icon_state = "male_half"
+	gender = MALE
+	specuse = list(SPEC_ID_HALFLING)
+
 /datum/sprite_accessory/underwear/bikini
 	name = "Bikini"
 	icon_state = "female_bikini"
@@ -57,6 +63,12 @@
 	name = "Panties"
 	icon_state = "panties"
 	underwear_type = /obj/item/undies/panties
+
+/datum/sprite_accessory/underwear/female_dwarf
+	name = "FemUndiesD"
+	icon_state = "female_dwarf"
+	gender = FEMALE
+	specuse = list(SPEC_ID_DWARF, SPEC_ID_HALFLING)
 
 /datum/sprite_accessory/underwear/leotard
 	name = "Leotard"

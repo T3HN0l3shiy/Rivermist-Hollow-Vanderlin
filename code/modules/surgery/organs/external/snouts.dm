@@ -8,3 +8,6 @@
 
 /obj/item/organ/snout/beak
 	name = "beak"
+
+/obj/item/organ/snout/triton
+	name = "triton snout"

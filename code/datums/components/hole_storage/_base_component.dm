@@ -322,6 +322,8 @@
 
 	var/obj/item_to_remove
 
+	if(!storage_parent.contents.len)
+		return
 	// Pick the item
 	item_to_remove = pick(storage_parent.contents)
 	if(!item_to_remove)
@@ -415,16 +417,14 @@
 /**
  * Return a simple list of all items in ONE hole
  */
-/datum/component/hole_storage/proc/return_list_single_hole(datum/source, hole_id)
-	var/list/all_items = list()
+/datum/component/hole_storage/proc/return_list_single_hole(datum/source, stored_items, hole_id)
 
 	var/datum/component/storage/storage_comp = hole_array[hole_id]
 	if(!storage_comp || QDELETED(storage_comp.parent))
 		return
 
-	all_items += storage_comp.contents()
+	stored_items += storage_comp.contents()
 
-	return all_items
 
 // Storage container object for holes
 /obj/item/storage/backpack/hole_storage

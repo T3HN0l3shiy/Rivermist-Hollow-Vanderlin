@@ -51,7 +51,7 @@
 	boss.face_atom(target)
 
 	if(targetting_datum.should_disarm(boss, target))
-		if(ishuman(target))
+		if(ishuman(target) && target.Adjacent(boss))
 			var/mob/living/carbon/human/h_target = target
 			for(var/obj/item/I in h_target.held_items)
 				h_target.dropItemToGround(I, force = FALSE, silent = FALSE)

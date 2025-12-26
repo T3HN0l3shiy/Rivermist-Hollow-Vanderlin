@@ -59,7 +59,7 @@
 		OFFSET_FACEMASK = list(0,-4),\
 		OFFSET_HEAD = list(0,-4),\
 		OFFSET_FACE = list(0,-4),\
-		OFFSET_BELT = list(0,-5),\
+		OFFSET_BELT = list(0,0),\
 		OFFSET_BACK = list(0,-4),\
 		OFFSET_NECK = list(0,-4),\
 		OFFSET_MOUTH = list(0,-4),\
@@ -93,6 +93,8 @@
 		OFFSET_BREASTS = list(0,-4),\
 		OFFSET_TESTICLES = list(0,-2),\
 		OFFSET_VAGINA = list(0,-4),\
+		OFFSET_BUTT = list(0,-4),\
+		OFFSET_BELLY = list(0,-4),\
 	)
 
 	offset_genitals_f = list(
@@ -100,6 +102,8 @@
 		OFFSET_BREASTS = list(0,-4),\
 		OFFSET_TESTICLES = list(0,-2),\
 		OFFSET_VAGINA = list(0,-4),\
+		OFFSET_BUTT = list(0,-4),\
+		OFFSET_BELLY = list(0,-4),\
 	)
 
 	specstats_m = list(STATKEY_STR = 1, STATKEY_PER = -2, STATKEY_INT = 0, STATKEY_CON = 2, STATKEY_END = 2, STATKEY_SPD = -1, STATKEY_LCK = 0)

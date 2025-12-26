@@ -18,11 +18,15 @@
 	var/transformed
 	/// Tracks when in the middle of either transforming into or out of WW form
 	var/transforming
+	var/untransforming
+
 	var/wolfname = "Werevolf"
 	COOLDOWN_DECLARE(message_cooldown)
 
 	innate_traits = list(
 		TRAIT_STRONGBITE,
+		TRAIT_BESTIALSENSE,
+		TRAIT_BRUSHWALK,
 		TRAIT_BESTIALSENSE,
 		TRAIT_BRUSHWALK
 	)
@@ -51,9 +55,16 @@
 				return span_boldwarning("A vampire.")
 
 /datum/antagonist/werewolf/on_gain()
+	SSmapping.retainer.werewolves |= owner
 	owner.special_role = name
 	if(increase_votepwr)
 		forge_werewolf_objectives()
+	owner.current.add_spell(/datum/action/cooldown/spell/undirected/werewolf_form)
+	owner.current.RegisterSignal(owner.current, COMSIG_RAGE_BOTTOMED, TYPE_PROC_REF(/mob/living/carbon/human, werewolf_untransform))
+	owner.current.RegisterSignal(owner.current, COMSIG_RAGE_OVERRAGE, TYPE_PROC_REF(/mob/living/carbon/human, werewolf_transform))
+
+	var/datum/rage/new_rage = new
+	new_rage.grant_to(owner.current)
 
 	wolfname = "[pick(strings("werewolf_names.json", "wolf_prefixes"))] [pick(strings("werewolf_names.json", "wolf_suffixes"))]"
 	owner.current.verbs |= /mob/living/carbon/human/proc/toggle_werewolf_transform
@@ -63,6 +74,11 @@
 	if(!silent && owner.current)
 		to_chat(owner.current,span_danger("I am no longer a [special_role]!"))
 	owner.special_role = null
+	owner.current.remove_spell(/datum/action/cooldown/spell/undirected/werewolf_form)
+	owner.current.UnregisterSignal(owner.current, COMSIG_RAGE_BOTTOMED)
+	owner.current.UnregisterSignal(owner.current, COMSIG_RAGE_OVERRAGE)
+
+
 	owner.current.verbs -= /mob/living/carbon/human/proc/toggle_werewolf_transform
 	return ..()
 
@@ -155,7 +171,7 @@
 	to_chat(src, span_warning("I feed on succulent flesh. I feel reinvigorated."))
 	return src.reagents.add_reagent(/datum/reagent/medicine/healthpot, healing_amount)
 
-/obj/item/clothing/armor/skin_armor/werewolf_skin
+/obj/item/clothing/armor/regenerating/skin/werewolf_skin
 	slot_flags = null
 	name = "Werevolf's skin"
 	desc = ""
@@ -169,6 +185,7 @@
 	sewrepair = FALSE
 	max_integrity = INTEGRITY_STRONG
 	item_flags = DROPDEL
+	repair_time = 15 SECONDS
 
 /datum/intent/simple/werewolf
 	name = "claw"
@@ -177,7 +194,7 @@
 	attack_verb = list("claws", "mauls", "eviscerates")
 	animname = "claw"
 	hitsound = "genslash"
-	penfactor = 30
+	penfactor = 45
 	candodge = TRUE
 	canparry = TRUE
 	miss_text = "slashes the air!"
@@ -187,16 +204,15 @@
 /obj/item/weapon/werewolf_claw
 	name = "verevolf claw"
 	desc = ""
+	icon = 'icons/roguetown/weapons/32/special.dmi'
 	item_state = null
 	lefthand_file = null
 	righthand_file = null
-	icon = 'icons/roguetown/weapons/32.dmi'
 	max_blade_int = 900
 	max_integrity = 900
 	force = 15
 	block_chance = 0
 	wdefense = 2
-	armor_penetration = 15
 	associated_skill = /datum/skill/combat/unarmed
 	wlength = WLENGTH_NORMAL
 	wbalance = EASY_TO_DODGE
